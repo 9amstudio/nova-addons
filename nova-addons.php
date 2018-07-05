@@ -32,23 +32,25 @@ class Nova_Addons {
 	 * Defines constants
 	 */
 	public function define_constants() {
-		define( 'SOBER_ADDONS_VER', '1.3.9' );
-		define( 'SOBER_ADDONS_DIR', plugin_dir_path( __FILE__ ) );
-		define( 'SOBER_ADDONS_URL', plugin_dir_url( __FILE__ ) );
+		define( 'NOVA_ADDONS_VER', '0.1.0' );
+		define( 'NOVA_ADDONS_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'NOVA_ADDONS_URL', plugin_dir_url( __FILE__ ) );
 	}
 
 	/**
 	 * Load files
 	 */
 	public function includes() {
-		include_once( SOBER_ADDONS_DIR . 'includes/update.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/import.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/user.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/portfolio.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/class-nova-vc.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/shortcodes/class-nova-banner.php' );
-		include_once( SOBER_ADDONS_DIR . 'includes/shortcodes/class-nova-banner-grid.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/update.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/import.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/user.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/portfolio.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/class-nova-vc.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes-row.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-banner.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-banner-grid.php' );
+		WPBakeryShortCode_Nova_Row::get_instance();
 	}
 
 	/**
@@ -89,7 +91,7 @@ class Nova_Addons {
 	 */
 	public function update() {
 		// set auto-update params
-		$plugin_current_version = SOBER_ADDONS_VER;
+		$plugin_current_version = NOVA_ADDONS_VER;
 		$plugin_remote_path     = 'http://update.uix.store';
         $plugin_slug            = plugin_basename( __FILE__ );
         $license_user           = '';

@@ -51,14 +51,14 @@ class Nova_Shortcodes {
 	 */
 	public static function enqueue_scripts() {
 		wp_deregister_script( 'isotope' );
-		wp_register_script( 'isotope', SOBER_ADDONS_URL . 'assets/js/isotope.pkgd.min.js', array(
+		wp_register_script( 'isotope', NOVA_ADDONS_URL . 'assets/js/isotope.pkgd.min.js', array(
 			'jquery',
 			'imagesloaded',
 		), '3.0.1', true );
-		wp_register_script( 'jquery-countdown', SOBER_ADDONS_URL . 'assets/js/jquery.countdown.js', array( 'jquery' ), '2.0.4', true );
-		wp_register_script( 'jquery-circle-progress', SOBER_ADDONS_URL . 'assets/js/circle-progress.js', array( 'jquery' ), '1.1.3', true );
+		wp_register_script( 'jquery-countdown', NOVA_ADDONS_URL . 'assets/js/jquery.countdown.js', array( 'jquery' ), '2.0.4', true );
+		wp_register_script( 'jquery-circle-progress', NOVA_ADDONS_URL . 'assets/js/circle-progress.js', array( 'jquery' ), '1.1.3', true );
 
-		wp_enqueue_script( 'nova-shortcodes', SOBER_ADDONS_URL . 'assets/js/shortcodes.js', array(
+		wp_enqueue_script( 'nova-shortcodes', NOVA_ADDONS_URL . 'assets/js/shortcodes.js', array(
 			'isotope',
 			'wp-util',
 			'jquery-countdown',

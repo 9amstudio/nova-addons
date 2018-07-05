@@ -1920,10 +1920,10 @@ class Nova_Addons_VC {
 	 */
 	protected function get_icon( $file_name ) {
 
-		if ( file_exists( SOBER_ADDONS_DIR . 'assets/icons/' . $file_name ) ) {
-			$url = SOBER_ADDONS_URL . 'assets/icons/' . $file_name;
+		if ( file_exists( NOVA_ADDONS_DIR . 'assets/icons/' . $file_name ) ) {
+			$url = NOVA_ADDONS_URL . 'assets/icons/' . $file_name;
 		} else {
-			$url = SOBER_ADDONS_URL . 'assets/icons/default.png';
+			$url = NOVA_ADDONS_URL . 'assets/icons/default.png';
 		}
 
 		return $url;
