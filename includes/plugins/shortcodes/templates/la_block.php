@@ -16,7 +16,7 @@ $atts = shortcode_atts( array(
 extract($atts);
 
 if ($id || $name) {
-    $el_class = LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+    $el_class = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
     $query_args = array(
         'post_type' => 'la_block',
         'posts_per_page' => 1
@@ -38,7 +38,7 @@ if ($id || $name) {
             ?>
             <div class="la-static-block<?php echo esc_attr($el_class)?>">
                 <?php
-                echo LaStudio_Shortcodes_Helper::remove_js_autop($post->post_content);
+                echo Novaworks_Shortcodes_Helper::remove_js_autop($post->post_content);
                 ?>
             </div>
             <?php if($wpb_post_custom_css || $wpb_shortcodes_custom_css):?>

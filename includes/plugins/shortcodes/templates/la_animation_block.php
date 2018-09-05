@@ -18,7 +18,7 @@ extract(shortcode_atts(array(
 ),$atts ));
 
 $style = $css_class = '';
-$css_class = la_shortcode_custom_css_class( $css, ' ' );
+$css_class = nova_shortcode_custom_css_class( $css, ' ' );
 
 wp_enqueue_style('la-animate-block');
 
@@ -34,7 +34,7 @@ if($animation_iteration_count == 0 || in_array($css_animation,$inifinite_arr)){
     $css_animation = 'infinite '.$css_animation;
 }
 $output .= '<div data-la_component="AnimationBlock" class="js-el la-animation-block '.esc_attr( $el_class . $css_class ).'" data-animate="'. esc_attr( $css_animation ) .'" data-animation-delay="'. esc_attr( $animation_delay ) .'" data-animation-duration="'. esc_attr( $animation_duration ) .'" data-animation-iteration="'. esc_attr( $animation_iteration_count ) .'" style="'.esc_attr( $style ).'">';
-$output .= LaStudio_Shortcodes_Helper::remove_js_autop($content);
+$output .= Novaworks_Shortcodes_Helper::remove_js_autop($content);
 $output .= '</div>';
 
 echo $output;

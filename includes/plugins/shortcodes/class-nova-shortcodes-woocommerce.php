@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @author   La-Studio
  * @category Shortcodes
- * @package  LaStudio-Core/Shortcodes
+ * @package  Novaworks-Core/Shortcodes
  * @version  3.3.0
  */
 
-class LaStudio_Shortcodes_WooCommerce{
+class Novaworks_Shortcodes_WooCommerce{
 
     /**
      * Shortcode type.
@@ -627,7 +627,7 @@ class LaStudio_Shortcodes_WooCommerce{
 
         $unique_id                  = $this->get_wrapper_shortcode_id();
         $wrapper_classes            = $this->get_wrapper_classes();
-        $columns                    = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['columns'] );
+        $columns                    = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['columns'] );
         $layout                     = !empty($this->attributes['layout']) ? $this->attributes['layout'] : 'grid';
         $style                      = $this->attributes[$layout . '_style'];
         $item_space                 = $this->attributes['item_space'];
@@ -643,7 +643,7 @@ class LaStudio_Shortcodes_WooCommerce{
         if( $layout == 'grid' ){
             if( 'yes' == $this->attributes['enable_carousel'] ) {
                 $container_attr = ' data-la_component="AutoCarousel" ';
-                $container_attr .= LaStudio_Shortcodes_Helper::getParamCarouselShortCode( $this->origin_attributes );
+                $container_attr .= Novaworks_Shortcodes_Helper::getParamCarouselShortCode( $this->origin_attributes );
                 $loopCssClass[] = 'js-el la-slick-slider';
             }
         }
@@ -655,7 +655,7 @@ class LaStudio_Shortcodes_WooCommerce{
 
 
         if($image_size){
-            $globalWcLoopTmp['image_size'] = LaStudio_Shortcodes_Helper::getImageSizeFormString( $this->attributes['img_size'] );
+            $globalWcLoopTmp['image_size'] = Novaworks_Shortcodes_Helper::getImageSizeFormString( $this->attributes['img_size'] );
         }
         if($disable_alt_image){
             $globalWcLoopTmp['disable_alt_image'] = true;
@@ -683,7 +683,7 @@ class LaStudio_Shortcodes_WooCommerce{
                     $container_attr = ' data-la_component="DefaultMasonry"';
                 }
                 else{
-                    $mb_columns = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['mb_columns'] );
+                    $mb_columns = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['mb_columns'] );
                     $container_attr = ' data-la_component="AdvancedMasonry"';
                     $container_attr .= ' data-item-width="' . ( $this->attributes['base_item_w'] ? intval($this->attributes['base_item_w']) : 300 ) . '"';
                     $container_attr .= ' data-item-height="' . ( $this->attributes['base_item_h'] ? intval($this->attributes['base_item_h']) : 300 ) . '"';
@@ -699,7 +699,7 @@ class LaStudio_Shortcodes_WooCommerce{
                             foreach($_item_sizes as $k => $size){
                                 $__new_item_sizes[$k] = $size;
                                 if(!empty($size['s'])){
-                                    $__new_item_sizes[$k]['s'] = LaStudio_Shortcodes_Helper::getImageSizeFormString($size['s']);
+                                    $__new_item_sizes[$k]['s'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($size['s']);
                                 }
                             }
                         }
@@ -751,7 +751,7 @@ class LaStudio_Shortcodes_WooCommerce{
 
             $original_post = $GLOBALS['post'];
 
-            do_action('LaStudio/shortcodes/before_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
+            do_action('Novaworks/shortcodes/before_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
             do_action( "woocommerce_shortcode_before_{$this->type}_loop", $this->attributes );
 
             if($products->total){
@@ -780,7 +780,7 @@ class LaStudio_Shortcodes_WooCommerce{
 
             do_action( "woocommerce_shortcode_after_{$this->type}_loop", $this->attributes );
 
-            do_action('LaStudio/shortcodes/after_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
+            do_action('Novaworks/shortcodes/after_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
 
 
             if( ( !empty($this->attributes['display_style']) && $this->attributes['display_style'] != 'all' )
@@ -809,7 +809,7 @@ class LaStudio_Shortcodes_WooCommerce{
                         esc_attr($products->current_page),
                         esc_attr($unique_id),
                         esc_attr($unique_id),
-                        LaStudio_Shortcodes_Helper::getLoadingIcon(),
+                        Novaworks_Shortcodes_Helper::getLoadingIcon(),
                         $_paginate_links
                     );
                 }
@@ -825,7 +825,7 @@ class LaStudio_Shortcodes_WooCommerce{
                         esc_attr($products->current_page),
                         esc_attr($products->total_pages),
                         esc_attr($unique_id),
-                        LaStudio_Shortcodes_Helper::getLoadingIcon(),
+                        Novaworks_Shortcodes_Helper::getLoadingIcon(),
                         esc_html($this->attributes['load_more_text'])
                     );
                 }

@@ -12,7 +12,7 @@ $el_class  = $use_gfont_title = $title_font = $title_fz = $title_lh = $title_col
 $use_gfont_value = $value_font = $value_fz = $value_lh = $value_color = $css = '';
 $prefix = $suffix = $el_id = $el_class_value = $el_class_heading = '';
 
-$la_fix_css = array();
+$nova_fix_css = array();
 
 $atts = shortcode_atts( array(
     'icon_pos' => 'top',
@@ -33,7 +33,7 @@ $atts = shortcode_atts( array(
     'icon_entypo' => '',
     'icon_linecons' => '',
     'icon_monosocial' => 'vc-mono vc-mono-fivehundredpx',
-    'icon_la_icon_outline' => 'la-icon design-2_image',
+    'icon_nova_icon_outline' => 'nova-icon design-2_image',
     'icon_nucleo_glyph' => 'nc-icon-glyph nature_bear',
     'icon_image_id' => '',
     'title' => '',
@@ -74,7 +74,7 @@ if($spacer == 'line'){
     $_tmp_class .= ' spacer-position-' . $spacer_position;
 }
 
-$class_to_filter = $_tmp_class . la_shortcode_custom_css_class( $css, ' ' ) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$class_to_filter = $_tmp_class . nova_shortcode_custom_css_class( $css, ' ' ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 $css_class = $class_to_filter;
 
 $wapIconCssStyle = $iconCssStyle = array();
@@ -161,13 +161,13 @@ if($spacer == 'line'){
     $parentLineCssInline = array();
     $parentLineCssInline[] = "height:{$line_height}px";
     if(!empty($line_width)){
-        $lineHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $lineHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target'		=> "#{$unique_id} .la-line",
             'media_sizes' 	=> array(
                 'width' 	=> $line_width,
             )
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target'		=> "#{$unique_id} .la-line",
             'media_sizes' 	=> array(
                 'width' 	=> $line_width,
@@ -197,14 +197,14 @@ if(!empty($_icon_html)){
 
 if(!empty($title)){
     if(!empty($title_fz) || !empty( $title_lh)){
-        $titleHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .stats-heading',
             'media_sizes' => array(
                 'font-size' => $title_fz,
                 'line-height' => $title_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .stats-heading',
             'media_sizes' => array(
                 'font-size' => $title_fz,
@@ -220,7 +220,7 @@ if(!empty($title)){
         $titleCssInline[] = "color:{$title_color}";
     }
     if(!empty($use_gfont_title)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_font);
         if(isset($gfont_data['style'])){
             $titleCssInline[] = $gfont_data['style'];
         }
@@ -228,20 +228,20 @@ if(!empty($title)){
             wp_enqueue_style( 'vc_google_fonts_' . $gfont_data['font_family'], $gfont_data['font_url'] );
         }
     }
-    $heading_el_class = 'stats-heading js-el'  . LaStudio_Shortcodes_Helper::getExtraClass($el_class_heading);
+    $heading_el_class = 'stats-heading js-el'  . Novaworks_Shortcodes_Helper::getExtraClass($el_class_heading);
     $title_html = '<div class="box-heading"><div class="'.esc_attr($heading_el_class).'" style="'. esc_attr( implode(';', $titleCssInline)).'" '.$titleHtmlAtts.'>' . esc_html($title) . '</div></div>';
 }
 if(!empty($value)){
     $valueHtmlAtts = '';
     if(!empty($value_fz) || !empty( $value_lh)){
-        $valueHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $valueHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .stats-value',
             'media_sizes' => array(
                 'font-size' => $value_fz,
                 'line-height' => $value_lh
             )
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .stats-value',
             'media_sizes' => array(
                 'font-size' => $value_fz,
@@ -260,7 +260,7 @@ if(!empty($value)){
         $valueCssInline[] = "color:{$value_color}";
     }
     if(!empty($use_gfont_value)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($value_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($value_font);
         if(isset($gfont_data['style'])){
             $valueCssInline[] = $gfont_data['style'];
         }
@@ -268,7 +268,7 @@ if(!empty($value)){
             wp_enqueue_style( 'vc_google_fonts_' . $gfont_data['font_family'], $gfont_data['font_url'] );
         }
     }
-    $value_el_class = 'stats-value js-el'  . LaStudio_Shortcodes_Helper::getExtraClass($el_class_value);
+    $value_el_class = 'stats-value js-el'  . Novaworks_Shortcodes_Helper::getExtraClass($el_class_value);
     $value_html = '<div class="'.esc_attr($value_el_class).'" style="'. esc_attr( implode(';', $valueCssInline)).'" '.$valueHtmlAtts.'>' . esc_html($value) . '</div>';
 }
 
@@ -306,4 +306,4 @@ if(!empty($iconCssStyle) || !empty($wapIconCssStyle) ) :
         echo '#'.$unique_id . '.la-stats-counter .wrap-icon .box-icon span{' . implode(';', $iconCssStyle) . '}';
     }
 ?></span><?php endif;?>
-<?php LaStudio_Shortcodes_Helper::renderResponsiveMediaStyleTags($la_fix_css); ?>
+<?php Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags($nova_fix_css); ?>

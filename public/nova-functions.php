@@ -35,7 +35,7 @@ if (!function_exists('la_fw_add_element')) {
         $depend = '';
         $sub = (isset($field['sub'])) ? 'sub-' : '';
         $unique = (isset($unique)) ? $unique : '';
-        $class = 'LaStudio_Theme_Options_Field_' . strtolower($field['type']);
+        $class = 'Novaworks_Theme_Options_Field_' . strtolower($field['type']);
         $wrap_class = (isset($field['wrap_class'])) ? ' ' . $field['wrap_class'] : '';
         $el_class = (isset($field['title'])) ? sanitize_title($field['title']) : 'no-title';
         $hidden = '';
@@ -66,7 +66,7 @@ if (!function_exists('la_fw_add_element')) {
             $element->output();
             $output .= ob_get_clean();
         } else {
-            $output .= '<p>' . __('This field class is not available!', 'lastudio') . '</p>';
+            $output .= '<p>' . __('This field class is not available!', 'nova') . '</p>';
         }
 
         $output .= (isset($field['title'])) ? '</div>' : '';
@@ -343,8 +343,8 @@ if (!function_exists('la_pagespeed_detected')) {
     }
 }
 
-if (!function_exists('la_shortcode_custom_css_class')) {
-    function la_shortcode_custom_css_class($param_value, $prefix = '')
+if (!function_exists('nova_shortcode_custom_css_class')) {
+    function nova_shortcode_custom_css_class($param_value, $prefix = '')
     {
         $css_class = preg_match('/\s*\.([^\{]+)\s*\{\s*([^\}]+)\s*\}\s*/', $param_value) ? $prefix . preg_replace('/\s*\.([^\{]+)\s*\{\s*([^\}]+)\s*\}\s*/', '$1', $param_value) : '';
         return $css_class;
@@ -380,13 +380,13 @@ if (!function_exists('la_get_product_grid_style')) {
     function la_get_product_grid_style()
     {
         return array(
-            __('Design 01', 'lastudio') => '1',
-            __('Design 02', 'lastudio') => '2',
-            __('Design 03', 'lastudio') => '3',
-            __('Design 04', 'lastudio') => '4',
-            __('Design 05', 'lastudio') => '5',
-            __('Design 06', 'lastudio') => '6',
-            __('Design 07', 'lastudio') => '7'
+            __('Design 01', 'nova') => '1',
+            __('Design 02', 'nova') => '2',
+            __('Design 03', 'nova') => '3',
+            __('Design 04', 'nova') => '4',
+            __('Design 05', 'nova') => '5',
+            __('Design 06', 'nova') => '6',
+            __('Design 07', 'nova') => '7'
         );
     }
 }
@@ -395,8 +395,8 @@ if (!function_exists('la_get_product_list_style')) {
     function la_get_product_list_style()
     {
         return array(
-            __('Default', 'lastudio') => 'default',
-            __('Mini', 'lastudio') => 'mini'
+            __('Default', 'nova') => 'default',
+            __('Mini', 'nova') => 'mini'
         );
     }
 }
@@ -441,9 +441,9 @@ if (!function_exists('la_add_script_to_quickview_product')) {
                         'ajax' => array('url' => admin_url('admin-ajax.php', 'relative'))
                     ));?>;
                     var wc_add_to_cart_variation_params = <?php echo wp_json_encode(array(
-                        'i18n_no_matching_variations_text' => esc_attr__('Sorry, no products matched your selection. Please choose a different combination.', 'lastudio'),
-                        'i18n_make_a_selection_text' => esc_attr__('Select product options before adding this product to your cart.', 'lastudio'),
-                        'i18n_unavailable_text' => esc_attr__('Sorry, this product is unavailable. Please choose a different combination.', 'lastudio')
+                        'i18n_no_matching_variations_text' => esc_attr__('Sorry, no products matched your selection. Please choose a different combination.', 'nova'),
+                        'i18n_make_a_selection_text' => esc_attr__('Select product options before adding this product to your cart.', 'nova'),
+                        'i18n_unavailable_text' => esc_attr__('Sorry, this product is unavailable. Please choose a different combination.', 'nova')
                     )); ?>;
                     /* ]]> */
                 </script>
@@ -457,7 +457,7 @@ if (!function_exists('la_add_script_to_quickview_product')) {
                 <script type="text/javascript">
                     /* <![CDATA[ */
                     var wc_single_product_params = <?php echo wp_json_encode(array(
-                        'i18n_required_rating_text' => esc_attr__('Please select a rating', 'lastudio'),
+                        'i18n_required_rating_text' => esc_attr__('Please select a rating', 'nova'),
                         'review_rating_required' => get_option('woocommerce_review_rating_required'),
                         'flexslider' => apply_filters('woocommerce_single_product_carousel_options', array(
                             'rtl' => is_rtl(),

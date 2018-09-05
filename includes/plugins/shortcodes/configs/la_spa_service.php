@@ -8,31 +8,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'attach_image',
-        'heading' => __('Upload the banner image', 'lastudio'),
+        'heading' => __('Upload the banner image', 'nova'),
         'param_name' => 'banner_id'
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __('Design','lastudio'),
+        'heading' => __('Design','nova'),
         'param_name' => 'style',
         'value' => array(
-            __('Default','lastudio') => '1',
-            __('Style 02','lastudio') => '2',
+            __('Default','nova') => '1',
+            __('Style 02','nova') => '2',
         ),
         'std' => '1'
     ),
 
     array(
         'type' => 'vc_link',
-        'heading' => __('Banner Link', 'lastudio'),
+        'heading' => __('Banner Link', 'nova'),
         'param_name' => 'banner_link',
-        'description' => __('Add link / select existing page to link to this banner', 'lastudio')
+        'description' => __('Add link / select existing page to link to this banner', 'nova')
     ),
 
 
     array(
         'type' => 'textfield',
-        'heading' => __( 'Title', 'lastudio' ),
+        'heading' => __( 'Title', 'nova' ),
         'param_name' => 'title',
         'admin_label' => true,
         'dependency'    => array(
@@ -43,33 +43,33 @@ $shortcode_params = array(
 
     array(
         'type' => 'textarea',
-        'heading' => __( 'Content', 'lastudio' ),
+        'heading' => __( 'Content', 'nova' ),
         'param_name' => 'content',
         'admin_label' => true
     ),
 
-    LaStudio_Shortcodes_Helper::fieldElementID(array(
+    Novaworks_Shortcodes_Helper::fieldElementID(array(
         'param_name' 	=> 'el_id'
     )),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'heading' 		=> __('Extra class name for title', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'heading' 		=> __('Extra class name for title', 'nova'),
         'param_name' 	=> 'el_class1',
         'dependency'    => array(
             'element' => 'style',
             'value'   => array('1')
         )
     )),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'heading' 		=> __('Extra class name for content', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'heading' 		=> __('Extra class name for content', 'nova'),
         'param_name' 	=> 'el_class2'
     )),
 
     array(
         'type' 			=> 'colorpicker',
         'param_name' 	=> 'bg_color',
-        'heading' 		=> __('Background Color', 'lastudio'),
-        'group' 		=> __('Design', 'lastudio'),
+        'heading' 		=> __('Background Color', 'nova'),
+        'group' 		=> __('Design', 'nova'),
         'dependency'    => array (
             'element' => 'style',
             'value'   => array('1')
@@ -77,23 +77,23 @@ $shortcode_params = array(
     )
 );
 
-$param_fonts_title1 = LaStudio_Shortcodes_Helper::fieldTitleGFont('title', __('Title', 'lastudio'), array(
+$param_fonts_title1 = Novaworks_Shortcodes_Helper::fieldTitleGFont('title', __('Title', 'nova'), array(
     'element' => 'style',
     'value'   => array('1')
 ));
-$param_fonts_title2 = LaStudio_Shortcodes_Helper::fieldTitleGFont('content', __('Content', 'lastudio'));
+$param_fonts_title2 = Novaworks_Shortcodes_Helper::fieldTitleGFont('content', __('Content', 'nova'));
 
 
 $shortcode_params = array_merge( $shortcode_params, $param_fonts_title1, $param_fonts_title2);
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('Spa Service', 'lastudio'),
+        'name'			=> __('Spa Service', 'nova'),
         'base'			=> 'la_spa_service',
-        'icon'          => 'la-wpb-icon la_spa_service',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description'   => __('Displays the banner image with information', 'lastudio'),
+        'icon'          => 'nova-wpb-icon la_spa_service',
+        'category'  	=> __('La Studio', 'nova'),
+        'description'   => __('Displays the banner image with information', 'nova'),
         'params' 		=> $shortcode_params
     ),
     'la_spa_service'

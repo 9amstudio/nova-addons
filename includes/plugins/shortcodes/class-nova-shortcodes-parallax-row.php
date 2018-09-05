@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class LaStudio_Shortcodes_Parallax_Row{
+class Novaworks_Shortcodes_Parallax_Row{
 
     public static $instance = null;
 
@@ -41,24 +41,24 @@ class LaStudio_Shortcodes_Parallax_Row{
             return;
         }
         vc_map( array(
-            'name'          => __( 'Parallax Row Background', 'lastudio' ),
+            'name'          => __( 'Parallax Row Background', 'nova' ),
             'base'          => 'la_parallax_row',
             'icon'          => 'la_parallax_row',
-            'description'   => __( 'Add a parallax bg to your row.', 'lastudio' ),
-            'category'  	=> __('La Studio', 'lastudio'),
+            'description'   => __( 'Add a parallax bg to your row.', 'nova' ),
+            'category'  	=> __('La Studio', 'nova'),
             'params'        => array(
                 array(
                     'type' => 'attach_image',
                     'class' => '',
-                    'heading' => __( 'Background Image', 'lastudio' ),
+                    'heading' => __( 'Background Image', 'nova' ),
                     'param_name' => 'image',
                     'admin_label' => true,
-                    'description' => __( 'Select your background image. <strong>Make sure that your image is of high resolution, we will resize the image to make it fit.</strong><br><strong>For optimal performance, try keeping your images close to 1600 x 900 pixels</strong>', 'lastudio' ),
+                    'description' => __( 'Select your background image. <strong>Make sure that your image is of high resolution, we will resize the image to make it fit.</strong><br><strong>For optimal performance, try keeping your images close to 1600 x 900 pixels</strong>', 'nova' ),
                 ),
                 array(
                     'type' => 'dropdown',
                     'class' => '',
-                    'heading' => __( 'Background Image Parallax', 'lastudio' ),
+                    'heading' => __( 'Background Image Parallax', 'nova' ),
                     'param_name' => 'direction',
                     'value' => array(
                         'Up' => 'up',
@@ -67,15 +67,15 @@ class LaStudio_Shortcodes_Parallax_Row{
                         'Right' => 'right',
                         'Fixed' => 'fixed',
                     ),
-                    'description' => __( "Choose the direction of your parallax. <strong>Note that browsers render fixed directions very slow since they aren't hardware accelerated.</strong>", 'lastudio' ),
+                    'description' => __( "Choose the direction of your parallax. <strong>Note that browsers render fixed directions very slow since they aren't hardware accelerated.</strong>", 'nova' ),
                 ),
                 array(
                     'type' => 'textfield',
                     'class' => '',
-                    'heading' => __( 'Parallax Speed', 'lastudio' ),
+                    'heading' => __( 'Parallax Speed', 'nova' ),
                     'param_name' => 'speed',
                     'value' => '0.3',
-                    'description' => __( 'The movement speed, value should be between 0.1 and 1.0. A lower number means slower scrolling speed.', 'lastudio' ),
+                    'description' => __( 'The movement speed, value should be between 0.1 and 1.0. A lower number means slower scrolling speed.', 'nova' ),
                     'dependency' => array(
                         'element' => 'direction',
                         'value' => array( 'up', 'down', 'left', 'right' ),
@@ -84,66 +84,66 @@ class LaStudio_Shortcodes_Parallax_Row{
                 array(
                     'type' => 'dropdown',
                     'class' => '',
-                    'heading' => __( 'Background Style / Repeat', 'lastudio' ),
+                    'heading' => __( 'Background Style / Repeat', 'nova' ),
                     'param_name' => 'background_repeat',
                     'value' => array(
-                        __( 'Cover Whole Row (covers the whole row)', 'lastudio' ) => '',
-                        __( 'Repeating Image Pattern', 'lastudio' ) => 'repeat',
+                        __( 'Cover Whole Row (covers the whole row)', 'nova' ) => '',
+                        __( 'Repeating Image Pattern', 'nova' ) => 'repeat',
                     ),
-                    'description' => __( 'Select whether the background image above should cover the whole row, or whether the image is a background seamless pattern.', 'lastudio' ),
+                    'description' => __( 'Select whether the background image above should cover the whole row, or whether the image is a background seamless pattern.', 'nova' ),
                 ),
                 array(
                     'type' => 'dropdown',
                     'class' => '',
-                    'heading' => __( 'Background Position / Alignment', 'lastudio' ),
+                    'heading' => __( 'Background Position / Alignment', 'nova' ),
                     'param_name' => 'background_position',
                     'value' => array(
-                        __( 'Centered', 'lastudio' ) => '',
-                        __( 'Left (only applies to up, down parallax or fixed)', 'lastudio' ) => 'left',
-                        __( 'Right (only applies to up, down parallax or fixed)', 'lastudio' ) => 'right',
-                        __( 'Top (only applies to left or right parallax)', 'lastudio' ) => 'top',
-                        __( 'Bottom (only applies to left or right parallax)', 'lastudio' ) => 'bottom',
+                        __( 'Centered', 'nova' ) => '',
+                        __( 'Left (only applies to up, down parallax or fixed)', 'nova' ) => 'left',
+                        __( 'Right (only applies to up, down parallax or fixed)', 'nova' ) => 'right',
+                        __( 'Top (only applies to left or right parallax)', 'nova' ) => 'top',
+                        __( 'Bottom (only applies to left or right parallax)', 'nova' ) => 'bottom',
                     ),
-                    'description' => __( 'The alignment of the background / parallax image. Note that this most likely will only be noticeable in smaller screens, if the row is large enough, the image will most likely be fully visible. Use this if you want to ensure that a certain area will always be visible in your parallax in smaller screens.', 'lastudio' ),
+                    'description' => __( 'The alignment of the background / parallax image. Note that this most likely will only be noticeable in smaller screens, if the row is large enough, the image will most likely be fully visible. Use this if you want to ensure that a certain area will always be visible in your parallax in smaller screens.', 'nova' ),
                 ),
                 array(
                     'type' => 'textfield',
                     'class' => '',
-                    'heading' => __( 'Opacity', 'lastudio' ),
+                    'heading' => __( 'Opacity', 'nova' ),
                     'param_name'  => 'opacity',
                     'value' => '100',
-                    'description' => __( 'You may set the opacity level for your parallax. You can add a background color to your row and add an opacity here to tint your parallax. <strong>Please choose an integer value between 1 and 100.</strong>', 'lastudio' ),
+                    'description' => __( 'You may set the opacity level for your parallax. You can add a background color to your row and add an opacity here to tint your parallax. <strong>Please choose an integer value between 1 and 100.</strong>', 'nova' ),
                 ),
                 array(
                     'type' => 'checkbox',
                     'class' => '',
                     'param_name' => 'enable_mobile',
-                    'value' => array( __( 'Check this to enable the parallax effect in mobile devices', 'lastudio' ) => 'parallax-enable-mobile' ),
-                    'description' => __( 'Parallax effects would most probably cause slowdowns when your site is viewed in mobile devices. If the device width is less than 980 pixels, then it is assumed that the site is being viewed in a mobile device.', 'lastudio' ),
+                    'value' => array( __( 'Check this to enable the parallax effect in mobile devices', 'nova' ) => 'parallax-enable-mobile' ),
+                    'description' => __( 'Parallax effects would most probably cause slowdowns when your site is viewed in mobile devices. If the device width is less than 980 pixels, then it is assumed that the site is being viewed in a mobile device.', 'nova' ),
                 ),
                 array(
                     'type' => 'textfield',
-                    'heading' => __( 'Custom ID', 'lastudio' ),
+                    'heading' => __( 'Custom ID', 'nova' ),
                     'param_name' => 'id',
                     'value' => '',
-                    'description' => __( 'Add a custom id for the element here. Only one ID can be defined.', 'lastudio' ),
-                    'group' => __( 'Advanced', 'lastudio' ),
+                    'description' => __( 'Add a custom id for the element here. Only one ID can be defined.', 'nova' ),
+                    'group' => __( 'Advanced', 'nova' ),
                 ),
                 array(
                     'type' => 'textfield',
-                    'heading' => __( 'Parallax ID', 'lastudio' ),
+                    'heading' => __( 'Parallax ID', 'nova' ),
                     'param_name' => 'prlx_id',
                     'value' => '',
-                    'description' => __( 'Assign an ID for the actual parallax row here.', 'lastudio' ),
-                    'group' => __( 'Advanced', 'lastudio' ),
+                    'description' => __( 'Assign an ID for the actual parallax row here.', 'nova' ),
+                    'group' => __( 'Advanced', 'nova' ),
                 ),
                 array(
                     'type' => 'textfield',
-                    'heading' => __( 'Custom Class', 'lastudio' ),
+                    'heading' => __( 'Custom Class', 'nova' ),
                     'param_name' => 'class',
                     'value' => '',
-                    'description' => __( 'Add a custom class name for the element here. If defining multiple classes, separate them by lines and define them like you would in HTML code.', 'lastudio' ),
-                    'group' => __( 'Advanced', 'lastudio' ),
+                    'description' => __( 'Add a custom class name for the element here. If defining multiple classes, separate them by lines and define them like you would in HTML code.', 'nova' ),
+                    'group' => __( 'Advanced', 'nova' ),
                 ),
             ),
         ) );

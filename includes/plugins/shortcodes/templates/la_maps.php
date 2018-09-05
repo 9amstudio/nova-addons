@@ -39,7 +39,7 @@ if(empty($lat) || empty($lng)){
 }
 
 $_tmp_class = 'la-shortcode-maps';
-$class_to_filter = $_tmp_class . la_shortcode_custom_css_class( $css, ' ' ) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$class_to_filter = $_tmp_class . nova_shortcode_custom_css_class( $css, ' ' ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 $css_class = $class_to_filter;
 
 $marker_lat = $lat;
@@ -76,13 +76,13 @@ $output .= '</div>';
 $output .= sprintf(
     '<div id="%s" class="hidden">%s</div>',
     esc_attr($id) . '_contentbox',
-    LaStudio_Shortcodes_Helper::remove_js_autop( $content ,true)
+    Novaworks_Shortcodes_Helper::remove_js_autop( $content ,true)
 );
 
 echo $output;
 
 $url = 'https://maps.googleapis.com/maps/api/js';
-$key = apply_filters('LaStudio/core/google_map_api', '');
+$key = apply_filters('Novaworks/core/google_map_api', '');
 if(!empty($key)){
     $url = add_query_arg('key',$key, $url);
 }

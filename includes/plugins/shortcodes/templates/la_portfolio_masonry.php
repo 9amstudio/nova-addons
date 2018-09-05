@@ -46,7 +46,7 @@ if(empty($paged)){
 extract( $atts );
 
 $_tmp_class = 'la-portfolio-masonry';
-$el_class = $_tmp_class . LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = $_tmp_class . Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 $unique_id = uniqid('la_pf_');
 
 $query_args = array(
@@ -104,7 +104,7 @@ if ( !empty ( $post__not_in ) ) {
     $query_args['post__not_in'] = $post__not_in;
 }
 
-$globalVar = apply_filters('LaStudio/global_loop_variable', 'lastudio_loop');
+$globalVar = apply_filters('Novaworks/global_loop_variable', 'nova_loop');
 $globalVarTmp = (isset($GLOBALS[$globalVar]) ? $GLOBALS[$globalVar] : '');
 $globalParams = array();
 
@@ -114,12 +114,12 @@ $globalParams['loop_id']            = $unique_id;
 $globalParams['item_space']         = $item_space;
 $globalParams['loop_layout']        = $layout;
 $globalParams['loop_style']         = $masonry_style;
-$globalParams['responsive_column']  = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
-$globalParams['image_size']         = LaStudio_Shortcodes_Helper::getImageSizeFormString($img_size);
+$globalParams['responsive_column']  = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
+$globalParams['image_size']         = Novaworks_Shortcodes_Helper::getImageSizeFormString($img_size);
 $globalParams['title_tag']          = $title_tag;
 $globalParams['excerpt_length']     = $excerpt_length;
 $globalParams['column_type']        = $column_type;
-$globalParams['mb_column']          = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($mb_column);
+$globalParams['mb_column']          = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($mb_column);
 $globalParams['base_item_w']        = $base_item_w;
 $globalParams['base_item_h']        = $base_item_h;
 
@@ -130,7 +130,7 @@ if($custom_item_size == 'yes'){
         foreach($_item_sizes as $k => $size){
             $__new_item_sizes[$k] = $size;
             if(!empty($size['s'])){
-                $__new_item_sizes[$k]['s'] = LaStudio_Shortcodes_Helper::getImageSizeFormString($size['s']);
+                $__new_item_sizes[$k]['s'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($size['s']);
             }
         }
     }
@@ -155,7 +155,7 @@ if( $the_query->have_posts() ){
         return $excerpt_length;
     }, 1011);
 
-    do_action('LaStudio/shortcodes/before_loop', 'shortcode', 'la_portfolio_masonry', $atts);
+    do_action('Novaworks/shortcodes/before_loop', 'shortcode', 'la_portfolio_masonry', $atts);
 
     $start_tpl = $end_tpl = $loop_tpl = array();
 
@@ -182,7 +182,7 @@ if( $the_query->have_posts() ){
 
     locate_template($end_tpl, true, false);
 
-    do_action('LaStudio/shortcodes/after_loop','shortcode', 'la_portfolio_masonry', $atts);
+    do_action('Novaworks/shortcodes/after_loop','shortcode', 'la_portfolio_masonry', $atts);
 
     remove_all_filters('excerpt_length', 1011);
 
@@ -197,7 +197,7 @@ if( $the_query->have_posts() ){
             esc_attr($paged),
             esc_attr($the_query->max_num_pages),
             esc_attr($unique_id),
-            LaStudio_Shortcodes_Helper::getLoadingIcon(),
+            Novaworks_Shortcodes_Helper::getLoadingIcon(),
             esc_html($load_more_text)
         );
     }

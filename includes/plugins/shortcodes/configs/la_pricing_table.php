@@ -8,36 +8,36 @@ $base_param = array(
 	array(
 		'type' => 'colorpicker',
 		'param_name' => 'main_bg_color',
-		'heading' => __('Main background color', 'lastudio')
+		'heading' => __('Main background color', 'nova')
 	),
 	array(
 		'type' => 'colorpicker',
 		'param_name' => 'main_text_color',
-		'heading' => __('Main text color', 'lastudio')
+		'heading' => __('Main text color', 'nova')
 	),
 	array(
 		'type' => 'textfield',
-		'heading' => __( 'Package Name / Title', 'lastudio' ),
+		'heading' => __( 'Package Name / Title', 'nova' ),
 		'param_name' => 'package_title',
-		'description' => __( 'Enter the package name or table heading', 'lastudio' )
+		'description' => __( 'Enter the package name or table heading', 'nova' )
 	),
 	array(
 		'type' => 'textfield',
-		'heading' => __( 'Package Price', 'lastudio' ),
+		'heading' => __( 'Package Price', 'nova' ),
 		'param_name' => 'package_price',
-		'description' => __( 'Enter the price for this package. e.g. $157', 'lastudio' )
+		'description' => __( 'Enter the price for this package. e.g. $157', 'nova' )
 	),
 	array(
 		'type' => 'textfield',
-		'heading' => __( 'Price Unit', 'lastudio' ),
+		'heading' => __( 'Price Unit', 'nova' ),
 		'param_name' => 'price_unit',
-		'description' => __( 'Enter the price unit for this package. e.g. per month', 'lastudio' )
+		'description' => __( 'Enter the price unit for this package. e.g. per month', 'nova' )
 	),
 	array(
 		'type' => 'param_group',
-		'heading' => __( 'Features', 'lastudio' ),
+		'heading' => __( 'Features', 'nova' ),
 		'param_name' => 'features',
-		'description' => __( 'Create the features list', 'lastudio' ),
+		'description' => __( 'Create the features list', 'nova' ),
 		'value' => urlencode( json_encode( array(
 			array(
 				'highlight' => 'Sample',
@@ -55,13 +55,13 @@ $base_param = array(
 		'params' => array(
 			array(
 				'type' => 'textfield',
-				'heading' => __( 'Highlight Text', 'lastudio' ),
+				'heading' => __( 'Highlight Text', 'nova' ),
 				'param_name' => 'highlight',
 				'admin_label' => true,
 			),
 			array(
 				'type' => 'textfield',
-				'heading' => __( 'Text', 'lastudio' ),
+				'heading' => __( 'Text', 'nova' ),
 				'param_name' => 'text',
 				'admin_label' => true,
 			),
@@ -77,35 +77,35 @@ $base_param = array(
 	),
 	array(
 		'type' => 'textarea',
-		'heading' => __( 'Description before features', 'lastudio' ),
+		'heading' => __( 'Description before features', 'nova' ),
 		'param_name' => 'desc_before',
 	),
 	array(
 		'type' => 'textarea',
-		'heading' => __( 'Description after features', 'lastudio' ),
+		'heading' => __( 'Description after features', 'nova' ),
 		'param_name' => 'desc_after',
 	),
 	array(
 		'type' => 'textfield',
-		'heading' => __( 'Button text', 'lastudio' ),
+		'heading' => __( 'Button text', 'nova' ),
 		'param_name' => 'button_text',
-		'description' => __( 'Enter call to action button text', 'lastudio' ),
+		'description' => __( 'Enter call to action button text', 'nova' ),
 		'value' => 'View More'
 	),
 	array(
 		'type'       => 'vc_link',
-		'heading'    => __( 'Button Link', 'lastudio' ),
+		'heading'    => __( 'Button Link', 'nova' ),
 		'param_name' => 'button_link',
-		'description' => __('Select / enter the link for call to action button', 'lastudio')
+		'description' => __('Select / enter the link for call to action button', 'nova')
 	),
 	array(
 		'type'       => 'checkbox',
 		'param_name' => 'package_featured',
-		'value'      => array( __( 'Make this pricing box as featured', 'lastudio' ) => 'yes' ),
+		'value'      => array( __( 'Make this pricing box as featured', 'nova' ) => 'yes' ),
 	),
 	array(
 		'type' => 'textfield',
-		'heading' => __( 'Custom badge', 'lastudio' ),
+		'heading' => __( 'Custom badge', 'nova' ),
 		'param_name' => 'custom_badge',
 		'value'		=> 'Recommended',
 		'dependency' => array(
@@ -114,37 +114,37 @@ $base_param = array(
 		)
 	),
 
-	LaStudio_Shortcodes_Helper::fieldExtraClass()
+	Novaworks_Shortcodes_Helper::fieldExtraClass()
 );
 
-$title_google_font_param = LaStudio_Shortcodes_Helper::fieldTitleGFont('package_title', __('Package Name/Title', 'lastudio'));
-$price_google_font_param = LaStudio_Shortcodes_Helper::fieldTitleGFont('package_price', __('Price', 'lastudio'));
-$price_unit_google_font_param = LaStudio_Shortcodes_Helper::fieldTitleGFont('package_price_unit', __('Price Unit', 'lastudio'));
-$desc_google_font_param = LaStudio_Shortcodes_Helper::fieldTitleGFont('package_desc', __('After Features/ Before Features', 'lastudio'));
-$features_google_font_param = LaStudio_Shortcodes_Helper::fieldTitleGFont('package_features', __('Features', 'lastudio'));
+$title_google_font_param = Novaworks_Shortcodes_Helper::fieldTitleGFont('package_title', __('Package Name/Title', 'nova'));
+$price_google_font_param = Novaworks_Shortcodes_Helper::fieldTitleGFont('package_price', __('Price', 'nova'));
+$price_unit_google_font_param = Novaworks_Shortcodes_Helper::fieldTitleGFont('package_price_unit', __('Price Unit', 'nova'));
+$desc_google_font_param = Novaworks_Shortcodes_Helper::fieldTitleGFont('package_desc', __('After Features/ Before Features', 'nova'));
+$features_google_font_param = Novaworks_Shortcodes_Helper::fieldTitleGFont('package_features', __('Features', 'nova'));
 
 $features_google_font_param[] = array(
 	'type' 			=> 'colorpicker',
 	'param_name' 	=> 'package_features_highlight_color',
-	'heading' 		=> __('Highlight Text Color', 'lastudio'),
-	'group' 		=> __('Typography', 'lastudio')
+	'heading' 		=> __('Highlight Text Color', 'nova'),
+	'group' 		=> __('Typography', 'nova')
 );
 
 
 $button_google_font_param = array(
 	array(
-		'type' 			=> 'la_heading',
+		'type' 			=> 'nova_heading',
 		'param_name' 	=> 'icon__package_button',
-		'text' 			=> __('Button settings', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio')
+		'text' 			=> __('Button settings', 'nova'),
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' => 'checkbox',
-		'heading' => __( 'Use google fonts family?', 'lastudio' ),
+		'heading' => __( 'Use google fonts family?', 'nova' ),
 		'param_name' => 'use_gfont_package_button',
-		'value' => array( __( 'Yes', 'lastudio' ) => 'yes' ),
-		'description' => __( 'Use font family from the theme.', 'lastudio' ),
-		'group' 		=> __('Typography', 'lastudio')
+		'value' => array( __( 'Yes', 'nova' ) => 'yes' ),
+		'description' => __( 'Use font family from the theme.', 'nova' ),
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' 			=> 'google_fonts',
@@ -153,11 +153,11 @@ $button_google_font_param = array(
 			'element' => 'use_gfont_package_button',
 			'value' => 'yes'
 		),
-		'group' 		=> __('Typography', 'lastudio')
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
-		'type' 			=> 'la_column',
-		'heading' 		=> __('Font size', 'lastudio'),
+		'type' 			=> 'nova_column',
+		'heading' 		=> __('Font size', 'nova'),
 		'param_name' 	=> 'package_button_fz',
 		'unit' 			=> 'px',
 		'media' => array(
@@ -168,11 +168,11 @@ $button_google_font_param = array(
 			'xs'	=> '',
 			'mb'	=> ''
 		),
-		'group' 		=> __('Typography', 'lastudio')
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
-		'type' 			=> 'la_column',
-		'heading' 		=> __('Line Height', 'lastudio'),
+		'type' 			=> 'nova_column',
+		'heading' 		=> __('Line Height', 'nova'),
 		'param_name' 	=> 'package_button_lh',
 		'unit' 			=> 'px',
 		'media' => array(
@@ -183,48 +183,48 @@ $button_google_font_param = array(
 			'xs'	=> '',
 			'mb'	=> ''
 		),
-		'group' 		=> __('Typography', 'lastudio')
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'package_button_color',
-		'heading' 		=> __('Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio')
+		'heading' 		=> __('Color', 'nova'),
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'package_button_bg_color',
-		'heading' 		=> __('Background Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio')
+		'heading' 		=> __('Background Color', 'nova'),
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'package_button_hover_color',
-		'heading' 		=> __('Hover Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio')
+		'heading' 		=> __('Hover Color', 'nova'),
+		'group' 		=> __('Typography', 'nova')
 	),
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'package_button_hover_bg_color',
-		'heading' 		=> __('Hover Background Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio')
+		'heading' 		=> __('Hover Background Color', 'nova'),
+		'group' 		=> __('Typography', 'nova')
 	)
 );
 
 $icon_google_font_param = array(
 	array(
-		'type' 			=> 'la_heading',
+		'type' 			=> 'nova_heading',
 		'param_name' 	=> 'icon__typography',
-		'text' 			=> __('Icon settings', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio'),
+		'text' 			=> __('Icon settings', 'nova'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
 		)
 	),
 	array(
-		'type' 			=> 'la_column',
-		'heading' 		=> __('Icon Width', 'lastudio'),
+		'type' 			=> 'nova_column',
+		'heading' 		=> __('Icon Width', 'nova'),
 		'param_name' 	=> 'icon_lh',
 		'unit' 			=> 'px',
 		'media' => array(
@@ -235,15 +235,15 @@ $icon_google_font_param = array(
 			'xs'	=> '',
 			'mb'	=> ''
 		),
-		'group' 		=> __('Typography', 'lastudio'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
 		)
 	),
 	array(
-		'type' 			=> 'la_column',
-		'heading' 		=> __('Font size', 'lastudio'),
+		'type' 			=> 'nova_column',
+		'heading' 		=> __('Font size', 'nova'),
 		'param_name' 	=> 'icon_fz',
 		'unit' 			=> 'px',
 		'media' => array(
@@ -254,7 +254,7 @@ $icon_google_font_param = array(
 			'xs'	=> '',
 			'mb'	=> ''
 		),
-		'group' 		=> __('Typography', 'lastudio'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
@@ -263,8 +263,8 @@ $icon_google_font_param = array(
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'icon_color',
-		'heading' 		=> __('Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio'),
+		'heading' 		=> __('Color', 'nova'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
@@ -273,8 +273,8 @@ $icon_google_font_param = array(
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'icon_bg_color',
-		'heading' 		=> __('Background Color', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio'),
+		'heading' 		=> __('Background Color', 'nova'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
@@ -283,8 +283,8 @@ $icon_google_font_param = array(
 	array(
 		'type' 			=> 'colorpicker',
 		'param_name' 	=> 'icon_bg_color2',
-		'heading' 		=> __('Background Color 2', 'lastudio'),
-		'group' 		=> __('Typography', 'lastudio'),
+		'heading' 		=> __('Background Color 2', 'nova'),
+		'group' 		=> __('Typography', 'nova'),
 		'dependency'	=> array(
 			'element'	=> 'style',
 			'value'		=> '1'
@@ -292,7 +292,7 @@ $icon_google_font_param = array(
 	)
 );
 
-$icon_type = LaStudio_Shortcodes_Helper::fieldIconType(array(
+$icon_type = Novaworks_Shortcodes_Helper::fieldIconType(array(
 	'element' => 'style',
 	'value'	  => '1'
 ), true);
@@ -301,13 +301,13 @@ $shortcode_params = array_merge(
 	array(
 		array(
 			'type' => 'dropdown',
-			'heading' => __('Select Design','lastudio'),
-			'description' => __('Select Pricing box design you would like to use','lastudio'),
+			'heading' => __('Select Design','nova'),
+			'description' => __('Select Pricing box design you would like to use','nova'),
 			'param_name' => 'style',
 			'value' => array(
-				__('Design 01','lastudio') => '1',
-				__('Design 02','lastudio') => '2',
-				__('Design 03','lastudio') => '3'
+				__('Design 01','nova') => '1',
+				__('Design 02','nova') => '2',
+				__('Design 03','nova') => '3'
 			)
 		)
 	),
@@ -323,13 +323,13 @@ $shortcode_params = array_merge(
 );
 
 return apply_filters(
-	'LaStudio/shortcodes/configs',
+	'Novaworks/shortcodes/configs',
 	array(
-		'name'			=> __('Pricing Box', 'lastudio'),
+		'name'			=> __('Pricing Box', 'nova'),
 		'base'			=> 'la_pricing_table',
-		'icon'          => 'la-wpb-icon la_pricing_table',
-		'category'  	=> __('La Studio', 'lastudio'),
-		'description' 	=> __('Create nice looking pricing tables','lastudio'),
+		'icon'          => 'nova-wpb-icon la_pricing_table',
+		'category'  	=> __('La Studio', 'nova'),
+		'description' 	=> __('Create nice looking pricing tables','nova'),
 		'params' 		=> $shortcode_params
 	),
     'la_pricing_table'

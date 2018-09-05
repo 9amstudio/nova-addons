@@ -28,6 +28,7 @@ class Nova_Addons {
 		$this->define_constants();
 		$this->includes();
 		$this->define_admin_hooks();
+		$this->define_public_hooks();
 		$this->init();
 	}
 
@@ -43,22 +44,32 @@ class Nova_Addons {
 	 * Defines admin hook
 	 */
 	public function define_admin_hooks() {
-		$plugin_admin = new LaStudio_Admin();
+		$plugin_admin = new Novaworks_Admin();
 		add_action( 'admin_enqueue_scripts', array( $plugin_admin, 'enqueue_styles' ), 999 );
 		add_action( 'admin_enqueue_scripts', array( $plugin_admin, 'enqueue_scripts' ), 999 );
 	}
+	/**
+	 * Defines pubic hook
+	 */
+	private function define_public_hooks() {
+		$plugin_public = new Novaworks_Public();
+		add_action( 'wp_enqueue_scripts', array( $plugin_public, 'enqueue_styles' ));
+		add_filter( 'vc_enqueue_font_icon_element', array( $plugin_public, 'add_fonts_to_visual_composer' ) );
 
+	}
 	/**
 	 * Load files
 	 */
 	public function includes() {
-		include_once( NOVA_ADDONS_DIR . 'admin/class-lastudio-admin.php' );
-		include_once( NOVA_ADDONS_DIR . 'public/lastudio-functions.php' );
+		include_once( NOVA_ADDONS_DIR . 'admin/class-nova-admin.php' );
+		include_once( NOVA_ADDONS_DIR . 'public/nova-functions.php' );
+		include_once( NOVA_ADDONS_DIR . 'public/class-nova-public.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/import.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/user.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/portfolio.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/team.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/class-nova-vc.php' );
-		include_once( NOVA_ADDONS_DIR . 'includes/plugins/shortcodes/class-lastudio-shortcodes.php');
+		include_once( NOVA_ADDONS_DIR . 'includes/plugins/shortcodes/class-nova-shortcodes.php');
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes-row.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-banner.php' );
@@ -75,7 +86,7 @@ class Nova_Addons {
 
 		add_action( 'vc_after_init', array( 'Nova_Addons_VC', 'init' ), 50 );
 
-		$shortcode_extension = new LaStudio_Shortcodes();
+		$shortcode_extension = new Novaworks_Shortcodes();
 
 		add_action( 'init', array( 'Nova_Shortcodes', 'init' ), 50 );
 
@@ -88,10 +99,12 @@ class Nova_Addons {
 
 		add_action( 'vc_after_init', array( $shortcode_extension, 'vc_after_init' ) );
 		add_action( 'vc_param_animation_style_list', array( $shortcode_extension, 'vc_param_animation_style_list' ) );
+		add_filter( 'vc_iconpicker-type-nova_icon_outline', array( $shortcode_extension, 'get_nova_icon_outline_font_icon' ) );
+		add_filter( 'vc_iconpicker-type-nucleo_glyph', array( $shortcode_extension, 'get_nucleo_glyph_font_icon' ) );
 
 		add_action( 'init', array( 'Nova_Addons_Portfolio', 'init' ) );
+		add_action( 'init', array( 'Nova_Team_Member', 'init' ) );
 	}
-
 	/**
 	 * Check plugin dependencies
 	 * Check if Visual Composer plugin is installed
@@ -110,5 +123,4 @@ class Nova_Addons {
 		}
 	}
 }
-
 new Nova_Addons();

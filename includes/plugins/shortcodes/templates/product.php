@@ -22,6 +22,6 @@ $ids = $atts['id'];
 unset($atts['id']);
 $atts['ids'] = $ids;
 
-$shortcode = new LaStudio_Shortcodes_WooCommerce($atts, 'product');
+$shortcode = new Novaworks_Shortcodes_WooCommerce($atts, 'product');
 
 echo $shortcode->get_content();

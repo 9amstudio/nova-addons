@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $shortcode_params = array(
     array(
-        'type' 			=> 'la_column',
-        'heading' 		=> __('Space Height', 'lastudio'),
+        'type' 			=> 'nova_column',
+        'heading' 		=> __('Space Height', 'nova'),
         'admin_label'   => true,
         'param_name' 	=> 'height',
         'unit'			=> 'px',
@@ -21,18 +21,18 @@ $shortcode_params = array(
             'mb'	=> ''
         )
     ),
-    LaStudio_Shortcodes_Helper::fieldExtraClass()
+    Novaworks_Shortcodes_Helper::fieldExtraClass()
 );
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('LaStudio Space', 'lastudio'),
-        'base'			=> 'la_divider',
-        'icon'          => 'la-wpb-icon la_divider',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description' 	=> __('Blank space with custom height.','lastudio'),
+        'name'			=> __('Content Space', 'nova'),
+        'base'			=> 'nova_divider',
+        'icon'          => 'nova-wpb-icon nova_divider',
+        'category'  	=> __('9AM Studio', 'nova'),
+        'description' 	=> __('Blank space with custom height.','nova'),
         'params' 		=> $shortcode_params
     ),
-    'la_divider'
+    'nova_divider'
 );

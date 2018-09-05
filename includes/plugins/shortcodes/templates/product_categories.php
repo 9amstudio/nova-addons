@@ -50,7 +50,7 @@ $atts = shortcode_atts(array(
 
 extract($atts);
 
-$css_class = 'woocommerce' . LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$css_class = 'woocommerce' . Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 
 if(!empty($ids)){
     $ids = explode( ',', $ids );
@@ -92,7 +92,7 @@ if ( $number > 0 ) {
 }
 
 
-$columns        = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($columns);
+$columns        = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($columns);
 $loopCssClass = array();
 $loopCssClass[] = 'products';
 $loopCssClass[] = 'grid-items';
@@ -102,7 +102,7 @@ $carousel_configs = false;
 if($enable_carousel == 'yes'){
 
     $carousel_configs = ' data-la_component="AutoCarousel" ';
-    $carousel_configs .= LaStudio_Shortcodes_Helper::getParamCarouselShortCode($atts);
+    $carousel_configs .= Novaworks_Shortcodes_Helper::getParamCarouselShortCode($atts);
     $loopCssClass[] = 'js-el la-slick-slider';
 }
 

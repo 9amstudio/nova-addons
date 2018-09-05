@@ -22,7 +22,7 @@ $atts = shortcode_atts( array(
 
 extract( $atts );
 
-$el_class = LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 $css_class = "timeline-block" . $el_class;
 if(!empty($css_animation) && 'none' != $css_animation){
     $css_class .= ' wpb_animate_when_almost_visible la-animation animated';
@@ -66,7 +66,7 @@ if ( $use_link ) {
                     echo $title;
                 }
                 ?></h3>
-            <div class="timeline-entry"><?php echo LaStudio_Shortcodes_Helper::remove_js_autop($content);?></div>
+            <div class="timeline-entry"><?php echo Novaworks_Shortcodes_Helper::remove_js_autop($content);?></div>
             <?php if($time_link_apply == 'more' && $use_link && !empty($time_read_text) ){
                 echo "<div class='readmore-link'><a {$attributes}>{$time_read_text}</a></div>";
             }?>

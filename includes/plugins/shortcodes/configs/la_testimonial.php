@@ -8,20 +8,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'dropdown',
-        'heading' => __('Design','lastudio'),
+        'heading' => __('Design','nova'),
         'param_name' => 'style',
         'value' => array(
-            __('Style 01','lastudio') => '1',
-            __('Style 02','lastudio') => '2',
-            __('Style 03','lastudio') => '3',
-            __('Style 04','lastudio') => '4'
+            __('Style 01','nova') => '1',
+            __('Style 02','nova') => '2',
+            __('Style 03','nova') => '3',
+            __('Style 04','nova') => '4'
         ),
         'std' => '1',
         'admin_label' => true
     ),
     array(
         'type'       => 'autocomplete',
-        'heading'    => __( 'Choose member', 'lastudio' ),
+        'heading'    => __( 'Choose member', 'nova' ),
         'param_name' => 'ids',
         'settings'   => array(
             'unique_values'  => true,
@@ -35,24 +35,24 @@ $shortcode_params = array(
     ),
     array(
         'type'       => 'checkbox',
-        'heading'    => __('Enable slider', 'lastudio' ),
+        'heading'    => __('Enable slider', 'nova' ),
         'param_name' => 'enable_carousel',
-        'value'      => array( __( 'Yes', 'lastudio' ) => 'yes' )
+        'value'      => array( __( 'Yes', 'nova' ) => 'yes' )
     ),
-    LaStudio_Shortcodes_Helper::fieldColumn(array(
-        'heading' 		=> __('Items to show', 'lastudio')
+    Novaworks_Shortcodes_Helper::fieldColumn(array(
+        'heading' 		=> __('Items to show', 'nova')
     )),
-    LaStudio_Shortcodes_Helper::getParamItemSpace(array(
+    Novaworks_Shortcodes_Helper::getParamItemSpace(array(
         'std' => 'default'
     )),
-    LaStudio_Shortcodes_Helper::fieldElementID(array(
+    Novaworks_Shortcodes_Helper::fieldElementID(array(
         'param_name' 	=> 'el_id'
     )),
-    LaStudio_Shortcodes_Helper::fieldExtraClass()
+    Novaworks_Shortcodes_Helper::fieldExtraClass()
 );
 
-$carousel = LaStudio_Shortcodes_Helper::paramCarouselShortCode(false);
-$slides_column_idx = LaStudio_Shortcodes_Helper::getParamIndex( $carousel, 'slides_column');
+$carousel = Novaworks_Shortcodes_Helper::paramCarouselShortCode(false);
+$slides_column_idx = Novaworks_Shortcodes_Helper::getParamIndex( $carousel, 'slides_column');
 if($slides_column_idx){
     unset($carousel[$slides_column_idx]);
 }
@@ -60,13 +60,13 @@ if($slides_column_idx){
 $shortcode_params = array_merge( $shortcode_params, $carousel);
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('Testimonials', 'lastudio'),
+        'name'			=> __('Testimonials', 'nova'),
         'base'			=> 'la_testimonial',
-        'icon'          => 'la-wpb-icon la_testimonial',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description' 	=> __('Display the testimonial','lastudio'),
+        'icon'          => 'nova-wpb-icon la_testimonial',
+        'category'  	=> __('La Studio', 'nova'),
+        'description' 	=> __('Display the testimonial','nova'),
         'params' 		=> $shortcode_params
     ),
     'la_testimonial'

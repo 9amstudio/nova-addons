@@ -9,7 +9,7 @@ $banner_id = $style = $banner_link = $title_1 = $title_2 = $title_3 = $el_class 
 
 $overlay_bg_color = $el_id = '';
 
-$la_fix_css = array();
+$nova_fix_css = array();
 
 $atts = shortcode_atts(array(
     'banner_id' => '',
@@ -50,7 +50,7 @@ $title_1_html = $title_2_html = $title_3_html = '';
 $a_href = $a_title = $a_target = '';
 $a_attributes = array();
 
-$la_fix_css = array();
+$nova_fix_css = array();
 
 extract( $atts );
 
@@ -99,24 +99,24 @@ $_tmp_class = array(
 $_tmp_class[] = $unique_id;
 
 
-$el_class3 = 'js-el b-title b-title3' .  LaStudio_Shortcodes_Helper::getExtraClass($el_class3);
+$el_class3 = 'js-el b-title b-title3' .  Novaworks_Shortcodes_Helper::getExtraClass($el_class3);
 
-$css_class = implode(' ', $_tmp_class) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$css_class = implode(' ', $_tmp_class) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 
 
 if(!empty($title_1)){
-    $el_class1 = 'js-el b-title b-title1' .  LaStudio_Shortcodes_Helper::getExtraClass($el_class1);
+    $el_class1 = 'js-el b-title b-title1' .  Novaworks_Shortcodes_Helper::getExtraClass($el_class1);
     $title_1_html_attr = '';
     $title_1_css_inline = array();
     if(!empty($title_1_fz) || !empty($title_1_lh)){
-        $title_1_html_attr = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $title_1_html_attr = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .b-title1',
             'media_sizes' => array(
                 'font-size' => $title_1_fz,
                 'line-height' => $title_1_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .b-title1',
             'media_sizes' => array(
                 'font-size' => $title_1_fz,
@@ -128,7 +128,7 @@ if(!empty($title_1)){
         $title_1_css_inline[] = "color:{$title_1_color}";
     }
     if(!empty($use_gfont_title_1)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_1_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_1_font);
         if(isset($gfont_data['style'])){
             $title_1_css_inline[] = $gfont_data['style'];
         }
@@ -147,18 +147,18 @@ if(!empty($title_1)){
 }
 
 if(!empty($title_2)){
-    $el_class2 = 'js-el b-title b-title2' .  LaStudio_Shortcodes_Helper::getExtraClass($el_class2);
+    $el_class2 = 'js-el b-title b-title2' .  Novaworks_Shortcodes_Helper::getExtraClass($el_class2);
     $title_2_html_attr = '';
     $title_2_css_inline = array();
     if(!empty($title_2_fz) || !empty($title_2_lh)){
-        $title_2_html_attr = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $title_2_html_attr = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .b-title2',
             'media_sizes' => array(
                 'font-size' => $title_2_fz,
                 'line-height' => $title_2_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .b-title2',
             'media_sizes' => array(
                 'font-size' => $title_2_fz,
@@ -170,7 +170,7 @@ if(!empty($title_2)){
         $title_2_css_inline[] = "color:{$title_2_color}";
     }
     if(!empty($use_gfont_title_2)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_2_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_2_font);
         if(isset($gfont_data['style'])){
             $title_2_css_inline[] = $gfont_data['style'];
         }
@@ -189,18 +189,18 @@ if(!empty($title_2)){
 }
 
 if(!empty($title_3)){
-    $el_class3 = 'js-el b-title b-title3' .  LaStudio_Shortcodes_Helper::getExtraClass($el_class3);
+    $el_class3 = 'js-el b-title b-title3' .  Novaworks_Shortcodes_Helper::getExtraClass($el_class3);
     $title_3_html_attr = '';
     $title_3_css_inline = array();
     if(!empty($title_3_fz) || !empty($title_3_lh)){
-        $title_3_html_attr = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $title_3_html_attr = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .b-title3',
             'media_sizes' => array(
                 'font-size' => $title_3_fz,
                 'line-height' => $title_3_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .b-title3',
             'media_sizes' => array(
                 'font-size' => $title_3_fz,
@@ -212,7 +212,7 @@ if(!empty($title_3)){
         $title_3_css_inline[] = "color:{$title_3_color}";
     }
     if(!empty($use_gfont_title_3)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_3_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_3_font);
         if(isset($gfont_data['style'])){
             $title_3_css_inline[] = $gfont_data['style'];
         }
@@ -282,4 +282,4 @@ if(!empty($title_3)){
         </style>
     <?php endif; ?>
 </div>
-<?php LaStudio_Shortcodes_Helper::renderResponsiveMediaStyleTags($la_fix_css); ?>
+<?php Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags($nova_fix_css); ?>

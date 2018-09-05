@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class LaStudio_Shortcodes{
+class Novaworks_Shortcodes{
 
     public static $shortcode_path;
 
@@ -13,9 +13,10 @@ class LaStudio_Shortcodes{
     private $_shortcodes = array(
         'la_animation_block',
         'la_btn',
-        'la_icon_boxes',
-        'la_heading',
-        'la_team_member',
+        'nova_icon_boxes',
+        'nova_heading',
+        'nova_member',
+        'nova_brands',
         'la_stats_counter',
         'la_testimonial',
         'la_show_posts',
@@ -29,7 +30,7 @@ class LaStudio_Shortcodes{
         'la_block',
         'la_countdown',
         'la_pricing_table',
-        'la_divider',
+        'nova_divider',
         'la_icon_list',
         'la_icon_list_item',
         'la_instagram_feed',
@@ -63,16 +64,16 @@ class LaStudio_Shortcodes{
     }
 
     public function load_dependencies(){
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-helper.php';
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-row.php';
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-parallax-row.php';
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-autocomplete-filters.php';
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-param.php';
-        require_once self::$shortcode_path . 'class-lastudio-shortcodes-woocommerce.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-helper.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-row.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-parallax-row.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-autocomplete-filters.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-param.php';
+        require_once self::$shortcode_path . 'class-nova-shortcodes-woocommerce.php';
 
-        LaStudio_Shortcodes_Row::get_instance();
-        LaStudio_Shortcodes_Parallax_Row::get_instance();
-        LaStudio_Shortcodes_Autocomplete_Filters::get_instance();
+        Novaworks_Shortcodes_Row::get_instance();
+        Novaworks_Shortcodes_Parallax_Row::get_instance();
+        Novaworks_Shortcodes_Autocomplete_Filters::get_instance();
     }
 
     public function create_shortcode(){
@@ -113,7 +114,7 @@ class LaStudio_Shortcodes{
         }
 
         add_filter('vc_edit_form_fields_after_render', array( $this, 'add_js_to_edit_vc_form') );
-        LaStudio_Shortcodes_Param::get_instance();
+        Novaworks_Shortcodes_Param::get_instance();
     }
 
     public function formatting($content) {
@@ -174,13 +175,13 @@ class LaStudio_Shortcodes{
         if(empty($content)){
             return '';
         }
-        $output .= '<blockquote class="la-blockquote style-'.esc_attr($style) . LaStudio_Shortcodes_Helper::getExtraClass($el_class).'"';
+        $output .= '<blockquote class="la-blockquote style-'.esc_attr($style) . Novaworks_Shortcodes_Helper::getExtraClass($el_class).'"';
         if(!empty($link)){
             $output .= ' cite="'.esc_url($link).'"';
         }
         $output .= '>';
 
-        $output .= LaStudio_Shortcodes_Helper::remove_js_autop($content, true);
+        $output .= Novaworks_Shortcodes_Helper::remove_js_autop($content, true);
 
         if(!empty($author)){
             $output .= '<footer>';
@@ -222,7 +223,7 @@ class LaStudio_Shortcodes{
             $adv_atts .= '"';
         }
         if(!empty($font_size) || !empty($line_height)){
-            $adv_atts .= LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+            $adv_atts .= Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
                 'target' => '#'. $unique_id ,
                 'media_sizes' => array(
                     'font-size' => $font_size,
@@ -230,7 +231,7 @@ class LaStudio_Shortcodes{
                 )
             ));
         }
-        $output = '<div id="'.$unique_id.'" class="js-el la-text '. LaStudio_Shortcodes_Helper::getExtraClass($el_class) .'"'. $adv_atts .'>';
+        $output = '<div id="'.$unique_id.'" class="js-el la-text '. Novaworks_Shortcodes_Helper::getExtraClass($el_class) .'"'. $adv_atts .'>';
         $output .= $content;
         $output .= '</div>';
         return $output;
@@ -310,10 +311,10 @@ class LaStudio_Shortcodes{
         ));
 
         if( ! $located && file_exists( $plugin_template ) ){
-            return apply_filters( 'LaStudio/shortcode/locate_template', $plugin_template, $path );
+            return apply_filters( 'Novaworks/shortcode/locate_template', $plugin_template, $path );
         }
 
-        return apply_filters( 'LaStudio/shortcode/locate_template', $located, $path );
+        return apply_filters( 'Novaworks/shortcode/locate_template', $located, $path );
 
     }
 
@@ -355,65 +356,65 @@ class LaStudio_Shortcodes{
             $style = array();
         }
         $style[] = array(
-            'label' => __( 'Infinite Animations', 'lastudio' ),
+            'label' => __( 'Infinite Animations', 'nova' ),
             'values' => array(
-                __( 'InfiniteRotate', 'lastudio' ) => array(
+                __( 'InfiniteRotate', 'nova' ) => array(
                     'value' => 'InfiniteRotate',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteRotateCounter', 'lastudio' ) => array(
+                __( 'InfiniteRotateCounter', 'nova' ) => array(
                     'value' => 'InfiniteRotateCounter',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteDangle', 'lastudio' ) => array(
+                __( 'InfiniteDangle', 'nova' ) => array(
                     'value' => 'InfiniteDangle',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteSwing', 'lastudio' ) => array(
+                __( 'InfiniteSwing', 'nova' ) => array(
                     'value' => 'InfiniteSwing',
                     'type' => 'infinite'
                 ),
-                __( 'InfinitePulse', 'lastudio' ) => array(
+                __( 'InfinitePulse', 'nova' ) => array(
                     'value' => 'InfinitePulse',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalShake', 'lastudio' ) => array(
+                __( 'InfiniteHorizontalShake', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalShake',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVericalShake', 'lastudio' ) => array(
+                __( 'InfiniteVericalShake', 'nova' ) => array(
                     'value' => 'InfiniteVericalShake',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteBounce', 'lastudio' ) => array(
+                __( 'InfiniteBounce', 'nova' ) => array(
                     'value' => 'InfiniteBounce',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteFlash', 'lastudio' ) => array(
+                __( 'InfiniteFlash', 'nova' ) => array(
                     'value' => 'InfiniteFlash',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteTADA', 'lastudio' ) => array(
+                __( 'InfiniteTADA', 'nova' ) => array(
                     'value' => 'InfiniteTADA',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteRubberBand', 'lastudio' ) => array(
+                __( 'InfiniteRubberBand', 'nova' ) => array(
                     'value' => 'InfiniteRubberBand',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalFlip', 'lastudio' ) => array(
+                __( 'InfiniteHorizontalFlip', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVericalFlip', 'lastudio' ) => array(
+                __( 'InfiniteVericalFlip', 'nova' ) => array(
                     'value' => 'InfiniteVericalFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalScaleFlip', 'lastudio' ) => array(
+                __( 'InfiniteHorizontalScaleFlip', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalScaleFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVerticalScaleFlip', 'lastudio' ) => array(
+                __( 'InfiniteVerticalScaleFlip', 'nova' ) => array(
                     'value' => 'InfiniteVerticalScaleFlip',
                     'type' => 'infinite'
                 )
@@ -422,5 +423,31 @@ class LaStudio_Shortcodes{
 
         return $style;
     }
+    /**
+     * Add Icon fonts to visualcomposer
+     */
+    public function get_nova_icon_outline_font_icon( $icons = array() ) {
 
+      $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nova-icon-outline-object.json';
+
+      if(file_exists($json_file)){
+        $file_data = @file_get_contents( $json_file );
+        if( !is_wp_error( $file_data ) ) {
+          $file_data = json_decode( $file_data, true);
+          return array_merge( $icons, $file_data );
+        }
+      }
+      return $icons;
+    }
+    public function get_nucleo_glyph_font_icon( $icons = array() ) {
+        $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nucleo-glyph-object.json';
+      if(file_exists($json_file)){
+        $file_data = @file_get_contents( $json_file );
+        if( !is_wp_error( $file_data ) ) {
+          $file_data = json_decode( $file_data, true);
+          return array_merge( $icons, $file_data );
+        }
+      }
+      return $icons;
+  }
 }

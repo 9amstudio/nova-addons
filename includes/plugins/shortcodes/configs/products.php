@@ -14,39 +14,39 @@ $shortcode_params = array(
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Scenario','lastudio'),
+        'heading' => __('Scenario','nova'),
         'param_name' => 'scenario',
         'value' => array(
-            __('Recent Products','lastudio') => 'recent_products',
-            __('Featured Products','lastudio') => 'featured_products',
-            __('Sale Products','lastudio') => 'sale_products',
-            __('Best Selling Products','lastudio') => 'best_selling_products',
-            __('Specific Categories','lastudio') => 'product_categories',
-            __('Specific products','lastudio') => 'products',
-            __('Attribute Display','lastudio') => 'product_attribute',
-            __('Top Rated Products','lastudio') => 'top_rated_products'
+            __('Recent Products','nova') => 'recent_products',
+            __('Featured Products','nova') => 'featured_products',
+            __('Sale Products','nova') => 'sale_products',
+            __('Best Selling Products','nova') => 'best_selling_products',
+            __('Specific Categories','nova') => 'product_categories',
+            __('Specific products','nova') => 'products',
+            __('Attribute Display','nova') => 'product_attribute',
+            __('Top Rated Products','nova') => 'top_rated_products'
         ),
         'std' => 'recent_products',
         'admin_label' => true,
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Layout','lastudio'),
+        'heading' => __('Layout','nova'),
         'param_name' => 'layout',
         'value' => array(
-            __('List','lastudio')      => 'list',
-            __('Grid','lastudio')      => 'grid',
-            __('Masonry','lastudio')   => 'masonry',
+            __('List','nova')      => 'list',
+            __('Grid','nova')      => 'grid',
+            __('Masonry','nova')   => 'masonry',
         ),
         'std'   => 'grid',
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Style','lastudio'),
+        'heading' => __('Style','nova'),
         'param_name' => 'list_style',
         'value' => la_get_product_list_style(),
         'dependency' => array(
@@ -54,12 +54,12 @@ $shortcode_params = array(
             'value'     => 'list'
         ),
         'std' => 'default',
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Style','lastudio'),
+        'heading' => __('Style','nova'),
         'param_name' => 'grid_style',
         'value' => la_get_product_grid_style(),
         'dependency' => array(
@@ -67,12 +67,12 @@ $shortcode_params = array(
             'value'     => 'grid'
         ),
         'std' => '1',
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Style','lastudio'),
+        'heading' => __('Style','nova'),
         'param_name' => 'masonry_style',
         'value' => la_get_product_grid_style(),
         'dependency' => array(
@@ -80,12 +80,12 @@ $shortcode_params = array(
             'value'     => 'masonry'
         ),
         'std' => '1',
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'autocomplete',
-        'heading' => __( 'Categories', 'lastudio' ),
+        'heading' => __( 'Categories', 'nova' ),
         'param_name' => 'category',
         'settings' => array(
             'multiple' => true,
@@ -96,96 +96,96 @@ $shortcode_params = array(
             'element'   => 'scenario',
             'value_not_equal_to'     => array('products')
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __('Operator','lastudio'),
+        'heading' => __('Operator','nova'),
         'param_name' => 'operator',
         'value' => array(
-            __('IN','lastudio') => 'IN',
-            __('NOT IN','lastudio') => 'NOT IN',
-            __('AND','lastudio') => 'AND',
+            __('IN','nova') => 'IN',
+            __('NOT IN','nova') => 'NOT IN',
+            __('AND','nova') => 'AND',
         ),
         'std' => 'IN',
         'dependency' => array(
             'element'   => 'scenario',
             'value_not_equal_to'     => array('products')
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Attribute', 'lastudio' ),
+        'heading' => __( 'Attribute', 'nova' ),
         'param_name' => 'attribute',
         'value' => $attributes,
         'save_always' => true,
-        'description' => __( 'List of product taxonomy attribute', 'lastudio' ),
+        'description' => __( 'List of product taxonomy attribute', 'nova' ),
         'dependency' => array(
             'element'   => 'scenario',
             'value'     => array('product_attribute')
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'checkbox',
-        'heading' => __( 'Filter', 'lastudio' ),
+        'heading' => __( 'Filter', 'nova' ),
         'param_name' => 'filter',
         'value' => array( 'empty' => 'empty' ),
         'save_always' => true,
-        'description' => __( 'Taxonomy values', 'lastudio' ),
+        'description' => __( 'Taxonomy values', 'nova' ),
         'dependency' => array(
             'callback' => 'laWoocommerceProductAttributeFilterDependencyCallback',
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Order by', 'lastudio' ),
+        'heading' => __( 'Order by', 'nova' ),
         'param_name' => 'orderby',
         'value' => array(
             '',
-            __( 'Date', 'lastudio' ) => 'date',
-            __( 'Menu order', 'lastudio' ) => 'menu_order',
-            __( 'Random', 'lastudio' ) => 'rand',
-            __( 'Popularity', 'lastudio' ) => 'popularity',
-            __( 'Rating', 'lastudio' ) => 'rating',
-            __( 'Title', 'lastudio' ) => 'title'
+            __( 'Date', 'nova' ) => 'date',
+            __( 'Menu order', 'nova' ) => 'menu_order',
+            __( 'Random', 'nova' ) => 'rand',
+            __( 'Popularity', 'nova' ) => 'popularity',
+            __( 'Rating', 'nova' ) => 'rating',
+            __( 'Title', 'nova' ) => 'title'
         ),
         'save_always' => true,
-        'description' => sprintf( __( 'Select how to sort retrieved products. More at %s.', 'lastudio' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+        'description' => sprintf( __( 'Select how to sort retrieved products. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
         'dependency' => array(
             'element'   => 'scenario',
             'value_not_equal_to'     => array('products')
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Sort order', 'lastudio' ),
+        'heading' => __( 'Sort order', 'nova' ),
         'param_name' => 'order',
         'value' => array(
             '',
-            __( 'Descending', 'lastudio' ) => 'DESC',
-            __( 'Ascending', 'lastudio' ) => 'ASC',
+            __( 'Descending', 'nova' ) => 'DESC',
+            __( 'Ascending', 'nova' ) => 'ASC',
         ),
         'save_always' => true,
-        'description' => sprintf( __( 'Designates the ascending or descending order. More at %s.', 'lastudio' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+        'description' => sprintf( __( 'Designates the ascending or descending order. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
         'dependency' => array(
             'element'   => 'scenario',
             'value_not_equal_to'     => array('products')
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'autocomplete',
-        'heading' => __( 'Products', 'lastudio' ),
+        'heading' => __( 'Products', 'nova' ),
         'param_name' => 'ids',
         'settings' => array(
             'multiple' => true,
@@ -193,80 +193,80 @@ $shortcode_params = array(
             'unique_values' => true
         ),
         'save_always' => true,
-        'description' => __( 'Enter List of Products', 'lastudio' ),
+        'description' => __( 'Enter List of Products', 'nova' ),
         'dependency' => array(
             'element'   => 'scenario',
             'value'     => array( 'products' )
         ),
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
-        'type' => 'la_number',
-        'heading' => __('Total items', 'lastudio'),
-        'description' => __('Set max limit for items in grid or enter -1 to display all (limited to 1000).', 'lastudio'),
+        'type' => 'nova_number',
+        'heading' => __('Total items', 'nova'),
+        'description' => __('Set max limit for items in grid or enter -1 to display all (limited to 1000).', 'nova'),
         'param_name' => 'per_page',
         'value' => 12,
         'min' => -1,
         'max' => 1000,
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
-    LaStudio_Shortcodes_Helper::getParamItemSpace(array(
+    Novaworks_Shortcodes_Helper::getParamItemSpace(array(
         'std' => 'default',
         'dependency' => array(
             'element'   => 'layout',
             'value'     => array('grid','masonry')
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     )),
 
     array(
         'type' 			=> 'checkbox',
-        'heading' 		=> __( 'Enable Custom Image Size', 'lastudio' ),
+        'heading' 		=> __( 'Enable Custom Image Size', 'nova' ),
         'param_name' 	=> 'enable_custom_image_size',
-        'value' 		=> array( __( 'Yes', 'lastudio' ) => 'yes' ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'value' 		=> array( __( 'Yes', 'nova' ) => 'yes' ),
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
-    LaStudio_Shortcodes_Helper::fieldImageSize(array(
+    Novaworks_Shortcodes_Helper::fieldImageSize(array(
         'value'			=> 'shop_catalog',
         'dependency' => array(
             'element'   => 'enable_custom_image_size',
             'value'     => 'yes'
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     )),
 
     array(
         'type' 			=> 'checkbox',
-        'heading' 		=> __( 'Disable alternative image ', 'lastudio' ),
+        'heading' 		=> __( 'Disable alternative image ', 'nova' ),
         'param_name' 	=> 'disable_alt_image',
-        'value' 		=> array( __( 'Yes', 'lastudio' ) => 'yes' ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'value' 		=> array( __( 'Yes', 'nova' ) => 'yes' ),
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Column Type', 'lastudio' ),
+        'heading' => __( 'Column Type', 'nova' ),
         'param_name' => 'column_type',
         'value' => array(
-            __( 'Default', 'lastudio' ) => 'default',
-            __( 'Custom', 'lastudio' ) => 'custom'
+            __( 'Default', 'nova' ) => 'default',
+            __( 'Custom', 'nova' ) => 'custom'
         ),
         'save_always' => true,
         'dependency' => array(
             'element'   => 'layout',
             'value'     => array('masonry')
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
-        'type' => 'la_number',
-        'heading' => __('Item Width', 'lastudio'),
+        'type' => 'nova_number',
+        'heading' => __('Item Width', 'nova'),
         'param_name' => 'base_item_w',
-        'description' => __('Set your item default width', 'lastudio'),
+        'description' => __('Set your item default width', 'nova'),
         'value' => 300,
         'min' => 100,
         'max' => 1920,
@@ -275,13 +275,13 @@ $shortcode_params = array(
             'element'   => 'column_type',
             'value'     => 'custom'
         ),
-        'group' => __('Layout Setting', 'lastudio')
+        'group' => __('Layout Setting', 'nova')
     ),
 
     array(
-        'type' => 'la_number',
-        'heading' => __('Item Height', 'lastudio'),
-        'description' => __('Set your item default height', 'lastudio'),
+        'type' => 'nova_number',
+        'heading' => __('Item Height', 'nova'),
+        'description' => __('Set your item default height', 'nova'),
         'param_name' => 'base_item_h',
         'value' => 300,
         'min' => 100,
@@ -291,12 +291,12 @@ $shortcode_params = array(
             'element'   => 'column_type',
             'value'     => 'custom'
         ),
-        'group' => __('Layout Setting', 'lastudio')
+        'group' => __('Layout Setting', 'nova')
     ),
 
     array(
-        'type' 			=> 'la_column',
-        'heading' 		=> __('[Mobile] Items to show', 'lastudio'),
+        'type' 			=> 'nova_column',
+        'heading' 		=> __('[Mobile] Items to show', 'nova'),
         'param_name' 	=> 'mb_columns',
         'unit'			=> '',
         'media'			=> array(
@@ -309,59 +309,59 @@ $shortcode_params = array(
             'element'   => 'column_type',
             'value'     => 'custom'
         ),
-        'group' => __('Layout Setting', 'lastudio')
+        'group' => __('Layout Setting', 'nova')
     ),
 
     array(
         'type'       => 'checkbox',
-        'heading'    => __( 'Enable Custom Item Setting', 'lastudio' ),
+        'heading'    => __( 'Enable Custom Item Setting', 'nova' ),
         'param_name' => 'custom_item_size',
-        'value'      => array( __( 'Yes', 'lastudio' ) => 'yes' ),
+        'value'      => array( __( 'Yes', 'nova' ) => 'yes' ),
         'dependency'        => array(
             'element'   => 'column_type',
             'value'     => 'custom'
         ),
-        'group' => __('Layout Setting', 'lastudio')
+        'group' => __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'param_group',
         'param_name' => 'item_sizes',
-        'heading' => __( 'Item Sizes', 'lastudio' ),
+        'heading' => __( 'Item Sizes', 'nova' ),
         'params' => array(
             array(
                 'type' => 'dropdown',
-                'heading' => __('Width','lastudio'),
-                'description' 	=> __('it will occupy x width of base item width ( example: this item will be occupy 2x width of base width you need entered "2")', 'lastudio'),
+                'heading' => __('Width','nova'),
+                'description' 	=> __('it will occupy x width of base item width ( example: this item will be occupy 2x width of base width you need entered "2")', 'nova'),
                 'param_name' => 'w',
                 'admin_label' => true,
                 'value' => array(
-                    __('1/2x width','lastudio')    => '0.5',
-                    __('1x width','lastudio')      => '1',
-                    __('1.5x width','lastudio')    => '1.5',
-                    __('2x width','lastudio')      => '2',
-                    __('2.5x width','lastudio')    => '2.5',
-                    __('3x width','lastudio')      => '3',
-                    __('3.5x width','lastudio')    => '3.5',
-                    __('4x width','lastudio')      => '4',
+                    __('1/2x width','nova')    => '0.5',
+                    __('1x width','nova')      => '1',
+                    __('1.5x width','nova')    => '1.5',
+                    __('2x width','nova')      => '2',
+                    __('2.5x width','nova')    => '2.5',
+                    __('3x width','nova')      => '3',
+                    __('3.5x width','nova')    => '3.5',
+                    __('4x width','nova')      => '4',
                 ),
                 'std' => '1'
             ),
             array(
                 'type' => 'dropdown',
-                'heading' => __('Height','lastudio'),
-                'description' 	=> __('it will occupy x height of base item height ( example: this item will be occupy 2x height of base height you need entered "2")', 'lastudio'),
+                'heading' => __('Height','nova'),
+                'description' 	=> __('it will occupy x height of base item height ( example: this item will be occupy 2x height of base height you need entered "2")', 'nova'),
                 'param_name' => 'h',
                 'admin_label' => true,
                 'value' => array(
-                    __('1/2x height','lastudio')    => '0.5',
-                    __('1x height','lastudio')      => '1',
-                    __('1.5x height','lastudio')    => '1.5',
-                    __('2x height','lastudio')      => '2',
-                    __('2.5x height','lastudio')    => '2.5',
-                    __('3x height','lastudio')      => '3',
-                    __('3.5x height','lastudio')    => '3.5',
-                    __('4x height','lastudio')      => '4',
+                    __('1/2x height','nova')    => '0.5',
+                    __('1x height','nova')      => '1',
+                    __('1.5x height','nova')    => '1.5',
+                    __('2x height','nova')      => '2',
+                    __('2.5x height','nova')    => '2.5',
+                    __('3x height','nova')      => '3',
+                    __('3.5x height','nova')    => '3.5',
+                    __('4x height','nova')      => '4',
                 ),
                 'std' => '1'
             )
@@ -370,91 +370,91 @@ $shortcode_params = array(
             'element'   => 'custom_item_size',
             'value'     => 'yes'
         ),
-        'group' => __('Layout Setting', 'lastudio')
+        'group' => __('Layout Setting', 'nova')
     ),
 
-    LaStudio_Shortcodes_Helper::fieldColumn(array(
-        'heading' 		=> __('Items to show', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldColumn(array(
+        'heading' 		=> __('Items to show', 'nova'),
         'param_name' 	=> 'columns',
         'dependency' => array(
             'callback' => 'laWoocommerceProductColumnsDependencyCallback',
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     )),
 
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Display Style', 'lastudio' ),
+        'heading' => __( 'Display Style', 'nova' ),
         'param_name' => 'display_style',
         'value' => array(
-            __( 'Show All', 'lastudio' ) => 'all',
-            __( 'Load more button', 'lastudio' ) => 'load-more',
-            __( 'Pagination', 'lastudio' ) => 'pagination',
+            __( 'Show All', 'nova' ) => 'all',
+            __( 'Load more button', 'nova' ) => 'load-more',
+            __( 'Pagination', 'nova' ) => 'pagination',
         ),
         'std' => 'all',
         'save_always' => true,
-        'description' => __('Select display style', 'lastudio'),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'description' => __('Select display style', 'nova'),
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'textfield',
-        'heading' => __( 'Load more text', 'lastudio' ),
+        'heading' => __( 'Load more text', 'nova' ),
         'param_name' => 'load_more_text',
         'dependency' => array(
             'element'   => 'display_style',
             'value'     => 'load-more'
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type'       => 'checkbox',
-        'heading'    => __('Enable slider', 'lastudio' ),
+        'heading'    => __('Enable slider', 'nova' ),
         'param_name' => 'enable_carousel',
-        'value'      => array( __( 'Yes', 'lastudio' ) => 'yes' ),
+        'value'      => array( __( 'Yes', 'nova' ) => 'yes' ),
         'dependency' => array(
             'element'   => 'layout',
             'value'     => 'grid'
         ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
     array(
         'type' => 'checkbox',
-        'heading' => __( 'Enable Ajax Loading', 'lastudio' ),
+        'heading' => __( 'Enable Ajax Loading', 'nova' ),
         'param_name' => 'enable_ajax_loader',
-        'value' => array( __( 'Yes', 'lastudio' ) => 'yes' ),
-        'group' 		=> __('Layout Setting', 'lastudio')
+        'value' => array( __( 'Yes', 'nova' ) => 'yes' ),
+        'group' 		=> __('Layout Setting', 'nova')
     ),
 
-    LaStudio_Shortcodes_Helper::fieldElementID(array(
-        'group' 		=> __('Layout Setting', 'lastudio')
+    Novaworks_Shortcodes_Helper::fieldElementID(array(
+        'group' 		=> __('Layout Setting', 'nova')
     )),
 
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'group' 		=> __('Layout Setting', 'lastudio')
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'group' 		=> __('Layout Setting', 'nova')
     )),
 
     array(
         'type' => 'hidden',
         'param_name' => 'skus',
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 
     array(
         'type' => 'hidden',
-        'heading' => __('Paged', 'lastudio'),
+        'heading' => __('Paged', 'nova'),
         'param_name' => 'paged',
         'value' => '1',
-        'group' 		=> __('Data Setting', 'lastudio')
+        'group' 		=> __('Data Setting', 'nova')
     ),
 );
 
 
-$carousel = LaStudio_Shortcodes_Helper::paramCarouselShortCode(false);
+$carousel = Novaworks_Shortcodes_Helper::paramCarouselShortCode(false);
 
-$slides_column_idx = LaStudio_Shortcodes_Helper::getParamIndex( $carousel, 'slides_column');
+$slides_column_idx = Novaworks_Shortcodes_Helper::getParamIndex( $carousel, 'slides_column');
 
 if($slides_column_idx){
     unset($carousel[$slides_column_idx]);
@@ -463,13 +463,13 @@ if($slides_column_idx){
 $shortcode_params = array_merge( $shortcode_params, $carousel);
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('Products', 'lastudio'),
+        'name'			=> __('Products', 'nova'),
         'base'			=> 'products',
         'icon'          => 'icon-wpb-woocommerce',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description' 	=> __('Allowing fetch products by ids, SKUs, categories, attributes, and more, replacing the need for multiples shortcodes','lastudio'),
+        'category'  	=> __('La Studio', 'nova'),
+        'description' 	=> __('Allowing fetch products by ids, SKUs, categories, attributes, and more, replacing the need for multiples shortcodes','nova'),
         'params' 		=> $shortcode_params
     ),
     'products'

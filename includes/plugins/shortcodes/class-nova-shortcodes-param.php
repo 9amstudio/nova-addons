@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class LaStudio_Shortcodes_Param{
+class Novaworks_Shortcodes_Param{
 
     public static $instance = null;
 
@@ -22,9 +22,9 @@ class LaStudio_Shortcodes_Param{
             return;
         }
 
-        vc_add_shortcode_param('la_column', array($this, 'columnResponsiveCallBack') );
-        vc_add_shortcode_param('la_number' , array($this, 'laNumberCallBack' ));
-        vc_add_shortcode_param('la_heading' , array($this, 'headingCallBack' ));
+        vc_add_shortcode_param('nova_column', array($this, 'columnResponsiveCallBack') );
+        vc_add_shortcode_param('nova_number' , array($this, 'laNumberCallBack' ));
+        vc_add_shortcode_param('nova_heading' , array($this, 'headingCallBack' ));
         vc_add_shortcode_param('datetimepicker' , array($this, 'datetimePickerCallBack' ) );
         vc_add_shortcode_param('gradient' , array($this, 'gradient_picker' ) );
         vc_add_shortcode_param('la_slides_navigation' , array($this, 'slides_navigation' ) );
@@ -40,13 +40,13 @@ class LaStudio_Shortcodes_Param{
             $value = "lg:".$value . $unit.';';
         }
 
-        $uid = 'lastudio-responsive-'. rand(1000, 9999);
+        $uid = 'nova-responsive-'. rand(1000, 9999);
 
         $require = sprintf(
             '<div class="simplify"><span class="la-vc-icon"><div class="la-vc-tooltip simplify-options">%s</div><i class="simplify-icon dashicons dashicons-arrow-right-alt2"></i></span></div>',
-            __('Responsive Options', 'lastudio')
+            __('Responsive Options', 'nova')
         );
-        $html  = '<div class="lastudio-responsive-wrapper" id="'.$uid.'"><div class="lastudio-responsive-items">';
+        $html  = '<div class="nova-responsive-wrapper" id="'.$uid.'"><div class="nova-responsive-items">';
 
         foreach($medias as $key => $default_value ) {
 
@@ -55,7 +55,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'optional',
                         '<i class="fa fa-desktop"></i>',
-                        __('Large Desktop', 'lastudio'),
+                        __('Large Desktop', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -66,7 +66,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'required',
                         '<i class="dashicons dashicons-desktop"></i>',
-                        __('Desktop', 'lastudio'),
+                        __('Desktop', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -78,7 +78,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'optional',
                         '<i class="dashicons dashicons-tablet" style="transform: rotate(90deg);"></i>',
-                        __('Tablet', 'lastudio'),
+                        __('Tablet', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -90,7 +90,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'optional',
                         '<i class="dashicons dashicons-tablet"></i>',
-                        __('Tablet Portrait', 'lastudio'),
+                        __('Tablet Portrait', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -101,7 +101,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'optional',
                         '<i class="dashicons dashicons-smartphone" style="transform: rotate(90deg);"></i>',
-                        __('Mobile Landscape', 'lastudio'),
+                        __('Mobile Landscape', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -111,7 +111,7 @@ class LaStudio_Shortcodes_Param{
                     $html .= $this->getParamMedia(
                         'optional',
                         '<i class="dashicons dashicons-smartphone"></i>',
-                        __('Mobile', 'lastudio'),
+                        __('Mobile', 'nova'),
                         $default_value,
                         $unit,
                         $key
@@ -120,10 +120,10 @@ class LaStudio_Shortcodes_Param{
             }
         }
         $html .= '</div>';
-        $html .= '<div class="lastudio-unit-section"><label>'.$unit.'</label></div>';
-        $html .= '<input type="hidden" data-unit="'.$unit.'"  name="'.$settings['param_name'].'" class="wpb_vc_param_value lastudio-responsive-value '.$settings['param_name'].' '.$settings['type'].'_field" value="'.$value.'" />';
+        $html .= '<div class="nova-unit-section"><label>'.$unit.'</label></div>';
+        $html .= '<input type="hidden" data-unit="'.$unit.'"  name="'.$settings['param_name'].'" class="wpb_vc_param_value nova-responsive-value '.$settings['param_name'].' '.$settings['type'].'_field" value="'.$value.'" />';
         $html .= '</div>';
-        $html .= '<script type="text/javascript">jQuery("#'.$uid.'").trigger("vc_param.la_columns")</script>';
+        $html .= '<script type="text/javascript">jQuery("#'.$uid.'").trigger("vc_param.nova_columns")</script>';
         return $html;
     }
 
@@ -144,7 +144,7 @@ class LaStudio_Shortcodes_Param{
         $class = isset($settings['class']) ? $settings['class'] : '';
         $text = isset($settings['text']) ? $settings['text'] : '';
         $output = '<h4 class="wpb_vc_param_value '.$class.'">'.$text.'</h4>';
-        $output .= '<input type="hidden" name="'.$param_name.'" class="wpb_vc_param_value lastudio-param-heading '.$param_name.' '.$settings['type'].'_field" value="'.$value.'" />';
+        $output .= '<input type="hidden" name="'.$param_name.'" class="wpb_vc_param_value nova-param-heading '.$param_name.' '.$settings['type'].'_field" value="'.$value.'" />';
         return $output;
     }
 
@@ -191,12 +191,12 @@ class LaStudio_Shortcodes_Param{
         $uni = uniqid();
         $output = '<div class="vc_ug_control" data-uniqid="'.$uni.'" data-color1="'.$color1.'" data-color2="'.$color2.'">';
         $output .= '<select id="grad_type'.$uni.'" class="grad_type" data-uniqid="'.$uni.'">
-				<option value="vertical">'.__('Vertical', 'lastudio').'</option>
-				<option value="horizontal">'.__('Horizontal', 'lastudio').'</option>
-				<option value="custom">'.__('Custom', 'lastudio').'</option>
+				<option value="vertical">'.__('Vertical', 'nova').'</option>
+				<option value="horizontal">'.__('Horizontal', 'nova').'</option>
+				<option value="custom">'.__('Custom', 'nova').'</option>
 			</select>
 			<div id="grad_type_custom_wrapper'.$uni.'" class="grad_type_custom_wrapper" style="display:none;"><input type="number" id="grad_type_custom'.$uni.'" placeholder="45" data-uniqid="'.$uni.'" class="grad_custom" style="width: 200px; margin-bottom: 10px;"/> deg</div>';
-        $output .= '<div class="wpb_element_label" style="margin-top: 10px;">'.__('Choose Colors', 'lastudio').'</div>';
+        $output .= '<div class="wpb_element_label" style="margin-top: 10px;">'.__('Choose Colors', 'nova').'</div>';
         $output .= '<div class="grad_hold" id="grad_hold'.$uni.'"></div>';
         $output .= '<div class="grad_trgt" id="grad_target'.$uni.'"></div>';
 

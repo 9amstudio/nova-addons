@@ -8,36 +8,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'textfield',
-        'heading' => __( 'Text', 'lastudio' ),
+        'heading' => __( 'Text', 'nova' ),
         'param_name' => 'title',
-        'value' => __( 'Text on the button', 'lastudio' ),
+        'value' => __( 'Text on the button', 'nova' ),
         'admin_label' => true
     ),
     array(
         'type' => 'vc_link',
-        'heading' => __( 'URL (Link)', 'lastudio' ),
+        'heading' => __( 'URL (Link)', 'nova' ),
         'param_name' => 'link',
-        'description' => __( 'Add link to button.', 'lastudio' )
+        'description' => __( 'Add link to button.', 'nova' )
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Style', 'lastudio' ),
-        'description' => __( 'Select button display style.', 'lastudio' ),
+        'heading' => __( 'Style', 'nova' ),
+        'description' => __( 'Select button display style.', 'nova' ),
         'param_name' => 'style',
         'value' => array(
-            __( 'Flat', 'lastudio' ) => 'flat',
-            __( 'Outline', 'lastudio' ) => 'outline'
+            __( 'Flat', 'nova' ) => 'flat',
+            __( 'Outline', 'nova' ) => 'outline'
         )
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Border width', 'lastudio' ),
-        'description' => __( 'Select border width.', 'lastudio' ),
+        'heading' => __( 'Border width', 'nova' ),
+        'description' => __( 'Select border width.', 'nova' ),
         'param_name' => 'border_width',
         'value' => array(
-            __( '1px', 'lastudio' ) => '1',
-            __( '2px', 'lastudio' ) => '2',
-            __( '3px', 'lastudio' ) => '3'
+            __( '1px', 'nova' ) => '1',
+            __( '2px', 'nova' ) => '2',
+            __( '3px', 'nova' ) => '3'
         ),
         'dependency' => array(
             'element' => 'style',
@@ -47,36 +47,36 @@ $shortcode_params = array(
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Shape', 'lastudio' ),
-        'description' => __( 'Select button shape.', 'lastudio' ),
+        'heading' => __( 'Shape', 'nova' ),
+        'description' => __( 'Select button shape.', 'nova' ),
         'param_name' => 'shape',
         'value' => array(
-            __( 'Rounded', 'lastudio' ) => 'rounded',
-            __( 'Square', 'lastudio' ) => 'square',
-            __( 'Round', 'lastudio' ) => 'round'
+            __( 'Rounded', 'nova' ) => 'rounded',
+            __( 'Square', 'nova' ) => 'square',
+            __( 'Round', 'nova' ) => 'round'
         ),
         'std' => 'square'
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Color', 'lastudio' ),
+        'heading' => __( 'Color', 'nova' ),
         'param_name' => 'color',
-        'description' => __( 'Select button color.', 'lastudio' ),
+        'description' => __( 'Select button color.', 'nova' ),
         'value' => array(
-                __( 'Black', 'lastudio' ) => 'black',
-                __( 'Primary', 'lastudio' ) => 'primary',
-                __( 'Three', 'lastudio' ) => 'three',
-                __( 'White', 'lastudio' ) => 'white',
-                __( 'White 2', 'lastudio' ) => 'white2',
-                __( 'Gray', 'lastudio' ) => 'gray'
+                __( 'Black', 'nova' ) => 'black',
+                __( 'Primary', 'nova' ) => 'primary',
+                __( 'Three', 'nova' ) => 'three',
+                __( 'White', 'nova' ) => 'white',
+                __( 'White 2', 'nova' ) => 'white2',
+                __( 'Gray', 'nova' ) => 'gray'
         ),
         'std' => 'black'
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Size', 'lastudio' ),
+        'heading' => __( 'Size', 'nova' ),
         'param_name' => 'size',
-        'description' => __( 'Select button display size.', 'lastudio' ),
+        'description' => __( 'Select button display size.', 'nova' ),
         'std' => 'md',
         'value' => array(
             'Mini' => 'xs',
@@ -87,33 +87,33 @@ $shortcode_params = array(
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __( 'Alignment', 'lastudio' ),
+        'heading' => __( 'Alignment', 'nova' ),
         'param_name' => 'align',
-        'description' => __( 'Select button alignment.', 'lastudio' ),
+        'description' => __( 'Select button alignment.', 'nova' ),
         'value' => array(
-            __( 'Inline', 'lastudio' ) => 'inline',
-            __( 'Left', 'lastudio' ) => 'left',
-            __( 'Right', 'lastudio' ) => 'right',
-            __( 'Center', 'lastudio' ) => 'center',
+            __( 'Inline', 'nova' ) => 'inline',
+            __( 'Left', 'nova' ) => 'left',
+            __( 'Right', 'nova' ) => 'right',
+            __( 'Center', 'nova' ) => 'center',
         ),
     ),
     array(
         'type' => 'textfield',
-        'heading' => __( 'Extra class name', 'lastudio' ),
+        'heading' => __( 'Extra class name', 'nova' ),
         'param_name' => 'el_class',
-        'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'lastudio' ),
+        'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'nova' ),
     ),
 );
 
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('La Button', 'lastudio'),
+        'name'			=> __('La Button', 'nova'),
         'base'			=> 'la_btn',
         'icon'          => 'icon-wpb-ui-button',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description'   => __('Eye catching button', 'lastudio'),
+        'category'  	=> __('La Studio', 'nova'),
+        'description'   => __('Eye catching button', 'nova'),
         'params' 		=> $shortcode_params
     ),
     'la_btn'

@@ -29,7 +29,7 @@ $tooltip_content_class = (empty($content)) ? 'nttip empty-tip' : 'nttip';
 ?>
 <div class="la_hotspot_wrap" style="<?php echo esc_attr(join(';', $styles))?>">
     <div class="la_hotspot<?php echo $click_class;?>"><span><?php echo $hotspot_icon; ?></span></div>
-    <div class="<?php echo esc_attr($tooltip_content_class) ?>" data-tooltip-position="<?php echo esc_attr($position) ?>"><div class="inner"><?php echo LaStudio_Shortcodes_Helper::remove_js_autop($content);?></div></div>
+    <div class="<?php echo esc_attr($tooltip_content_class) ?>" data-tooltip-position="<?php echo esc_attr($position) ?>"><div class="inner"><?php echo Novaworks_Shortcodes_Helper::remove_js_autop($content);?></div></div>
 </div><?php
 
 $GLOBALS['la-image_hotspot-count']++;

@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-$la_fix_css = array();
+$nova_fix_css = array();
 $icon_type = $icon_fontawesome = $icon_openiconic = $icon_typicons = $icon_entypo = $icon_linecons = $icon_monosocial = $icon_image_id = $title = '';
 $icon_pos = $icon_style = $icon_size = $icon_width = $icon_color = $icon_bg = $icon_border_style = $icon_border_width = $icon_border_color = $icon_border_radius = $el_class = $css = '';
 $icon_padding = '';
@@ -29,7 +29,7 @@ $atts = shortcode_atts(array(
     'icon_entypo' => '',
     'icon_linecons' => '',
     'icon_monosocial' => 'vc-mono vc-mono-fivehundredpx',
-    'icon_la_icon_outline' => 'la-icon design-2_image',
+    'icon_nova_icon_outline' => 'nova-icon design-2_image',
     'icon_nucleo_glyph' => 'nc-icon-glyph nature_bear',
     'icon_image_id' => '',
     'custom_number' => '',
@@ -101,8 +101,8 @@ if(empty($icon_h_border_color)){
     $icon_h_border_color = $icon_border_color;
 }
 
-$unique_id = uniqid('la_icon_boxes_');
-$_tmp_class = 'la-sc-icon-boxes wpb_content_element';
+$unique_id = uniqid('nova_icon_boxes_');
+$_tmp_class = 'nova-icon-boxes wpb_content_element';
 if($icon_type == 'custom'){
     $_tmp_class .= ' icon-type-img';
 }else{
@@ -114,9 +114,9 @@ $_tmp_class .= " icon-style-{$icon_style}";
 
 
 
-$title_class = 'js-el la-unit-responsive icon-heading' . LaStudio_Shortcodes_Helper::getExtraClass($title_class);
-$desc_class = 'js-el la-unit-responsive box-description' . LaStudio_Shortcodes_Helper::getExtraClass($desc_class);
-$class_to_filter = $_tmp_class . la_shortcode_custom_css_class( $css, ' ' ) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$title_class = 'js-el nova-unit-responsive icon-heading' . Novaworks_Shortcodes_Helper::getExtraClass($title_class);
+$desc_class = 'js-el nova-unit-responsive box-description' . Novaworks_Shortcodes_Helper::getExtraClass($desc_class);
+$class_to_filter = $_tmp_class . nova_shortcode_custom_css_class( $css, ' ' ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 $css_class = $class_to_filter;
 
 if(function_exists('vc_icon_element_fonts_enqueue')){
@@ -230,14 +230,14 @@ if(!empty($_icon_html)){
 
 if(!empty($title)){
     if(!empty($title_fz) || !empty( $title_lh)){
-        $titleHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .icon-heading',
             'media_sizes' => array(
                 'font-size' => $title_fz,
                 'line-height' => $title_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .icon-heading',
             'media_sizes' => array(
                 'font-size' => $title_fz,
@@ -253,7 +253,7 @@ if(!empty($title)){
         $titleCssInline[] = "color:{$title_color}";
     }
     if(!empty($use_gfont_title)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_font);
         if(isset($gfont_data['style'])){
             $titleCssInline[] = $gfont_data['style'];
         }
@@ -269,14 +269,14 @@ if(!empty($title)){
 }
 if(!empty($content)){
     if(!empty($desc_fz) || !empty( $desc_lh)){
-        $descHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $descHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .box-description',
             'media_sizes' => array(
                 'font-size' => $desc_fz,
                 'line-height' => $desc_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .box-description',
             'media_sizes' => array(
                 'font-size' => $desc_fz,
@@ -292,7 +292,7 @@ if(!empty($content)){
         $descCssInline[] = "color:{$desc_color}";
     }
     if(!empty($use_gfont_title)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($desc_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($desc_font);
         if(isset($gfont_data['style'])){
             $descCssInline[] = $gfont_data['style'];
         }
@@ -300,7 +300,7 @@ if(!empty($content)){
             wp_enqueue_style( 'vc_google_fonts_' . $gfont_data['font_family'], $gfont_data['font_url'] );
         }
     }
-    $box_content_html = '<div class="'.esc_html($desc_class).'" style="'. esc_attr( implode(';', $descCssInline)).'" '.$descHtmlAtts.'>' . LaStudio_Shortcodes_Helper::remove_js_autop($content, true) . '</div>';
+    $box_content_html = '<div class="'.esc_html($desc_class).'" style="'. esc_attr( implode(';', $descCssInline)).'" '.$descHtmlAtts.'>' . Novaworks_Shortcodes_Helper::remove_js_autop($content, true) . '</div>';
 }
 
 switch($icon_pos){
@@ -361,12 +361,12 @@ switch($icon_pos){
         ?></div>
 </div>
 <?php if(!empty($iconCssStyle) || !empty($wapIconCssStyle)|| !empty($iconHoverCssStyle)|| !empty($wapIconHoverCssStyle) ): ?>
-<span data-la_component="InsertCustomCSS" class="js-el hidden"><?php
+<span data-nova_component="InsertCustomCSS" class="js-el hidden"><?php
 if(!empty($wapIconCssStyle)){
-    echo '#'.$unique_id . '.la-sc-icon-boxes .wrap-icon .box-icon{' . implode(';', $wapIconCssStyle) . '}';
+    echo '#'.$unique_id . '.nova-icon-boxes .wrap-icon .box-icon{' . implode(';', $wapIconCssStyle) . '}';
 }
 if(!empty($iconCssStyle)){
-    echo '#'.$unique_id . '.la-sc-icon-boxes .wrap-icon .box-icon span{' . implode(';', $iconCssStyle) . '}';
+    echo '#'.$unique_id . '.nova-icon-boxes .wrap-icon .box-icon span{' . implode(';', $iconCssStyle) . '}';
 }
 if(!empty($wapIconHoverCssStyle)){
     echo '#'.$unique_id . '.icon-type-normal:hover .wrap-icon .box-icon{' . implode(';', $wapIconHoverCssStyle) . '}';
@@ -377,4 +377,4 @@ if(!empty($iconHoverCssStyle)){
 ?>
 </span>
 <?php endif; ?>
-<?php LaStudio_Shortcodes_Helper::renderResponsiveMediaStyleTags($la_fix_css); ?>
+<?php Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags($nova_fix_css); ?>

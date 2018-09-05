@@ -46,7 +46,7 @@ extract(shortcode_atts( array(
     'css_countdown' => '',
     'el_id' => '',
 ), $atts ));
-$el_class = LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 $count_frmt = $labels = $countdown_design_style = '';
 $labels = $string_years2 .','.$string_months2.','.$string_weeks2.','.$string_days2.','.$string_hours2.','.$string_minutes2.','.$string_seconds2;
 $labels2 = $string_years .','.$string_months.','.$string_weeks.','.$string_days.','.$string_hours.','.$string_minutes.','.$string_seconds;
@@ -65,7 +65,7 @@ if(is_array($countdown_opt)){
 if (is_numeric($tick_size)) {
     $tick_size = 'desktop:'.$tick_size.'px;';
 }
-$countdown_design_style = la_shortcode_custom_css_class( $css_countdown, ' ' );
+$countdown_design_style = nova_shortcode_custom_css_class( $css_countdown, ' ' );
 $countdown_design_style = esc_attr( $countdown_design_style );
 
 

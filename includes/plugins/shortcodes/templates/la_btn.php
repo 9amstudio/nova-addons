@@ -55,7 +55,7 @@ $button_classes[] = 'btn-size-' . $size;
 $button_classes[] = 'btn-style-' . $style;
 $button_classes[] = 'btn-shape-' . $shape;
 $button_classes[] = 'btn-brw-' . $border_width;
-$el_class = LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$el_class = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 $css_class = implode( ' ', $button_classes ) . $el_class;
 
 $attributes[] = 'class="' . trim( $css_class ) . '"';

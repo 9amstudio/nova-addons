@@ -7,26 +7,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'autocomplete',
-        'heading' => __( 'Select identificator', 'lastudio' ),
+        'heading' => __( 'Select identificator', 'nova' ),
         'param_name' => 'id',
-        'description' => __( 'Input block ID or block title to see suggestions', 'lastudio' ),
+        'description' => __( 'Input block ID or block title to see suggestions', 'nova' ),
     ),
     array(
         'type' => 'hidden',
         'param_name' => 'name',
     ),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(),
 );
 
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('La Custom Block', 'lastudio'),
+        'name'			=> __('La Custom Block', 'nova'),
         'base'			=> 'la_block',
-        'icon'          => 'la-wpb-icon la_block',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description'   => __('Displays the custom block', 'lastudio'),
+        'icon'          => 'nova-wpb-icon la_block',
+        'category'  	=> __('La Studio', 'nova'),
+        'description'   => __('Displays the custom block', 'nova'),
         'params' 		=> $shortcode_params
     ),
     'la_block'

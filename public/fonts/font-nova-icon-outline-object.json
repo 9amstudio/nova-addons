@@ -1,0 +1,5931 @@
+{
+  "Animals & Nature": [
+    {
+      "nova-icon nature_bear": "Nature bear"
+    },
+    {
+      "nova-icon nature_bee": "Nature bee"
+    },
+    {
+      "nova-icon nature_butterfly": "Nature butterfly"
+    },
+    {
+      "nova-icon nature_chicken": "Nature chicken"
+    },
+    {
+      "nova-icon nature_clover": "Nature clover"
+    },
+    {
+      "nova-icon nature_collar": "Nature collar"
+    },
+    {
+      "nova-icon nature_cow": "Nature cow"
+    },
+    {
+      "nova-icon nature_dog-house": "Nature dog house"
+    },
+    {
+      "nova-icon nature_dog": "Nature dog"
+    },
+    {
+      "nova-icon nature_flower-05": "Nature flower 05"
+    },
+    {
+      "nova-icon nature_flower-06": "Nature flower 06"
+    },
+    {
+      "nova-icon nature_flower-07": "Nature flower 07"
+    },
+    {
+      "nova-icon nature_food-dog": "Nature food dog"
+    },
+    {
+      "nova-icon nature_food": "Nature food"
+    },
+    {
+      "nova-icon nature_forest": "Nature forest"
+    },
+    {
+      "nova-icon nature_mountain": "Nature mountain"
+    },
+    {
+      "nova-icon nature_mushroom": "Nature mushroom"
+    },
+    {
+      "nova-icon nature_panda": "Nature panda"
+    },
+    {
+      "nova-icon nature_paw": "Nature paw"
+    },
+    {
+      "nova-icon nature_pig": "Nature pig"
+    },
+    {
+      "nova-icon nature_plant-ground": "Nature plant ground"
+    },
+    {
+      "nova-icon nature_plant-vase": "Nature plant vase"
+    },
+    {
+      "nova-icon nature_rat": "Nature rat"
+    },
+    {
+      "nova-icon nature_sheep": "Nature sheep"
+    },
+    {
+      "nova-icon nature_snake": "Nature snake"
+    },
+    {
+      "nova-icon nature_tree-01": "Nature tree 01"
+    },
+    {
+      "nova-icon nature_tree-02": "Nature tree 02"
+    },
+    {
+      "nova-icon nature_tree-03": "Nature tree 03"
+    },
+    {
+      "nova-icon nature_turtle": "Nature turtle"
+    },
+    {
+      "nova-icon nature_wood": "Nature wood"
+    }
+  ],
+  "Arrows": [
+    {
+      "nova-icon arrows_back-78": "Arrows 1 back-78"
+    },
+    {
+      "nova-icon arrows_back-80": "Arrows 1 back-80"
+    },
+    {
+      "nova-icon arrows_bold-direction": "Arrows 1 bold-direction"
+    },
+    {
+      "nova-icon arrows_bold-down": "Arrows 1 bold-down"
+    },
+    {
+      "nova-icon arrows_bold-left": "Arrows 1 bold-left"
+    },
+    {
+      "nova-icon arrows_bold-right": "Arrows 1 bold-right"
+    },
+    {
+      "nova-icon arrows_bold-up": "Arrows 1 bold-up"
+    },
+    {
+      "nova-icon arrows_circle-down-12": "Arrows 1 circle-down-12"
+    },
+    {
+      "nova-icon arrows_circle-down-40": "Arrows 1 circle-down-40"
+    },
+    {
+      "nova-icon arrows_circle-left-10": "Arrows 1 circle-left-10"
+    },
+    {
+      "nova-icon arrows_circle-left-38": "Arrows 1 circle-left-38"
+    },
+    {
+      "nova-icon arrows_circle-right-09": "Arrows 1 circle-right-09"
+    },
+    {
+      "nova-icon arrows_circle-right-37": "Arrows 1 circle-right-37"
+    },
+    {
+      "nova-icon arrows_circle-up-11": "Arrows 1 circle-up-11"
+    },
+    {
+      "nova-icon arrows_circle-up-39": "Arrows 1 circle-up-39"
+    },
+    {
+      "nova-icon arrows_cloud-download-93": "Arrows 1 cloud-download-93"
+    },
+    {
+      "nova-icon arrows_cloud-download-95": "Arrows 1 cloud-download-95"
+    },
+    {
+      "nova-icon arrows_cloud-upload-94": "Arrows 1 cloud-upload-94"
+    },
+    {
+      "nova-icon arrows_cloud-upload-96": "Arrows 1 cloud-upload-96"
+    },
+    {
+      "nova-icon arrows_curved-next": "Arrows 1 curved-next"
+    },
+    {
+      "nova-icon arrows_curved-previous": "Arrows 1 curved-previous"
+    },
+    {
+      "nova-icon arrows_direction-53": "Arrows 1 direction-53"
+    },
+    {
+      "nova-icon arrows_direction-56": "Arrows 1 direction-56"
+    },
+    {
+      "nova-icon arrows_double-left": "Arrows 1 double-left"
+    },
+    {
+      "nova-icon arrows_double-right": "Arrows 1 double-right"
+    },
+    {
+      "nova-icon arrows_download": "Arrows 1 download"
+    },
+    {
+      "nova-icon arrows_enlarge-diagonal-43": "Arrows 1 enlarge-diagonal-43"
+    },
+    {
+      "nova-icon arrows_enlarge-diagonal-44": "Arrows 1 enlarge-diagonal-44"
+    },
+    {
+      "nova-icon arrows_enlarge-horizontal": "Arrows 1 enlarge-horizontal"
+    },
+    {
+      "nova-icon arrows_enlarge-vertical": "Arrows 1 enlarge-vertical"
+    },
+    {
+      "nova-icon arrows_fit-horizontal": "Arrows 1 fit-horizontal"
+    },
+    {
+      "nova-icon arrows_fit-vertical": "Arrows 1 fit-vertical"
+    },
+    {
+      "nova-icon arrows_fullscreen-70": "Arrows 1 fullscreen-70"
+    },
+    {
+      "nova-icon arrows_fullscreen-71": "Arrows 1 fullscreen-71"
+    },
+    {
+      "nova-icon arrows_fullscreen-76": "Arrows 1 fullscreen-76"
+    },
+    {
+      "nova-icon arrows_fullscreen-77": "Arrows 1 fullscreen-77"
+    },
+    {
+      "nova-icon arrows_fullscreen-double-74": "Arrows 1 fullscreen-double-74"
+    },
+    {
+      "nova-icon arrows_fullscreen-double-75": "Arrows 1 fullscreen-double-75"
+    },
+    {
+      "nova-icon arrows_fullscreen-split-72": "Arrows 1 fullscreen-split-72"
+    },
+    {
+      "nova-icon arrows_fullscreen-split-73": "Arrows 1 fullscreen-split-73"
+    },
+    {
+      "nova-icon arrows_log-in": "Arrows 1 log-in"
+    },
+    {
+      "nova-icon arrows_log-out": "Arrows 1 log-out"
+    },
+    {
+      "nova-icon arrows_loop-82": "Arrows 1 loop-82"
+    },
+    {
+      "nova-icon arrows_loop-83": "Arrows 1 loop-83"
+    },
+    {
+      "nova-icon arrows_minimal-down": "Arrows 1 minimal-down"
+    },
+    {
+      "nova-icon arrows_minimal-left": "Arrows 1 minimal-left"
+    },
+    {
+      "nova-icon arrows_minimal-right": "Arrows 1 minimal-right"
+    },
+    {
+      "nova-icon arrows_minimal-up": "Arrows 1 minimal-up"
+    },
+    {
+      "nova-icon arrows_redo-79": "Arrows 1 redo-79"
+    },
+    {
+      "nova-icon arrows_redo-81": "Arrows 1 redo-81"
+    },
+    {
+      "nova-icon arrows_refresh-68": "Arrows 1 refresh-68"
+    },
+    {
+      "nova-icon arrows_refresh-69": "Arrows 1 refresh-69"
+    },
+    {
+      "nova-icon arrows_round-down": "Arrows 1 round-down"
+    },
+    {
+      "nova-icon arrows_round-left": "Arrows 1 round-left"
+    },
+    {
+      "nova-icon arrows_round-right": "Arrows 1 round-right"
+    },
+    {
+      "nova-icon arrows_round-up": "Arrows 1 round-up"
+    },
+    {
+      "nova-icon arrows_share-66": "Arrows 1 share-66"
+    },
+    {
+      "nova-icon arrows_share-91": "Arrows 1 share-91"
+    },
+    {
+      "nova-icon arrows_share-92": "Arrows 1 share-92"
+    },
+    {
+      "nova-icon arrows_shuffle-97": "Arrows 1 shuffle-97"
+    },
+    {
+      "nova-icon arrows_shuffle-98": "Arrows 1 shuffle-98"
+    },
+    {
+      "nova-icon arrows_simple-down": "Arrows 1 simple-down"
+    },
+    {
+      "nova-icon arrows_simple-left": "Arrows 1 simple-left"
+    },
+    {
+      "nova-icon arrows_simple-right": "Arrows 1 simple-right"
+    },
+    {
+      "nova-icon arrows_simple-up": "Arrows 1 simple-up"
+    },
+    {
+      "nova-icon arrows_small-triangle-down": "Arrows 1 small-triangle-down"
+    },
+    {
+      "nova-icon arrows_small-triangle-left": "Arrows 1 small-triangle-left"
+    },
+    {
+      "nova-icon arrows_small-triangle-right": "Arrows 1 small-triangle-right"
+    },
+    {
+      "nova-icon arrows_small-triangle-up": "Arrows 1 small-triangle-up"
+    },
+    {
+      "nova-icon arrows_square-down": "Arrows 1 square-down"
+    },
+    {
+      "nova-icon arrows_square-left": "Arrows 1 square-left"
+    },
+    {
+      "nova-icon arrows_square-right": "Arrows 1 square-right"
+    },
+    {
+      "nova-icon arrows_square-up": "Arrows 1 square-up"
+    },
+    {
+      "nova-icon arrows_strong-down": "Arrows 1 strong-down"
+    },
+    {
+      "nova-icon arrows_strong-left": "Arrows 1 strong-left"
+    },
+    {
+      "nova-icon arrows_strong-right": "Arrows 1 strong-right"
+    },
+    {
+      "nova-icon arrows_strong-up": "Arrows 1 strong-up"
+    },
+    {
+      "nova-icon arrows_tail-down": "Arrows 1 tail-down"
+    },
+    {
+      "nova-icon arrows_tail-left": "Arrows 1 tail-left"
+    },
+    {
+      "nova-icon arrows_tail-right": "Arrows 1 tail-right"
+    },
+    {
+      "nova-icon arrows_tail-triangle-down": "Arrows 1 tail-triangle-down"
+    },
+    {
+      "nova-icon arrows_tail-triangle-left": "Arrows 1 tail-triangle-left"
+    },
+    {
+      "nova-icon arrows_tail-triangle-right": "Arrows 1 tail-triangle-right"
+    },
+    {
+      "nova-icon arrows_tail-triangle-up": "Arrows 1 tail-triangle-up"
+    },
+    {
+      "nova-icon arrows_tail-up": "Arrows 1 tail-up"
+    },
+    {
+      "nova-icon arrows_trend-down": "Arrows 1 trend-down"
+    },
+    {
+      "nova-icon arrows_trend-up": "Arrows 1 trend-up"
+    },
+    {
+      "nova-icon arrows_triangle-down-20": "Arrows 1 triangle-down-20"
+    },
+    {
+      "nova-icon arrows_triangle-down-65": "Arrows 1 triangle-down-65"
+    },
+    {
+      "nova-icon arrows_triangle-left-18": "Arrows 1 triangle-left-18"
+    },
+    {
+      "nova-icon arrows_triangle-left-63": "Arrows 1 triangle-left-63"
+    },
+    {
+      "nova-icon arrows_triangle-right-17": "Arrows 1 triangle-right-17"
+    },
+    {
+      "nova-icon arrows_triangle-right-62": "Arrows 1 triangle-right-62"
+    },
+    {
+      "nova-icon arrows_triangle-up-19": "Arrows 1 triangle-up-19"
+    },
+    {
+      "nova-icon arrows_triangle-up-64": "Arrows 1 triangle-up-64"
+    },
+    {
+      "nova-icon arrows_window-zoom-in": "Arrows 1 window-zoom-in"
+    },
+    {
+      "nova-icon arrows_window-zoom-out": "Arrows 1 window-zoom-out"
+    },
+    {
+      "nova-icon arrows_zoom-88": "Arrows 1 zoom-88"
+    },
+    {
+      "nova-icon arrows_zoom-99": "Arrows 1 zoom-99"
+    },
+    {
+      "nova-icon arrows_zoom-100": "Arrows 1 zoom-100"
+    },
+    {
+      "nova-icon arrows_block-down": "Arrows 2 block-down"
+    },
+    {
+      "nova-icon arrows_block-left": "Arrows 2 block-left"
+    },
+    {
+      "nova-icon arrows_block-right": "Arrows 2 block-right"
+    },
+    {
+      "nova-icon arrows_block-up": "Arrows 2 block-up"
+    },
+    {
+      "nova-icon arrows_circle-in": "Arrows 2 circle-in"
+    },
+    {
+      "nova-icon arrows_circle-out": "Arrows 2 circle-out"
+    },
+    {
+      "nova-icon arrows_circuit-round": "Arrows 2 circuit-round"
+    },
+    {
+      "nova-icon arrows_circuit": "Arrows 2 circuit"
+    },
+    {
+      "nova-icon arrows_computer-upload": "Arrows 2 computer-upload"
+    },
+    {
+      "nova-icon arrows_conversion": "Arrows 2 conversion"
+    },
+    {
+      "nova-icon arrows_corner-down-round": "Arrows 2 corner-down-round"
+    },
+    {
+      "nova-icon arrows_corner-down": "Arrows 2 corner-down"
+    },
+    {
+      "nova-icon arrows_corner-left-down": "Arrows 2 corner-left-down"
+    },
+    {
+      "nova-icon arrows_corner-left-round": "Arrows 2 corner-left-round"
+    },
+    {
+      "nova-icon arrows_corner-left": "Arrows 2 corner-left"
+    },
+    {
+      "nova-icon arrows_corner-right-down": "Arrows 2 corner-right-down"
+    },
+    {
+      "nova-icon arrows_corner-right-round": "Arrows 2 corner-right-round"
+    },
+    {
+      "nova-icon arrows_corner-right": "Arrows 2 corner-right"
+    },
+    {
+      "nova-icon arrows_corner-up-left": "Arrows 2 corner-up-left"
+    },
+    {
+      "nova-icon arrows_corner-up-right": "Arrows 2 corner-up-right"
+    },
+    {
+      "nova-icon arrows_corner-up-round": "Arrows 2 corner-up-round"
+    },
+    {
+      "nova-icon arrows_corner-up": "Arrows 2 corner-up"
+    },
+    {
+      "nova-icon arrows_cross-down": "Arrows 2 cross-down"
+    },
+    {
+      "nova-icon arrows_cross-horizontal": "Arrows 2 cross-horizontal"
+    },
+    {
+      "nova-icon arrows_cross-left": "Arrows 2 cross-left"
+    },
+    {
+      "nova-icon arrows_cross-right": "Arrows 2 cross-right"
+    },
+    {
+      "nova-icon arrows_cross-up": "Arrows 2 cross-up"
+    },
+    {
+      "nova-icon arrows_cross-vertical": "Arrows 2 cross-vertical"
+    },
+    {
+      "nova-icon arrows_curve-circuit": "Arrows 2 curve-circuit"
+    },
+    {
+      "nova-icon arrows_curve-directions": "Arrows 2 curve-directions"
+    },
+    {
+      "nova-icon arrows_curve-split": "Arrows 2 curve-split"
+    },
+    {
+      "nova-icon arrows_delete-49": "Arrows 2 delete-49"
+    },
+    {
+      "nova-icon arrows_delete-50": "Arrows 2 delete-50"
+    },
+    {
+      "nova-icon arrows_direction": "Arrows 2 direction"
+    },
+    {
+      "nova-icon arrows_dots-download": "Arrows 2 dots-download"
+    },
+    {
+      "nova-icon arrows_dots-upload": "Arrows 2 dots-upload"
+    },
+    {
+      "nova-icon arrows_eject": "Arrows 2 eject"
+    },
+    {
+      "nova-icon arrows_enlarge-circle": "Arrows 2 enlarge-circle"
+    },
+    {
+      "nova-icon arrows_file-download-87": "Arrows 2 file-download-87"
+    },
+    {
+      "nova-icon arrows_file-download-89": "Arrows 2 file-download-89"
+    },
+    {
+      "nova-icon arrows_file-download-94": "Arrows 2 file-download-94"
+    },
+    {
+      "nova-icon arrows_file-upload-86": "Arrows 2 file-upload-86"
+    },
+    {
+      "nova-icon arrows_file-upload-88": "Arrows 2 file-upload-88"
+    },
+    {
+      "nova-icon arrows_file-upload-93": "Arrows 2 file-upload-93"
+    },
+    {
+      "nova-icon arrows_fork-round": "Arrows 2 fork-round"
+    },
+    {
+      "nova-icon arrows_fork": "Arrows 2 fork"
+    },
+    {
+      "nova-icon arrows_hit-down": "Arrows 2 hit-down"
+    },
+    {
+      "nova-icon arrows_hit-left": "Arrows 2 hit-left"
+    },
+    {
+      "nova-icon arrows_hit-right": "Arrows 2 hit-right"
+    },
+    {
+      "nova-icon arrows_hit-up": "Arrows 2 hit-up"
+    },
+    {
+      "nova-icon arrows_lines": "Arrows 2 lines"
+    },
+    {
+      "nova-icon arrows_log-out": "Arrows 2 log-out"
+    },
+    {
+      "nova-icon arrows_loop": "Arrows 2 loop"
+    },
+    {
+      "nova-icon arrows_merge-round": "Arrows 2 merge-round"
+    },
+    {
+      "nova-icon arrows_merge": "Arrows 2 merge"
+    },
+    {
+      "nova-icon arrows_move-05": "Arrows 2 move-05"
+    },
+    {
+      "nova-icon arrows_move-06": "Arrows 2 move-06"
+    },
+    {
+      "nova-icon arrows_move-92": "Arrows 2 move-92"
+    },
+    {
+      "nova-icon arrows_move-down-right": "Arrows 2 move-down-right"
+    },
+    {
+      "nova-icon arrows_move-down": "Arrows 2 move-down"
+    },
+    {
+      "nova-icon arrows_move-left": "Arrows 2 move-left"
+    },
+    {
+      "nova-icon arrows_move-right": "Arrows 2 move-right"
+    },
+    {
+      "nova-icon arrows_move-up-left": "Arrows 2 move-up-left"
+    },
+    {
+      "nova-icon arrows_move-up": "Arrows 2 move-up"
+    },
+    {
+      "nova-icon arrows_push-next": "Arrows 2 push-next"
+    },
+    {
+      "nova-icon arrows_push-previous": "Arrows 2 push-previous"
+    },
+    {
+      "nova-icon arrows_reload": "Arrows 2 reload"
+    },
+    {
+      "nova-icon arrows_replay": "Arrows 2 replay"
+    },
+    {
+      "nova-icon arrows_rotate-left": "Arrows 2 rotate-left"
+    },
+    {
+      "nova-icon arrows_rotate-right": "Arrows 2 rotate-right"
+    },
+    {
+      "nova-icon arrows_round-left-down": "Arrows 2 round-left-down"
+    },
+    {
+      "nova-icon arrows_round-right-down": "Arrows 2 round-right-down"
+    },
+    {
+      "nova-icon arrows_round-up-left": "Arrows 2 round-up-left"
+    },
+    {
+      "nova-icon arrows_round-up-right": "Arrows 2 round-up-right"
+    },
+    {
+      "nova-icon arrows_select-83": "Arrows 2 select-83"
+    },
+    {
+      "nova-icon arrows_select-84": "Arrows 2 select-84"
+    },
+    {
+      "nova-icon arrows_separate-round": "Arrows 2 separate-round"
+    },
+    {
+      "nova-icon arrows_separate": "Arrows 2 separate"
+    },
+    {
+      "nova-icon arrows_share-left": "Arrows 2 share-left"
+    },
+    {
+      "nova-icon arrows_share-right": "Arrows 2 share-right"
+    },
+    {
+      "nova-icon arrows_skew-down": "Arrows 2 skew-down"
+    },
+    {
+      "nova-icon arrows_skew-left": "Arrows 2 skew-left"
+    },
+    {
+      "nova-icon arrows_skew-right": "Arrows 2 skew-right"
+    },
+    {
+      "nova-icon arrows_skew-up": "Arrows 2 skew-up"
+    },
+    {
+      "nova-icon arrows_small-left": "Arrows 2 small-left"
+    },
+    {
+      "nova-icon arrows_small-right": "Arrows 2 small-right"
+    },
+    {
+      "nova-icon arrows_split-horizontal": "Arrows 2 split-horizontal"
+    },
+    {
+      "nova-icon arrows_split-round": "Arrows 2 split-round"
+    },
+    {
+      "nova-icon arrows_split-vertical": "Arrows 2 split-vertical"
+    },
+    {
+      "nova-icon arrows_split": "Arrows 2 split"
+    },
+    {
+      "nova-icon arrows_square-download": "Arrows 2 square-download"
+    },
+    {
+      "nova-icon arrows_square-upload": "Arrows 2 square-upload"
+    },
+    {
+      "nova-icon arrows_time": "Arrows 2 time"
+    },
+    {
+      "nova-icon arrows_triangle-down": "Arrows 2 triangle-down"
+    },
+    {
+      "nova-icon arrows_triangle-left": "Arrows 2 triangle-left"
+    },
+    {
+      "nova-icon arrows_triangle-right": "Arrows 2 triangle-right"
+    },
+    {
+      "nova-icon arrows_triangle-up": "Arrows 2 triangle-up"
+    },
+    {
+      "nova-icon arrows_unite-round": "Arrows 2 unite-round"
+    },
+    {
+      "nova-icon arrows_unite": "Arrows 2 unite"
+    },
+    {
+      "nova-icon arrows_zoom": "Arrows 2 zoom"
+    },
+    {
+      "nova-icon arrows_circle-down": "Arrows 3 circle-down"
+    },
+    {
+      "nova-icon arrows_circle-left": "Arrows 3 circle-left"
+    },
+    {
+      "nova-icon arrows_circle-right": "Arrows 3 circle-right"
+    },
+    {
+      "nova-icon arrows_circle-simple-down": "Arrows 3 circle-simple-down"
+    },
+    {
+      "nova-icon arrows_circle-simple-left": "Arrows 3 circle-simple-left"
+    },
+    {
+      "nova-icon arrows_circle-simple-right": "Arrows 3 circle-simple-right"
+    },
+    {
+      "nova-icon arrows_circle-simple-up": "Arrows 3 circle-simple-up"
+    },
+    {
+      "nova-icon arrows_circle-up": "Arrows 3 circle-up"
+    },
+    {
+      "nova-icon arrows_cloud-refresh": "Arrows 3 cloud-refresh"
+    },
+    {
+      "nova-icon arrows_separate": "Arrows 3 separate"
+    },
+    {
+      "nova-icon arrows_small-down": "Arrows 3 small-down"
+    },
+    {
+      "nova-icon arrows_small-up": "Arrows 3 small-up"
+    },
+    {
+      "nova-icon arrows_square-corner-down-left": "Arrows 3 square-corner-down-left"
+    },
+    {
+      "nova-icon arrows_square-corner-down-right": "Arrows 3 square-corner-down-right"
+    },
+    {
+      "nova-icon arrows_square-corner-up-left": "Arrows 3 square-corner-up-left"
+    },
+    {
+      "nova-icon arrows_square-corner-up-right": "Arrows 3 square-corner-up-right"
+    },
+    {
+      "nova-icon arrows_square-down-06": "Arrows 3 square-down-06"
+    },
+    {
+      "nova-icon arrows_square-down-22": "Arrows 3 square-down-22"
+    },
+    {
+      "nova-icon arrows_square-enlarge": "Arrows 3 square-enlarge"
+    },
+    {
+      "nova-icon arrows_square-left-04": "Arrows 3 square-left-04"
+    },
+    {
+      "nova-icon arrows_square-left-20": "Arrows 3 square-left-20"
+    },
+    {
+      "nova-icon arrows_square-right-03": "Arrows 3 square-right-03"
+    },
+    {
+      "nova-icon arrows_square-right-19": "Arrows 3 square-right-19"
+    },
+    {
+      "nova-icon arrows_square-simple-down": "Arrows 3 square-simple-down"
+    },
+    {
+      "nova-icon arrows_square-simple-left": "Arrows 3 square-simple-left"
+    },
+    {
+      "nova-icon arrows_square-simple-right": "Arrows 3 square-simple-right"
+    },
+    {
+      "nova-icon arrows_square-simple-up": "Arrows 3 square-simple-up"
+    },
+    {
+      "nova-icon arrows_square-up-05": "Arrows 3 square-up-05"
+    },
+    {
+      "nova-icon arrows_square-up-21": "Arrows 3 square-up-21"
+    },
+    {
+      "nova-icon arrows_square-zoom": "Arrows 3 square-zoom"
+    },
+    {
+      "nova-icon arrows_super-bold-down": "Arrows 3 super-bold-down"
+    },
+    {
+      "nova-icon arrows_super-bold-left": "Arrows 3 super-bold-left"
+    },
+    {
+      "nova-icon arrows_super-bold-right": "Arrows 3 super-bold-right"
+    },
+    {
+      "nova-icon arrows_super-bold-up": "Arrows 3 super-bold-up"
+    },
+    {
+      "nova-icon arrows_block-bottom-left": "Arrows 4 block-bottom-left"
+    },
+    {
+      "nova-icon arrows_block-bottom-right": "Arrows 4 block-bottom-right"
+    },
+    {
+      "nova-icon arrows_block-top-left": "Arrows 4 block-top-left"
+    },
+    {
+      "nova-icon arrows_block-top-right": "Arrows 4 block-top-right"
+    },
+    {
+      "nova-icon arrows_centralize": "Arrows 4 centralize"
+    },
+    {
+      "nova-icon arrows_compare": "Arrows 4 compare"
+    },
+    {
+      "nova-icon arrows_contrast": "Arrows 4 contrast"
+    },
+    {
+      "nova-icon arrows_cross": "Arrows 4 cross"
+    },
+    {
+      "nova-icon arrows_diag-bottom-left": "Arrows 4 diag-bottom-left"
+    },
+    {
+      "nova-icon arrows_diag-bottom-right": "Arrows 4 diag-bottom-right"
+    },
+    {
+      "nova-icon arrows_diag-top-left": "Arrows 4 diag-top-left"
+    },
+    {
+      "nova-icon arrows_diag-top-right": "Arrows 4 diag-top-right"
+    },
+    {
+      "nova-icon arrows_disperse": "Arrows 4 disperse"
+    },
+    {
+      "nova-icon arrows_download": "Arrows 4 download"
+    },
+    {
+      "nova-icon arrows_enlarge-45": "Arrows 4 enlarge-45"
+    },
+    {
+      "nova-icon arrows_enlarge-46": "Arrows 4 enlarge-46"
+    },
+    {
+      "nova-icon arrows_export": "Arrows 4 export"
+    },
+    {
+      "nova-icon arrows_format-left": "Arrows 4 format-left"
+    },
+    {
+      "nova-icon arrows_format-right": "Arrows 4 format-right"
+    },
+    {
+      "nova-icon arrows_input-12": "Arrows 4 input-12"
+    },
+    {
+      "nova-icon arrows_input-21": "Arrows 4 input-21"
+    },
+    {
+      "nova-icon arrows_invert": "Arrows 4 invert"
+    },
+    {
+      "nova-icon arrows_launch-11": "Arrows 4 launch-11"
+    },
+    {
+      "nova-icon arrows_launch-47": "Arrows 4 launch-47"
+    },
+    {
+      "nova-icon arrows_logout": "Arrows 4 logout"
+    },
+    {
+      "nova-icon arrows_loop-30": "Arrows 4 loop-30"
+    },
+    {
+      "nova-icon arrows_loop-34": "Arrows 4 loop-34"
+    },
+    {
+      "nova-icon arrows_merge": "Arrows 4 merge"
+    },
+    {
+      "nova-icon arrows_open-in-browser": "Arrows 4 open-in-browser"
+    },
+    {
+      "nova-icon arrows_priority-high": "Arrows 4 priority-high"
+    },
+    {
+      "nova-icon arrows_priority-low": "Arrows 4 priority-low"
+    },
+    {
+      "nova-icon arrows_redo-10": "Arrows 4 redo-10"
+    },
+    {
+      "nova-icon arrows_redo-26": "Arrows 4 redo-26"
+    },
+    {
+      "nova-icon arrows_reply-all": "Arrows 4 reply-all"
+    },
+    {
+      "nova-icon arrows_reply": "Arrows 4 reply"
+    },
+    {
+      "nova-icon arrows_restore": "Arrows 4 restore"
+    },
+    {
+      "nova-icon arrows_share": "Arrows 4 share"
+    },
+    {
+      "nova-icon arrows_shuffle-01": "Arrows 4 shuffle-01"
+    },
+    {
+      "nova-icon arrows_shuffle-35": "Arrows 4 shuffle-35"
+    },
+    {
+      "nova-icon arrows_split-33": "Arrows 4 split-33"
+    },
+    {
+      "nova-icon arrows_split-37": "Arrows 4 split-37"
+    },
+    {
+      "nova-icon arrows_stre-down": "Arrows 4 stre-down"
+    },
+    {
+      "nova-icon arrows_stre-left": "Arrows 4 stre-left"
+    },
+    {
+      "nova-icon arrows_stre-right": "Arrows 4 stre-right"
+    },
+    {
+      "nova-icon arrows_stre-up": "Arrows 4 stre-up"
+    },
+    {
+      "nova-icon arrows_swap-horizontal": "Arrows 4 swap-horizontal"
+    },
+    {
+      "nova-icon arrows_swap-vertical": "Arrows 4 swap-vertical"
+    },
+    {
+      "nova-icon arrows_system-update": "Arrows 4 system-update"
+    },
+    {
+      "nova-icon arrows_undo-25": "Arrows 4 undo-25"
+    },
+    {
+      "nova-icon arrows_undo-29": "Arrows 4 undo-29"
+    },
+    {
+      "nova-icon arrows_upload": "Arrows 4 upload"
+    }
+  ],
+  "Business & Finance": [
+    {
+      "nova-icon business_agenda": "Business agenda"
+    },
+    {
+      "nova-icon business_atm": "Business atm"
+    },
+    {
+      "nova-icon business_award-48": "Business award 48"
+    },
+    {
+      "nova-icon business_award-49": "Business award 49"
+    },
+    {
+      "nova-icon business_award-74": "Business award 74"
+    },
+    {
+      "nova-icon business_badge": "Business badge"
+    },
+    {
+      "nova-icon business_bank": "Business bank"
+    },
+    {
+      "nova-icon business_board-27": "Business board 27"
+    },
+    {
+      "nova-icon business_board-28": "Business board 28"
+    },
+    {
+      "nova-icon business_board-29": "Business board 29"
+    },
+    {
+      "nova-icon business_board-30": "Business board 30"
+    },
+    {
+      "nova-icon business_books": "Business books"
+    },
+    {
+      "nova-icon business_briefcase-24": "Business briefcase 24"
+    },
+    {
+      "nova-icon business_briefcase-25": "Business briefcase 25"
+    },
+    {
+      "nova-icon business_briefcase-26": "Business briefcase 26"
+    },
+    {
+      "nova-icon business_building": "Business building"
+    },
+    {
+      "nova-icon business_bulb-61": "Business bulb 61"
+    },
+    {
+      "nova-icon business_bulb-62": "Business bulb 62"
+    },
+    {
+      "nova-icon business_bulb-63": "Business bulb 63"
+    },
+    {
+      "nova-icon business_business-contact-85": "Business business contact-85"
+    },
+    {
+      "nova-icon business_business-contact-86": "Business business contact-86"
+    },
+    {
+      "nova-icon business_business-contact-87": "Business business contact-87"
+    },
+    {
+      "nova-icon business_business-contact-88": "Business business contact-88"
+    },
+    {
+      "nova-icon business_business-contact-89": "Business business contact-89"
+    },
+    {
+      "nova-icon business_businessman-03": "Business businessman 03"
+    },
+    {
+      "nova-icon business_businessman-04": "Business businessman 04"
+    },
+    {
+      "nova-icon business_calculator": "Business calculator"
+    },
+    {
+      "nova-icon business_chair": "Business chair"
+    },
+    {
+      "nova-icon business_chart-bar-32": "Business chart bar-32"
+    },
+    {
+      "nova-icon business_chart-bar-33": "Business chart bar-33"
+    },
+    {
+      "nova-icon business_chart-growth": "Business chart growth"
+    },
+    {
+      "nova-icon business_chart-pie-35": "Business chart pie-35"
+    },
+    {
+      "nova-icon business_chart-pie-36": "Business chart pie-36"
+    },
+    {
+      "nova-icon business_chart": "Business chart"
+    },
+    {
+      "nova-icon business_cheque": "Business cheque"
+    },
+    {
+      "nova-icon business_coins": "Business coins"
+    },
+    {
+      "nova-icon business_connect": "Business connect"
+    },
+    {
+      "nova-icon business_contacts": "Business contacts"
+    },
+    {
+      "nova-icon business_currency-dollar": "Business currency dollar"
+    },
+    {
+      "nova-icon business_currency-euro": "Business currency euro"
+    },
+    {
+      "nova-icon business_currency-pound": "Business currency pound"
+    },
+    {
+      "nova-icon business_currency-yen": "Business currency yen"
+    },
+    {
+      "nova-icon business_factory": "Business factory"
+    },
+    {
+      "nova-icon business_globe": "Business globe"
+    },
+    {
+      "nova-icon business_goal-64": "Business goal 64"
+    },
+    {
+      "nova-icon business_goal-65": "Business goal 65"
+    },
+    {
+      "nova-icon business_gold": "Business gold"
+    },
+    {
+      "nova-icon business_hammer": "Business hammer"
+    },
+    {
+      "nova-icon business_handout": "Business handout"
+    },
+    {
+      "nova-icon business_handshake": "Business handshake"
+    },
+    {
+      "nova-icon business_hat": "Business hat"
+    },
+    {
+      "nova-icon business_hierarchy-53": "Business hierarchy 53"
+    },
+    {
+      "nova-icon business_hierarchy-54": "Business hierarchy 54"
+    },
+    {
+      "nova-icon business_hierarchy-55": "Business hierarchy 55"
+    },
+    {
+      "nova-icon business_hierarchy-56": "Business hierarchy 56"
+    },
+    {
+      "nova-icon business_laptop-71": "Business laptop 71"
+    },
+    {
+      "nova-icon business_laptop-72": "Business laptop 72"
+    },
+    {
+      "nova-icon business_laptop-91": "Business laptop 91"
+    },
+    {
+      "nova-icon business_law": "Business law"
+    },
+    {
+      "nova-icon business_math": "Business math"
+    },
+    {
+      "nova-icon business_money-11": "Business money 11"
+    },
+    {
+      "nova-icon business_money-12": "Business money 12"
+    },
+    {
+      "nova-icon business_money-13": "Business money 13"
+    },
+    {
+      "nova-icon business_money-bag": "Business money bag"
+    },
+    {
+      "nova-icon business_money-coins": "Business money coins"
+    },
+    {
+      "nova-icon business_money-growth": "Business money growth"
+    },
+    {
+      "nova-icon business_money-time": "Business money time"
+    },
+    {
+      "nova-icon business_net": "Business net"
+    },
+    {
+      "nova-icon business_notes": "Business notes"
+    },
+    {
+      "nova-icon business_payment": "Business payment"
+    },
+    {
+      "nova-icon business_percentage-38": "Business percentage 38"
+    },
+    {
+      "nova-icon business_percentage-39": "Business percentage 39"
+    },
+    {
+      "nova-icon business_pig": "Business pig"
+    },
+    {
+      "nova-icon business_pin": "Business pin"
+    },
+    {
+      "nova-icon business_plug": "Business plug"
+    },
+    {
+      "nova-icon business_progress": "Business progress"
+    },
+    {
+      "nova-icon business_round-dollar": "Business round dollar"
+    },
+    {
+      "nova-icon business_round-euro": "Business round euro"
+    },
+    {
+      "nova-icon business_round-pound": "Business round pound"
+    },
+    {
+      "nova-icon business_round-yen": "Business round yen"
+    },
+    {
+      "nova-icon business_safe": "Business safe"
+    },
+    {
+      "nova-icon business_scale": "Business scale"
+    },
+    {
+      "nova-icon business_sign": "Business sign"
+    },
+    {
+      "nova-icon business_signature": "Business signature"
+    },
+    {
+      "nova-icon business_stock": "Business stock"
+    },
+    {
+      "nova-icon business_strategy": "Business strategy"
+    },
+    {
+      "nova-icon business_tie-01": "Business tie 01"
+    },
+    {
+      "nova-icon business_tie-02": "Business tie 02"
+    },
+    {
+      "nova-icon business_wallet-43": "Business wallet 43"
+    },
+    {
+      "nova-icon business_wallet-44": "Business wallet 44"
+    },
+    {
+      "nova-icon business_wallet-90": "Business wallet 90"
+    }
+  ],
+  "Clothes & Accessories": [
+    {
+      "nova-icon clothes_baby": "Clothes baby"
+    },
+    {
+      "nova-icon clothes_backpack": "Clothes backpack"
+    },
+    {
+      "nova-icon clothes_bag-21": "Clothes bag 21"
+    },
+    {
+      "nova-icon clothes_bag-22": "Clothes bag 22"
+    },
+    {
+      "nova-icon clothes_belt": "Clothes belt"
+    },
+    {
+      "nova-icon clothes_boot-woman": "Clothes boot woman"
+    },
+    {
+      "nova-icon clothes_boot": "Clothes boot"
+    },
+    {
+      "nova-icon clothes_bra": "Clothes bra"
+    },
+    {
+      "nova-icon clothes_button": "Clothes button"
+    },
+    {
+      "nova-icon clothes_cap": "Clothes cap"
+    },
+    {
+      "nova-icon clothes_coat": "Clothes coat"
+    },
+    {
+      "nova-icon clothes_corset": "Clothes corset"
+    },
+    {
+      "nova-icon clothes_dress-man": "Clothes dress man"
+    },
+    {
+      "nova-icon clothes_dress-woman": "Clothes dress woman"
+    },
+    {
+      "nova-icon clothes_flip": "Clothes flip"
+    },
+    {
+      "nova-icon clothes_glasses": "Clothes glasses"
+    },
+    {
+      "nova-icon clothes_gloves": "Clothes gloves"
+    },
+    {
+      "nova-icon clothes_hat-top": "Clothes hat top"
+    },
+    {
+      "nova-icon clothes_hat": "Clothes hat"
+    },
+    {
+      "nova-icon clothes_hoodie": "Clothes hoodie"
+    },
+    {
+      "nova-icon clothes_iron-dont": "Clothes iron dont"
+    },
+    {
+      "nova-icon clothes_iron": "Clothes iron"
+    },
+    {
+      "nova-icon clothes_jeans-41": "Clothes jeans 41"
+    },
+    {
+      "nova-icon clothes_jeans-43": "Clothes jeans 43"
+    },
+    {
+      "nova-icon clothes_jeans-pocket": "Clothes jeans pocket"
+    },
+    {
+      "nova-icon clothes_kitchen": "Clothes kitchen"
+    },
+    {
+      "nova-icon clothes_long-sleeve": "Clothes long sleeve"
+    },
+    {
+      "nova-icon clothes_makeup": "Clothes makeup"
+    },
+    {
+      "nova-icon clothes_needle": "Clothes needle"
+    },
+    {
+      "nova-icon clothes_pajamas": "Clothes pajamas"
+    },
+    {
+      "nova-icon clothes_ring": "Clothes ring"
+    },
+    {
+      "nova-icon clothes_scarf": "Clothes scarf"
+    },
+    {
+      "nova-icon clothes_shirt-business": "Clothes shirt business"
+    },
+    {
+      "nova-icon clothes_shirt-buttons": "Clothes shirt buttons"
+    },
+    {
+      "nova-icon clothes_shirt-neck": "Clothes shirt neck"
+    },
+    {
+      "nova-icon clothes_shirt": "Clothes shirt"
+    },
+    {
+      "nova-icon clothes_shoe-man": "Clothes shoe man"
+    },
+    {
+      "nova-icon clothes_shoe-sport": "Clothes shoe sport"
+    },
+    {
+      "nova-icon clothes_shoe-woman": "Clothes shoe woman"
+    },
+    {
+      "nova-icon clothes_skirt": "Clothes skirt"
+    },
+    {
+      "nova-icon clothes_slacks-12": "Clothes slacks 12"
+    },
+    {
+      "nova-icon clothes_slacks-13": "Clothes slacks 13"
+    },
+    {
+      "nova-icon clothes_sock": "Clothes sock"
+    },
+    {
+      "nova-icon clothes_tie-bow": "Clothes tie bow"
+    },
+    {
+      "nova-icon clothes_tshirt-53": "Clothes tshirt 53"
+    },
+    {
+      "nova-icon clothes_tshirt-54": "Clothes tshirt 54"
+    },
+    {
+      "nova-icon clothes_tshirt-sport": "Clothes tshirt sport"
+    },
+    {
+      "nova-icon clothes_underwear-man": "Clothes underwear man"
+    },
+    {
+      "nova-icon clothes_underwear": "Clothes underwear"
+    },
+    {
+      "nova-icon clothes_vest-sport": "Clothes vest sport"
+    },
+    {
+      "nova-icon clothes_vest": "Clothes vest"
+    },
+    {
+      "nova-icon clothes_wash-30": "Clothes wash 30"
+    },
+    {
+      "nova-icon clothes_wash-60": "Clothes wash 60"
+    },
+    {
+      "nova-icon clothes_wash-90": "Clothes wash 90"
+    },
+    {
+      "nova-icon clothes_wash-hand": "Clothes wash hand"
+    },
+    {
+      "nova-icon clothes_wash": "Clothes wash"
+    }
+  ],
+  "Design & Development": [
+    {
+      "nova-icon design_album": "Design album"
+    },
+    {
+      "nova-icon design_align-bottom": "Design align bottom"
+    },
+    {
+      "nova-icon design_align-center-horizontal": "Design align center-horizontal"
+    },
+    {
+      "nova-icon design_align-center-vertical": "Design align center-vertical"
+    },
+    {
+      "nova-icon design_align-left": "Design align left"
+    },
+    {
+      "nova-icon design_align-right": "Design align right"
+    },
+    {
+      "nova-icon design_align-top": "Design align top"
+    },
+    {
+      "nova-icon design_app": "Design app"
+    },
+    {
+      "nova-icon design_artboard": "Design artboard"
+    },
+    {
+      "nova-icon design_blend": "Design blend"
+    },
+    {
+      "nova-icon design_book-bookmark": "Design book bookmark"
+    },
+    {
+      "nova-icon design_book-open": "Design book open"
+    },
+    {
+      "nova-icon design_brush": "Design brush"
+    },
+    {
+      "nova-icon design_bug": "Design bug"
+    },
+    {
+      "nova-icon design_bullet-list-67": "Design bullet list-67"
+    },
+    {
+      "nova-icon design_bullet-list-68": "Design bullet list-68"
+    },
+    {
+      "nova-icon design_bullet-list-69": "Design bullet list-69"
+    },
+    {
+      "nova-icon design_bullet-list-70": "Design bullet list-70"
+    },
+    {
+      "nova-icon design_clone": "Design clone"
+    },
+    {
+      "nova-icon design_code-editor": "Design code editor"
+    },
+    {
+      "nova-icon design_code": "Design code"
+    },
+    {
+      "nova-icon design_collection": "Design collection"
+    },
+    {
+      "nova-icon design_command": "Design command"
+    },
+    {
+      "nova-icon design_compass": "Design compass"
+    },
+    {
+      "nova-icon design_contrast": "Design contrast"
+    },
+    {
+      "nova-icon design_copy": "Design copy"
+    },
+    {
+      "nova-icon design_crop": "Design crop"
+    },
+    {
+      "nova-icon design_cursor-48": "Design cursor 48"
+    },
+    {
+      "nova-icon design_cursor-49": "Design cursor 49"
+    },
+    {
+      "nova-icon design_design-dev": "Design design dev"
+    },
+    {
+      "nova-icon design_design": "Design design"
+    },
+    {
+      "nova-icon design_distribute-horizontal": "Design distribute horizontal"
+    },
+    {
+      "nova-icon design_distribute-vertical": "Design distribute vertical"
+    },
+    {
+      "nova-icon design_drag": "Design drag"
+    },
+    {
+      "nova-icon design_eraser-32": "Design eraser 32"
+    },
+    {
+      "nova-icon design_eraser-33": "Design eraser 33"
+    },
+    {
+      "nova-icon design_eraser-46": "Design eraser 46"
+    },
+    {
+      "nova-icon design_flip-horizontal": "Design flip horizontal"
+    },
+    {
+      "nova-icon design_flip-vertical": "Design flip vertical"
+    },
+    {
+      "nova-icon design_image": "Design image"
+    },
+    {
+      "nova-icon design_magnet": "Design magnet"
+    },
+    {
+      "nova-icon design_marker": "Design marker"
+    },
+    {
+      "nova-icon design_measure-02": "Design measure 02"
+    },
+    {
+      "nova-icon design_measure-17": "Design measure 17"
+    },
+    {
+      "nova-icon design_measure-big": "Design measure big"
+    },
+    {
+      "nova-icon design_mobile-design": "Design mobile design"
+    },
+    {
+      "nova-icon design_mobile-dev": "Design mobile dev"
+    },
+    {
+      "nova-icon design_mouse-08": "Design mouse 08"
+    },
+    {
+      "nova-icon design_mouse-09": "Design mouse 09"
+    },
+    {
+      "nova-icon design_mouse-10": "Design mouse 10"
+    },
+    {
+      "nova-icon design_newsletter-dev": "Design newsletter dev"
+    },
+    {
+      "nova-icon design_note-code": "Design note code"
+    },
+    {
+      "nova-icon design_paint-16": "Design paint 16"
+    },
+    {
+      "nova-icon design_paint-37": "Design paint 37"
+    },
+    {
+      "nova-icon design_paint-38": "Design paint 38"
+    },
+    {
+      "nova-icon design_paint-bucket-39": "Design paint bucket-39"
+    },
+    {
+      "nova-icon design_paint-bucket-40": "Design paint bucket-40"
+    },
+    {
+      "nova-icon design_palette": "Design palette"
+    },
+    {
+      "nova-icon design_pantone": "Design pantone"
+    },
+    {
+      "nova-icon design_paper-design": "Design paper design"
+    },
+    {
+      "nova-icon design_paper-dev": "Design paper dev"
+    },
+    {
+      "nova-icon design_patch-19": "Design patch 19"
+    },
+    {
+      "nova-icon design_patch-34": "Design patch 34"
+    },
+    {
+      "nova-icon design_path-exclude": "Design path exclude"
+    },
+    {
+      "nova-icon design_path-intersect": "Design path intersect"
+    },
+    {
+      "nova-icon design_path-minus": "Design path minus"
+    },
+    {
+      "nova-icon design_path-unite": "Design path unite"
+    },
+    {
+      "nova-icon design_pen-01": "Design pen 01"
+    },
+    {
+      "nova-icon design_pen-23": "Design pen 23"
+    },
+    {
+      "nova-icon design_pen-tool": "Design pen tool"
+    },
+    {
+      "nova-icon design_phone": "Design phone"
+    },
+    {
+      "nova-icon design_photo-editor": "Design photo editor"
+    },
+    {
+      "nova-icon design_responsive": "Design responsive"
+    },
+    {
+      "nova-icon design_scissors-dashed": "Design scissors dashed"
+    },
+    {
+      "nova-icon design_scissors": "Design scissors"
+    },
+    {
+      "nova-icon design_shape-adjust": "Design shape adjust"
+    },
+    {
+      "nova-icon design_shape-circle": "Design shape circle"
+    },
+    {
+      "nova-icon design_shape-polygon": "Design shape polygon"
+    },
+    {
+      "nova-icon design_shape-square": "Design shape square"
+    },
+    {
+      "nova-icon design_shape-triangle": "Design shape triangle"
+    },
+    {
+      "nova-icon design_shapes": "Design shapes"
+    },
+    {
+      "nova-icon design_sharpener": "Design sharpener"
+    },
+    {
+      "nova-icon design_slice": "Design slice"
+    },
+    {
+      "nova-icon design_spray": "Design spray"
+    },
+    {
+      "nova-icon design_stamp": "Design stamp"
+    },
+    {
+      "nova-icon design_tablet-mobile": "Design tablet mobile"
+    },
+    {
+      "nova-icon design_tablet": "Design tablet"
+    },
+    {
+      "nova-icon design_text": "Design text"
+    },
+    {
+      "nova-icon design_todo": "Design todo"
+    },
+    {
+      "nova-icon design_usb": "Design usb"
+    },
+    {
+      "nova-icon design_vector": "Design vector"
+    },
+    {
+      "nova-icon design_wand-11": "Design wand 11"
+    },
+    {
+      "nova-icon design_wand-99": "Design wand 99"
+    },
+    {
+      "nova-icon design_watch-dev": "Design watch dev"
+    },
+    {
+      "nova-icon design_web-design": "Design web design"
+    },
+    {
+      "nova-icon design_webpage": "Design webpage"
+    },
+    {
+      "nova-icon design_window-code": "Design window code"
+    },
+    {
+      "nova-icon design_window-dev": "Design window dev"
+    },
+    {
+      "nova-icon design_window-paragraph": "Design window paragraph"
+    },
+    {
+      "nova-icon design_window-responsive": "Design window responsive"
+    },
+    {
+      "nova-icon design-2_3d-28": "Design 2 3d-28"
+    },
+    {
+      "nova-icon design-2_3d-29": "Design 2 3d-29"
+    },
+    {
+      "nova-icon design-2_android": "Design 2 android"
+    },
+    {
+      "nova-icon design-2_angle": "Design 2 angle"
+    },
+    {
+      "nova-icon design-2_animation-14": "Design 2 animation-14"
+    },
+    {
+      "nova-icon design-2_animation-31": "Design 2 animation-31"
+    },
+    {
+      "nova-icon design-2_animation-32": "Design 2 animation-32"
+    },
+    {
+      "nova-icon design-2_apple": "Design 2 apple"
+    },
+    {
+      "nova-icon design-2_browser-chrome": "Design 2 browser-chrome"
+    },
+    {
+      "nova-icon design-2_browser-edge": "Design 2 browser-edge"
+    },
+    {
+      "nova-icon design-2_browser-firefox": "Design 2 browser-firefox"
+    },
+    {
+      "nova-icon design-2_browser-ie": "Design 2 browser-ie"
+    },
+    {
+      "nova-icon design-2_browser-opera": "Design 2 browser-opera"
+    },
+    {
+      "nova-icon design-2_browser-safari": "Design 2 browser-safari"
+    },
+    {
+      "nova-icon design-2_bucket": "Design 2 bucket"
+    },
+    {
+      "nova-icon design-2_button": "Design 2 button"
+    },
+    {
+      "nova-icon design-2_canvas": "Design 2 canvas"
+    },
+    {
+      "nova-icon design-2_css3": "Design 2 css3"
+    },
+    {
+      "nova-icon design-2_cursor-add": "Design 2 cursor-add"
+    },
+    {
+      "nova-icon design-2_cursor-grab": "Design 2 cursor-grab"
+    },
+    {
+      "nova-icon design-2_cursor-load": "Design 2 cursor-load"
+    },
+    {
+      "nova-icon design-2_cursor-menu": "Design 2 cursor-menu"
+    },
+    {
+      "nova-icon design-2_cursor-not-allowed": "Design 2 cursor-not-allowed"
+    },
+    {
+      "nova-icon design-2_cursor-pointer": "Design 2 cursor-pointer"
+    },
+    {
+      "nova-icon design-2_cursor-text": "Design 2 cursor-text"
+    },
+    {
+      "nova-icon design-2_divider": "Design 2 divider"
+    },
+    {
+      "nova-icon design-2_filter-organization": "Design 2 filter-organization"
+    },
+    {
+      "nova-icon design-2_form": "Design 2 form"
+    },
+    {
+      "nova-icon design-2_frame": "Design 2 frame"
+    },
+    {
+      "nova-icon design-2_group": "Design 2 group"
+    },
+    {
+      "nova-icon design-2_html5": "Design 2 html5"
+    },
+    {
+      "nova-icon design-2_image": "Design 2 image"
+    },
+    {
+      "nova-icon design-2_layers": "Design 2 layers"
+    },
+    {
+      "nova-icon design-2_layout-11": "Design 2 layout-11"
+    },
+    {
+      "nova-icon design-2_layout-25": "Design 2 layout-25"
+    },
+    {
+      "nova-icon design-2_microsoft": "Design 2 microsoft"
+    },
+    {
+      "nova-icon design-2_mirror": "Design 2 mirror"
+    },
+    {
+      "nova-icon design-2_move-down": "Design 2 move-down"
+    },
+    {
+      "nova-icon design-2_move-up": "Design 2 move-up"
+    },
+    {
+      "nova-icon design-2_paint-brush": "Design 2 paint-brush"
+    },
+    {
+      "nova-icon design-2_ruler-pencil": "Design 2 ruler-pencil"
+    },
+    {
+      "nova-icon design-2_scale-down": "Design 2 scale-down"
+    },
+    {
+      "nova-icon design-2_scale-up": "Design 2 scale-up"
+    },
+    {
+      "nova-icon design-2_scale": "Design 2 scale"
+    },
+    {
+      "nova-icon design-2_selection": "Design 2 selection"
+    },
+    {
+      "nova-icon design-2_slider": "Design 2 slider"
+    },
+    {
+      "nova-icon design-2_text": "Design 2 text"
+    },
+    {
+      "nova-icon design-2_transform-origin": "Design 2 transform-origin"
+    },
+    {
+      "nova-icon design-2_transform": "Design 2 transform"
+    },
+    {
+      "nova-icon design-2_ungroup": "Design 2 ungroup"
+    }
+  ],
+  "Emoticons": [
+    {
+      "nova-icon emoticons_alien": "Emoticons alien"
+    },
+    {
+      "nova-icon emoticons_angry-10": "Emoticons angry 10"
+    },
+    {
+      "nova-icon emoticons_angry-44": "Emoticons angry 44"
+    },
+    {
+      "nova-icon emoticons_big-eyes": "Emoticons big eyes"
+    },
+    {
+      "nova-icon emoticons_big-smile": "Emoticons big smile"
+    },
+    {
+      "nova-icon emoticons_bigmouth": "Emoticons bigmouth"
+    },
+    {
+      "nova-icon emoticons_bleah": "Emoticons bleah"
+    },
+    {
+      "nova-icon emoticons_blind": "Emoticons blind"
+    },
+    {
+      "nova-icon emoticons_bomb": "Emoticons bomb"
+    },
+    {
+      "nova-icon emoticons_bored": "Emoticons bored"
+    },
+    {
+      "nova-icon emoticons_cake": "Emoticons cake"
+    },
+    {
+      "nova-icon emoticons_cry-15": "Emoticons cry 15"
+    },
+    {
+      "nova-icon emoticons_cry-57": "Emoticons cry 57"
+    },
+    {
+      "nova-icon emoticons_cute": "Emoticons cute"
+    },
+    {
+      "nova-icon emoticons_devil": "Emoticons devil"
+    },
+    {
+      "nova-icon emoticons_disgusted": "Emoticons disgusted"
+    },
+    {
+      "nova-icon emoticons_fist": "Emoticons fist"
+    },
+    {
+      "nova-icon emoticons_ghost": "Emoticons ghost"
+    },
+    {
+      "nova-icon emoticons_hannibal": "Emoticons hannibal"
+    },
+    {
+      "nova-icon emoticons_happy-sun": "Emoticons happy sun"
+    },
+    {
+      "nova-icon emoticons_kid": "Emoticons kid"
+    },
+    {
+      "nova-icon emoticons_kiss": "Emoticons kiss"
+    },
+    {
+      "nova-icon emoticons_laugh-17": "Emoticons laugh 17"
+    },
+    {
+      "nova-icon emoticons_laugh-35": "Emoticons laugh 35"
+    },
+    {
+      "nova-icon emoticons_like-no": "Emoticons like no"
+    },
+    {
+      "nova-icon emoticons_like": "Emoticons like"
+    },
+    {
+      "nova-icon emoticons_mad-12": "Emoticons mad 12"
+    },
+    {
+      "nova-icon emoticons_mad-58": "Emoticons mad 58"
+    },
+    {
+      "nova-icon emoticons_malicious": "Emoticons malicious"
+    },
+    {
+      "nova-icon emoticons_manga-62": "Emoticons manga 62"
+    },
+    {
+      "nova-icon emoticons_manga-63": "Emoticons manga 63"
+    },
+    {
+      "nova-icon emoticons_monster": "Emoticons monster"
+    },
+    {
+      "nova-icon emoticons_nerd-22": "Emoticons nerd 22"
+    },
+    {
+      "nova-icon emoticons_nerd-23": "Emoticons nerd 23"
+    },
+    {
+      "nova-icon emoticons_ninja": "Emoticons ninja"
+    },
+    {
+      "nova-icon emoticons_no-words": "Emoticons no words"
+    },
+    {
+      "nova-icon emoticons_parrot": "Emoticons parrot"
+    },
+    {
+      "nova-icon emoticons_penguin": "Emoticons penguin"
+    },
+    {
+      "nova-icon emoticons_pirate": "Emoticons pirate"
+    },
+    {
+      "nova-icon emoticons_poop": "Emoticons poop"
+    },
+    {
+      "nova-icon emoticons_puzzled": "Emoticons puzzled"
+    },
+    {
+      "nova-icon emoticons_quite-happy": "Emoticons quite happy"
+    },
+    {
+      "nova-icon emoticons_robot": "Emoticons robot"
+    },
+    {
+      "nova-icon emoticons_rock": "Emoticons rock"
+    },
+    {
+      "nova-icon emoticons_sad": "Emoticons sad"
+    },
+    {
+      "nova-icon emoticons_satisfied": "Emoticons satisfied"
+    },
+    {
+      "nova-icon emoticons_shark": "Emoticons shark"
+    },
+    {
+      "nova-icon emoticons_shy": "Emoticons shy"
+    },
+    {
+      "nova-icon emoticons_sick": "Emoticons sick"
+    },
+    {
+      "nova-icon emoticons_silly": "Emoticons silly"
+    },
+    {
+      "nova-icon emoticons_skull": "Emoticons skull"
+    },
+    {
+      "nova-icon emoticons_sleep": "Emoticons sleep"
+    },
+    {
+      "nova-icon emoticons_sloth": "Emoticons sloth"
+    },
+    {
+      "nova-icon emoticons_smart": "Emoticons smart"
+    },
+    {
+      "nova-icon emoticons_smile": "Emoticons smile"
+    },
+    {
+      "nova-icon emoticons_soldier": "Emoticons soldier"
+    },
+    {
+      "nova-icon emoticons_speechless": "Emoticons speechless"
+    },
+    {
+      "nova-icon emoticons_spiteful": "Emoticons spiteful"
+    },
+    {
+      "nova-icon emoticons_sunglasses-48": "Emoticons sunglasses 48"
+    },
+    {
+      "nova-icon emoticons_sunglasses-49": "Emoticons sunglasses 49"
+    },
+    {
+      "nova-icon emoticons_surprise": "Emoticons surprise"
+    },
+    {
+      "nova-icon emoticons_upset-13": "Emoticons upset 13"
+    },
+    {
+      "nova-icon emoticons_upset-14": "Emoticons upset 14"
+    },
+    {
+      "nova-icon emoticons_virus": "Emoticons virus"
+    },
+    {
+      "nova-icon emoticons_what": "Emoticons what"
+    },
+    {
+      "nova-icon emoticons_whiskers": "Emoticons whiskers"
+    },
+    {
+      "nova-icon emoticons_wink-06": "Emoticons wink 06"
+    },
+    {
+      "nova-icon emoticons_wink-11": "Emoticons wink 11"
+    },
+    {
+      "nova-icon emoticons_wink-69": "Emoticons wink 69"
+    }
+  ],
+  "Energy & Environment": [
+    {
+      "nova-icon envir_bulb-saver": "Envir bulb saver"
+    },
+    {
+      "nova-icon envir_bulb": "Envir bulb"
+    },
+    {
+      "nova-icon envir_car": "Envir car"
+    },
+    {
+      "nova-icon envir_fuel-electric": "Envir fuel electric"
+    },
+    {
+      "nova-icon envir_fuel": "Envir fuel"
+    },
+    {
+      "nova-icon envir_home": "Envir home"
+    },
+    {
+      "nova-icon envir_level": "Envir level"
+    },
+    {
+      "nova-icon envir_panel": "Envir panel"
+    },
+    {
+      "nova-icon envir_radiation": "Envir radiation"
+    },
+    {
+      "nova-icon envir_recycling": "Envir recycling"
+    },
+    {
+      "nova-icon envir_save-planet": "Envir save planet"
+    },
+    {
+      "nova-icon envir_waste-danger": "Envir waste danger"
+    },
+    {
+      "nova-icon envir_waste-recycling": "Envir waste recycling"
+    },
+    {
+      "nova-icon envir_waste": "Envir waste"
+    },
+    {
+      "nova-icon envir_water-hand": "Envir water hand"
+    },
+    {
+      "nova-icon envir_water-sink": "Envir water sink"
+    },
+    {
+      "nova-icon envir_water": "Envir water"
+    },
+    {
+      "nova-icon envir_wind": "Envir wind"
+    }
+  ],
+  "Files & Folders": [
+    {
+      "nova-icon files_add": "Files add"
+    },
+    {
+      "nova-icon files_archive-3d-check": "Files archive 3d-check"
+    },
+    {
+      "nova-icon files_archive-3d-content": "Files archive 3d-content"
+    },
+    {
+      "nova-icon files_archive-check": "Files archive check"
+    },
+    {
+      "nova-icon files_archive-content": "Files archive content"
+    },
+    {
+      "nova-icon files_archive-paper-check": "Files archive paper-check"
+    },
+    {
+      "nova-icon files_archive-paper": "Files archive paper"
+    },
+    {
+      "nova-icon files_archive": "Files archive"
+    },
+    {
+      "nova-icon files_audio": "Files audio"
+    },
+    {
+      "nova-icon files_book-07": "Files book 07"
+    },
+    {
+      "nova-icon files_book-08": "Files book 08"
+    },
+    {
+      "nova-icon files_bookmark": "Files bookmark"
+    },
+    {
+      "nova-icon files_box": "Files box"
+    },
+    {
+      "nova-icon files_chart-bar": "Files chart bar"
+    },
+    {
+      "nova-icon files_chart-pie": "Files chart pie"
+    },
+    {
+      "nova-icon files_check": "Files check"
+    },
+    {
+      "nova-icon files_cloud": "Files cloud"
+    },
+    {
+      "nova-icon files_copy": "Files copy"
+    },
+    {
+      "nova-icon files_dev": "Files dev"
+    },
+    {
+      "nova-icon files_download": "Files download"
+    },
+    {
+      "nova-icon files_drawer": "Files drawer"
+    },
+    {
+      "nova-icon files_edit": "Files edit"
+    },
+    {
+      "nova-icon files_exclamation": "Files exclamation"
+    },
+    {
+      "nova-icon files_folder-13": "Files folder 13"
+    },
+    {
+      "nova-icon files_folder-14": "Files folder 14"
+    },
+    {
+      "nova-icon files_folder-15": "Files folder 15"
+    },
+    {
+      "nova-icon files_folder-16": "Files folder 16"
+    },
+    {
+      "nova-icon files_folder-17": "Files folder 17"
+    },
+    {
+      "nova-icon files_folder-18": "Files folder 18"
+    },
+    {
+      "nova-icon files_folder-19": "Files folder 19"
+    },
+    {
+      "nova-icon files_folder-add": "Files folder add"
+    },
+    {
+      "nova-icon files_folder-audio": "Files folder audio"
+    },
+    {
+      "nova-icon files_folder-bookmark": "Files folder bookmark"
+    },
+    {
+      "nova-icon files_folder-chart-bar": "Files folder chart-bar"
+    },
+    {
+      "nova-icon files_folder-chart-pie": "Files folder chart-pie"
+    },
+    {
+      "nova-icon files_folder-check": "Files folder check"
+    },
+    {
+      "nova-icon files_folder-cloud": "Files folder cloud"
+    },
+    {
+      "nova-icon files_folder-dev": "Files folder dev"
+    },
+    {
+      "nova-icon files_folder-download": "Files folder download"
+    },
+    {
+      "nova-icon files_folder-edit": "Files folder edit"
+    },
+    {
+      "nova-icon files_folder-exclamation": "Files folder exclamation"
+    },
+    {
+      "nova-icon files_folder-gallery": "Files folder gallery"
+    },
+    {
+      "nova-icon files_folder-heart": "Files folder heart"
+    },
+    {
+      "nova-icon files_folder-image": "Files folder image"
+    },
+    {
+      "nova-icon files_folder-info": "Files folder info"
+    },
+    {
+      "nova-icon files_folder-link": "Files folder link"
+    },
+    {
+      "nova-icon files_folder-locked": "Files folder locked"
+    },
+    {
+      "nova-icon files_folder-money": "Files folder money"
+    },
+    {
+      "nova-icon files_folder-music": "Files folder music"
+    },
+    {
+      "nova-icon files_folder-no-access": "Files folder no-access"
+    },
+    {
+      "nova-icon files_folder-play": "Files folder play"
+    },
+    {
+      "nova-icon files_folder-question": "Files folder question"
+    },
+    {
+      "nova-icon files_folder-refresh": "Files folder refresh"
+    },
+    {
+      "nova-icon files_folder-remove": "Files folder remove"
+    },
+    {
+      "nova-icon files_folder-search": "Files folder search"
+    },
+    {
+      "nova-icon files_folder-settings-81": "Files folder settings-81"
+    },
+    {
+      "nova-icon files_folder-settings-97": "Files folder settings-97"
+    },
+    {
+      "nova-icon files_folder-shared": "Files folder shared"
+    },
+    {
+      "nova-icon files_folder-star": "Files folder star"
+    },
+    {
+      "nova-icon files_folder-time": "Files folder time"
+    },
+    {
+      "nova-icon files_folder-upload": "Files folder upload"
+    },
+    {
+      "nova-icon files_folder-user": "Files folder user"
+    },
+    {
+      "nova-icon files_folder-vector": "Files folder vector"
+    },
+    {
+      "nova-icon files_gallery": "Files gallery"
+    },
+    {
+      "nova-icon files_heart": "Files heart"
+    },
+    {
+      "nova-icon files_image": "Files image"
+    },
+    {
+      "nova-icon files_info": "Files info"
+    },
+    {
+      "nova-icon files_link": "Files link"
+    },
+    {
+      "nova-icon files_locked": "Files locked"
+    },
+    {
+      "nova-icon files_money": "Files money"
+    },
+    {
+      "nova-icon files_music": "Files music"
+    },
+    {
+      "nova-icon files_no-access": "Files no access"
+    },
+    {
+      "nova-icon files_notebook": "Files notebook"
+    },
+    {
+      "nova-icon files_paper": "Files paper"
+    },
+    {
+      "nova-icon files_play": "Files play"
+    },
+    {
+      "nova-icon files_question": "Files question"
+    },
+    {
+      "nova-icon files_refresh": "Files refresh"
+    },
+    {
+      "nova-icon files_remove": "Files remove"
+    },
+    {
+      "nova-icon files_replace-folder": "Files replace folder"
+    },
+    {
+      "nova-icon files_replace": "Files replace"
+    },
+    {
+      "nova-icon files_search": "Files search"
+    },
+    {
+      "nova-icon files_settings-46": "Files settings 46"
+    },
+    {
+      "nova-icon files_settings-99": "Files settings 99"
+    },
+    {
+      "nova-icon files_shared": "Files shared"
+    },
+    {
+      "nova-icon files_single-content-02": "Files single content-02"
+    },
+    {
+      "nova-icon files_single-content-03": "Files single content-03"
+    },
+    {
+      "nova-icon files_single-copies": "Files single copies"
+    },
+    {
+      "nova-icon files_single-copy-04": "Files single copy-04"
+    },
+    {
+      "nova-icon files_single-copy-06": "Files single copy-06"
+    },
+    {
+      "nova-icon files_single-folded-content": "Files single folded-content"
+    },
+    {
+      "nova-icon files_single-folded": "Files single folded"
+    },
+    {
+      "nova-icon files_single-paragraph": "Files single paragraph"
+    },
+    {
+      "nova-icon files_single": "Files single"
+    },
+    {
+      "nova-icon files_star": "Files star"
+    },
+    {
+      "nova-icon files_time": "Files time"
+    },
+    {
+      "nova-icon files_upload": "Files upload"
+    },
+    {
+      "nova-icon files_user": "Files user"
+    },
+    {
+      "nova-icon files_vector": "Files vector"
+    },
+    {
+      "nova-icon files_zip-54": "Files zip 54"
+    },
+    {
+      "nova-icon files_zip-55": "Files zip 55"
+    },
+    {
+      "nova-icon files_ai-illustrator": "Files 2 ai-illustrator"
+    },
+    {
+      "nova-icon files_avi": "Files 2 avi"
+    },
+    {
+      "nova-icon files_css": "Files 2 css"
+    },
+    {
+      "nova-icon files_csv": "Files 2 csv"
+    },
+    {
+      "nova-icon files_doc": "Files 2 doc"
+    },
+    {
+      "nova-icon files_docx": "Files 2 docx"
+    },
+    {
+      "nova-icon files_epub": "Files 2 epub"
+    },
+    {
+      "nova-icon files_exe": "Files 2 exe"
+    },
+    {
+      "nova-icon files_font": "Files 2 font"
+    },
+    {
+      "nova-icon files_gif": "Files 2 gif"
+    },
+    {
+      "nova-icon files_html": "Files 2 html"
+    },
+    {
+      "nova-icon files_jpg-jpeg": "Files 2 jpg-jpeg"
+    },
+    {
+      "nova-icon files_js-javascript-jquery": "Files 2 js-javascript-jquery"
+    },
+    {
+      "nova-icon files_mov": "Files 3 mov"
+    },
+    {
+      "nova-icon files_mp3": "Files 3 mp3"
+    },
+    {
+      "nova-icon files_mp4": "Files 3 mp4"
+    },
+    {
+      "nova-icon files_pdf": "Files 3 pdf"
+    },
+    {
+      "nova-icon files_png": "Files 3 png"
+    },
+    {
+      "nova-icon files_psd-photoshop": "Files 3 psd-photoshop"
+    },
+    {
+      "nova-icon files_rar": "Files 3 rar"
+    },
+    {
+      "nova-icon files_sketch": "Files 3 sketch"
+    },
+    {
+      "nova-icon files_svg": "Files 3 svg"
+    },
+    {
+      "nova-icon files_txt": "Files 3 txt"
+    },
+    {
+      "nova-icon files_wav": "Files 3 wav"
+    },
+    {
+      "nova-icon files_zip": "Files 3 zip"
+    }
+  ],
+  "Food": [
+    {
+      "nova-icon food_alcohol": "Food alcohol"
+    },
+    {
+      "nova-icon food_apple": "Food apple"
+    },
+    {
+      "nova-icon food_baby": "Food baby"
+    },
+    {
+      "nova-icon food_bacon": "Food bacon"
+    },
+    {
+      "nova-icon food_baguette": "Food baguette"
+    },
+    {
+      "nova-icon food_banana": "Food banana"
+    },
+    {
+      "nova-icon food_barbecue-02": "Food barbecue 02"
+    },
+    {
+      "nova-icon food_barbecue-15": "Food barbecue 15"
+    },
+    {
+      "nova-icon food_barbecue-tools": "Food barbecue tools"
+    },
+    {
+      "nova-icon food_beer-95": "Food beer 95"
+    },
+    {
+      "nova-icon food_beer-96": "Food beer 96"
+    },
+    {
+      "nova-icon food_beverage": "Food beverage"
+    },
+    {
+      "nova-icon food_bottle-wine": "Food bottle wine"
+    },
+    {
+      "nova-icon food_bottle": "Food bottle"
+    },
+    {
+      "nova-icon food_bowl": "Food bowl"
+    },
+    {
+      "nova-icon food_bread": "Food bread"
+    },
+    {
+      "nova-icon food_broccoli": "Food broccoli"
+    },
+    {
+      "nova-icon food_cake-13": "Food cake 13"
+    },
+    {
+      "nova-icon food_cake-100": "Food cake 100"
+    },
+    {
+      "nova-icon food_cake-slice": "Food cake slice"
+    },
+    {
+      "nova-icon food_candle": "Food candle"
+    },
+    {
+      "nova-icon food_candy": "Food candy"
+    },
+    {
+      "nova-icon food_carrot": "Food carrot"
+    },
+    {
+      "nova-icon food_champagne": "Food champagne"
+    },
+    {
+      "nova-icon food_cheese-24": "Food cheese 24"
+    },
+    {
+      "nova-icon food_cheese-87": "Food cheese 87"
+    },
+    {
+      "nova-icon food_cheeseburger": "Food cheeseburger"
+    },
+    {
+      "nova-icon food_chef-hat": "Food chef hat"
+    },
+    {
+      "nova-icon food_cherry": "Food cherry"
+    },
+    {
+      "nova-icon food_chicken": "Food chicken"
+    },
+    {
+      "nova-icon food_chili": "Food chili"
+    },
+    {
+      "nova-icon food_chinese": "Food chinese"
+    },
+    {
+      "nova-icon food_chips": "Food chips"
+    },
+    {
+      "nova-icon food_chocolate": "Food chocolate"
+    },
+    {
+      "nova-icon food_cocktail": "Food cocktail"
+    },
+    {
+      "nova-icon food_coffe-long": "Food coffe long"
+    },
+    {
+      "nova-icon food_coffee-long": "Food coffee long"
+    },
+    {
+      "nova-icon food_coffee": "Food coffee"
+    },
+    {
+      "nova-icon food_cookies": "Food cookies"
+    },
+    {
+      "nova-icon food_course": "Food course"
+    },
+    {
+      "nova-icon food_crab": "Food crab"
+    },
+    {
+      "nova-icon food_croissant": "Food croissant"
+    },
+    {
+      "nova-icon food_cutlery-75": "Food cutlery 75"
+    },
+    {
+      "nova-icon food_cutlery-76": "Food cutlery 76"
+    },
+    {
+      "nova-icon food_cutlery-77": "Food cutlery 77"
+    },
+    {
+      "nova-icon food_dishwasher": "Food dishwasher"
+    },
+    {
+      "nova-icon food_donut": "Food donut"
+    },
+    {
+      "nova-icon food_drink": "Food drink"
+    },
+    {
+      "nova-icon food_egg": "Food egg"
+    },
+    {
+      "nova-icon food_energy-drink": "Food energy drink"
+    },
+    {
+      "nova-icon food_fish": "Food fish"
+    },
+    {
+      "nova-icon food_fishbone": "Food fishbone"
+    },
+    {
+      "nova-icon food_fridge": "Food fridge"
+    },
+    {
+      "nova-icon food_glass": "Food glass"
+    },
+    {
+      "nova-icon food_grape": "Food grape"
+    },
+    {
+      "nova-icon food_hob": "Food hob"
+    },
+    {
+      "nova-icon food_hot-dog": "Food hot dog"
+    },
+    {
+      "nova-icon food_ice-cream-22": "Food ice cream-22"
+    },
+    {
+      "nova-icon food_ice-cream-72": "Food ice cream-72"
+    },
+    {
+      "nova-icon food_jam": "Food jam"
+    },
+    {
+      "nova-icon food_kettle": "Food kettle"
+    },
+    {
+      "nova-icon food_kitchen-fan": "Food kitchen fan"
+    },
+    {
+      "nova-icon food_knife": "Food knife"
+    },
+    {
+      "nova-icon food_lemon-slice": "Food lemon slice"
+    },
+    {
+      "nova-icon food_lighter": "Food lighter"
+    },
+    {
+      "nova-icon food_lobster": "Food lobster"
+    },
+    {
+      "nova-icon food_matches": "Food matches"
+    },
+    {
+      "nova-icon food_measuring-cup": "Food measuring cup"
+    },
+    {
+      "nova-icon food_meat-spit": "Food meat spit"
+    },
+    {
+      "nova-icon food_microwave": "Food microwave"
+    },
+    {
+      "nova-icon food_milk": "Food milk"
+    },
+    {
+      "nova-icon food_moka": "Food moka"
+    },
+    {
+      "nova-icon food_muffin": "Food muffin"
+    },
+    {
+      "nova-icon food_mug": "Food mug"
+    },
+    {
+      "nova-icon food_oven": "Food oven"
+    },
+    {
+      "nova-icon food_pan": "Food pan"
+    },
+    {
+      "nova-icon food_pizza-slice": "Food pizza slice"
+    },
+    {
+      "nova-icon food_pizza": "Food pizza"
+    },
+    {
+      "nova-icon food_plate": "Food plate"
+    },
+    {
+      "nova-icon food_pot": "Food pot"
+    },
+    {
+      "nova-icon food_prosciutto": "Food prosciutto"
+    },
+    {
+      "nova-icon food_recipe-book-46": "Food recipe book-46"
+    },
+    {
+      "nova-icon food_recipe-book-47": "Food recipe book-47"
+    },
+    {
+      "nova-icon food_rolling-pin": "Food rolling pin"
+    },
+    {
+      "nova-icon food_salt": "Food salt"
+    },
+    {
+      "nova-icon food_sausage": "Food sausage"
+    },
+    {
+      "nova-icon food_scale": "Food scale"
+    },
+    {
+      "nova-icon food_scotch": "Food scotch"
+    },
+    {
+      "nova-icon food_shrimp": "Food shrimp"
+    },
+    {
+      "nova-icon food_steak": "Food steak"
+    },
+    {
+      "nova-icon food_store": "Food store"
+    },
+    {
+      "nova-icon food_strawberry": "Food strawberry"
+    },
+    {
+      "nova-icon food_sushi": "Food sushi"
+    },
+    {
+      "nova-icon food_tacos": "Food tacos"
+    },
+    {
+      "nova-icon food_tea": "Food tea"
+    },
+    {
+      "nova-icon food_temperature": "Food temperature"
+    },
+    {
+      "nova-icon food_vest-07": "Food vest 07"
+    },
+    {
+      "nova-icon food_vest-31": "Food vest 31"
+    },
+    {
+      "nova-icon food_watermelon": "Food watermelon"
+    },
+    {
+      "nova-icon food_whisk": "Food whisk"
+    }
+  ],
+  "Healthcare & Medical": [
+    {
+      "nova-icon health_ambulance": "Health ambulance"
+    },
+    {
+      "nova-icon health_apple": "Health apple"
+    },
+    {
+      "nova-icon health_bag-49": "Health bag 49"
+    },
+    {
+      "nova-icon health_bag-50": "Health bag 50"
+    },
+    {
+      "nova-icon health_brain": "Health brain"
+    },
+    {
+      "nova-icon health_dna-27": "Health dna 27"
+    },
+    {
+      "nova-icon health_dna-38": "Health dna 38"
+    },
+    {
+      "nova-icon health_doctor": "Health doctor"
+    },
+    {
+      "nova-icon health_flask": "Health flask"
+    },
+    {
+      "nova-icon health_heartbeat-16": "Health heartbeat 16"
+    },
+    {
+      "nova-icon health_height": "Health height"
+    },
+    {
+      "nova-icon health_hospital-32": "Health hospital 32"
+    },
+    {
+      "nova-icon health_hospital-33": "Health hospital 33"
+    },
+    {
+      "nova-icon health_hospital-34": "Health hospital 34"
+    },
+    {
+      "nova-icon health_humidity-26": "Health humidity 26"
+    },
+    {
+      "nova-icon health_humidity-52": "Health humidity 52"
+    },
+    {
+      "nova-icon health_intestine": "Health intestine"
+    },
+    {
+      "nova-icon health_lungs": "Health lungs"
+    },
+    {
+      "nova-icon health_molecule-39": "Health molecule 39"
+    },
+    {
+      "nova-icon health_molecule-40": "Health molecule 40"
+    },
+    {
+      "nova-icon health_notebook": "Health notebook"
+    },
+    {
+      "nova-icon health_nurse": "Health nurse"
+    },
+    {
+      "nova-icon health_patch-46": "Health patch 46"
+    },
+    {
+      "nova-icon health_pill-42": "Health pill 42"
+    },
+    {
+      "nova-icon health_pill-43": "Health pill 43"
+    },
+    {
+      "nova-icon health_pill-container-44": "Health pill container-44"
+    },
+    {
+      "nova-icon health_pill-container-47": "Health pill container-47"
+    },
+    {
+      "nova-icon health_pulse-chart": "Health pulse chart"
+    },
+    {
+      "nova-icon health_pulse-phone": "Health pulse phone"
+    },
+    {
+      "nova-icon health_pulse-sleep": "Health pulse sleep"
+    },
+    {
+      "nova-icon health_pulse-watch": "Health pulse watch"
+    },
+    {
+      "nova-icon health_pulse": "Health pulse"
+    },
+    {
+      "nova-icon health_sleep": "Health sleep"
+    },
+    {
+      "nova-icon health_steps": "Health steps"
+    },
+    {
+      "nova-icon health_syringe": "Health syringe"
+    },
+    {
+      "nova-icon health_temperature-23": "Health temperature 23"
+    },
+    {
+      "nova-icon health_temperature-24": "Health temperature 24"
+    },
+    {
+      "nova-icon health_tooth": "Health tooth"
+    },
+    {
+      "nova-icon health_weed": "Health weed"
+    },
+    {
+      "nova-icon health_weight": "Health weight"
+    },
+    {
+      "nova-icon health_wheelchair": "Health wheelchair"
+    },
+    {
+      "nova-icon health_woman": "Health woman"
+    }
+  ],
+  "Holidays": [
+    {
+      "nova-icon holidays_bat": "Holidays bat"
+    },
+    {
+      "nova-icon holidays_biscuit": "Holidays biscuit"
+    },
+    {
+      "nova-icon holidays_bones": "Holidays bones"
+    },
+    {
+      "nova-icon holidays_boot": "Holidays boot"
+    },
+    {
+      "nova-icon holidays_candy": "Holidays candy"
+    },
+    {
+      "nova-icon holidays_cat": "Holidays cat"
+    },
+    {
+      "nova-icon holidays_cauldron": "Holidays cauldron"
+    },
+    {
+      "nova-icon holidays_chimney": "Holidays chimney"
+    },
+    {
+      "nova-icon holidays_cockade": "Holidays cockade"
+    },
+    {
+      "nova-icon holidays_coffin": "Holidays coffin"
+    },
+    {
+      "nova-icon holidays_dead-hand": "Holidays dead hand"
+    },
+    {
+      "nova-icon holidays_decoration": "Holidays decoration"
+    },
+    {
+      "nova-icon holidays_deer": "Holidays deer"
+    },
+    {
+      "nova-icon holidays_egg-38": "Holidays egg 38"
+    },
+    {
+      "nova-icon holidays_egg-39": "Holidays egg 39"
+    },
+    {
+      "nova-icon holidays_frankenstein": "Holidays frankenstein"
+    },
+    {
+      "nova-icon holidays_ghost": "Holidays ghost"
+    },
+    {
+      "nova-icon holidays_gift-exchange": "Holidays gift exchange"
+    },
+    {
+      "nova-icon holidays_gift": "Holidays gift"
+    },
+    {
+      "nova-icon holidays_glove": "Holidays glove"
+    },
+    {
+      "nova-icon holidays_grave": "Holidays grave"
+    },
+    {
+      "nova-icon holidays_light": "Holidays light"
+    },
+    {
+      "nova-icon holidays_message": "Holidays message"
+    },
+    {
+      "nova-icon holidays_mistletoe": "Holidays mistletoe"
+    },
+    {
+      "nova-icon holidays_owl": "Holidays owl"
+    },
+    {
+      "nova-icon holidays_pumpkin": "Holidays pumpkin"
+    },
+    {
+      "nova-icon holidays_rabbit": "Holidays rabbit"
+    },
+    {
+      "nova-icon holidays_santa-hat": "Holidays santa hat"
+    },
+    {
+      "nova-icon holidays_sickle": "Holidays sickle"
+    },
+    {
+      "nova-icon holidays_snow-ball": "Holidays snow ball"
+    },
+    {
+      "nova-icon holidays_snowman-head": "Holidays snowman head"
+    },
+    {
+      "nova-icon holidays_snowman": "Holidays snowman"
+    },
+    {
+      "nova-icon holidays_soak": "Holidays soak"
+    },
+    {
+      "nova-icon holidays_spider": "Holidays spider"
+    },
+    {
+      "nova-icon holidays_tree-ball": "Holidays tree ball"
+    },
+    {
+      "nova-icon holidays_tree": "Holidays tree"
+    },
+    {
+      "nova-icon holidays_vampire": "Holidays vampire"
+    },
+    {
+      "nova-icon holidays_witch-hat": "Holidays witch hat"
+    },
+    {
+      "nova-icon holidays_wolf": "Holidays wolf"
+    },
+    {
+      "nova-icon holidays_zombie": "Holidays zombie"
+    }
+  ],
+  "Home furniture": [
+    {
+      "nova-icon furniture_air-conditioner": "Furniture air conditioner"
+    },
+    {
+      "nova-icon furniture_armchair": "Furniture armchair"
+    },
+    {
+      "nova-icon furniture_bath-tub": "Furniture bath tub"
+    },
+    {
+      "nova-icon furniture_bed-09": "Furniture bed 09"
+    },
+    {
+      "nova-icon furniture_bed-23": "Furniture bed 23"
+    },
+    {
+      "nova-icon furniture_bed-side": "Furniture bed side"
+    },
+    {
+      "nova-icon furniture_cabinet": "Furniture cabinet"
+    },
+    {
+      "nova-icon furniture_cactus": "Furniture cactus"
+    },
+    {
+      "nova-icon furniture_chair": "Furniture chair"
+    },
+    {
+      "nova-icon furniture_coat-hanger": "Furniture coat hanger"
+    },
+    {
+      "nova-icon furniture_coffee": "Furniture coffee"
+    },
+    {
+      "nova-icon furniture_cradle": "Furniture cradle"
+    },
+    {
+      "nova-icon furniture_curtain": "Furniture curtain"
+    },
+    {
+      "nova-icon furniture_desk-drawer": "Furniture desk drawer"
+    },
+    {
+      "nova-icon furniture_desk": "Furniture desk"
+    },
+    {
+      "nova-icon furniture_door": "Furniture door"
+    },
+    {
+      "nova-icon furniture_drawer": "Furniture drawer"
+    },
+    {
+      "nova-icon furniture_fridge": "Furniture fridge"
+    },
+    {
+      "nova-icon furniture_hanger-clothes": "Furniture hanger clothes"
+    },
+    {
+      "nova-icon furniture_hanger": "Furniture hanger"
+    },
+    {
+      "nova-icon furniture_heater": "Furniture heater"
+    },
+    {
+      "nova-icon furniture_iron": "Furniture iron"
+    },
+    {
+      "nova-icon furniture_lamp-floor": "Furniture lamp floor"
+    },
+    {
+      "nova-icon furniture_lamp": "Furniture lamp"
+    },
+    {
+      "nova-icon furniture_library": "Furniture library"
+    },
+    {
+      "nova-icon furniture_light": "Furniture light"
+    },
+    {
+      "nova-icon furniture_mixer": "Furniture mixer"
+    },
+    {
+      "nova-icon furniture_oven": "Furniture oven"
+    },
+    {
+      "nova-icon furniture_shower": "Furniture shower"
+    },
+    {
+      "nova-icon furniture_sink-wash": "Furniture sink wash"
+    },
+    {
+      "nova-icon furniture_sink": "Furniture sink"
+    },
+    {
+      "nova-icon furniture_sofa": "Furniture sofa"
+    },
+    {
+      "nova-icon furniture_storage-hanger": "Furniture storage hanger"
+    },
+    {
+      "nova-icon furniture_storage": "Furniture storage"
+    },
+    {
+      "nova-icon furniture_table": "Furniture table"
+    },
+    {
+      "nova-icon furniture_toilet-paper": "Furniture toilet paper"
+    },
+    {
+      "nova-icon furniture_toilet": "Furniture toilet"
+    },
+    {
+      "nova-icon furniture_tv": "Furniture tv"
+    },
+    {
+      "nova-icon furniture_wardrobe": "Furniture wardrobe"
+    },
+    {
+      "nova-icon furniture_wash": "Furniture wash"
+    }
+  ],
+  "Maps & Location": [
+    {
+      "nova-icon location_appointment": "Location appointment"
+    },
+    {
+      "nova-icon location_bookmark-add": "Location bookmark add"
+    },
+    {
+      "nova-icon location_bookmark-remove": "Location bookmark remove"
+    },
+    {
+      "nova-icon location_bookmark": "Location bookmark"
+    },
+    {
+      "nova-icon location_compass-04": "Location compass 04"
+    },
+    {
+      "nova-icon location_compass-05": "Location compass 05"
+    },
+    {
+      "nova-icon location_compass-06": "Location compass 06"
+    },
+    {
+      "nova-icon location_crosshair": "Location crosshair"
+    },
+    {
+      "nova-icon location_explore-user": "Location explore user"
+    },
+    {
+      "nova-icon location_explore": "Location explore"
+    },
+    {
+      "nova-icon location_flag-complex": "Location flag complex"
+    },
+    {
+      "nova-icon location_flag-diagonal-33": "Location flag diagonal-33"
+    },
+    {
+      "nova-icon location_flag-diagonal-34": "Location flag diagonal-34"
+    },
+    {
+      "nova-icon location_flag-points-31": "Location flag points-31"
+    },
+    {
+      "nova-icon location_flag-points-32": "Location flag points-32"
+    },
+    {
+      "nova-icon location_flag-simple": "Location flag simple"
+    },
+    {
+      "nova-icon location_flag-triangle": "Location flag triangle"
+    },
+    {
+      "nova-icon location_flag": "Location flag"
+    },
+    {
+      "nova-icon location_gps": "Location gps"
+    },
+    {
+      "nova-icon location_map-big": "Location map big"
+    },
+    {
+      "nova-icon location_map-compass": "Location map compass"
+    },
+    {
+      "nova-icon location_map-gps": "Location map gps"
+    },
+    {
+      "nova-icon location_map-marker": "Location map marker"
+    },
+    {
+      "nova-icon location_map-pin": "Location map pin"
+    },
+    {
+      "nova-icon location_map": "Location map"
+    },
+    {
+      "nova-icon location_marker": "Location marker"
+    },
+    {
+      "nova-icon location_pin-add": "Location pin add"
+    },
+    {
+      "nova-icon location_pin-copy": "Location pin copy"
+    },
+    {
+      "nova-icon location_pin-remove": "Location pin remove"
+    },
+    {
+      "nova-icon location_pin": "Location pin"
+    },
+    {
+      "nova-icon location_pins": "Location pins"
+    },
+    {
+      "nova-icon location_position-marker": "Location position marker"
+    },
+    {
+      "nova-icon location_position-pin": "Location position pin"
+    },
+    {
+      "nova-icon location_position-user": "Location position user"
+    },
+    {
+      "nova-icon location_radar": "Location radar"
+    },
+    {
+      "nova-icon location_road": "Location road"
+    },
+    {
+      "nova-icon location_route-alert": "Location route alert"
+    },
+    {
+      "nova-icon location_route-close": "Location route close"
+    },
+    {
+      "nova-icon location_route-open": "Location route open"
+    },
+    {
+      "nova-icon location_square-marker": "Location square marker"
+    },
+    {
+      "nova-icon location_square-pin": "Location square pin"
+    },
+    {
+      "nova-icon location_treasure-map-21": "Location treasure map-21"
+    },
+    {
+      "nova-icon location_treasure-map-40": "Location treasure map-40"
+    },
+    {
+      "nova-icon location_worl-marker": "Location worl marker"
+    },
+    {
+      "nova-icon location_world-pin": "Location world pin"
+    },
+    {
+      "nova-icon location_world": "Location world"
+    }
+  ],
+  "Media": [
+    {
+      "nova-icon media_3d": "Media 1 3d"
+    },
+    {
+      "nova-icon media_action-73": "Media 1 action-73"
+    },
+    {
+      "nova-icon media_action-74": "Media 1 action-74"
+    },
+    {
+      "nova-icon media_album": "Media 1 album"
+    },
+    {
+      "nova-icon media_audio-91": "Media 1 audio-91"
+    },
+    {
+      "nova-icon media_audio-92": "Media 1 audio-92"
+    },
+    {
+      "nova-icon media_balance": "Media 1 balance"
+    },
+    {
+      "nova-icon media_brightness-46": "Media 1 brightness-46"
+    },
+    {
+      "nova-icon media_brightness-47": "Media 1 brightness-47"
+    },
+    {
+      "nova-icon media_button-circle-pause": "Media 1 button-circle-pause"
+    },
+    {
+      "nova-icon media_button-circle-play": "Media 1 button-circle-play"
+    },
+    {
+      "nova-icon media_button-circle-stop": "Media 1 button-circle-stop"
+    },
+    {
+      "nova-icon media_button-eject": "Media 1 button-eject"
+    },
+    {
+      "nova-icon media_button-next": "Media 1 button-next"
+    },
+    {
+      "nova-icon media_button-pause": "Media 1 button-pause"
+    },
+    {
+      "nova-icon media_button-play": "Media 1 button-play"
+    },
+    {
+      "nova-icon media_button-power": "Media 1 button-power"
+    },
+    {
+      "nova-icon media_button-previous": "Media 1 button-previous"
+    },
+    {
+      "nova-icon media_button-record": "Media 1 button-record"
+    },
+    {
+      "nova-icon media_button-rewind": "Media 1 button-rewind"
+    },
+    {
+      "nova-icon media_button-skip": "Media 1 button-skip"
+    },
+    {
+      "nova-icon media_button-stop": "Media 1 button-stop"
+    },
+    {
+      "nova-icon media_camera-18": "Media 1 camera-18"
+    },
+    {
+      "nova-icon media_camera-19": "Media 1 camera-19"
+    },
+    {
+      "nova-icon media_camera-20": "Media 1 camera-20"
+    },
+    {
+      "nova-icon media_camera-ban-36": "Media 1 camera-ban-36"
+    },
+    {
+      "nova-icon media_camera-ban-37": "Media 1 camera-ban-37"
+    },
+    {
+      "nova-icon media_camera-compact": "Media 1 camera-compact"
+    },
+    {
+      "nova-icon media_camera-screen": "Media 1 camera-screen"
+    },
+    {
+      "nova-icon media_camera-square-57": "Media 1 camera-square-57"
+    },
+    {
+      "nova-icon media_camera-square-58": "Media 1 camera-square-58"
+    },
+    {
+      "nova-icon media_camera-time": "Media 1 camera-time"
+    },
+    {
+      "nova-icon media_countdown-34": "Media 1 countdown-34"
+    },
+    {
+      "nova-icon media_countdown-35": "Media 1 countdown-35"
+    },
+    {
+      "nova-icon media_edit-color": "Media 1 edit-color"
+    },
+    {
+      "nova-icon media_edit-contrast-42": "Media 1 edit-contrast-42"
+    },
+    {
+      "nova-icon media_edit-contrast-43": "Media 1 edit-contrast-43"
+    },
+    {
+      "nova-icon media_edit-saturation": "Media 1 edit-saturation"
+    },
+    {
+      "nova-icon media_flash-21": "Media 1 flash-21"
+    },
+    {
+      "nova-icon media_flash-24": "Media 1 flash-24"
+    },
+    {
+      "nova-icon media_flash-29": "Media 1 flash-29"
+    },
+    {
+      "nova-icon media_flash-auto-22": "Media 1 flash-auto-22"
+    },
+    {
+      "nova-icon media_flash-auto-25": "Media 1 flash-auto-25"
+    },
+    {
+      "nova-icon media_flash-off-23": "Media 1 flash-off-23"
+    },
+    {
+      "nova-icon media_flash-off-26": "Media 1 flash-off-26"
+    },
+    {
+      "nova-icon media_focus-32": "Media 1 focus-32"
+    },
+    {
+      "nova-icon media_focus-38": "Media 1 focus-38"
+    },
+    {
+      "nova-icon media_focus-40": "Media 1 focus-40"
+    },
+    {
+      "nova-icon media_focus-circle": "Media 1 focus-circle"
+    },
+    {
+      "nova-icon media_frame-12": "Media 1 frame-12"
+    },
+    {
+      "nova-icon media_frame-41": "Media 1 frame-41"
+    },
+    {
+      "nova-icon media_grid": "Media 1 grid"
+    },
+    {
+      "nova-icon media_image-01": "Media 1 image-01"
+    },
+    {
+      "nova-icon media_image-02": "Media 1 image-02"
+    },
+    {
+      "nova-icon media_image-05": "Media 1 image-05"
+    },
+    {
+      "nova-icon media_image-add": "Media 1 image-add"
+    },
+    {
+      "nova-icon media_image-delete": "Media 1 image-delete"
+    },
+    {
+      "nova-icon media_image-location": "Media 1 image-location"
+    },
+    {
+      "nova-icon media_kid": "Media 1 kid"
+    },
+    {
+      "nova-icon media_layers": "Media 1 layers"
+    },
+    {
+      "nova-icon media_lens-31": "Media 1 lens-31"
+    },
+    {
+      "nova-icon media_lens-56": "Media 1 lens-56"
+    },
+    {
+      "nova-icon media_macro": "Media 1 macro"
+    },
+    {
+      "nova-icon media_movie-61": "Media 1 movie-61"
+    },
+    {
+      "nova-icon media_movie-62": "Media 1 movie-62"
+    },
+    {
+      "nova-icon media_night": "Media 1 night"
+    },
+    {
+      "nova-icon media_picture": "Media 1 picture"
+    },
+    {
+      "nova-icon media_play-68": "Media 1 play-68"
+    },
+    {
+      "nova-icon media_play-69": "Media 1 play-69"
+    },
+    {
+      "nova-icon media_player": "Media 1 player"
+    },
+    {
+      "nova-icon media_polaroid-add": "Media 1 polaroid-add"
+    },
+    {
+      "nova-icon media_polaroid-delete": "Media 1 polaroid-delete"
+    },
+    {
+      "nova-icon media_polaroid-multiple": "Media 1 polaroid-multiple"
+    },
+    {
+      "nova-icon media_polaroid-user": "Media 1 polaroid-user"
+    },
+    {
+      "nova-icon media_polaroid": "Media 1 polaroid"
+    },
+    {
+      "nova-icon media_roll": "Media 1 roll"
+    },
+    {
+      "nova-icon media_rotate-left": "Media 1 rotate-left"
+    },
+    {
+      "nova-icon media_rotate-right": "Media 1 rotate-right"
+    },
+    {
+      "nova-icon media_sd": "Media 1 sd"
+    },
+    {
+      "nova-icon media_selfie": "Media 1 selfie"
+    },
+    {
+      "nova-icon media_shake": "Media 1 shake"
+    },
+    {
+      "nova-icon media_speaker": "Media 1 speaker"
+    },
+    {
+      "nova-icon media_sport": "Media 1 sport"
+    },
+    {
+      "nova-icon media_ticket-75": "Media 1 ticket-75"
+    },
+    {
+      "nova-icon media_ticket-76": "Media 1 ticket-76"
+    },
+    {
+      "nova-icon media_touch": "Media 1 touch"
+    },
+    {
+      "nova-icon media_tripod": "Media 1 tripod"
+    },
+    {
+      "nova-icon media_video-64": "Media 1 video-64"
+    },
+    {
+      "nova-icon media_video-65": "Media 1 video-65"
+    },
+    {
+      "nova-icon media_video-66": "Media 1 video-66"
+    },
+    {
+      "nova-icon media_video-67": "Media 1 video-67"
+    },
+    {
+      "nova-icon media_videocamera-71": "Media 1 videocamera-71"
+    },
+    {
+      "nova-icon media_videocamera-72": "Media 1 videocamera-72"
+    },
+    {
+      "nova-icon media_volume-93": "Media 1 volume-93"
+    },
+    {
+      "nova-icon media_volume-97": "Media 1 volume-97"
+    },
+    {
+      "nova-icon media_volume-98": "Media 1 volume-98"
+    },
+    {
+      "nova-icon media_volume-ban": "Media 1 volume-ban"
+    },
+    {
+      "nova-icon media_volume-down": "Media 1 volume-down"
+    },
+    {
+      "nova-icon media_volume-off": "Media 1 volume-off"
+    },
+    {
+      "nova-icon media_volume-up": "Media 1 volume-up"
+    },
+    {
+      "nova-icon media_guitar": "Media 2 guitar"
+    },
+    {
+      "nova-icon media_headphones-mic": "Media 2 headphones-mic"
+    },
+    {
+      "nova-icon media_headphones": "Media 2 headphones"
+    },
+    {
+      "nova-icon media_knob": "Media 2 knob"
+    },
+    {
+      "nova-icon media_mic": "Media 2 mic"
+    },
+    {
+      "nova-icon media_music-album": "Media 2 music-album"
+    },
+    {
+      "nova-icon media_music-cloud": "Media 2 music-cloud"
+    },
+    {
+      "nova-icon media_note-03": "Media 2 note-03"
+    },
+    {
+      "nova-icon media_note-04": "Media 2 note-04"
+    },
+    {
+      "nova-icon media_piano": "Media 2 piano"
+    },
+    {
+      "nova-icon media_radio": "Media 2 radio"
+    },
+    {
+      "nova-icon media_remix": "Media 2 remix"
+    },
+    {
+      "nova-icon media_sound-wave": "Media 2 sound-wave"
+    },
+    {
+      "nova-icon media_speaker-01": "Media 2 speaker-01"
+    },
+    {
+      "nova-icon media_speaker-05": "Media 2 speaker-05"
+    },
+    {
+      "nova-icon media_tape": "Media 2 tape"
+    }
+  ],
+  "Objects": [
+    {
+      "nova-icon objects_alien-29": "Objects alien 29"
+    },
+    {
+      "nova-icon objects_alien-33": "Objects alien 33"
+    },
+    {
+      "nova-icon objects_anchor": "Objects anchor"
+    },
+    {
+      "nova-icon objects_astronaut": "Objects astronaut"
+    },
+    {
+      "nova-icon objects_axe": "Objects axe"
+    },
+    {
+      "nova-icon objects_baby-bottle": "Objects baby bottle"
+    },
+    {
+      "nova-icon objects_baby": "Objects baby"
+    },
+    {
+      "nova-icon objects_baloon": "Objects baloon"
+    },
+    {
+      "nova-icon objects_battery": "Objects battery"
+    },
+    {
+      "nova-icon objects_bear": "Objects bear"
+    },
+    {
+      "nova-icon objects_billiard": "Objects billiard"
+    },
+    {
+      "nova-icon objects_binocular": "Objects binocular"
+    },
+    {
+      "nova-icon objects_bow": "Objects bow"
+    },
+    {
+      "nova-icon objects_bowling": "Objects bowling"
+    },
+    {
+      "nova-icon objects_broom": "Objects broom"
+    },
+    {
+      "nova-icon objects_cone": "Objects cone"
+    },
+    {
+      "nova-icon objects_controller": "Objects controller"
+    },
+    {
+      "nova-icon objects_diamond": "Objects diamond"
+    },
+    {
+      "nova-icon objects_dice": "Objects dice"
+    },
+    {
+      "nova-icon objects_globe": "Objects globe"
+    },
+    {
+      "nova-icon objects_hut": "Objects hut"
+    },
+    {
+      "nova-icon objects_key-25": "Objects key 25"
+    },
+    {
+      "nova-icon objects_key-26": "Objects key 26"
+    },
+    {
+      "nova-icon objects_lamp": "Objects lamp"
+    },
+    {
+      "nova-icon objects_leaf-36": "Objects leaf 36"
+    },
+    {
+      "nova-icon objects_leaf-38": "Objects leaf 38"
+    },
+    {
+      "nova-icon objects_light": "Objects light"
+    },
+    {
+      "nova-icon objects_pipe": "Objects pipe"
+    },
+    {
+      "nova-icon objects_planet": "Objects planet"
+    },
+    {
+      "nova-icon objects_puzzle-09": "Objects puzzle 09"
+    },
+    {
+      "nova-icon objects_puzzle-10": "Objects puzzle 10"
+    },
+    {
+      "nova-icon objects_shovel": "Objects shovel"
+    },
+    {
+      "nova-icon objects_skull": "Objects skull"
+    },
+    {
+      "nova-icon objects_spaceship": "Objects spaceship"
+    },
+    {
+      "nova-icon objects_spray": "Objects spray"
+    },
+    {
+      "nova-icon objects_support-16": "Objects support 16"
+    },
+    {
+      "nova-icon objects_support-17": "Objects support 17"
+    },
+    {
+      "nova-icon objects_umbrella-13": "Objects umbrella 13"
+    },
+    {
+      "nova-icon objects_umbrella-14": "Objects umbrella 14"
+    },
+    {
+      "nova-icon objects_wool-ball": "Objects wool ball"
+    }
+  ],
+  "School & Education": [
+    {
+      "nova-icon education_abc": "Education abc"
+    },
+    {
+      "nova-icon education_agenda-bookmark": "Education agenda bookmark"
+    },
+    {
+      "nova-icon education_atom": "Education atom"
+    },
+    {
+      "nova-icon education_award-55": "Education award 55"
+    },
+    {
+      "nova-icon education_backpack-57": "Education backpack 57"
+    },
+    {
+      "nova-icon education_backpack-58": "Education backpack 58"
+    },
+    {
+      "nova-icon education_ball-basket": "Education ball basket"
+    },
+    {
+      "nova-icon education_ball-soccer": "Education ball soccer"
+    },
+    {
+      "nova-icon education_board-51": "Education board 51"
+    },
+    {
+      "nova-icon education_book-39": "Education book 39"
+    },
+    {
+      "nova-icon education_book-bookmark": "Education book bookmark"
+    },
+    {
+      "nova-icon education_book-open": "Education book open"
+    },
+    {
+      "nova-icon education_books-46": "Education books 46"
+    },
+    {
+      "nova-icon education_chalkboard": "Education chalkboard"
+    },
+    {
+      "nova-icon education_flask": "Education flask"
+    },
+    {
+      "nova-icon education_glasses": "Education glasses"
+    },
+    {
+      "nova-icon education_grammar-check": "Education grammar check"
+    },
+    {
+      "nova-icon education_hat": "Education hat"
+    },
+    {
+      "nova-icon education_language": "Education language"
+    },
+    {
+      "nova-icon education_microscope": "Education microscope"
+    },
+    {
+      "nova-icon education_molecule": "Education molecule"
+    },
+    {
+      "nova-icon education_notepad": "Education notepad"
+    },
+    {
+      "nova-icon education_paper-diploma": "Education paper diploma"
+    },
+    {
+      "nova-icon education_paper": "Education paper"
+    },
+    {
+      "nova-icon education_pencil-47": "Education pencil 47"
+    },
+    {
+      "nova-icon education_school": "Education school"
+    }
+  ],
+  "Shopping": [
+    {
+      "nova-icon shopping_award": "Shopping award"
+    },
+    {
+      "nova-icon shopping_bag-09": "Shopping bag 09"
+    },
+    {
+      "nova-icon shopping_bag-16": "Shopping bag 16"
+    },
+    {
+      "nova-icon shopping_bag-17": "Shopping bag 17"
+    },
+    {
+      "nova-icon shopping_bag-20": "Shopping bag 20"
+    },
+    {
+      "nova-icon shopping_bag-add-18": "Shopping bag add-18"
+    },
+    {
+      "nova-icon shopping_bag-add-21": "Shopping bag add-21"
+    },
+    {
+      "nova-icon shopping_bag-edit": "Shopping bag edit"
+    },
+    {
+      "nova-icon shopping_bag-remove-19": "Shopping bag remove-19"
+    },
+    {
+      "nova-icon shopping_bag-remove-22": "Shopping bag remove-22"
+    },
+    {
+      "nova-icon shopping_barcode-scan": "Shopping barcode scan"
+    },
+    {
+      "nova-icon shopping_barcode": "Shopping barcode"
+    },
+    {
+      "nova-icon shopping_bardcode-qr": "Shopping bardcode qr"
+    },
+    {
+      "nova-icon shopping_basket-add": "Shopping basket add"
+    },
+    {
+      "nova-icon shopping_basket-edit": "Shopping basket edit"
+    },
+    {
+      "nova-icon shopping_basket-remove": "Shopping basket remove"
+    },
+    {
+      "nova-icon shopping_basket-simple-add": "Shopping basket simple-add"
+    },
+    {
+      "nova-icon shopping_basket-simple-remove": "Shopping basket simple-remove"
+    },
+    {
+      "nova-icon shopping_basket-simple": "Shopping basket simple"
+    },
+    {
+      "nova-icon shopping_basket": "Shopping basket"
+    },
+    {
+      "nova-icon shopping_bitcoin": "Shopping bitcoin"
+    },
+    {
+      "nova-icon shopping_board": "Shopping board"
+    },
+    {
+      "nova-icon shopping_box-3d-50": "Shopping box 3d-50"
+    },
+    {
+      "nova-icon shopping_box-3d-67": "Shopping box 3d-67"
+    },
+    {
+      "nova-icon shopping_box-ribbon": "Shopping box ribbon"
+    },
+    {
+      "nova-icon shopping_box": "Shopping box"
+    },
+    {
+      "nova-icon shopping_cart-add": "Shopping cart add"
+    },
+    {
+      "nova-icon shopping_cart-modern-add": "Shopping cart modern-add"
+    },
+    {
+      "nova-icon shopping_cart-modern-in": "Shopping cart modern-in"
+    },
+    {
+      "nova-icon shopping_cart-modern-remove": "Shopping cart modern-remove"
+    },
+    {
+      "nova-icon shopping_cart-modern": "Shopping cart modern"
+    },
+    {
+      "nova-icon shopping_cart-remove": "Shopping cart remove"
+    },
+    {
+      "nova-icon shopping_cart-simple-add": "Shopping cart simple-add"
+    },
+    {
+      "nova-icon shopping_cart-simple-in": "Shopping cart simple-in"
+    },
+    {
+      "nova-icon shopping_cart-simple-remove": "Shopping cart simple-remove"
+    },
+    {
+      "nova-icon shopping_cart-simple": "Shopping cart simple"
+    },
+    {
+      "nova-icon shopping_cart": "Shopping cart"
+    },
+    {
+      "nova-icon shopping_cash-register": "Shopping cash register"
+    },
+    {
+      "nova-icon shopping_chart": "Shopping chart"
+    },
+    {
+      "nova-icon shopping_credit-card-in": "Shopping credit card-in"
+    },
+    {
+      "nova-icon shopping_credit-card": "Shopping credit card"
+    },
+    {
+      "nova-icon shopping_credit-locked": "Shopping credit locked"
+    },
+    {
+      "nova-icon shopping_delivery-fast": "Shopping delivery fast"
+    },
+    {
+      "nova-icon shopping_delivery-time": "Shopping delivery time"
+    },
+    {
+      "nova-icon shopping_delivery-track": "Shopping delivery track"
+    },
+    {
+      "nova-icon shopping_delivery": "Shopping delivery"
+    },
+    {
+      "nova-icon shopping_discount": "Shopping discount"
+    },
+    {
+      "nova-icon shopping_gift": "Shopping gift"
+    },
+    {
+      "nova-icon shopping_hand-card": "Shopping hand card"
+    },
+    {
+      "nova-icon shopping_list": "Shopping list"
+    },
+    {
+      "nova-icon shopping_mobile-card": "Shopping mobile card"
+    },
+    {
+      "nova-icon shopping_mobile-cart": "Shopping mobile cart"
+    },
+    {
+      "nova-icon shopping_mobile-touch": "Shopping mobile touch"
+    },
+    {
+      "nova-icon shopping_newsletter": "Shopping newsletter"
+    },
+    {
+      "nova-icon shopping_pos": "Shopping pos"
+    },
+    {
+      "nova-icon shopping_receipt-list-42": "Shopping receipt list-42"
+    },
+    {
+      "nova-icon shopping_receipt-list-43": "Shopping receipt list-43"
+    },
+    {
+      "nova-icon shopping_receipt": "Shopping receipt"
+    },
+    {
+      "nova-icon shopping_shop-location": "Shopping shop location"
+    },
+    {
+      "nova-icon shopping_shop": "Shopping shop"
+    },
+    {
+      "nova-icon shopping_stock": "Shopping stock"
+    },
+    {
+      "nova-icon shopping_tag-content": "Shopping tag content"
+    },
+    {
+      "nova-icon shopping_tag-cut": "Shopping tag cut"
+    },
+    {
+      "nova-icon shopping_tag-line": "Shopping tag line"
+    },
+    {
+      "nova-icon shopping_tag-sale": "Shopping tag sale"
+    },
+    {
+      "nova-icon shopping_tag": "Shopping tag"
+    },
+    {
+      "nova-icon shopping_wallet": "Shopping wallet"
+    }
+  ],
+  "Sport": [
+    {
+      "nova-icon sport_badminton": "Sport badminton"
+    },
+    {
+      "nova-icon sport_baseball-ball": "Sport baseball ball"
+    },
+    {
+      "nova-icon sport_baseball-bat": "Sport baseball bat"
+    },
+    {
+      "nova-icon sport_baseball": "Sport baseball"
+    },
+    {
+      "nova-icon sport_basketball-12": "Sport basketball 12"
+    },
+    {
+      "nova-icon sport_basketball-13": "Sport basketball 13"
+    },
+    {
+      "nova-icon sport_boxing": "Sport boxing"
+    },
+    {
+      "nova-icon sport_cardio": "Sport cardio"
+    },
+    {
+      "nova-icon sport_cricket": "Sport cricket"
+    },
+    {
+      "nova-icon sport_crown": "Sport crown"
+    },
+    {
+      "nova-icon sport_dart": "Sport dart"
+    },
+    {
+      "nova-icon sport_dumbbells": "Sport dumbbells"
+    },
+    {
+      "nova-icon sport_energy-drink": "Sport energy drink"
+    },
+    {
+      "nova-icon sport_energy-supplement": "Sport energy supplement"
+    },
+    {
+      "nova-icon sport_fencing": "Sport fencing"
+    },
+    {
+      "nova-icon sport_fishing": "Sport fishing"
+    },
+    {
+      "nova-icon sport_flag-finish": "Sport flag finish"
+    },
+    {
+      "nova-icon sport_football-headguard": "Sport football headguard"
+    },
+    {
+      "nova-icon sport_golf": "Sport golf"
+    },
+    {
+      "nova-icon sport_helmet": "Sport helmet"
+    },
+    {
+      "nova-icon sport_hockey": "Sport hockey"
+    },
+    {
+      "nova-icon sport_kettlebell": "Sport kettlebell"
+    },
+    {
+      "nova-icon sport_ping-pong": "Sport ping pong"
+    },
+    {
+      "nova-icon sport_podium-trophy": "Sport podium trophy"
+    },
+    {
+      "nova-icon sport_podium": "Sport podium"
+    },
+    {
+      "nova-icon sport_rope": "Sport rope"
+    },
+    {
+      "nova-icon sport_rugby": "Sport rugby"
+    },
+    {
+      "nova-icon sport_shaker": "Sport shaker"
+    },
+    {
+      "nova-icon sport_shoe-run": "Sport shoe run"
+    },
+    {
+      "nova-icon sport_skateboard": "Sport skateboard"
+    },
+    {
+      "nova-icon sport_snowboard": "Sport snowboard"
+    },
+    {
+      "nova-icon sport_soccer-field": "Sport soccer field"
+    },
+    {
+      "nova-icon sport_steering-wheel": "Sport steering wheel"
+    },
+    {
+      "nova-icon sport_supplement": "Sport supplement"
+    },
+    {
+      "nova-icon sport_surf": "Sport surf"
+    },
+    {
+      "nova-icon sport_tactic": "Sport tactic"
+    },
+    {
+      "nova-icon sport_tennis-ball": "Sport tennis ball"
+    },
+    {
+      "nova-icon sport_tennis": "Sport tennis"
+    },
+    {
+      "nova-icon sport_trophy": "Sport trophy"
+    },
+    {
+      "nova-icon sport_user-balance": "Sport user balance"
+    },
+    {
+      "nova-icon sport_user-climb": "Sport user climb"
+    },
+    {
+      "nova-icon sport_user-meditation": "Sport user meditation"
+    },
+    {
+      "nova-icon sport_user-run": "Sport user run"
+    },
+    {
+      "nova-icon sport_user-snowboard": "Sport user snowboard"
+    },
+    {
+      "nova-icon sport_user-swim": "Sport user swim"
+    },
+    {
+      "nova-icon sport_volleyball": "Sport volleyball"
+    },
+    {
+      "nova-icon sport_whistle": "Sport whistle"
+    }
+  ],
+  "Technology": [
+    {
+      "nova-icon tech_cable-49": "Tech cable 49"
+    },
+    {
+      "nova-icon tech_cable-50": "Tech cable 50"
+    },
+    {
+      "nova-icon tech_cd-reader": "Tech cd reader"
+    },
+    {
+      "nova-icon tech_computer-monitor": "Tech computer monitor"
+    },
+    {
+      "nova-icon tech_computer-old": "Tech computer old"
+    },
+    {
+      "nova-icon tech_computer": "Tech computer"
+    },
+    {
+      "nova-icon tech_controller-modern": "Tech controller modern"
+    },
+    {
+      "nova-icon tech_controller": "Tech controller"
+    },
+    {
+      "nova-icon tech_desktop-screen": "Tech desktop screen"
+    },
+    {
+      "nova-icon tech_desktop": "Tech desktop"
+    },
+    {
+      "nova-icon tech_disk-reader": "Tech disk reader"
+    },
+    {
+      "nova-icon tech_disk": "Tech disk"
+    },
+    {
+      "nova-icon tech_gopro": "Tech gopro"
+    },
+    {
+      "nova-icon tech_headphones": "Tech headphones"
+    },
+    {
+      "nova-icon tech_keyboard-mouse": "Tech keyboard mouse"
+    },
+    {
+      "nova-icon tech_keyboard-wifi": "Tech keyboard wifi"
+    },
+    {
+      "nova-icon tech_keyboard": "Tech keyboard"
+    },
+    {
+      "nova-icon tech_laptop-camera": "Tech laptop camera"
+    },
+    {
+      "nova-icon tech_laptop-front": "Tech laptop front"
+    },
+    {
+      "nova-icon tech_laptop": "Tech laptop"
+    },
+    {
+      "nova-icon tech_mobile-button": "Tech mobile button"
+    },
+    {
+      "nova-icon tech_mobile-camera": "Tech mobile camera"
+    },
+    {
+      "nova-icon tech_mobile-recharger-08": "Tech mobile recharger-08"
+    },
+    {
+      "nova-icon tech_mobile-recharger-09": "Tech mobile recharger-09"
+    },
+    {
+      "nova-icon tech_mobile-toolbar": "Tech mobile toolbar"
+    },
+    {
+      "nova-icon tech_mobile": "Tech mobile"
+    },
+    {
+      "nova-icon tech_music": "Tech music"
+    },
+    {
+      "nova-icon tech_navigation": "Tech navigation"
+    },
+    {
+      "nova-icon tech_player-19": "Tech player 19"
+    },
+    {
+      "nova-icon tech_player-48": "Tech player 48"
+    },
+    {
+      "nova-icon tech_print-fold": "Tech print fold"
+    },
+    {
+      "nova-icon tech_print-round-fold": "Tech print round-fold"
+    },
+    {
+      "nova-icon tech_print-round": "Tech print round"
+    },
+    {
+      "nova-icon tech_print": "Tech print"
+    },
+    {
+      "nova-icon tech_ram": "Tech ram"
+    },
+    {
+      "nova-icon tech_remote": "Tech remote"
+    },
+    {
+      "nova-icon tech_signal": "Tech signal"
+    },
+    {
+      "nova-icon tech_socket": "Tech socket"
+    },
+    {
+      "nova-icon tech_sync": "Tech sync"
+    },
+    {
+      "nova-icon tech_tablet-button": "Tech tablet button"
+    },
+    {
+      "nova-icon tech_tablet-reader-31": "Tech tablet reader-31"
+    },
+    {
+      "nova-icon tech_tablet-reader-42": "Tech tablet reader-42"
+    },
+    {
+      "nova-icon tech_tablet-toolbar": "Tech tablet toolbar"
+    },
+    {
+      "nova-icon tech_tablet": "Tech tablet"
+    },
+    {
+      "nova-icon tech_tv-old": "Tech tv old"
+    },
+    {
+      "nova-icon tech_tv": "Tech tv"
+    },
+    {
+      "nova-icon tech_watch-circle": "Tech watch circle"
+    },
+    {
+      "nova-icon tech_watch-time": "Tech watch time"
+    },
+    {
+      "nova-icon tech_watch": "Tech watch"
+    },
+    {
+      "nova-icon tech_webcam-38": "Tech webcam 38"
+    },
+    {
+      "nova-icon tech_webcam-39": "Tech webcam 39"
+    },
+    {
+      "nova-icon tech_wifi-router": "Tech wifi router"
+    },
+    {
+      "nova-icon tech_wifi": "Tech wifi"
+    }
+  ],
+  "Text Editing": [
+    {
+      "nova-icon text_align-center": "Text align center"
+    },
+    {
+      "nova-icon text_align-justify": "Text align justify"
+    },
+    {
+      "nova-icon text_align-left": "Text align left"
+    },
+    {
+      "nova-icon text_align-right": "Text align right"
+    },
+    {
+      "nova-icon text_background": "Text background"
+    },
+    {
+      "nova-icon text_bold": "Text bold"
+    },
+    {
+      "nova-icon text_capitalize": "Text capitalize"
+    },
+    {
+      "nova-icon text_caps-all": "Text caps all"
+    },
+    {
+      "nova-icon text_caps-small": "Text caps small"
+    },
+    {
+      "nova-icon text_color": "Text color"
+    },
+    {
+      "nova-icon text_edit": "Text edit"
+    },
+    {
+      "nova-icon text_italic": "Text italic"
+    },
+    {
+      "nova-icon text_line-height": "Text line height"
+    },
+    {
+      "nova-icon text_list-bullet": "Text list bullet"
+    },
+    {
+      "nova-icon text_list-numbers": "Text list numbers"
+    },
+    {
+      "nova-icon text_margin-left": "Text margin left"
+    },
+    {
+      "nova-icon text_margin-right": "Text margin right"
+    },
+    {
+      "nova-icon text_quote": "Text quote"
+    },
+    {
+      "nova-icon text_scale-horizontal": "Text scale horizontal"
+    },
+    {
+      "nova-icon text_scale-vertical": "Text scale vertical"
+    },
+    {
+      "nova-icon text_size": "Text size"
+    },
+    {
+      "nova-icon text_strikethrough": "Text strikethrough"
+    },
+    {
+      "nova-icon text_subscript": "Text subscript"
+    },
+    {
+      "nova-icon text_superscript": "Text superscript"
+    },
+    {
+      "nova-icon text_tracking": "Text tracking"
+    },
+    {
+      "nova-icon text_underline": "Text underline"
+    }
+  ],
+  "Touch Gestures": [
+    {
+      "nova-icon gestures_2x-drag-down": "Gestures 2x drag-down"
+    },
+    {
+      "nova-icon gestures_2x-drag-up": "Gestures 2x drag-up"
+    },
+    {
+      "nova-icon gestures_2x-swipe-down": "Gestures 2x swipe-down"
+    },
+    {
+      "nova-icon gestures_2x-swipe-left": "Gestures 2x swipe-left"
+    },
+    {
+      "nova-icon gestures_2x-swipe-right": "Gestures 2x swipe-right"
+    },
+    {
+      "nova-icon gestures_2x-swipe-up": "Gestures 2x swipe-up"
+    },
+    {
+      "nova-icon gestures_2x-tap": "Gestures 2x tap"
+    },
+    {
+      "nova-icon gestures_3x-swipe-left": "Gestures 3x swipe-left"
+    },
+    {
+      "nova-icon gestures_3x-swipe-right": "Gestures 3x swipe-right"
+    },
+    {
+      "nova-icon gestures_3x-swipe-up": "Gestures 3x swipe-up"
+    },
+    {
+      "nova-icon gestures_3x-tap": "Gestures 3x tap"
+    },
+    {
+      "nova-icon gestures_4x-swipe-left": "Gestures 4x swipe-left"
+    },
+    {
+      "nova-icon gestures_4x-swipe-right": "Gestures 4x swipe-right"
+    },
+    {
+      "nova-icon gestures_4x-swipe-up": "Gestures 4x swipe-up"
+    },
+    {
+      "nova-icon gestures_active-38": "Gestures active 38"
+    },
+    {
+      "nova-icon gestures_active-40": "Gestures active 40"
+    },
+    {
+      "nova-icon gestures_camera": "Gestures camera"
+    },
+    {
+      "nova-icon gestures_double-tap": "Gestures double tap"
+    },
+    {
+      "nova-icon gestures_drag-21": "Gestures drag 21"
+    },
+    {
+      "nova-icon gestures_drag-31": "Gestures drag 31"
+    },
+    {
+      "nova-icon gestures_drag-down": "Gestures drag down"
+    },
+    {
+      "nova-icon gestures_drag-left": "Gestures drag left"
+    },
+    {
+      "nova-icon gestures_drag-right": "Gestures drag right"
+    },
+    {
+      "nova-icon gestures_drag-up": "Gestures drag up"
+    },
+    {
+      "nova-icon gestures_flick-down": "Gestures flick down"
+    },
+    {
+      "nova-icon gestures_flick-left": "Gestures flick left"
+    },
+    {
+      "nova-icon gestures_flick-right": "Gestures flick right"
+    },
+    {
+      "nova-icon gestures_flick-up": "Gestures flick up"
+    },
+    {
+      "nova-icon gestures_grab": "Gestures grab"
+    },
+    {
+      "nova-icon gestures_hold": "Gestures hold"
+    },
+    {
+      "nova-icon gestures_pin": "Gestures pin"
+    },
+    {
+      "nova-icon gestures_pinch": "Gestures pinch"
+    },
+    {
+      "nova-icon gestures_rotate-22": "Gestures rotate 22"
+    },
+    {
+      "nova-icon gestures_rotate-23": "Gestures rotate 23"
+    },
+    {
+      "nova-icon gestures_scan": "Gestures scan"
+    },
+    {
+      "nova-icon gestures_scroll-horitontal": "Gestures scroll horitontal"
+    },
+    {
+      "nova-icon gestures_scroll-vertical": "Gestures scroll vertical"
+    },
+    {
+      "nova-icon gestures_stretch": "Gestures stretch"
+    },
+    {
+      "nova-icon gestures_swipe-bottom": "Gestures swipe bottom"
+    },
+    {
+      "nova-icon gestures_swipe-left": "Gestures swipe left"
+    },
+    {
+      "nova-icon gestures_swipe-right": "Gestures swipe right"
+    },
+    {
+      "nova-icon gestures_swipe-up": "Gestures swipe up"
+    },
+    {
+      "nova-icon gestures_tap-01": "Gestures tap 01"
+    },
+    {
+      "nova-icon gestures_tap-02": "Gestures tap 02"
+    }
+  ],
+  "Transportation": [
+    {
+      "nova-icon transportation_air-baloon": "Transportation air baloon"
+    },
+    {
+      "nova-icon transportation_bike-sport": "Transportation bike sport"
+    },
+    {
+      "nova-icon transportation_bike": "Transportation bike"
+    },
+    {
+      "nova-icon transportation_boat-front": "Transportation boat front"
+    },
+    {
+      "nova-icon transportation_boat-small-02": "Transportation boat small-02"
+    },
+    {
+      "nova-icon transportation_boat-small-03": "Transportation boat small-03"
+    },
+    {
+      "nova-icon transportation_boat": "Transportation boat"
+    },
+    {
+      "nova-icon transportation_bus-front-10": "Transportation bus front-10"
+    },
+    {
+      "nova-icon transportation_bus-front-12": "Transportation bus front-12"
+    },
+    {
+      "nova-icon transportation_bus": "Transportation bus"
+    },
+    {
+      "nova-icon transportation_car-front": "Transportation car front"
+    },
+    {
+      "nova-icon transportation_car-simple": "Transportation car simple"
+    },
+    {
+      "nova-icon transportation_car-sport": "Transportation car sport"
+    },
+    {
+      "nova-icon transportation_car-taxi": "Transportation car taxi"
+    },
+    {
+      "nova-icon transportation_car": "Transportation car"
+    },
+    {
+      "nova-icon transportation_helicopter": "Transportation helicopter"
+    },
+    {
+      "nova-icon transportation_helmet": "Transportation helmet"
+    },
+    {
+      "nova-icon transportation_light-traffic": "Transportation light traffic"
+    },
+    {
+      "nova-icon transportation_moto": "Transportation moto"
+    },
+    {
+      "nova-icon transportation_plane-17": "Transportation plane 17"
+    },
+    {
+      "nova-icon transportation_plane-18": "Transportation plane 18"
+    },
+    {
+      "nova-icon transportation_road": "Transportation road"
+    },
+    {
+      "nova-icon transportation_skateboard": "Transportation skateboard"
+    },
+    {
+      "nova-icon transportation_tractor": "Transportation tractor"
+    },
+    {
+      "nova-icon transportation_train-speed": "Transportation train speed"
+    },
+    {
+      "nova-icon transportation_train": "Transportation train"
+    },
+    {
+      "nova-icon transportation_tram": "Transportation tram"
+    },
+    {
+      "nova-icon transportation_truck-front": "Transportation truck front"
+    },
+    {
+      "nova-icon transportation_vespa-front": "Transportation vespa front"
+    },
+    {
+      "nova-icon transportation_vespa": "Transportation vespa"
+    }
+  ],
+  "Travel": [
+    {
+      "nova-icon travel_axe": "Travel axe"
+    },
+    {
+      "nova-icon travel_backpack": "Travel backpack"
+    },
+    {
+      "nova-icon travel_bag": "Travel bag"
+    },
+    {
+      "nova-icon travel_barbecue": "Travel barbecue"
+    },
+    {
+      "nova-icon travel_beach-umbrella": "Travel beach umbrella"
+    },
+    {
+      "nova-icon travel_berlin": "Travel berlin"
+    },
+    {
+      "nova-icon travel_binocular": "Travel binocular"
+    },
+    {
+      "nova-icon travel_camper": "Travel camper"
+    },
+    {
+      "nova-icon travel_camping": "Travel camping"
+    },
+    {
+      "nova-icon travel_castle": "Travel castle"
+    },
+    {
+      "nova-icon travel_china": "Travel china"
+    },
+    {
+      "nova-icon travel_church": "Travel church"
+    },
+    {
+      "nova-icon travel_drink": "Travel drink"
+    },
+    {
+      "nova-icon travel_explore": "Travel explore"
+    },
+    {
+      "nova-icon travel_fire": "Travel fire"
+    },
+    {
+      "nova-icon travel_hotel-bell": "Travel hotel bell"
+    },
+    {
+      "nova-icon travel_hotel-symbol": "Travel hotel symbol"
+    },
+    {
+      "nova-icon travel_hotel": "Travel hotel"
+    },
+    {
+      "nova-icon travel_hut": "Travel hut"
+    },
+    {
+      "nova-icon travel_igloo": "Travel igloo"
+    },
+    {
+      "nova-icon travel_info": "Travel info"
+    },
+    {
+      "nova-icon travel_istanbul": "Travel istanbul"
+    },
+    {
+      "nova-icon travel_jellyfish": "Travel jellyfish"
+    },
+    {
+      "nova-icon travel_lamp": "Travel lamp"
+    },
+    {
+      "nova-icon travel_lighthouse": "Travel lighthouse"
+    },
+    {
+      "nova-icon travel_london": "Travel london"
+    },
+    {
+      "nova-icon travel_luggage": "Travel luggage"
+    },
+    {
+      "nova-icon travel_mosque": "Travel mosque"
+    },
+    {
+      "nova-icon travel_ny": "Travel ny"
+    },
+    {
+      "nova-icon travel_octopus": "Travel octopus"
+    },
+    {
+      "nova-icon travel_paris-tower": "Travel paris tower"
+    },
+    {
+      "nova-icon travel_passport": "Travel passport"
+    },
+    {
+      "nova-icon travel_pickaxe": "Travel pickaxe"
+    },
+    {
+      "nova-icon travel_pool": "Travel pool"
+    },
+    {
+      "nova-icon travel_pyramid": "Travel pyramid"
+    },
+    {
+      "nova-icon travel_rackets": "Travel rackets"
+    },
+    {
+      "nova-icon travel_rio": "Travel rio"
+    },
+    {
+      "nova-icon travel_road-sign-left": "Travel road sign-left"
+    },
+    {
+      "nova-icon travel_road-sign-right": "Travel road sign-right"
+    },
+    {
+      "nova-icon travel_rome": "Travel rome"
+    },
+    {
+      "nova-icon travel_rowing": "Travel rowing"
+    },
+    {
+      "nova-icon travel_sea-mask": "Travel sea mask"
+    },
+    {
+      "nova-icon travel_sf-bridge": "Travel sf bridge"
+    },
+    {
+      "nova-icon travel_shark": "Travel shark"
+    },
+    {
+      "nova-icon travel_spa": "Travel spa"
+    },
+    {
+      "nova-icon travel_sunglasses": "Travel sunglasses"
+    },
+    {
+      "nova-icon travel_surf": "Travel surf"
+    },
+    {
+      "nova-icon travel_swimsuit": "Travel swimsuit"
+    },
+    {
+      "nova-icon travel_swimwear": "Travel swimwear"
+    },
+    {
+      "nova-icon travel_swiss-knife": "Travel swiss knife"
+    },
+    {
+      "nova-icon travel_temple-02": "Travel temple 02"
+    },
+    {
+      "nova-icon travel_temple-25": "Travel temple 25"
+    },
+    {
+      "nova-icon travel_trolley": "Travel trolley"
+    },
+    {
+      "nova-icon travel_white-house": "Travel white house"
+    },
+    {
+      "nova-icon travel_world": "Travel world"
+    },
+    {
+      "nova-icon travel_worldmap": "Travel worldmap"
+    }
+  ],
+  "User Interface": [
+    {
+      "nova-icon ui_analytics-88": "Ui 1 analytics-88"
+    },
+    {
+      "nova-icon ui_analytics-89": "Ui 1 analytics-89"
+    },
+    {
+      "nova-icon ui_attach-86": "Ui 1 attach-86"
+    },
+    {
+      "nova-icon ui_attach-87": "Ui 1 attach-87"
+    },
+    {
+      "nova-icon ui_bell-53": "Ui 1 bell-53"
+    },
+    {
+      "nova-icon ui_bell-54": "Ui 1 bell-54"
+    },
+    {
+      "nova-icon ui_bell-55": "Ui 1 bell-55"
+    },
+    {
+      "nova-icon ui_bold-add": "Ui 1 bold-add"
+    },
+    {
+      "nova-icon ui_bold-delete": "Ui 1 bold-delete"
+    },
+    {
+      "nova-icon ui_bold-remove": "Ui 1 bold-remove"
+    },
+    {
+      "nova-icon ui_bookmark-add": "Ui 1 bookmark-add"
+    },
+    {
+      "nova-icon ui_bookmark-remove": "Ui 1 bookmark-remove"
+    },
+    {
+      "nova-icon ui_calendar-57": "Ui 1 calendar-57"
+    },
+    {
+      "nova-icon ui_calendar-60": "Ui 1 calendar-60"
+    },
+    {
+      "nova-icon ui_calendar-check-59": "Ui 1 calendar-check-59"
+    },
+    {
+      "nova-icon ui_calendar-check-62": "Ui 1 calendar-check-62"
+    },
+    {
+      "nova-icon ui_calendar-grid-58": "Ui 1 calendar-grid-58"
+    },
+    {
+      "nova-icon ui_calendar-grid-61": "Ui 1 calendar-grid-61"
+    },
+    {
+      "nova-icon ui_check-bold": "Ui 1 check-bold"
+    },
+    {
+      "nova-icon ui_check-circle-07": "Ui 1 check-circle-07"
+    },
+    {
+      "nova-icon ui_check-circle-08": "Ui 1 check-circle-08"
+    },
+    {
+      "nova-icon ui_check-curve": "Ui 1 check-curve"
+    },
+    {
+      "nova-icon ui_check-simple": "Ui 1 check-simple"
+    },
+    {
+      "nova-icon ui_check-small": "Ui 1 check-small"
+    },
+    {
+      "nova-icon ui_check-square-09": "Ui 1 check-square-09"
+    },
+    {
+      "nova-icon ui_check-square-11": "Ui 1 check-square-11"
+    },
+    {
+      "nova-icon ui_check": "Ui 1 check"
+    },
+    {
+      "nova-icon ui_circle-add": "Ui 1 circle-add"
+    },
+    {
+      "nova-icon ui_circle-bold-add": "Ui 1 circle-bold-add"
+    },
+    {
+      "nova-icon ui_circle-bold-remove": "Ui 1 circle-bold-remove"
+    },
+    {
+      "nova-icon ui_circle-delete": "Ui 1 circle-delete"
+    },
+    {
+      "nova-icon ui_circle-remove": "Ui 1 circle-remove"
+    },
+    {
+      "nova-icon ui_dashboard-29": "Ui 1 dashboard-29"
+    },
+    {
+      "nova-icon ui_dashboard-30": "Ui 1 dashboard-30"
+    },
+    {
+      "nova-icon ui_dashboard-half": "Ui 1 dashboard-half"
+    },
+    {
+      "nova-icon ui_dashboard-level": "Ui 1 dashboard-level"
+    },
+    {
+      "nova-icon ui_database": "Ui 1 database"
+    },
+    {
+      "nova-icon ui_drop": "Ui 1 drop"
+    },
+    {
+      "nova-icon ui_edit-71": "Ui 1 edit-71"
+    },
+    {
+      "nova-icon ui_edit-72": "Ui 1 edit-72"
+    },
+    {
+      "nova-icon ui_edit-73": "Ui 1 edit-73"
+    },
+    {
+      "nova-icon ui_edit-74": "Ui 1 edit-74"
+    },
+    {
+      "nova-icon ui_edit-75": "Ui 1 edit-75"
+    },
+    {
+      "nova-icon ui_edit-76": "Ui 1 edit-76"
+    },
+    {
+      "nova-icon ui_edit-77": "Ui 1 edit-77"
+    },
+    {
+      "nova-icon ui_edit-78": "Ui 1 edit-78"
+    },
+    {
+      "nova-icon ui_email-83": "Ui 1 email-83"
+    },
+    {
+      "nova-icon ui_email-84": "Ui 1 email-84"
+    },
+    {
+      "nova-icon ui_email-85": "Ui 1 email-85"
+    },
+    {
+      "nova-icon ui_eye-17": "Ui 1 eye-17"
+    },
+    {
+      "nova-icon ui_eye-19": "Ui 1 eye-19"
+    },
+    {
+      "nova-icon ui_eye-ban-18": "Ui 1 eye-ban-18"
+    },
+    {
+      "nova-icon ui_eye-ban-20": "Ui 1 eye-ban-20"
+    },
+    {
+      "nova-icon ui_flame": "Ui 1 flame"
+    },
+    {
+      "nova-icon ui_home-51": "Ui 1 home-51"
+    },
+    {
+      "nova-icon ui_home-52": "Ui 1 home-52"
+    },
+    {
+      "nova-icon ui_home-minimal": "Ui 1 home-minimal"
+    },
+    {
+      "nova-icon ui_home-simple": "Ui 1 home-simple"
+    },
+    {
+      "nova-icon ui_leaf-80": "Ui 1 leaf-80"
+    },
+    {
+      "nova-icon ui_leaf-81": "Ui 1 leaf-81"
+    },
+    {
+      "nova-icon ui_leaf-edit": "Ui 1 leaf-edit"
+    },
+    {
+      "nova-icon ui_lock-circle-open": "Ui 1 lock-circle-open"
+    },
+    {
+      "nova-icon ui_lock-circle": "Ui 1 lock-circle"
+    },
+    {
+      "nova-icon ui_lock-open": "Ui 1 lock-open"
+    },
+    {
+      "nova-icon ui_lock": "Ui 1 lock"
+    },
+    {
+      "nova-icon ui_notification-69": "Ui 1 notification-69"
+    },
+    {
+      "nova-icon ui_notification-70": "Ui 1 notification-70"
+    },
+    {
+      "nova-icon ui_pencil": "Ui 1 pencil"
+    },
+    {
+      "nova-icon ui_preferences-circle-rotate": "Ui 1 preferences-circle-rotate"
+    },
+    {
+      "nova-icon ui_preferences-circle": "Ui 1 preferences-circle"
+    },
+    {
+      "nova-icon ui_preferences-container-circle-rotate": "Ui 1 preferences-container-circle-rotate"
+    },
+    {
+      "nova-icon ui_preferences-container-circle": "Ui 1 preferences-container-circle"
+    },
+    {
+      "nova-icon ui_preferences-container-rotate": "Ui 1 preferences-container-rotate"
+    },
+    {
+      "nova-icon ui_preferences-container": "Ui 1 preferences-container"
+    },
+    {
+      "nova-icon ui_preferences-rotate": "Ui 1 preferences-rotate"
+    },
+    {
+      "nova-icon ui_preferences": "Ui 1 preferences"
+    },
+    {
+      "nova-icon ui_send": "Ui 1 send"
+    },
+    {
+      "nova-icon ui_settings-gear-63": "Ui 1 settings-gear-63"
+    },
+    {
+      "nova-icon ui_settings-gear-64": "Ui 1 settings-gear-64"
+    },
+    {
+      "nova-icon ui_settings-gear-65": "Ui 1 settings-gear-65"
+    },
+    {
+      "nova-icon ui_settings-tool-66": "Ui 1 settings-tool-66"
+    },
+    {
+      "nova-icon ui_settings-tool-67": "Ui 1 settings-tool-67"
+    },
+    {
+      "nova-icon ui_settings": "Ui 1 settings"
+    },
+    {
+      "nova-icon ui_simple-add": "Ui 1 simple-add"
+    },
+    {
+      "nova-icon ui_simple-delete": "Ui 1 simple-delete"
+    },
+    {
+      "nova-icon ui_simple-remove": "Ui 1 simple-remove"
+    },
+    {
+      "nova-icon ui_trash-round": "Ui 1 trash-round"
+    },
+    {
+      "nova-icon ui_trash-simple": "Ui 1 trash-simple"
+    },
+    {
+      "nova-icon ui_trash": "Ui 1 trash"
+    },
+    {
+      "nova-icon ui_ui-03": "Ui 1 ui-03"
+    },
+    {
+      "nova-icon ui_ui-04": "Ui 1 ui-04"
+    },
+    {
+      "nova-icon ui_zoom-bold-in": "Ui 1 zoom-bold-in"
+    },
+    {
+      "nova-icon ui_zoom-bold-out": "Ui 1 zoom-bold-out"
+    },
+    {
+      "nova-icon ui_zoom-bold": "Ui 1 zoom-bold"
+    },
+    {
+      "nova-icon ui_zoom-in": "Ui 1 zoom-in"
+    },
+    {
+      "nova-icon ui_zoom-out": "Ui 1 zoom-out"
+    },
+    {
+      "nova-icon ui_zoom-split-in": "Ui 1 zoom-split-in"
+    },
+    {
+      "nova-icon ui_zoom-split-out": "Ui 1 zoom-split-out"
+    },
+    {
+      "nova-icon ui_zoom-split": "Ui 1 zoom-split"
+    },
+    {
+      "nova-icon ui_zoom": "Ui 1 zoom"
+    },
+    {
+      "nova-icon ui_alert": "Ui 2 alert"
+    },
+    {
+      "nova-icon ui_alert-": "Ui 2 alert-"
+    },
+    {
+      "nova-icon ui_alert-circle": "Ui 2 alert-circle"
+    },
+    {
+      "nova-icon ui_alert-circle-": "Ui 2 alert-circle-"
+    },
+    {
+      "nova-icon ui_alert-circle-i": "Ui 2 alert-circle-i"
+    },
+    {
+      "nova-icon ui_alert-i": "Ui 2 alert-i"
+    },
+    {
+      "nova-icon ui_alert-square": "Ui 2 alert-square"
+    },
+    {
+      "nova-icon ui_alert-square-": "Ui 2 alert-square-"
+    },
+    {
+      "nova-icon ui_alert-square-i": "Ui 2 alert-square-i"
+    },
+    {
+      "nova-icon ui_archive": "Ui 2 archive"
+    },
+    {
+      "nova-icon ui_ban-bold": "Ui 2 ban-bold"
+    },
+    {
+      "nova-icon ui_ban": "Ui 2 ban"
+    },
+    {
+      "nova-icon ui_battery-81": "Ui 2 battery-81"
+    },
+    {
+      "nova-icon ui_battery-83": "Ui 2 battery-83"
+    },
+    {
+      "nova-icon ui_battery-half": "Ui 2 battery-half"
+    },
+    {
+      "nova-icon ui_battery-low": "Ui 2 battery-low"
+    },
+    {
+      "nova-icon ui_bluetooth": "Ui 2 bluetooth"
+    },
+    {
+      "nova-icon ui_book": "Ui 2 book"
+    },
+    {
+      "nova-icon ui_chart-bar-52": "Ui 2 chart-bar-52"
+    },
+    {
+      "nova-icon ui_chart-bar-53": "Ui 2 chart-bar-53"
+    },
+    {
+      "nova-icon ui_chat-content": "Ui 2 chat-content"
+    },
+    {
+      "nova-icon ui_chat-round-content": "Ui 2 chat-round-content"
+    },
+    {
+      "nova-icon ui_chat-round": "Ui 2 chat-round"
+    },
+    {
+      "nova-icon ui_chat": "Ui 2 chat"
+    },
+    {
+      "nova-icon ui_circle-bold-delete": "Ui 2 circle-bold-delete"
+    },
+    {
+      "nova-icon ui_cloud-25": "Ui 2 cloud-25"
+    },
+    {
+      "nova-icon ui_cloud-26": "Ui 2 cloud-26"
+    },
+    {
+      "nova-icon ui_disk": "Ui 2 disk"
+    },
+    {
+      "nova-icon ui_enlarge-57": "Ui 2 enlarge-57"
+    },
+    {
+      "nova-icon ui_enlarge-58": "Ui 2 enlarge-58"
+    },
+    {
+      "nova-icon ui_enlarge-59": "Ui 2 enlarge-59"
+    },
+    {
+      "nova-icon ui_fat-add": "Ui 2 fat-add"
+    },
+    {
+      "nova-icon ui_fat-delete": "Ui 2 fat-delete"
+    },
+    {
+      "nova-icon ui_fat-remove": "Ui 2 fat-remove"
+    },
+    {
+      "nova-icon ui_favourite-28": "Ui 2 favourite-28"
+    },
+    {
+      "nova-icon ui_favourite-31": "Ui 2 favourite-31"
+    },
+    {
+      "nova-icon ui_favourite-add-29": "Ui 2 favourite-add-29"
+    },
+    {
+      "nova-icon ui_favourite-add-32": "Ui 2 favourite-add-32"
+    },
+    {
+      "nova-icon ui_favourite-remove-30": "Ui 2 favourite-remove-30"
+    },
+    {
+      "nova-icon ui_favourite-remove-33": "Ui 2 favourite-remove-33"
+    },
+    {
+      "nova-icon ui_filter": "Ui 2 filter"
+    },
+    {
+      "nova-icon ui_fullsize": "Ui 2 fullsize"
+    },
+    {
+      "nova-icon ui_grid-45": "Ui 2 grid-45"
+    },
+    {
+      "nova-icon ui_grid-46": "Ui 2 grid-46"
+    },
+    {
+      "nova-icon ui_grid-48": "Ui 2 grid-48"
+    },
+    {
+      "nova-icon ui_grid-49": "Ui 2 grid-49"
+    },
+    {
+      "nova-icon ui_grid-50": "Ui 2 grid-50"
+    },
+    {
+      "nova-icon ui_grid-square": "Ui 2 grid-square"
+    },
+    {
+      "nova-icon ui_hourglass": "Ui 2 hourglass"
+    },
+    {
+      "nova-icon ui_lab": "Ui 2 lab"
+    },
+    {
+      "nova-icon ui_layers": "Ui 2 layers"
+    },
+    {
+      "nova-icon ui_like": "Ui 2 like"
+    },
+    {
+      "nova-icon ui_link-66": "Ui 2 link-66"
+    },
+    {
+      "nova-icon ui_link-67": "Ui 2 link-67"
+    },
+    {
+      "nova-icon ui_link-68": "Ui 2 link-68"
+    },
+    {
+      "nova-icon ui_link-69": "Ui 2 link-69"
+    },
+    {
+      "nova-icon ui_link-71": "Ui 2 link-71"
+    },
+    {
+      "nova-icon ui_link-72": "Ui 2 link-72"
+    },
+    {
+      "nova-icon ui_link-broken-70": "Ui 2 link-broken-70"
+    },
+    {
+      "nova-icon ui_link-broken-73": "Ui 2 link-broken-73"
+    },
+    {
+      "nova-icon ui_menu-34": "Ui 2 menu-34"
+    },
+    {
+      "nova-icon ui_menu-35": "Ui 2 menu-35"
+    },
+    {
+      "nova-icon ui_menu-bold": "Ui 2 menu-bold"
+    },
+    {
+      "nova-icon ui_menu-dots": "Ui 2 menu-dots"
+    },
+    {
+      "nova-icon ui_menu-square": "Ui 2 menu-square"
+    },
+    {
+      "nova-icon ui_node": "Ui 2 node"
+    },
+    {
+      "nova-icon ui_paragraph": "Ui 2 paragraph"
+    },
+    {
+      "nova-icon ui_phone": "Ui 2 phone"
+    },
+    {
+      "nova-icon ui_settings-90": "Ui 2 settings-90"
+    },
+    {
+      "nova-icon ui_settings-91": "Ui 2 settings-91"
+    },
+    {
+      "nova-icon ui_share-bold": "Ui 2 share-bold"
+    },
+    {
+      "nova-icon ui_share": "Ui 2 share"
+    },
+    {
+      "nova-icon ui_small-add": "Ui 2 small-add"
+    },
+    {
+      "nova-icon ui_small-delete": "Ui 2 small-delete"
+    },
+    {
+      "nova-icon ui_small-remove": "Ui 2 small-remove"
+    },
+    {
+      "nova-icon ui_square-add-08": "Ui 2 square-add-08"
+    },
+    {
+      "nova-icon ui_square-add-11": "Ui 2 square-add-11"
+    },
+    {
+      "nova-icon ui_square-delete-10": "Ui 2 square-delete-10"
+    },
+    {
+      "nova-icon ui_square-delete-13": "Ui 2 square-delete-13"
+    },
+    {
+      "nova-icon ui_square-remove-09": "Ui 2 square-remove-09"
+    },
+    {
+      "nova-icon ui_square-remove-12": "Ui 2 square-remove-12"
+    },
+    {
+      "nova-icon ui_target": "Ui 2 target"
+    },
+    {
+      "nova-icon ui_tile-55": "Ui 2 tile-55"
+    },
+    {
+      "nova-icon ui_tile-56": "Ui 2 tile-56"
+    },
+    {
+      "nova-icon ui_time-alarm": "Ui 2 time-alarm"
+    },
+    {
+      "nova-icon ui_time-clock": "Ui 2 time-clock"
+    },
+    {
+      "nova-icon ui_time-countdown": "Ui 2 time-countdown"
+    },
+    {
+      "nova-icon ui_time": "Ui 2 time"
+    },
+    {
+      "nova-icon ui_webpage": "Ui 2 webpage"
+    },
+    {
+      "nova-icon ui_window-add": "Ui 2 window-add"
+    },
+    {
+      "nova-icon ui_window-delete": "Ui 2 window-delete"
+    },
+    {
+      "nova-icon ui_alert": "Ui 3 alert"
+    },
+    {
+      "nova-icon ui_backward": "Ui 3 backward"
+    },
+    {
+      "nova-icon ui_bolt": "Ui 3 bolt"
+    },
+    {
+      "nova-icon ui_bullet-list": "Ui 3 bullet-list"
+    },
+    {
+      "nova-icon ui_calendar-add": "Ui 3 calendar-add"
+    },
+    {
+      "nova-icon ui_card-add": "Ui 3 card-add"
+    },
+    {
+      "nova-icon ui_card-alert": "Ui 3 card-alert"
+    },
+    {
+      "nova-icon ui_chart-bars": "Ui 3 chart-bars"
+    },
+    {
+      "nova-icon ui_chart": "Ui 3 chart"
+    },
+    {
+      "nova-icon ui_chat-33": "Ui 3 chat-33"
+    },
+    {
+      "nova-icon ui_chat-45": "Ui 3 chat-45"
+    },
+    {
+      "nova-icon ui_chat-46": "Ui 3 chat-46"
+    },
+    {
+      "nova-icon ui_chat-reply": "Ui 3 chat-reply"
+    },
+    {
+      "nova-icon ui_check-in": "Ui 3 check-in"
+    },
+    {
+      "nova-icon ui_check-out": "Ui 3 check-out"
+    },
+    {
+      "nova-icon ui_dock-bottom": "Ui 3 dock-bottom"
+    },
+    {
+      "nova-icon ui_dock-left": "Ui 3 dock-left"
+    },
+    {
+      "nova-icon ui_dock-right": "Ui 3 dock-right"
+    },
+    {
+      "nova-icon ui_dock-top": "Ui 3 dock-top"
+    },
+    {
+      "nova-icon ui_filter-check": "Ui 3 filter-check"
+    },
+    {
+      "nova-icon ui_filter-remove": "Ui 3 filter-remove"
+    },
+    {
+      "nova-icon ui_forward": "Ui 3 forward"
+    },
+    {
+      "nova-icon ui_funnel-39": "Ui 3 funnel-39"
+    },
+    {
+      "nova-icon ui_funnel-40": "Ui 3 funnel-40"
+    },
+    {
+      "nova-icon ui_funnel-41": "Ui 3 funnel-41"
+    },
+    {
+      "nova-icon ui_heart-add": "Ui 3 heart-add"
+    },
+    {
+      "nova-icon ui_heart-remove": "Ui 3 heart-remove"
+    },
+    {
+      "nova-icon ui_heart": "Ui 3 heart"
+    },
+    {
+      "nova-icon ui_infinite": "Ui 3 infinite"
+    },
+    {
+      "nova-icon ui_link": "Ui 3 link"
+    },
+    {
+      "nova-icon ui_menu-left": "Ui 3 menu-left"
+    },
+    {
+      "nova-icon ui_menu-right": "Ui 3 menu-right"
+    },
+    {
+      "nova-icon ui_menu": "Ui 3 menu"
+    },
+    {
+      "nova-icon ui_metrics": "Ui 3 metrics"
+    },
+    {
+      "nova-icon ui_phone-call-end": "Ui 3 phone-call-end"
+    },
+    {
+      "nova-icon ui_phone-call": "Ui 3 phone-call"
+    },
+    {
+      "nova-icon ui_phone": "Ui 3 phone"
+    },
+    {
+      "nova-icon ui_playlist": "Ui 3 playlist"
+    },
+    {
+      "nova-icon ui_search": "Ui 3 search"
+    },
+    {
+      "nova-icon ui_security": "Ui 3 security"
+    },
+    {
+      "nova-icon ui_segmentation": "Ui 3 segmentation"
+    },
+    {
+      "nova-icon ui_select": "Ui 3 select"
+    },
+    {
+      "nova-icon ui_send": "Ui 3 send"
+    },
+    {
+      "nova-icon ui_signal": "Ui 3 signal"
+    },
+    {
+      "nova-icon ui_slide-left": "Ui 3 slide-left"
+    },
+    {
+      "nova-icon ui_slide-right": "Ui 3 slide-right"
+    },
+    {
+      "nova-icon ui_table-left": "Ui 3 table-left"
+    },
+    {
+      "nova-icon ui_table-right": "Ui 3 table-right"
+    },
+    {
+      "nova-icon ui_tag": "Ui 3 tag"
+    },
+    {
+      "nova-icon ui_widget": "Ui 3 widget"
+    }
+  ],
+  "Users": [
+    {
+      "nova-icon users_add-27": "Users add 27"
+    },
+    {
+      "nova-icon users_add-29": "Users add 29"
+    },
+    {
+      "nova-icon users_badge-13": "Users badge 13"
+    },
+    {
+      "nova-icon users_badge-14": "Users badge 14"
+    },
+    {
+      "nova-icon users_badge-15": "Users badge 15"
+    },
+    {
+      "nova-icon users_circle-08": "Users circle 08"
+    },
+    {
+      "nova-icon users_circle-09": "Users circle 09"
+    },
+    {
+      "nova-icon users_circle-10": "Users circle 10"
+    },
+    {
+      "nova-icon users_contacts": "Users contacts"
+    },
+    {
+      "nova-icon users_delete-28": "Users delete 28"
+    },
+    {
+      "nova-icon users_delete-30": "Users delete 30"
+    },
+    {
+      "nova-icon users_man-20": "Users man 20"
+    },
+    {
+      "nova-icon users_man-23": "Users man 23"
+    },
+    {
+      "nova-icon users_man-glasses": "Users man glasses"
+    },
+    {
+      "nova-icon users_mobile-contact": "Users mobile contact"
+    },
+    {
+      "nova-icon users_multiple-11": "Users multiple 11"
+    },
+    {
+      "nova-icon users_multiple-19": "Users multiple 19"
+    },
+    {
+      "nova-icon users_network": "Users network"
+    },
+    {
+      "nova-icon users_parent": "Users parent"
+    },
+    {
+      "nova-icon users_single-01": "Users single 01"
+    },
+    {
+      "nova-icon users_single-02": "Users single 02"
+    },
+    {
+      "nova-icon users_single-03": "Users single 03"
+    },
+    {
+      "nova-icon users_single-04": "Users single 04"
+    },
+    {
+      "nova-icon users_single-05": "Users single 05"
+    },
+    {
+      "nova-icon users_single-body": "Users single body"
+    },
+    {
+      "nova-icon users_single-position": "Users single position"
+    },
+    {
+      "nova-icon users_square-31": "Users square 31"
+    },
+    {
+      "nova-icon users_square-32": "Users square 32"
+    },
+    {
+      "nova-icon users_square-33": "Users square 33"
+    },
+    {
+      "nova-icon users_woman-21": "Users woman 21"
+    },
+    {
+      "nova-icon users_woman-24": "Users woman 24"
+    },
+    {
+      "nova-icon users_woman-25": "Users woman 25"
+    },
+    {
+      "nova-icon users_woman-man": "Users woman man"
+    },
+    {
+      "nova-icon users_add-27": "Users add 27"
+    },
+    {
+      "nova-icon users_add-29": "Users add 29"
+    },
+    {
+      "nova-icon users_badge-13": "Users Badge 1"
+    },
+    {
+      "nova-icon users_badge-14": "Users Badge 2"
+    },
+    {
+      "nova-icon users_badge-15": "Users Badge 3"
+    },
+    {
+      "nova-icon users_circle-08": "Users Circle 1"
+    },
+    {
+      "nova-icon users_circle-09": "Users Circle 2"
+    },
+    {
+      "nova-icon users_circle-10": "Users Circle 3"
+    },
+    {
+      "nova-icon users_contacts": "Users Contact"
+    },
+    {
+      "nova-icon users_delete-28": "Users Delete 1"
+    },
+    {
+      "nova-icon users_delete-30": "Users Delete 2"
+    },
+    {
+      "nova-icon users_man-20": "Users Man 1"
+    },
+    {
+      "nova-icon users_man-23": "Users Man 2"
+    },
+    {
+      "nova-icon users_man-glasses": "Users Man Glass"
+    },
+    {
+      "nova-icon users_mobile-contact": "Users Mobile Contact"
+    },
+    {
+      "nova-icon users_multiple-11": "Users Multiple 1"
+    },
+    {
+      "nova-icon users_multiple-19": "Users Multiple 2"
+    },
+    {
+      "nova-icon users_network": "Users Network"
+    },
+    {
+      "nova-icon users_parent": "Users Parent"
+    },
+    {
+      "nova-icon users_single-01": "Users Single 01"
+    },
+    {
+      "nova-icon users_single-02": "Users Single 02"
+    },
+    {
+      "nova-icon users_single-03": "Users Single 03"
+    },
+    {
+      "nova-icon users_single-04": "Users Single 04"
+    },
+    {
+      "nova-icon users_single-05": "Users Single 05"
+    },
+    {
+      "nova-icon users_single-body": "Users Single Body"
+    },
+    {
+      "nova-icon users_single-position": "Users Single Position"
+    },
+    {
+      "nova-icon users_square-31": "Users Square"
+    },
+    {
+      "nova-icon users_square-32": "Users Square 2"
+    },
+    {
+      "nova-icon users_square-33": "Users Square 3"
+    },
+    {
+      "nova-icon users_woman-21": "Users Women 1"
+    },
+    {
+      "nova-icon users_woman-24": "Users Women 2"
+    },
+    {
+      "nova-icon users_woman-25": "Users Women 3"
+    },
+    {
+      "nova-icon users_woman-34": "Users Women 4"
+    },
+    {
+      "nova-icon users_woman-35": "Users Women 5"
+    },
+    {
+      "nova-icon users_woman-man": "Users Women Man"
+    }
+  ],
+  "Weather": [
+    {
+      "nova-icon weather_celsius": "Weather celsius"
+    },
+    {
+      "nova-icon weather_cloud-13": "Weather cloud 13"
+    },
+    {
+      "nova-icon weather_cloud-14": "Weather cloud 14"
+    },
+    {
+      "nova-icon weather_cloud-drop": "Weather cloud drop"
+    },
+    {
+      "nova-icon weather_cloud-fog-31": "Weather cloud fog-31"
+    },
+    {
+      "nova-icon weather_cloud-fog-32": "Weather cloud fog-32"
+    },
+    {
+      "nova-icon weather_cloud-hail": "Weather cloud hail"
+    },
+    {
+      "nova-icon weather_cloud-light": "Weather cloud light"
+    },
+    {
+      "nova-icon weather_cloud-moon": "Weather cloud moon"
+    },
+    {
+      "nova-icon weather_cloud-rain": "Weather cloud rain"
+    },
+    {
+      "nova-icon weather_cloud-rainbow": "Weather cloud rainbow"
+    },
+    {
+      "nova-icon weather_cloud-snow-34": "Weather cloud snow-34"
+    },
+    {
+      "nova-icon weather_cloud-snow-42": "Weather cloud snow-42"
+    },
+    {
+      "nova-icon weather_cloud-sun-17": "Weather cloud sun-17"
+    },
+    {
+      "nova-icon weather_cloud-sun-19": "Weather cloud sun-19"
+    },
+    {
+      "nova-icon weather_compass": "Weather compass"
+    },
+    {
+      "nova-icon weather_drop-12": "Weather drop 12"
+    },
+    {
+      "nova-icon weather_drop-15": "Weather drop 15"
+    },
+    {
+      "nova-icon weather_drops": "Weather drops"
+    },
+    {
+      "nova-icon weather_eclipse": "Weather eclipse"
+    },
+    {
+      "nova-icon weather_fahrenheit": "Weather fahrenheit"
+    },
+    {
+      "nova-icon weather_fog": "Weather fog"
+    },
+    {
+      "nova-icon weather_forecast": "Weather forecast"
+    },
+    {
+      "nova-icon weather_hurricane-44": "Weather hurricane 44"
+    },
+    {
+      "nova-icon weather_hurricane-45": "Weather hurricane 45"
+    },
+    {
+      "nova-icon weather_moon-cloud-drop": "Weather moon cloud-drop"
+    },
+    {
+      "nova-icon weather_moon-cloud-fog": "Weather moon cloud-fog"
+    },
+    {
+      "nova-icon weather_moon-cloud-hail": "Weather moon cloud-hail"
+    },
+    {
+      "nova-icon weather_moon-cloud-light": "Weather moon cloud-light"
+    },
+    {
+      "nova-icon weather_moon-cloud-rain": "Weather moon cloud-rain"
+    },
+    {
+      "nova-icon weather_moon-cloud-snow-61": "Weather moon cloud-snow-61"
+    },
+    {
+      "nova-icon weather_moon-cloud-snow-62": "Weather moon cloud-snow-62"
+    },
+    {
+      "nova-icon weather_moon-fog": "Weather moon fog"
+    },
+    {
+      "nova-icon weather_moon-full": "Weather moon full"
+    },
+    {
+      "nova-icon weather_moon-stars": "Weather moon stars"
+    },
+    {
+      "nova-icon weather_moon": "Weather moon"
+    },
+    {
+      "nova-icon weather_rain-hail": "Weather rain hail"
+    },
+    {
+      "nova-icon weather_rain": "Weather rain"
+    },
+    {
+      "nova-icon weather_rainbow": "Weather rainbow"
+    },
+    {
+      "nova-icon weather_snow": "Weather snow"
+    },
+    {
+      "nova-icon weather_sun-cloud-drop": "Weather sun cloud-drop"
+    },
+    {
+      "nova-icon weather_sun-cloud-fog": "Weather sun cloud-fog"
+    },
+    {
+      "nova-icon weather_sun-cloud-hail": "Weather sun cloud-hail"
+    },
+    {
+      "nova-icon weather_sun-cloud-light": "Weather sun cloud-light"
+    },
+    {
+      "nova-icon weather_sun-cloud-rain": "Weather sun cloud-rain"
+    },
+    {
+      "nova-icon weather_sun-cloud-snow-54": "Weather sun cloud-snow-54"
+    },
+    {
+      "nova-icon weather_sun-cloud-snow-55": "Weather sun cloud-snow-55"
+    },
+    {
+      "nova-icon weather_sun-cloud": "Weather sun cloud"
+    },
+    {
+      "nova-icon weather_sun-fog-29": "Weather sun fog-29"
+    },
+    {
+      "nova-icon weather_sun-fog-30": "Weather sun fog-30"
+    },
+    {
+      "nova-icon weather_sun-fog-43": "Weather sun fog-43"
+    },
+    {
+      "nova-icon weather_sun": "Weather sun"
+    },
+    {
+      "nova-icon weather_wind": "Weather wind"
+    }
+  ]
+}

@@ -42,11 +42,11 @@ extract( shortcode_atts( array(
 
 $uid = uniqid( rand() );
 
-$design_style = la_shortcode_custom_css_class( $css_ad_carousel, ' ' );
+$design_style = nova_shortcode_custom_css_class( $css_ad_carousel, ' ' );
 
-$el_class = LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 
-$wrap_data = LaStudio_Shortcodes_Helper::getParamCarouselShortCode($atts);
+$wrap_data = Novaworks_Shortcodes_Helper::getParamCarouselShortCode($atts);
 
 $elem_css = 'la-carousel-wrapper la_carousel_' . $slider_type . $design_style . $el_class;
 ?>
@@ -54,7 +54,7 @@ $elem_css = 'la-carousel-wrapper la_carousel_' . $slider_type . $design_style . 
     <div data-la_component="AutoCarousel" class="js-el la-slick-slider" <?php echo $wrap_data ?>>
         <?php
         la_fw_override_shortcodes( $content );
-        echo LaStudio_Shortcodes_Helper::remove_js_autop( $content );
+        echo Novaworks_Shortcodes_Helper::remove_js_autop( $content );
         la_fw_restore_shortcodes();
         ?>
     </div>

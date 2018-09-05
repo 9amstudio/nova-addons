@@ -53,7 +53,7 @@ $atts = shortcode_atts( $default_atts, $atts );
 extract( $atts );
 
 $_tmp_class = 'wpb_content_element la-testimonials';
-$el_class = $_tmp_class . LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = $_tmp_class . Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 
 if(!empty($ids)){
     $ids = explode(',', $ids);
@@ -72,17 +72,17 @@ if(!empty($ids)){
     $query_args['orderby'] = 'post__in';
 }
 
-$globalVar = apply_filters('LaStudio/global_loop_variable', 'lastudio_loop');
+$globalVar = apply_filters('Novaworks/global_loop_variable', 'nova_loop');
 $globalVarTmp = (isset($GLOBALS[$globalVar]) ? $GLOBALS[$globalVar] : '');
 $globalParams = array();
 $globalParams['loop_id'] = $unique_id;
 $globalParams['loop_style'] = $style;
-$globalParams['responsive_column'] = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
-$globalParams['image_size'] = LaStudio_Shortcodes_Helper::getImageSizeFormString($img_size);
+$globalParams['responsive_column'] = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
+$globalParams['image_size'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($img_size);
 $globalParams['excerpt_length'] = $excerpt_length;
 $globalParams['item_space'] = $item_space;
 if($enable_carousel){
-    $globalParams['slider_configs'] = LaStudio_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
+    $globalParams['slider_configs'] = Novaworks_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
 }
 
 $GLOBALS[$globalVar] = $globalParams;
@@ -92,7 +92,7 @@ if( $the_query->have_posts() ){
     ?><div id="<?php echo $unique_id;?>" class="<?php echo esc_attr($el_class)?>">
         <?php
 
-        do_action('LaStudio/shortcodes/before_loop/', 'shortcode', 'la_testimonial', $atts);
+        do_action('Novaworks/shortcodes/before_loop/', 'shortcode', 'la_testimonial', $atts);
 
         get_template_part('templates/testimonial/loop','start');
 
@@ -106,7 +106,7 @@ if( $the_query->have_posts() ){
 
         get_template_part('templates/testimonial/loop','end');
 
-        do_action('LaStudio/shortcodes/after_loop','shortcode', 'la_testimonial', $atts);
+        do_action('Novaworks/shortcodes/after_loop','shortcode', 'la_testimonial', $atts);
 
         ?>
     </div><?php

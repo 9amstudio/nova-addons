@@ -9,37 +9,37 @@ $shortcode_params = array(
     array(
         'type'          => 'dropdown',
         'save_always'   => true,
-        'heading'       => __('Position', 'lastudio'),
+        'heading'       => __('Position', 'nova'),
         'param_name'    => 'position',
         'value'         => array(
-            __('Top', 'lastudio')      => 'top',
-            __('Right', 'lastudio')    => 'right',
-            __('Bottom', 'lastudio')   => 'bottom',
-            __('Left', 'lastudio')     => 'left'
+            __('Top', 'nova')      => 'top',
+            __('Right', 'nova')    => 'right',
+            __('Bottom', 'nova')   => 'bottom',
+            __('Left', 'nova')     => 'left'
         )
     ),
     array(
         'type'          => 'textfield',
-        'heading'       => __('Left', 'lastudio'),
+        'heading'       => __('Left', 'nova'),
         'param_name'    => 'left'
     ),
     array(
         'type'          => 'textfield',
-        'heading'       => __('Top', 'lastudio'),
+        'heading'       => __('Top', 'nova'),
         'param_name'    => 'top'
     ),
     array(
         'type'          => 'textarea_html',
-        'heading'       => __('Content', 'lastudio'),
+        'heading'       => __('Content', 'nova'),
         'param_name'    => 'content'
     )
 );
 
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'                      => __('LA Hotspot', 'lastudio'),
+        'name'                      => __('LA Hotspot', 'nova'),
         'base'                      => 'la_hotspot',
         'allowed_container_element' => 'vc_row',
         'content_element'           => false,

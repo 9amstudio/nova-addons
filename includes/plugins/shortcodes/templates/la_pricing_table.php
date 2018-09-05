@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-$la_fix_css = array();
-$icon_type = $icon_fontawesome = $icon_la_icon_outline = $icon_image_id = $icon_fz = $icon_lh = $icon_color = $icon_bg_color = $icon_bg_color2 = '';
+$nova_fix_css = array();
+$icon_type = $icon_fontawesome = $icon_nova_icon_outline = $icon_image_id = $icon_fz = $icon_lh = $icon_color = $icon_bg_color = $icon_bg_color2 = '';
 $package_title = $use_gfont_package_title = $package_title_font = $package_title_fz = $package_title_lh = $package_title_color = '';
 $package_price = $use_gfont_package_price = $package_price_font = $package_price_fz = $package_price_lh = $package_price_color = '';
 $price_unit = $use_gfont_package_price_unit = $package_price_unit_font = $package_price_unit_fz = $package_price_unit_lh = $package_price_unit_color = '';
@@ -24,7 +24,7 @@ $atts = shortcode_atts( array(
     'icon_entypo' => '',
     'icon_linecons' => '',
     'icon_monosocial' => 'vc-mono vc-mono-fivehundredpx',
-    'icon_la_icon_outline' => 'la-icon design-2_image',
+    'icon_nova_icon_outline' => 'nova-icon design-2_image',
     'icon_nucleo_glyph' => 'nc-icon-glyph nature_bear',
     'icon_image_id' => '',
     'main_bg_color' => '',
@@ -102,7 +102,7 @@ if($package_featured == 'yes'){
     $css_class[] = 'is_box_featured';
 }
 
-$css_class = implode(' ', $css_class) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$css_class = implode(' ', $css_class) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 
 
 $button_link = ( '||' === $button_link ) ? '' : $button_link;
@@ -112,14 +112,14 @@ $button_link = vc_parse_multi_attribute( $button_link, array( 'url' => '', 'titl
 $packageTitleCssInline = array();
 $packageTitleHtmlAtts = '';
 if(!empty($package_title_fz) || !empty($package_title_lh)){
-    $packageTitleHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packageTitleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .pricing-heading',
         'media_sizes' => array(
             'font-size' => $package_title_fz,
             'line-height' => $package_title_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .pricing-heading',
         'media_sizes' => array(
             'font-size' => $package_title_fz,
@@ -131,7 +131,7 @@ if(!empty($package_title_color)){
     $packageTitleCssInline[] = "color:{$package_title_color}";
 }
 if(!empty($use_gfont_package_title)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_title_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_title_font);
     if(isset($gfont_data['style'])){
         $packageTitleCssInline[] = $gfont_data['style'];
     }
@@ -145,14 +145,14 @@ if(!empty($use_gfont_package_title)){
 $packagePriceCssInline = array();
 $packagePriceHtmlAtts = '';
 if(!empty($package_price_fz) || !empty($package_price_lh)){
-    $packagePriceHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packagePriceHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .price-box .price-value',
         'media_sizes' => array(
             'font-size' => $package_price_fz,
             'line-height' => $package_price_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .price-box .price-value',
         'media_sizes' => array(
             'font-size' => $package_price_fz,
@@ -164,7 +164,7 @@ if(!empty($package_price_color)){
     $packagePriceCssInline[] = "color:{$package_price_color}";
 }
 if(!empty($use_gfont_package_price)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_price_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_price_font);
     if(isset($gfont_data['style'])){
         $packagePriceCssInline[] = $gfont_data['style'];
     }
@@ -177,14 +177,14 @@ if(!empty($use_gfont_package_price)){
 $packagePriceUnitCssInline = array();
 $packagePriceUnitHtmlAtts = '';
 if(!empty($package_price_unit_fz) || !empty($package_price_unit_lh)){
-    $packagePriceUnitHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packagePriceUnitHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .price-box .price-unit',
         'media_sizes' => array(
             'font-size' => $package_price_unit_fz,
             'line-height' => $package_price_unit_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .price-box .price-unit',
         'media_sizes' => array(
             'font-size' => $package_price_unit_fz,
@@ -196,7 +196,7 @@ if(!empty($package_price_unit_color)){
     $packagePriceUnitCssInline[] = "color:{$package_price_unit_color}";
 }
 if(!empty($use_gfont_package_price_unit)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_price_unit_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_price_unit_font);
     if(isset($gfont_data['style'])){
         $packagePriceUnitCssInline[] = $gfont_data['style'];
     }
@@ -209,14 +209,14 @@ if(!empty($use_gfont_package_price_unit)){
 $packageDescCssInline = array();
 $packageDescHtmlAtts = '';
 if(!empty($package_desc_fz) || !empty($package_desc_lh)){
-    $packageDescHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packageDescHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .desc-features',
         'media_sizes' => array(
             'font-size' => $package_desc_fz,
             'line-height' => $package_desc_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .desc-features',
         'media_sizes' => array(
             'font-size' => $package_desc_fz,
@@ -228,7 +228,7 @@ if(!empty($package_desc_color)){
     $packageDescCssInline[] = "color:{$package_desc_color}";
 }
 if(!empty($use_gfont_package_desc)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_desc_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_desc_font);
     if(isset($gfont_data['style'])){
         $packageDescCssInline[] = $gfont_data['style'];
     }
@@ -241,14 +241,14 @@ if(!empty($use_gfont_package_desc)){
 $packageFeaturesCssInline = array();
 $packageFeaturesHtmlAtts = '';
 if(!empty($package_features_fz) || !empty($package_features_lh)){
-    $packageFeaturesHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packageFeaturesHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .package-features',
         'media_sizes' => array(
             'font-size' => $package_features_fz,
             'line-height' => $package_features_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .package-features',
         'media_sizes' => array(
             'font-size' => $package_features_fz,
@@ -260,7 +260,7 @@ if(!empty($package_features_color)){
     $packageFeaturesCssInline[] = "color:{$package_features_color}";
 }
 if(!empty($use_gfont_package_features)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_features_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_features_font);
     if(isset($gfont_data['style'])){
         $packageFeaturesCssInline[] = $gfont_data['style'];
     }
@@ -273,14 +273,14 @@ if(!empty($use_gfont_package_features)){
 $packageActionCssInline = array();
 $packageActionHtmlAtts = '';
 if(!empty($package_button_fz) || !empty($package_button_lh)){
-    $packageActionHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+    $packageActionHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
         'target' => '#' . $unique_id . ' .la-pricing-box .pricing-action a',
         'media_sizes' => array(
             'font-size' => $package_button_fz,
             'line-height' => $package_button_lh
         )
     ));
-    LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+    Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
         'target' => '#' . $unique_id . ' .la-pricing-box .pricing-action a',
         'media_sizes' => array(
             'font-size' => $package_button_fz,
@@ -290,7 +290,7 @@ if(!empty($package_button_fz) || !empty($package_button_lh)){
 }
 
 if(!empty($use_gfont_package_button)){
-    $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($package_button_font);
+    $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($package_button_font);
     if(isset($gfont_data['style'])){
         $packageActionCssInline[] = $gfont_data['style'];
     }
@@ -315,7 +315,7 @@ if($icon_type == 'custom'){
         }
     }
 }
-$packageIconHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+$packageIconHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
     'target' => '#' . $unique_id . ' .la-pricing-box .wrap-icon .icon-inner',
     'media_sizes' => array(
         'font-size' => $icon_fz,
@@ -324,7 +324,7 @@ $packageIconHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
         'height' => $icon_lh
     )
 ));
-LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
     'target' => '#' . $unique_id . ' .la-pricing-box .wrap-icon .icon-inner',
     'media_sizes' => array(
         'font-size' => $icon_fz,
@@ -353,7 +353,7 @@ if(!empty($icon_color)){
 
                     $iconInnerHTML .= sprintf(
                         '<span class="hidden js-el"%s></span>',
-                        LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+                        Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
                             'target' => '#' . $unique_id . ' .la-pricing-box',
                             'media_sizes' => array(
                                 'margin-top' => preg_replace_callback(
@@ -368,7 +368,7 @@ if(!empty($icon_color)){
                     );
                     $iconInnerHTML .= sprintf(
                         '<span class="hidden js-el"%s></span>',
-                        LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+                        Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
                             'target' => '#' . $unique_id . ' .la-pricing-box .pricing-heading-wrap',
                             'media_sizes' => array(
                                 'padding-top' => preg_replace_callback(
@@ -383,7 +383,7 @@ if(!empty($icon_color)){
                     );
                     $iconInnerHTML .= sprintf(
                         '<span class="hidden js-el"%s></span>',
-                        LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+                        Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
                             'target' => '#' . $unique_id . ' .la-pricing-box .wrap-icon',
                             'media_sizes' => array(
                                 'margin-top' => preg_replace_callback(
@@ -518,4 +518,4 @@ if(!empty($icon_color)){
         }
     <?php endif; ?>
 </span>
-<?php LaStudio_Shortcodes_Helper::renderResponsiveMediaStyleTags($la_fix_css); ?>
+<?php Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags($nova_fix_css); ?>

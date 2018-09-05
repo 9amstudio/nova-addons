@@ -8,27 +8,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'dropdown',
-        'heading' => __('Style','lastudio'),
+        'heading' => __('Style','nova'),
         'param_name' => 'style',
         'value' => array(
-            __('Default','lastudio') => 'default',
-            __('Circle','lastudio') => 'circle',
-            __('Square','lastudio') => 'square',
-            __('Round','lastudio') => 'round',
+            __('Default','nova') => 'default',
+            __('Circle','nova') => 'circle',
+            __('Square','nova') => 'square',
+            __('Round','nova') => 'round',
         ),
         'default' => 'default'
     ),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(),
 );
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('Social Media Link', 'lastudio'),
+        'name'			=> __('Social Media Link', 'nova'),
         'base'			=> 'la_social_link',
         'icon'          => 'la_social_link fa fa-share-alt',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description' 	=> __('Display Social Media Link.','lastudio'),
+        'category'  	=> __('La Studio', 'nova'),
+        'description' 	=> __('Display Social Media Link.','nova'),
         'params' 		=> $shortcode_params
     ),
     'la_social_link'

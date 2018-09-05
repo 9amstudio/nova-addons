@@ -11,19 +11,19 @@ if ( !class_exists( 'WPBakeryShortCode_la_icon_list' ) ) {
 }
 
 return apply_filters(
-	'LaStudio/shortcodes/configs',
+	'Novaworks/shortcodes/configs',
 	array(
-		'name'			=> __('Icon Lists', 'lastudio'),
+		'name'			=> __('Icon Lists', 'nova'),
 		'base'			=> 'la_icon_list',
-		'icon'          => 'la-wpb-icon la_icon_list',
-		'category'  	=> __('La Studio', 'lastudio'),
-		'description' 	=> __('Displays the list icon','lastudio'),
+		'icon'          => 'nova-wpb-icon la_icon_list',
+		'category'  	=> __('La Studio', 'nova'),
+		'description' 	=> __('Displays the list icon','nova'),
 		'as_parent'         => array('only' => 'la_icon_list_item'),
 		'content_element'   => true,
 		'is_container'      => false,
 		'show_settings_on_create' => false,
 		'params' 		=> array(
-			LaStudio_Shortcodes_Helper::fieldExtraClass()
+			Novaworks_Shortcodes_Helper::fieldExtraClass()
 		),
 		'js_view' => 'VcColumnView',
 		'html_template' => plugin_dir_path( dirname(__FILE__) ) . 'templates/la_icon_list.php'

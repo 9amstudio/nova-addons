@@ -11,13 +11,13 @@ if ( !class_exists( 'WPBakeryShortCode_la_timeline' ) ) {
 }
 
 return apply_filters(
-	'LaStudio/shortcodes/configs',
+	'Novaworks/shortcodes/configs',
 	array(
-		'name'			=> __('Timeline', 'lastudio'),
+		'name'			=> __('Timeline', 'nova'),
 		'base'			=> 'la_timeline',
-		'icon'          => 'la-wpb-icon la_timeline',
-		'category'  	=> __('La Studio', 'lastudio'),
-		'description' 	=> __('Displays the timeline block','lastudio'),
+		'icon'          => 'nova-wpb-icon la_timeline',
+		'category'  	=> __('La Studio', 'nova'),
+		'description' 	=> __('Displays the timeline block','nova'),
 		'as_parent'         => array('only' => 'la_timeline_item'),
 		'content_element'   => true,
 		'is_container'      => false,
@@ -25,28 +25,28 @@ return apply_filters(
 		'params' 		=> array(
 			array(
 				'type' => 'dropdown',
-				'heading' => __( 'Design', 'lastudio'),
+				'heading' => __( 'Design', 'nova'),
 				'param_name' => 'style',
 				'value' => array(
-					__('Style 01', 'lastudio') => '1',
-					__('Style 02', 'lastudio') => '2',
+					__('Style 01', 'nova') => '1',
+					__('Style 02', 'nova') => '2',
 				),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __('Enable load more', 'lastudio' ),
+				'heading'    => __('Enable load more', 'nova' ),
 				'param_name' => 'enable_load_more',
-				'value'      => array( __( 'Yes', 'lastudio' ) => 'yes' )
+				'value'      => array( __( 'Yes', 'nova' ) => 'yes' )
 			),
 			array(
 				"type" => "textfield",
-				"heading" => __("Load More Text", 'lastudio'),
+				"heading" => __("Load More Text", 'nova'),
 				"param_name" => "load_more_text",
 				"value" => "Load More",
-				"description" => __("Customize the load more text.", 'lastudio'),
+				"description" => __("Customize the load more text.", 'nova'),
 				"dependency" => Array("element" => "enable_load_more","value" => array("yes")),
 			),
-			LaStudio_Shortcodes_Helper::fieldExtraClass()
+			Novaworks_Shortcodes_Helper::fieldExtraClass()
 		),
 		'js_view' => 'VcColumnView',
 		'html_template' => plugin_dir_path( dirname(__FILE__) ) . 'templates/la_timeline.php'

@@ -899,14 +899,14 @@
 				e.preventDefault();
 
 				var $this   = $(this),
-					$dialog = $('#la-icon-dialog'),
+					$dialog = $('#nova-icon-dialog'),
 					$load   = $dialog.find('.la-dialog-load'),
 					$select = $dialog.find('.la-dialog-select'),
 					$insert = $dialog.find('.la-dialog-insert'),
-					$search = $dialog.find('.la-icon-search');
+					$search = $dialog.find('.nova-icon-search');
 
 				// set parent
-				$parent = $this.closest('.la-icon-select');
+				$parent = $this.closest('.nova-icon-select');
 
 				// open dialog
 				$dialog.dialog({
@@ -919,7 +919,7 @@
 					open: function() {
 
 						// fix scrolling
-						$la_body.addClass('la-icon-scrolling');
+						$la_body.addClass('nova-icon-scrolling');
 
 						// fix button for VC
 						$('.ui-dialog-titlebar-close').addClass('ui-button');
@@ -939,7 +939,7 @@
 
 					},
 					close: function() {
-						$la_body.removeClass('la-icon-scrolling');
+						$la_body.removeClass('nova-icon-scrolling');
 					}
 				});
 
@@ -961,12 +961,12 @@
 
 								e.preventDefault();
 
-								var icon = $(this).data('la-icon');
+								var icon = $(this).data('nova-icon');
 
 								$parent.find('i').removeAttr('class').addClass(icon);
 								$parent.find('input').val(icon).trigger('change');
-								$parent.find('.la-icon-preview').removeClass('hidden');
-								$parent.find('.la-icon-remove').removeClass('hidden');
+								$parent.find('.nova-icon-preview').removeClass('hidden');
+								$parent.find('.nova-icon-remove').removeClass('hidden');
 								$dialog.dialog('close');
 
 							});
@@ -980,7 +980,7 @@
 
 									var $ico = $(this);
 
-									if ( $ico.data('la-icon').search( new RegExp( value, 'i' ) ) < 0 ) {
+									if ( $ico.data('nova-icon').search( new RegExp( value, 'i' ) ) < 0 ) {
 										$ico.hide();
 									} else {
 										$ico.show();
@@ -990,7 +990,7 @@
 
 							});
 
-							$load.find('.la-icon-tooltip').cstooltip({html:true, placement:'top', container:'body'});
+							$load.find('.nova-icon-tooltip').cstooltip({html:true, placement:'top', container:'body'});
 
 						}
 					});
@@ -999,14 +999,14 @@
 
 			});
 
-			$la_body.on('click', '.la-icon-remove', function( e ) {
+			$la_body.on('click', '.nova-icon-remove', function( e ) {
 
 				e.preventDefault();
 
 				var $this   = $(this),
-					$parent = $this.closest('.la-icon-select');
+					$parent = $this.closest('.nova-icon-select');
 
-				$parent.find('.la-icon-preview').addClass('hidden');
+				$parent.find('.nova-icon-preview').addClass('hidden');
 				$parent.find('input').val('').trigger('change');
 				$this.addClass('hidden');
 
@@ -1771,7 +1771,7 @@
 	 *   Get hidden field values
 	 *---------------------------------------------------*/
 	function get_responsive_values_in_input(t) {
-		var mv = t.find('.lastudio-responsive-value').val(),
+		var mv = t.find('.nova-responsive-value').val(),
 			counter = 0;
 		if (mv != "") {
 			var vals = mv.split(";");
@@ -1791,11 +1791,11 @@
 
 			if(counter>1) {
 				t.find('.simplify').attr('la-toggle', 'expand');
-				t.find('.la-responsive-item.optional, .lastudio-unit-section').show();
+				t.find('.la-responsive-item.optional, .nova-unit-section').show();
 			}
 			else {
 				t.find('.simplify').attr('la-toggle', 'collapse');
-				t.find('.la-responsive-item.optional, .lastudio-unit-section').hide();
+				t.find('.la-responsive-item.optional, .nova-unit-section').hide();
 			}
 		}
 		else {
@@ -1810,7 +1810,7 @@
 			});
 			if(i<=1) {    // set default - Collapse
 				t.find('.simplify').attr('la-toggle', 'collapse');
-				t.find('.la-responsive-item.optional, .lastudio-unit-section').hide();
+				t.find('.la-responsive-item.optional, .nova-unit-section').hide();
 			}
 		}
 	}
@@ -1827,38 +1827,38 @@
 				new_val += that.attr('data-id') + ':' + ival + unit + ';';
 			}
 		});
-		t.find('.lastudio-responsive-value').val(new_val);
+		t.find('.nova-responsive-value').val(new_val);
 	}
 
 	$(function(){
 
 
 		$(document)
-			.on('vc_param.la_columns', '.lastudio-responsive-wrapper',  function(e){
+			.on('vc_param.nova_columns', '.nova-responsive-wrapper',  function(e){
 				get_responsive_values_in_input($(this));
 				set_responsive_values_in_hidden($(this));
 			})
 			.on('click', '.simplify', function(e){
-				var $this   = $(this).closest('.lastudio-responsive-wrapper'),
+				var $this   = $(this).closest('.nova-responsive-wrapper'),
 					status  = $(this).attr('la-toggle');
 				switch(status) {
 					case 'expand':
 						$this.find('.simplify').attr('la-toggle', 'collapse');
-						$this.find('.la-responsive-item.optional, .lastudio-unit-section').hide();
+						$this.find('.la-responsive-item.optional, .nova-unit-section').hide();
 						break;
 					case 'collapse':
 						$this.find('.simplify').attr('la-toggle', 'expand');
-						$this.find('.la-responsive-item.optional, .lastudio-unit-section').show();
+						$this.find('.la-responsive-item.optional, .nova-unit-section').show();
 						break;
 					default:
 						$this.find('.simplify').attr('la-toggle', 'collapse');
-						$this.find('.la-responsive-item.optional, .lastudio-unit-section').hide();
+						$this.find('.la-responsive-item.optional, .nova-unit-section').hide();
 						break;
 				}
 			})
 			/* On change - input / select */
 			.on('change', '.la-responsive-input', function(e){
-				set_responsive_values_in_hidden($(this).closest('.lastudio-responsive-wrapper'));
+				set_responsive_values_in_hidden($(this).closest('.nova-responsive-wrapper'));
 			});
 
 		$('.elm-datetime').on('show', function(e){
@@ -1866,7 +1866,7 @@
 			return false;
 		}).bsdatetimepicker();
 
-		$('.lastudio-responsive-wrapper').trigger('vc_param.la_columns');
+		$('.nova-responsive-wrapper').trigger('vc_param.nova_columns');
 
 		$(document).on('click', '.la-field-fieldset.la-fieldset-toggle > .la-title', function() {
 			$(this).toggleClass('active');

@@ -56,14 +56,14 @@ $unique_id = uniqid('la_instagram_feed');
 
 $loopCssClass = array('la-loop','la-instagram-loop');
 
-$responsive_column = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
+$responsive_column = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
 
 $carousel_configs = false;
 
 if($enable_carousel == 'yes'){
 
     $carousel_configs = ' data-la_component="AutoCarousel" ';
-    $carousel_configs .= LaStudio_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
+    $carousel_configs .= Novaworks_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
     $loopCssClass[] = 'la-instagram-slider';
 }
 else{
@@ -77,7 +77,7 @@ $loopCssClass[] = 'grid-space-' . $item_space;
 $loopCssClass[] = 'image-as-' . $image_aspect_ration;
 
 ?>
-<div data-la_component="InstagramFeed" id="<?php echo $unique_id?>" class="js-el la-instagram-feeds<?php echo LaStudio_Shortcodes_Helper::getExtraClass( $el_class ); ?>" data-feed_config="<?php echo esc_attr(wp_json_encode(array(
+<div data-la_component="InstagramFeed" id="<?php echo $unique_id?>" class="js-el la-instagram-feeds<?php echo Novaworks_Shortcodes_Helper::getExtraClass( $el_class ); ?>" data-feed_config="<?php echo esc_attr(wp_json_encode(array(
     'get' => $feed_type,
     'tagName' => $hashtag,
     'locationId' => $location_id,

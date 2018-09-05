@@ -49,7 +49,7 @@ if(!empty($image)) {
 }
 
 
-$el_class = LaStudio_Shortcodes_Helper::getExtraClass($image_class . $el_class);
+$el_class = Novaworks_Shortcodes_Helper::getExtraClass($image_class . $el_class);
 
 $css_class = "la-image-with-hotspots" . $el_class;
 $GLOBALS['la-image_hotspot-icon'] = $hotspot_icon;
@@ -67,5 +67,5 @@ $GLOBALS['la-image_hotspot-tooltip-func'] = $tooltip;
     data-tooltip_shadow="<?php echo esc_attr($tooltip_shadow) ?>"
     data-animation="<?php echo esc_attr($animation) ?>"
 >
-    <?php echo $image_el . LaStudio_Shortcodes_Helper::remove_js_autop($content);?>
+    <?php echo $image_el . Novaworks_Shortcodes_Helper::remove_js_autop($content);?>
 </div>

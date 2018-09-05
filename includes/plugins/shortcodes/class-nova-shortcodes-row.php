@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class LaStudio_Shortcodes_Row{
+class Novaworks_Shortcodes_Row{
 
     public static $instance = null;
 
@@ -21,11 +21,11 @@ class LaStudio_Shortcodes_Row{
         add_filter('vc_shortcode_output',array($this, 'modify_vc_row_output'),10,3);
     }
     public function vc_after_init(){
-        $group_name = __('Background Gradient', 'lastudio');
+        $group_name = __('Background Gradient', 'nova');
 
         vc_add_param('vc_row',array(
             'type' => 'checkbox',
-            'heading' => __('Use Background Gradient',  'lastudio'),
+            'heading' => __('Use Background Gradient',  'nova'),
             'param_name' => 'use_grad',
             'value' => array( __( 'Yes', 'js_composer' ) => 'yes' ),
             'group' => $group_name,
@@ -33,9 +33,9 @@ class LaStudio_Shortcodes_Row{
 
         vc_add_param('vc_row',array(
             'type' => 'gradient',
-            'heading' => __('Gradient Type',  'lastudio'),
+            'heading' => __('Gradient Type',  'nova'),
             'param_name' => 'bg_grad',
-            'description' => __('At least two color points should be selected.', 'lastudio'),
+            'description' => __('At least two color points should be selected.', 'nova'),
             'dependency' => array('element' => 'use_grad','value' => array('yes')),
             'group' => $group_name,
         ));

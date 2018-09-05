@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-$la_fix_css = array();
+$nova_fix_css = array();
 
 $output = $line_class = '';
 $title = $tag = $alignment = $spacer = $spacer_position = $line_style = $line_width = $line_height = $line_color = $el_class = $title_class = $subtitle_class = $css = '';
@@ -54,12 +54,12 @@ if($spacer == 'line'){
     }
 }
 
-$title_class = 'js-el heading-tag la-unit-responsive' . LaStudio_Shortcodes_Helper::getExtraClass($title_class);
-$subtitle_class = 'js-el subheading-tag la-unit-responsive' . LaStudio_Shortcodes_Helper::getExtraClass($subtitle_class);
-$class_to_filter = $_tmp_class . la_shortcode_custom_css_class( $css, ' ' ) . LaStudio_Shortcodes_Helper::getExtraClass( $el_class );
+$title_class = 'js-el heading-tag nova-unit-responsive' . Novaworks_Shortcodes_Helper::getExtraClass($title_class);
+$subtitle_class = 'js-el subheading-tag nova-unit-responsive' . Novaworks_Shortcodes_Helper::getExtraClass($subtitle_class);
+$class_to_filter = $_tmp_class . nova_shortcode_custom_css_class( $css, ' ' ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 $css_class = $class_to_filter;
 
-$unique_id = uniqid('la_heading_');
+$unique_id = uniqid('nova_heading_');
 
 if($spacer == 'line'){
     $lineHtmlAtts = '';
@@ -70,14 +70,14 @@ if($spacer == 'line'){
         $parentLineCssInline[] = "margin-top:{$line_height}px";
     }
     if(!empty($line_width)){
-        $lineHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $lineHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target'		=> "#{$unique_id} .la-line",
             'media_sizes' 	=> array(
                 'width' 	=> $line_width,
             )
         ));
 
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target'		=> "#{$unique_id} .la-line",
             'media_sizes' 	=> array(
                 'width' 	=> $line_width,
@@ -88,8 +88,8 @@ if($spacer == 'line'){
     $lineCssInline[] = "border-width:{$line_height}px 0 0";
     $lineCssInline[] = "border-color:{$line_color}";
     $spacer_html = sprintf(
-        '<div class="la-separator %s" style="%s"><span class="la-line js-el la-unit-responsive" style="%s" %s></span></div>',
-        esc_attr( LaStudio_Shortcodes_Helper::getExtraClass($line_class) ),
+        '<div class="la-separator %s" style="%s"><span class="la-line js-el nova-unit-responsive" style="%s" %s></span></div>',
+        esc_attr( Novaworks_Shortcodes_Helper::getExtraClass($line_class) ),
         esc_attr( implode(';', $parentLineCssInline) ),
         esc_attr( implode(';', $lineCssInline) ),
         $lineHtmlAtts
@@ -100,14 +100,14 @@ if(!empty($title)){
     $titleHtmlAtts = '';
     $titleCssInline = array();
     if(!empty($title_fz) || !empty( $title_lh)){
-        $titleHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .heading-tag',
             'media_sizes' => array(
                 'font-size' => $title_fz,
                 'line-height' => $title_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .heading-tag',
             'media_sizes' => array(
                 'font-size' => $title_fz,
@@ -119,7 +119,7 @@ if(!empty($title)){
         $titleCssInline[] = "color:{$title_color}";
     }
     if(!empty($use_gfont_title)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($title_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($title_font);
         if(isset($gfont_data['style'])){
             $titleCssInline[] = $gfont_data['style'];
         }
@@ -141,14 +141,14 @@ if(!empty($content)){
     $subtitleHtmlAtts = '';
     $subtitleCssInline = array();
     if(!empty($subtitle_fz) || !empty( $subtitle_lh)){
-        $subtitleHtmlAtts = LaStudio_Shortcodes_Helper::getResponsiveMediaCss(array(
+        $subtitleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
             'target' => '#'. $unique_id.' .subheading-tag',
             'media_sizes' => array(
                 'font-size' => $subtitle_fz,
                 'line-height' => $subtitle_lh
             ),
         ));
-        LaStudio_Shortcodes_Helper::renderResponsiveMediaCss($la_fix_css, array(
+        Novaworks_Shortcodes_Helper::renderResponsiveMediaCss($nova_fix_css, array(
             'target' => '#'. $unique_id.' .subheading-tag',
             'media_sizes' => array(
                 'font-size' => $subtitle_fz,
@@ -160,7 +160,7 @@ if(!empty($content)){
         $subtitleCssInline[] = "color:{$subtitle_color}";
     }
     if(!empty($use_gfont_subtitle)){
-        $gfont_data = LaStudio_Shortcodes_Helper::parseGoogleFontAtts($subtitle_font);
+        $gfont_data = Novaworks_Shortcodes_Helper::parseGoogleFontAtts($subtitle_font);
         if(isset($gfont_data['style'])){
             $subtitleCssInline[] = $gfont_data['style'];
         }
@@ -173,7 +173,7 @@ if(!empty($content)){
         $subtitle_class,
         esc_attr( implode(';', $subtitleCssInline) ),
         $subtitleHtmlAtts,
-        LaStudio_Shortcodes_Helper::remove_js_autop($content,true)
+        Novaworks_Shortcodes_Helper::remove_js_autop($content,true)
     );
 }
 ?>
@@ -202,4 +202,4 @@ if(!empty($content)){
         echo $spacer_html;
     }
 ?></div>
-<?php LaStudio_Shortcodes_Helper::renderResponsiveMediaStyleTags($la_fix_css); ?>
+<?php Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags($nova_fix_css); ?>

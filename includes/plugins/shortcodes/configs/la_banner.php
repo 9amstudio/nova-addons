@@ -8,45 +8,45 @@ if ( ! defined( 'ABSPATH' ) ) {
 $shortcode_params = array(
     array(
         'type' => 'attach_image',
-        'heading' => __('Upload the banner image', 'lastudio'),
+        'heading' => __('Upload the banner image', 'nova'),
         'param_name' => 'banner_id'
     ),
     array(
         'type' => 'dropdown',
-        'heading' => __('Design','lastudio'),
+        'heading' => __('Design','nova'),
         'param_name' => 'style',
         'value' => array(
-            __('Style 1','lastudio') => '1',
-            __('Style 2','lastudio') => '2',
-            __('Style 3','lastudio') => '3',
-            __('Style 4','lastudio') => '4',
-            __('Style 5','lastudio') => '5',
-            __('Style 6','lastudio') => '6',
-            __('Style 7','lastudio') => '7',
-            __('Style 8','lastudio') => '8',
-            __('Style 9','lastudio') => '9'
+            __('Style 1','nova') => '1',
+            __('Style 2','nova') => '2',
+            __('Style 3','nova') => '3',
+            __('Style 4','nova') => '4',
+            __('Style 5','nova') => '5',
+            __('Style 6','nova') => '6',
+            __('Style 7','nova') => '7',
+            __('Style 8','nova') => '8',
+            __('Style 9','nova') => '9'
         ),
         'std' => '1'
     ),
 
     array(
         'type' => 'vc_link',
-        'heading' => __('Banner Link', 'lastudio'),
+        'heading' => __('Banner Link', 'nova'),
         'param_name' => 'banner_link',
-        'description' => __('Add link / select existing page to link to this banner', 'lastudio')
+        'description' => __('Add link / select existing page to link to this banner', 'nova')
     ),
 
 
     array(
         'type' => 'textfield',
-        'heading' => __( 'Banner Title 1', 'lastudio' ),
+        'heading' => __( 'Banner Title 1', 'nova' ),
         'param_name' => 'title_1',
         'admin_label' => true
     ),
 
     array(
         'type' => 'textfield',
-        'heading' => __( 'Banner Title 2', 'lastudio' ),
+        'heading' => __( 'Banner Title 2', 'nova' ),
         'param_name' => 'title_2',
         'admin_label' => true,
         'dependency' => array(
@@ -56,7 +56,7 @@ $shortcode_params = array(
     ),
     array(
         'type' => 'textfield',
-        'heading' => __( 'Banner Title 3', 'lastudio' ),
+        'heading' => __( 'Banner Title 3', 'nova' ),
         'param_name' => 'title_3',
         'admin_label' => true,
         'dependency' => array(
@@ -65,25 +65,25 @@ $shortcode_params = array(
         ),
     ),
 
-    LaStudio_Shortcodes_Helper::fieldElementID(array(
+    Novaworks_Shortcodes_Helper::fieldElementID(array(
         'param_name' 	=> 'el_id'
     )),
 
-    LaStudio_Shortcodes_Helper::fieldExtraClass(),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'heading' 		=> __('Extra class name for title 1', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'heading' 		=> __('Extra class name for title 1', 'nova'),
         'param_name' 	=> 'el_class1',
     )),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'heading' 		=> __('Extra class name for title 2', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'heading' 		=> __('Extra class name for title 2', 'nova'),
         'param_name' 	=> 'el_class2',
         'dependency' => array(
             'element' => 'style',
             'value' => array('1','2','5', '6', '7', '8', '9')
         )
     )),
-    LaStudio_Shortcodes_Helper::fieldExtraClass(array(
-        'heading' 		=> __('Extra class name for title 3', 'lastudio'),
+    Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+        'heading' 		=> __('Extra class name for title 3', 'nova'),
         'param_name' 	=> 'el_class3',
         'dependency' => array(
             'element' => 'style',
@@ -93,17 +93,17 @@ $shortcode_params = array(
     array(
         'type' 			=> 'colorpicker',
         'param_name' 	=> 'overlay_bg_color',
-        'heading' 		=> __('Overlay background color', 'lastudio'),
+        'heading' 		=> __('Overlay background color', 'nova'),
         'group' 		=> 'Design'
     )
 );
 
-$param_fonts_title1 = LaStudio_Shortcodes_Helper::fieldTitleGFont('title_1', __('Title 1', 'lastudio'));
-$param_fonts_title2 = LaStudio_Shortcodes_Helper::fieldTitleGFont('title_2', __('Title 2', 'lastudio'), array(
+$param_fonts_title1 = Novaworks_Shortcodes_Helper::fieldTitleGFont('title_1', __('Title 1', 'nova'));
+$param_fonts_title2 = Novaworks_Shortcodes_Helper::fieldTitleGFont('title_2', __('Title 2', 'nova'), array(
     'element' => 'style',
     'value' => array('1','2','5', '6', '7', '8', '9')
 ));
-$param_fonts_title3 = LaStudio_Shortcodes_Helper::fieldTitleGFont('title_3', __('Title 3', 'lastudio'), array(
+$param_fonts_title3 = Novaworks_Shortcodes_Helper::fieldTitleGFont('title_3', __('Title 3', 'nova'), array(
     'element' => 'style',
     'value' => array('2','9')
 ));
@@ -112,13 +112,13 @@ $param_fonts_title3 = LaStudio_Shortcodes_Helper::fieldTitleGFont('title_3', __(
 $shortcode_params = array_merge( $shortcode_params, $param_fonts_title1, $param_fonts_title2, $param_fonts_title3);
 
 return apply_filters(
-    'LaStudio/shortcodes/configs',
+    'Novaworks/shortcodes/configs',
     array(
-        'name'			=> __('Banner Box', 'lastudio'),
+        'name'			=> __('Banner Box', 'nova'),
         'base'			=> 'la_banner',
-        'icon'          => 'la-wpb-icon la_banner',
-        'category'  	=> __('La Studio', 'lastudio'),
-        'description'   => __('Displays the banner image with Information', 'lastudio'),
+        'icon'          => 'nova-wpb-icon la_banner',
+        'category'  	=> __('La Studio', 'nova'),
+        'description'   => __('Displays the banner image with Information', 'nova'),
         'params' 		=> $shortcode_params
     ),
     'la_banner'

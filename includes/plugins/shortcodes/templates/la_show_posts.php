@@ -64,7 +64,7 @@ $atts = shortcode_atts( array(
 extract( $atts );
 
 $_tmp_class = 'la-showposts';
-$el_class = $_tmp_class . LaStudio_Shortcodes_Helper::getExtraClass($el_class);
+$el_class = $_tmp_class . Novaworks_Shortcodes_Helper::getExtraClass($el_class);
 $unique_id = uniqid('la_showposts_');
 
 $query_args = array(
@@ -113,21 +113,21 @@ if ( !empty ( $post__not_in ) ) {
     $query_args['post__not_in'] = $post__not_in;
 }
 
-$globalVar = apply_filters('LaStudio/global_loop_variable', 'lastudio_loop');
+$globalVar = apply_filters('Novaworks/global_loop_variable', 'nova_loop');
 $globalVarTmp = (isset($GLOBALS[$globalVar]) ? $GLOBALS[$globalVar] : '');
 $globalParams = array();
 
 $globalParams['loop_id'] = $unique_id;
 $globalParams['loop_layout'] = $layout;
 $globalParams['loop_style'] = ${$layout . '_style'};
-$globalParams['responsive_column'] = LaStudio_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
-$globalParams['image_size'] = LaStudio_Shortcodes_Helper::getImageSizeFormString($img_size);
-$globalParams['image_size2'] = LaStudio_Shortcodes_Helper::getImageSizeFormString($img_size2);
+$globalParams['responsive_column'] = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts($column);
+$globalParams['image_size'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($img_size);
+$globalParams['image_size2'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($img_size2);
 $globalParams['title_tag'] = $title_tag;
 $globalParams['item_space'] = $item_space;
 $globalParams['excerpt_length'] = $excerpt_length;
 if($enable_carousel){
-    $globalParams['slider_configs'] = LaStudio_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
+    $globalParams['slider_configs'] = Novaworks_Shortcodes_Helper::getParamCarouselShortCode($atts, 'column');
 }
 
 $GLOBALS[$globalVar] = $globalParams;
@@ -155,7 +155,7 @@ if( $the_query->have_posts() ){
         return $excerpt_length;
     }, 1011);
 
-    do_action('LaStudio/shortcodes/before_loop/', 'shortcode', 'la_show_posts', $atts);
+    do_action('Novaworks/shortcodes/before_loop/', 'shortcode', 'la_show_posts', $atts);
 
     $start_tpl = $end_tpl = $loop_tpl = array();
 
@@ -183,7 +183,7 @@ if( $the_query->have_posts() ){
 
     locate_template($end_tpl, true, false);
 
-    do_action('LaStudio/shortcodes/after_loop','shortcode', 'la_show_posts', $atts);
+    do_action('Novaworks/shortcodes/after_loop','shortcode', 'la_show_posts', $atts);
 
     remove_all_filters('excerpt_length', 1011);
 
@@ -198,7 +198,7 @@ if( $the_query->have_posts() ){
             esc_attr($paged),
             esc_attr($max_paged),
             esc_attr($unique_id),
-            LaStudio_Shortcodes_Helper::getLoadingIcon(),
+            Novaworks_Shortcodes_Helper::getLoadingIcon(),
             esc_html($load_more_text)
         );
     }
@@ -226,7 +226,7 @@ if( $the_query->have_posts() ){
             esc_attr($paged),
             esc_attr($unique_id),
             esc_attr($unique_id),
-            LaStudio_Shortcodes_Helper::getLoadingIcon(),
+            Novaworks_Shortcodes_Helper::getLoadingIcon(),
             $_paginate_links
         );
 ?>
