@@ -451,7 +451,7 @@ class Nova_Addons_Portfolio {
 		wp_dropdown_pages( array(
 			'selected'          => get_option( $this->option . '_page_id' ),
 			'name'              => $this->option . '_page_id',
-			'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'nova' ),
+			'show_option_none'  => wp_kses_post( __( '&mdash; Select &mdash;', 'nova' ) ),
 			'option_none_value' => 0,
 		) );
 	}

@@ -264,6 +264,12 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	/**
+	 * Stats Counter
+	 */
+	
+	
+	
+	/**
 	 * Init banner grid layout 5
 	 */
 	$( '.nova-banner-grid-5' ).each( function () {

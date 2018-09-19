@@ -3462,17 +3462,12 @@ td.la_swatches span{
 .vc_element-icon.nova_icon_boxes{
     background-image: url(../images/icon-nova_icon_boxes.png);
 }
-.vc_element-icon.la_countdown{
-    background-image: url(../images/icon-la_countdown.png);
-}
-.vc_element-icon.la_stats_counter{
-    background-image: url(../images/icon-la_stats_counter.png);
+
+.vc_element-icon.nova_stats_counter{
+    background-image: url(../images/icon-nova_stats_counter.png);
 }
 .vc_element-icon.la_banner{
     background-image: url(../images/icon-la_banner.png);
-}
-.vc_element-icon.la_pricing_table{
-    background-image: url(../images/icon-la_pricing_table.png);
 }
 .vc_element-icon.nova_team_member{
     background-image: url(../images/icon-nova_team_member.png);
@@ -3486,22 +3481,10 @@ td.la_swatches span{
     text-align: center;
     line-height: 30px;
 }
-.vc_element-icon.la_maps{
-    background-image: url(../images/icon-la_maps.png);
-}
-.vc_element-icon.la_testimonial{
-    background-image: url(../images/icon-la_testimonial.png);
-}
+
 .vc_element-icon.la_portfolio_masonry,
 .vc_element-icon.la_show_portfolios{
     background-image: url(../images/icon-portfolio.png);
-}
-.vc_element-icon.la_parallax_row{
-    background-image: url(../images/icon-la_parallax_row.png);
-    background-size: cover;
-}
-.vc_element-icon.la_block{
-    background-image: url(../images/icon-la_block.png);
 }
 
 .vc_element-icon.la_timeline{
@@ -3517,10 +3500,6 @@ background-image: url(../images/icon-la_timeline.png);
 }
 .vc_element-icon.nova_brands{
     background-image: url(../images/icon-nova_brands.png);
-}
-
-.vc_element-icon.la_animation_block{
-    background-image: url(../images/icon-la_animation_block.png);
 }
 
 .la-framework .la-field-fieldset.la-fieldset-toggle {

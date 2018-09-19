@@ -56,7 +56,7 @@ class Nova_Addons_VC {
 			'type'        => 'checkbox',
 			'param_name'  => 'separate_link',
 			'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
-			'weight'      => 0,
+			'weight'      => 0
 		) );
 		vc_add_param( 'vc_custom_heading', array(
 			'heading'     => esc_html__( 'Link Arrow', 'nova' ),
@@ -67,8 +67,8 @@ class Nova_Addons_VC {
 			'weight'      => 0,
 			'dependency'  => array(
 				'element' => 'separate_link',
-				'value'   => 'yes',
-			),
+				'value'   => 'yes'
+			)
 		) );
 	}
 
@@ -91,7 +91,7 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Total number of products you want to show', 'nova' ),
 					'param_name'  => 'per_page',
 					'type'        => 'textfield',
-					'value'       => 15,
+					'value'       => 15
 				),
 				array(
 					'heading'     => esc_html__( 'Columns', 'nova' ),
@@ -101,8 +101,8 @@ class Nova_Addons_VC {
 					'value'       => array(
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
-						esc_html__( '6 Columns', 'nova' ) => 6,
-					),
+						esc_html__( '6 Columns', 'nova' ) => 6
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Category', 'nova' ),
@@ -113,8 +113,8 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'multiple' => true,
 						'sortable' => true,
-						'values'   => $this->get_terms(),
-					),
+						'values'   => $this->get_terms()
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Product Type', 'nova' ),
@@ -122,12 +122,12 @@ class Nova_Addons_VC {
 					'param_name'  => 'type',
 					'type'        => 'dropdown',
 					'value'       => array(
-						esc_html__( 'Recent Products', 'nova' )       => 'recent',
-						esc_html__( 'Featured Products', 'nova' )     => 'featured',
-						esc_html__( 'Sale Products', 'nova' )         => 'sale',
+						esc_html__( 'Recent Products', 'nova' ) => 'recent',
+						esc_html__( 'Featured Products', 'nova' ) => 'featured',
+						esc_html__( 'Sale Products', 'nova' ) => 'sale',
 						esc_html__( 'Best Selling Products', 'nova' ) => 'best_sellers',
-						esc_html__( 'Top Rated Products', 'nova' )    => 'top_rated',
-					),
+						esc_html__( 'Top Rated Products', 'nova' ) => 'top_rated'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Load More Button', 'nova' ),
@@ -135,8 +135,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'load_more',
 					'type'        => 'checkbox',
 					'value'       => array(
-						esc_html__( 'Yes', 'nova' ) => 'yes',
-					),
+						esc_html__( 'Yes', 'nova' ) => 'yes'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -144,9 +144,9 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
-				),
-			),
+					'value'       => ''
+				)
+			)
 		) );
 
 		// Product Tabs
@@ -162,7 +162,7 @@ class Nova_Addons_VC {
 					'param_name'  => 'per_page',
 					'type'        => 'textfield',
 					'value'       => 15,
-					'description' => esc_html__( 'Total number of products will be display in single tab', 'nova' ),
+					'description' => esc_html__( 'Total number of products will be display in single tab', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Columns', 'nova' ),
@@ -171,9 +171,9 @@ class Nova_Addons_VC {
 					'value'       => array(
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
-						esc_html__( '6 Columns', 'nova' ) => 6,
+						esc_html__( '6 Columns', 'nova' ) => 6
 					),
-					'description' => esc_html__( 'Display products in how many columns', 'nova' ),
+					'description' => esc_html__( 'Display products in how many columns', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Tabs', 'nova' ),
@@ -182,8 +182,8 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Group by category', 'nova' ) => 'category',
-						esc_html__( 'Group by feature', 'nova' )  => 'group',
-					),
+						esc_html__( 'Group by feature', 'nova' ) => 'group'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Categories', 'nova' ),
@@ -194,12 +194,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'multiple' => true,
 						'sortable' => true,
-						'values'   => $this->get_terms(),
+						'values'   => $this->get_terms()
 					),
 					'dependency'  => array(
 						'element' => 'filter',
-						'value'   => 'category',
-					),
+						'value'   => 'category'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Tabs Effect', 'nova' ),
@@ -208,17 +208,17 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Isotope Toggle', 'nova' ) => 'isotope',
-						esc_html__( 'Ajax Load', 'nova' )      => 'ajax',
-					),
+						esc_html__( 'Ajax Load', 'nova' ) => 'ajax'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Load More Button', 'nova' ),
 					'param_name'  => 'load_more',
 					'type'        => 'checkbox',
 					'value'       => array(
-						esc_html__( 'Yes', 'nova' ) => 'yes',
+						esc_html__( 'Yes', 'nova' ) => 'yes'
 					),
-					'description' => esc_html__( 'Show load more button with ajax loading', 'nova' ),
+					'description' => esc_html__( 'Show load more button with ajax loading', 'nova' )
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -226,9 +226,9 @@ class Nova_Addons_VC {
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
 					'value'       => '',
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
-				),
-			),
+					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' )
+				)
+			)
 		) );
 
 		// Product Carousel
@@ -244,7 +244,7 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Total number of products you want to show', 'nova' ),
 					'param_name'  => 'number',
 					'type'        => 'textfield',
-					'value'       => 15,
+					'value'       => 15
 				),
 				array(
 					'heading'     => esc_html__( 'Columns', 'nova' ),
@@ -255,8 +255,8 @@ class Nova_Addons_VC {
 						esc_html__( '3 Columns', 'nova' ) => 3,
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
-						esc_html__( '6 Columns', 'nova' ) => 6,
-					),
+						esc_html__( '6 Columns', 'nova' ) => 6
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Product Type', 'nova' ),
@@ -264,12 +264,12 @@ class Nova_Addons_VC {
 					'param_name'  => 'type',
 					'type'        => 'dropdown',
 					'value'       => array(
-						esc_html__( 'Recent Products', 'nova' )       => 'recent',
-						esc_html__( 'Featured Products', 'nova' )     => 'featured',
-						esc_html__( 'Sale Products', 'nova' )         => 'sale',
+						esc_html__( 'Recent Products', 'nova' ) => 'recent',
+						esc_html__( 'Featured Products', 'nova' ) => 'featured',
+						esc_html__( 'Sale Products', 'nova' ) => 'sale',
 						esc_html__( 'Best Selling Products', 'nova' ) => 'best_sellers',
-						esc_html__( 'Top Rated Products', 'nova' )    => 'top_rated',
-					),
+						esc_html__( 'Top Rated Products', 'nova' ) => 'top_rated'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Categories', 'nova' ),
@@ -280,21 +280,21 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'multiple' => true,
 						'sortable' => true,
-						'values'   => $this->get_terms(),
-					),
+						'values'   => $this->get_terms()
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Auto Play', 'nova' ),
 					'description' => esc_html__( 'Auto play speed in miliseconds. Enter "0" to disable auto play.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'autoplay',
-					'value'       => 5000,
+					'value'       => 5000
 				),
 				array(
-					'heading'    => esc_html__( 'Loop', 'nova' ),
-					'type'       => 'checkbox',
-					'param_name' => 'loop',
-					'value'      => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'heading'     => esc_html__( 'Loop', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'loop',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -302,9 +302,9 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
-				),
-			),
+					'value'       => ''
+				)
+			)
 		) );
 
 		// Post Grid
@@ -320,7 +320,7 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Number of posts', 'nova' ),
 					'param_name'  => 'per_page',
 					'type'        => 'textfield',
-					'value'       => 3,
+					'value'       => 3
 				),
 				array(
 					'heading'     => esc_html__( 'Columns', 'nova' ),
@@ -329,8 +329,8 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( '3 Columns', 'nova' ) => 3,
-						esc_html__( '4 Columns', 'nova' ) => 4,
-					),
+						esc_html__( '4 Columns', 'nova' ) => 4
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Category', 'nova' ),
@@ -340,15 +340,15 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'multiple' => true,
 						'sortable' => true,
-						'values'   => $this->get_terms( 'category' ),
-					),
+						'values'   => $this->get_terms( 'category' )
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Hide Post Meta', 'nova' ),
 					'description' => esc_html__( 'Hide information about date, category', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'hide_meta',
-					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -356,9 +356,9 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
-				),
-			),
+					'value'       => ''
+				)
+			)
 		) );
 
 		// Countdown
@@ -370,11 +370,22 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
+					'heading'     => esc_html__('Style', 'nova'),
+					'param_name'  => 'style',
+					'type'        => 'dropdown',
+					'value' => array(
+						esc_html__('Style 01','nova') => '1',
+						esc_html__('Style 02','nova') => '2',
+						esc_html__('Style 03','nova') => '3',
+						esc_html__('Style 04','nova') => '4'
+					)
+				),
+				array(
 					'heading'     => esc_html__( 'Date', 'nova' ),
-					'description' => esc_html__( 'Enter the date in format: YYYY/MM/DD', 'nova' ),
+					'description' => esc_html__( 'Date and time format (yyyy/mm/dd hh:mm:ss)', 'nova' ),
 					'admin_label' => true,
-					'type'        => 'textfield',
-					'param_name'  => 'date',
+					'type'        => 'datetimepicker',
+					'param_name'  => 'date'
 				),
 				array(
 					'heading'     => esc_html__( 'Text Align', 'nova' ),
@@ -382,10 +393,10 @@ class Nova_Addons_VC {
 					'param_name'  => 'text_align',
 					'type'        => 'dropdown',
 					'value'       => array(
-						esc_html__( 'Left', 'nova' )   => 'left',
+						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Center', 'nova' ) => 'center',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -393,9 +404,286 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
+					'value'       => ''
+				)
+			)
+		) );
+		
+		// Stats Counter
+		vc_map( array(
+			'name'        => esc_html__( 'Stats Counter', 'nova' ),
+			'base'        => 'nova_stats_counter',
+			'icon'        => 'nova-wpb-icon nova_stats_counter',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Your milestones, achievements, etc.','nova' ),
+			'params'      => array_merge( array(
+				array(
+					'heading'     => esc_html__('Icon Position', 'nova'),
+					'description' => esc_html__( 'Select icon position. Icon box style will be changed according to the icon position.', 'nova' ),
+					'param_name'  => 'icon_pos',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'No display', 'nova' ) => 'none',
+						esc_html__( 'Icon at Top', 'nova' ) => 'top',
+						esc_html__( 'Icon at Left', 'nova' ) => 'left',
+						esc_html__( 'Icon at Right', 'nova' ) => 'right'
+					),
+					'std'         => 'top'					
 				),
+				array(
+					'heading'     => esc_html__( 'Icon Styles', 'nova' ),
+					'description' => esc_html__( 'We have given four quick preset if you are in a hurry. Otherwise, create your own with various options.', 'nova' ),
+					'param_name'  => 'icon_style',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Normal', 'nova' ) => 'normal',
+						esc_html__( 'Circle', 'nova' ) => 'circle',
+						esc_html__( 'Square', 'nova' ) => 'square',
+						esc_html__( 'Round', 'nova' ) => 'round',
+						esc_html__( 'Advanced', 'nova' ) => 'advanced',
+					),
+					'dependency'  => array(
+						'element'            => 'icon_pos',
+						'value_not_equal_to' => array( 'none' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Size', 'nova' ),
+					'param_name'  => 'icon_size',
+					'type'        => 'nova_number',
+					'value'       => 30,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'            => 'icon_pos',
+						'value_not_equal_to' => array( 'none' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Box Width', 'nova' ),
+					'param_name'  => 'icon_width',
+					'type'        => 'nova_number',
+					'value'       => 30,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'icon_style',
+						'value'     => array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Padding', 'nova' ),
+					'param_name'  => 'icon_padding',
+					'type'        => 'nova_number',
+					'value'       => 0,
+					'min'         => 0,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'icon_style',
+						'value'     => array( 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Color Type', 'nova' ),
+					'param_name'  => 'icon_color_type',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'         => 'simple',
+					'dependency'  => array(
+						'element'            => 'icon_pos',
+						'value_not_equal_to' => array( 'none' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Color', 'nova' ),
+					'param_name'  => 'icon_color',
+					'type'        => 'colorpicker',
+					'dependency'  => array(
+						'element'            => 'icon_pos',
+						'value_not_equal_to' => array( 'none' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Color #2', 'nova' ),
+					'param_name'  => 'icon_color2',
+					'type'        => 'colorpicker',
+					'dependency'  => array(
+						'element'   => 'icon_color_type',
+						'value'     => array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Type', 'nova' ),
+					'param_name'  => 'icon_bg_type',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'         => 'simple',
+					'dependency'  => array(
+						'element'   => 'icon_style',
+						'value'     => array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Color', 'nova' ),
+					'param_name'  => 'icon_bg',
+					'type'        => 'colorpicker',
+					'dependency'  => array(
+						'element'   => 'icon_style',
+						'value'     => array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__('Icon Background Color #2', 'nova'),
+					'param_name'  => 'icon_bg2',
+					'type'        => 'colorpicker',
+					'dependency'  => array(
+						'element'   => 'icon_bg_type',
+						'value'     => array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				)
 			),
+			Novaworks_Shortcodes_Helper::fieldIconType( array(
+				'element' => 'icon_pos',
+				'value'	=> array( 'top', 'left', 'right' )
+			) ),
+			array(
+				array(
+					'heading'     => esc_html__( 'Title', 'nova' ),
+					'param_name'  => 'title',
+					'type'        => 'textfield',
+					'admin_label' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Value', 'nova' ),
+					'description' => esc_html__( 'Enter number for counter without any special character. You may enter a decimal number. Eg 12.76', 'nova' ),
+					'param_name'  => 'value',
+					'type'        => 'nova_number',
+					'value'       => 1250,
+					'min'         => 0,
+					'suffix'      => ''
+				),
+				array(
+					'heading'     => esc_html__( 'Value Prefix', 'nova' ),
+					'param_name'  => 'prefix',
+					'type'        => 'textfield'
+				),
+				array(
+					'heading'     => esc_html__( 'Value Suffix', 'nova' ),
+					'param_name'  => 'suffix',
+					'type'        => 'textfield'
+				),
+				array(
+					'heading'     => esc_html__( 'Separator', 'nova' ),
+					'param_name'  => 'spacer',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'No Separator', 'nova' ) => 'none',
+						esc_html__( 'Line', 'nova' ) => 'line'
+					),
+					'std'         => 'none'
+				),
+				array(
+					'heading'     => esc_html__( 'Separator Position', 'nova' ),
+					'param_name'  => 'spacer_position',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Top', 'nova' ) => 'top',
+						esc_html__( 'Bottom', 'nova' ) => 'bottom',
+						esc_html__( 'Between Value - Title', 'nova' ) => 'middle'
+					),
+					'std'         => 'top',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Line Style', 'nova' ),
+					'param_name'  => 'line_style',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Solid', 'nova' ) => 'solid',
+						esc_html__( 'Dashed', 'nova' ) => 'dashed',
+						esc_html__( 'Dotted', 'nova' ) => 'dotted',
+						esc_html__( 'Double', 'nova' ) => 'double'
+					),
+					'std'         => 'solid',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Line Width', 'nova' ),
+					'param_name'  => 'line_width',
+					'type'        => 'nova_column',
+					'unit'        => 'px',
+					'media'       => array(
+						'xlg'	=> '',
+						'lg'	=> '',
+						'md'	=> '',
+						'sm'	=> '',
+						'xs'	=> '',
+						'mb'	=> ''
+					),
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Line Height', 'nova' ),
+					'param_name'  => 'line_height',
+					'type'        => 'nova_number',
+					'value'       => 1,
+					'min'         => 1,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Line Color', 'nova' ),
+					'param_name'  => 'line_color',
+					'type'        => 'colorpicker',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				Novaworks_Shortcodes_Helper::fieldElementID( array(
+					'param_name'  => 'el_id'
+				) ),
+				Novaworks_Shortcodes_Helper::fieldExtraClass(),
+				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
+					'heading'     => esc_html__('Extra class name for value', 'nova'),
+					'param_name'  => 'el_class_value'
+				) ),
+				Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+					'heading'     => esc_html__('Extra Class name for heading', 'nova'),
+					'param_name'  => 'el_class_heading'
+				) )
+			),
+			Novaworks_Shortcodes_Helper::fieldTitleGFont(),
+			Novaworks_Shortcodes_Helper::fieldTitleGFont( 'value', esc_html__( 'Value', 'nova' ) ),
+			array( Novaworks_Shortcodes_Helper::fieldCssClass() ) )
 		) );
 
 		// Button
@@ -411,12 +699,12 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Enter button text', 'nova' ),
 					'admin_label' => true,
 					'type'        => 'textfield',
-					'param_name'  => 'label',
+					'param_name'  => 'label'
 				),
 				array(
-					'heading'    => esc_html__( 'URL (Link)', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'URL (Link)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				array(
 					'heading'     => esc_html__( 'Style', 'nova' ),
@@ -424,10 +712,10 @@ class Nova_Addons_VC {
 					'param_name'  => 'style',
 					'type'        => 'dropdown',
 					'value'       => array(
-						esc_html__( 'Normal', 'nova' )  => 'normal',
+						esc_html__( 'Normal', 'nova' ) => 'normal',
 						esc_html__( 'Outline', 'nova' ) => 'outline',
-						esc_html__( 'Light', 'nova' )   => 'light',
-					),
+						esc_html__( 'Light', 'nova' ) => 'light'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Size', 'nova' ),
@@ -436,13 +724,13 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Normal', 'nova' ) => 'normal',
-						esc_html__( 'Large', 'nova' )  => 'large',
-						esc_html__( 'Small', 'nova' )  => 'small',
+						esc_html__( 'Large', 'nova' ) => 'large',
+						esc_html__( 'Small', 'nova' ) => 'small'
 					),
 					'dependency'  => array(
 						'element' => 'style',
-						'value'   => array( 'normal', 'outline' ),
-					),
+						'value'   => array( 'normal', 'outline' )
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Color', 'nova' ),
@@ -450,13 +738,13 @@ class Nova_Addons_VC {
 					'param_name'  => 'color',
 					'type'        => 'dropdown',
 					'value'       => array(
-						esc_html__( 'Dark', 'nova' )  => 'dark',
-						esc_html__( 'White', 'nova' ) => 'white',
+						esc_html__( 'Dark', 'nova' ) => 'dark',
+						esc_html__( 'White', 'nova' ) => 'white'
 					),
 					'dependency'  => array(
 						'element' => 'style',
-						'value'   => array( 'outline' ),
-					),
+						'value'   => array( 'outline' )
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Alignment', 'nova' ),
@@ -465,10 +753,10 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Inline', 'nova' ) => 'inline',
-						esc_html__( 'Left', 'nova' )   => 'left',
+						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Center', 'nova' ) => 'center',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -476,9 +764,9 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
-				),
-			),
+					'value'       => ''
+				)
+			)
 		) );
 
 		// Banner
@@ -493,27 +781,27 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Banner Image', 'nova' ),
 					'param_name'  => 'image',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
 					'description' => esc_html__( 'Enter image size. Example: "thumbnail", "medium", "large", "full" or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'image_size',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
 					'heading'     => esc_html__( 'Banner description', 'nova' ),
 					'description' => esc_html__( 'A short text display before the banner text', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'desc',
+					'param_name'  => 'desc'
 				),
 				array(
 					'heading'     => esc_html__( 'Banner Text', 'nova' ),
 					'description' => esc_html__( 'Enter the banner text', 'nova' ),
 					'type'        => 'textarea',
 					'param_name'  => 'content',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Banner Text Position', 'nova' ),
@@ -521,52 +809,52 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'text_position',
 					'value'       => array(
-						esc_html__( 'Left', 'nova' )   => 'left',
+						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Center', 'nova' ) => 'center',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
 				),
 				array(
-					'type'       => 'font_container',
-					'param_name' => 'font_container',
-					'value'      => '',
-					'settings'   => array(
-						'fields' => array(
+					'type'        => 'font_container',
+					'param_name'  => 'font_container',
+					'value'       => '',
+					'settings'    => array(
+						'fields'  => array(
 							'font_size',
 							'line_height',
 							'color',
 							'font_size_description'   => esc_html__( 'Enter text font size.', 'nova' ),
 							'line_height_description' => esc_html__( 'Enter text line height.', 'nova' ),
-							'color_description'       => esc_html__( 'Select text color.', 'nova' ),
-						),
-					),
+							'color_description'       => esc_html__( 'Select text color.', 'nova' )
+						)
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Use theme default font family?', 'nova' ),
 					'description' => esc_html__( 'Use font family from the theme.', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'use_theme_fonts',
-					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				array(
-					'type'       => 'google_fonts',
-					'param_name' => 'google_fonts',
-					'value'      => 'font_family:Abril%20Fatface%3Aregular|font_style:400%20regular%3A400%3Anormal',
-					'settings'   => array(
-						'fields' => array(
+					'type'        => 'google_fonts',
+					'param_name'  => 'google_fonts',
+					'value'       => 'font_family:Abril%20Fatface%3Aregular|font_style:400%20regular%3A400%3Anormal',
+					'settings'    => array(
+						'fields'  => array(
 							'font_family_description' => esc_html__( 'Select font family.', 'nova' ),
 							'font_style_description'  => esc_html__( 'Select font styling.', 'nova' ),
-						),
+						)
 					),
-					'dependency' => array(
+					'dependency'  => array(
 						'element'            => 'use_theme_fonts',
-						'value_not_equal_to' => 'yes',
-					),
+						'value_not_equal_to' => 'yes'
+					)
 				),
 				array(
-					'heading'    => esc_html__( 'Link (URL)', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'Link (URL)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				array(
 					'heading'     => esc_html__( 'Button Type', 'nova' ),
@@ -574,10 +862,10 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'button_type',
 					'value'       => array(
-						esc_html__( 'Light Button', 'nova' )  => 'light',
+						esc_html__( 'Light Button', 'nova' ) => 'light',
 						esc_html__( 'Normal Button', 'nova' ) => 'normal',
-						esc_html__( 'Arrow Icon', 'nova' )    => 'arrow_icon',
-					),
+						esc_html__( 'Arrow Icon', 'nova' ) => 'arrow_icon'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Button Text', 'nova' ),
@@ -586,8 +874,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'button_text',
 					'dependency'  => array(
 						'element' => 'button_type',
-						'value'   => array( 'light', 'normal' ),
-					),
+						'value'   => array( 'light', 'normal' )
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Button Visibility', 'nova' ),
@@ -596,9 +884,9 @@ class Nova_Addons_VC {
 					'param_name'  => 'button_visibility',
 					'value'       => array(
 						esc_html__( 'Always visible', 'nova' ) => 'always',
-						esc_html__( 'When hover', 'nova' )     => 'hover',
-						esc_html__( 'Hidden', 'nova' )         => 'hidden',
-					),
+						esc_html__( 'When hover', 'nova' ) => 'hover',
+						esc_html__( 'Hidden', 'nova' ) => 'hidden'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Banner Color Scheme', 'nova' ),
@@ -606,9 +894,9 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'scheme',
 					'value'       => array(
-						esc_html__( 'Dark', 'nova' )  => 'dark',
-						esc_html__( 'Light', 'nova' ) => 'light',
-					),
+						esc_html__( 'Dark', 'nova' ) => 'dark',
+						esc_html__( 'Light', 'nova' ) => 'light'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -616,15 +904,15 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
-					'heading'    => esc_html__( 'CSS box', 'nova' ),
-					'type'       => 'css_editor',
-					'param_name' => 'css',
-					'group'      => esc_html__( 'Design Options', 'nova' ),
-				),
-			),
+					'heading'     => esc_html__( 'CSS box', 'nova' ),
+					'type'        => 'css_editor',
+					'param_name'  => 'css',
+					'group'       => esc_html__( 'Design Options', 'nova' )
+				)
+			)
 		) );
 
 		// Banner 2
@@ -640,14 +928,14 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Banner Image', 'nova' ),
 					'param_name'  => 'image',
 					'type'        => 'attach_image',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
 					'description' => esc_html__( 'Enter image size. Example: "thumbnail", "medium", "large", "full" or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'image_size',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
 					'heading'     => esc_html__( 'Buttons', 'nova' ),
@@ -658,14 +946,14 @@ class Nova_Addons_VC {
 						array(
 							'heading'    => esc_html__( 'Button Text', 'nova' ),
 							'type'       => 'textfield',
-							'param_name' => 'text',
+							'param_name' => 'text'
 						),
 						array(
 							'heading'    => esc_html__( 'Button Link', 'nova' ),
 							'type'       => 'vc_link',
-							'param_name' => 'link',
-						),
-					),
+							'param_name' => 'link'
+						)
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -673,7 +961,7 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
+					'value'       => ''
 				),
 			),
 		) );
@@ -690,21 +978,21 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Banner Image', 'nova' ),
 					'param_name'  => 'image',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
 					'description' => esc_html__( 'Enter image size. Example: "thumbnail", "medium", "large", "full" or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'image_size',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
 					'heading'     => esc_html__( 'Banner Text', 'nova' ),
 					'description' => esc_html__( 'Enter banner text', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'text',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Banner Text Position', 'nova' ),
@@ -712,21 +1000,21 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'text_align',
 					'value'       => array(
-						esc_html__( 'Left', 'nova' )   => 'left',
+						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Center', 'nova' ) => 'center',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
 				),
 				array(
-					'heading'    => esc_html__( 'Link (URL)', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'Link (URL)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				array(
 					'heading'     => esc_html__( 'Button Text', 'nova' ),
 					'description' => esc_html__( 'Enter the text for banner button', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'button_text',
+					'param_name'  => 'button_text'
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -734,9 +1022,9 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
-				),
-			),
+					'value'       => ''
+				)
+			)
 		) );
 
 		// Banner 4
@@ -751,19 +1039,19 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Banner Image', 'nova' ),
 					'param_name'  => 'image',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
 					'description' => esc_html__( 'Enter image size. Example: "thumbnail", "medium", "large", "full" or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'image_size',
-					'value'       => 'full',
+					'value'       => 'full'
 				),
 				array(
-					'heading'    => esc_html__( 'Link (URL)', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'Link (URL)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -771,20 +1059,20 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
-					'heading'    => esc_html__( 'Banner Content', 'nova' ),
-					'type'       => 'textarea_html',
-					'param_name' => 'content',
-					'group'      => esc_html__( 'Text', 'nova' ),
+					'heading'     => esc_html__( 'Banner Content', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content',
+					'group'       => esc_html__( 'Text', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Button Text', 'nova' ),
 					'description' => esc_html__( 'Enter the text for banner button', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'button_text',
-					'group'       => esc_html__( 'Text', 'nova' ),
+					'group'       => esc_html__( 'Text', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Text Color Scheme', 'nova' ),
@@ -793,9 +1081,9 @@ class Nova_Addons_VC {
 					'param_name'  => 'scheme',
 					'group'       => esc_html__( 'Text', 'nova' ),
 					'value'       => array(
-						esc_html__( 'Dark', 'nova' )  => 'dark',
-						esc_html__( 'Light', 'nova' ) => 'light',
-					),
+						esc_html__( 'Dark', 'nova' ) => 'dark',
+						esc_html__( 'Light', 'nova' ) => 'light'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Content Horizontal Alignment', 'nova' ),
@@ -804,10 +1092,10 @@ class Nova_Addons_VC {
 					'param_name'  => 'align_horizontal',
 					'group'       => esc_html__( 'Text', 'nova' ),
 					'value'       => array(
-						esc_html__( 'Left', 'nova' )   => 'left',
+						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Center', 'nova' ) => 'center',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Content Vertical Alignment', 'nova' ),
@@ -816,12 +1104,12 @@ class Nova_Addons_VC {
 					'param_name'  => 'align_vertical',
 					'group'       => esc_html__( 'Text', 'nova' ),
 					'value'       => array(
-						esc_html__( 'Top', 'nova' )    => 'top',
+						esc_html__( 'Top', 'nova' ) => 'top',
 						esc_html__( 'Middle', 'nova' ) => 'middle',
-						esc_html__( 'Bottom', 'nova' ) => 'bottom',
-					),
-				),
-			),
+						esc_html__( 'Bottom', 'nova' ) => 'bottom'
+					)
+				)
+			)
 		) );
 
 		// Category Banner
@@ -836,7 +1124,7 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Banner Image', 'nova' ),
 					'param_name'  => 'image',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Image Position', 'nova' ),
@@ -844,28 +1132,28 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'image_position',
 					'value'       => array(
-						esc_html__( 'Left', 'nova' )         => 'left',
-						esc_html__( 'Right', 'nova' )        => 'right',
-						esc_html__( 'Top', 'nova' )          => 'top',
-						esc_html__( 'Bottom', 'nova' )       => 'bottom',
-						esc_html__( 'Top Left', 'nova' )     => 'top-left',
-						esc_html__( 'Top Right', 'nova' )    => 'top-right',
-						esc_html__( 'Bottom Left', 'nova' )  => 'bottom-left',
-						esc_html__( 'Bottom Right', 'nova' ) => 'bottom-right',
-					),
+						esc_html__( 'Left', 'nova' ) => 'left',
+						esc_html__( 'Right', 'nova' ) => 'right',
+						esc_html__( 'Top', 'nova' ) => 'top',
+						esc_html__( 'Bottom', 'nova' ) => 'bottom',
+						esc_html__( 'Top Left', 'nova' ) => 'top-left',
+						esc_html__( 'Top Right', 'nova' ) => 'top-right',
+						esc_html__( 'Bottom Left', 'nova' ) => 'bottom-left',
+						esc_html__( 'Bottom Right', 'nova' ) => 'bottom-right'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Title', 'nova' ),
 					'description' => esc_html__( 'The banner title', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'title',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Description', 'nova' ),
 					'description' => esc_html__( 'The banner description', 'nova' ),
 					'type'        => 'textarea',
-					'param_name'  => 'content',
+					'param_name'  => 'content'
 				),
 				array(
 					'heading'     => esc_html__( 'Text Position', 'nova' ),
@@ -873,24 +1161,24 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'param_name'  => 'text_position',
 					'value'       => array(
-						esc_html__( 'Top Left', 'nova' )     => 'top-left',
-						esc_html__( 'Top Right', 'nova' )    => 'top-right',
-						esc_html__( 'Middle Left', 'nova' )  => 'middle-left',
+						esc_html__( 'Top Left', 'nova' ) => 'top-left',
+						esc_html__( 'Top Right', 'nova' ) => 'top-right',
+						esc_html__( 'Middle Left', 'nova' ) => 'middle-left',
 						esc_html__( 'Middle Right', 'nova' ) => 'middle-right',
-						esc_html__( 'Bottom Left', 'nova' )  => 'bottom-left',
-						esc_html__( 'Bottom Right', 'nova' ) => 'bottom-right',
-					),
+						esc_html__( 'Bottom Left', 'nova' ) => 'bottom-left',
+						esc_html__( 'Bottom Right', 'nova' ) => 'bottom-right'
+					)
 				),
 				array(
-					'heading'    => esc_html__( 'Link (URL)', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'Link (URL)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				array(
 					'heading'     => esc_html__( 'Button Text', 'nova' ),
 					'description' => esc_html__( 'Enter the text for banner button', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'button_text',
+					'param_name'  => 'button_text'
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -898,15 +1186,15 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
-					'heading'    => __( 'CSS box', 'nova' ),
+					'heading'    => esc_html__( 'CSS box', 'nova' ),
 					'type'       => 'css_editor',
 					'param_name' => 'css',
-					'group'      => esc_html__( 'Design Options', 'nova' ),
-				),
-			),
+					'group'      => esc_html__( 'Design Options', 'nova' )
+				)
+			)
 		) );
 
 		// Product
@@ -922,117 +1210,117 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Upload a product image', 'nova' ),
 					'param_name'  => 'image',
 					'type'        => 'attach_image',
-					'value'       => '',
+					'value'       => ''
 				),
 				array(
 					'heading'     => esc_html__( 'Product name', 'nova' ),
 					'description' => esc_html__( 'Enter product name', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'title',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Product description', 'nova' ),
 					'description' => esc_html__( 'Enter product description', 'nova' ),
 					'type'        => 'textarea',
-					'param_name'  => 'content',
+					'param_name'  => 'content'
 				),
 				array(
 					'heading'     => esc_html__( 'Product price', 'nova' ),
 					'description' => esc_html__( 'Enter product price. Only allow number.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'price',
+					'param_name'  => 'price'
 				),
 				array(
-					'heading'    => esc_html__( 'Product URL', 'nova' ),
-					'type'       => 'vc_link',
-					'param_name' => 'link',
+					'heading'     => esc_html__( 'Product URL', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 
 		// Banner Grid 4
 		vc_map( array(
-			'name'                    => esc_html__( 'Banner Grid 4', 'nova' ),
-			'description'             => esc_html__( 'Arrange 4 banners per row with unusual structure.', 'nova' ),
-			'base'                    => 'nova_banner_grid_4',
-			'icon'                    => $this->get_icon( 'banner-grid-4.png' ),
-			'category'                => esc_html__( 'Nova', 'nova' ),
-			'js_view'                 => 'VcColumnView',
+			'name'        => esc_html__( 'Banner Grid 4', 'nova' ),
+			'description' => esc_html__( 'Arrange 4 banners per row with unusual structure.', 'nova' ),
+			'base'        => 'nova_banner_grid_4',
+			'icon'        => $this->get_icon( 'banner-grid-4.png' ),
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'js_view'     => 'VcColumnView',
 			'content_element'         => true,
 			'show_settings_on_create' => false,
-			'as_parent'               => array( 'only' => 'nova_banner,nova_banner2,nova_banner3' ),
-			'params'                  => array(
+			'as_parent'   => array( 'only' => 'nova_banner, nova_banner2, nova_banner3' ),
+			'params'      => array(
 				array(
 					'heading'     => esc_html__( 'Reverse Order', 'nova' ),
 					'description' => esc_html__( 'Reverse the order of banners inside this grid', 'nova' ),
 					'param_name'  => 'reverse',
 					'type'        => 'checkbox',
-					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 
 		// Banner Grid 5
 		vc_map( array(
-			'name'                    => esc_html__( 'Banner Grid 5', 'nova' ),
-			'description'             => esc_html__( 'Arrange 5 banners in 3 columns.', 'nova' ),
-			'base'                    => 'nova_banner_grid_5',
-			'icon'                    => $this->get_icon( 'banner-grid-5.png' ),
-			'category'                => esc_html__( 'Nova', 'nova' ),
-			'js_view'                 => 'VcColumnView',
+			'name'        => esc_html__( 'Banner Grid 5', 'nova' ),
+			'description' => esc_html__( 'Arrange 5 banners in 3 columns.', 'nova' ),
+			'base'        => 'nova_banner_grid_5',
+			'icon'        => $this->get_icon( 'banner-grid-5.png' ),
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'js_view'     => 'VcColumnView',
 			'content_element'         => true,
 			'show_settings_on_create' => false,
-			'as_parent'               => array( 'only' => 'nova_banner,nova_banner2,nova_banner3' ),
-			'params'                  => array(
+			'as_parent'   => array( 'only' => 'nova_banner, nova_banner2, nova_banner3' ),
+			'params'      => array(
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 
 		// Banner Grid 6
 		vc_map( array(
-			'name'                    => esc_html__( 'Banner Grid 6', 'nova' ),
-			'description'             => esc_html__( 'Arrange 6 banners in 4 columns.', 'nova' ),
-			'base'                    => 'nova_banner_grid_6',
-			'icon'                    => $this->get_icon( 'banner-grid-6.png' ),
-			'category'                => esc_html__( 'Nova', 'nova' ),
-			'js_view'                 => 'VcColumnView',
+			'name'        => esc_html__( 'Banner Grid 6', 'nova' ),
+			'description' => esc_html__( 'Arrange 6 banners in 4 columns.', 'nova' ),
+			'base'        => 'nova_banner_grid_6',
+			'icon'        => $this->get_icon( 'banner-grid-6.png' ),
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'js_view'     => 'VcColumnView',
 			'content_element'         => true,
 			'show_settings_on_create' => false,
-			'as_parent'               => array( 'only' => 'nova_banner,nova_banner2,nova_banner3' ),
-			'params'                  => array(
+			'as_parent'   => array( 'only' => 'nova_banner, nova_banner2, nova_banner3' ),
+			'params'      => array(
 				array(
 					'heading'     => esc_html__( 'Reverse Order', 'nova' ),
 					'description' => esc_html__( 'Reverse the order of banners inside this grid', 'nova' ),
 					'param_name'  => 'reverse',
 					'type'        => 'checkbox',
-					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 
 		// Circle Chart
@@ -1049,28 +1337,28 @@ class Nova_Addons_VC {
 					'type'        => 'textfield',
 					'param_name'  => 'value',
 					'value'       => 100,
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Circle Size', 'nova' ),
 					'description' => esc_html__( 'Width of the circle', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'size',
-					'value'       => 200,
+					'value'       => 200
 				),
 				array(
 					'heading'     => esc_html__( 'Circle thickness', 'nova' ),
 					'description' => esc_html__( 'Width of the arc', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'thickness',
-					'value'       => 8,
+					'value'       => 8
 				),
 				array(
 					'heading'     => esc_html__( 'Color', 'nova' ),
 					'description' => esc_html__( 'Pick color for the circle', 'nova' ),
 					'type'        => 'colorpicker',
 					'param_name'  => 'color',
-					'value'       => '#6dcff6',
+					'value'       => '#6dcff6'
 				),
 				array(
 					'heading'     => esc_html__( 'Label Source', 'nova' ),
@@ -1079,8 +1367,8 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Auto', 'nova' )   => 'auto',
-						esc_html__( 'Custom', 'nova' ) => 'custom',
-					),
+						esc_html__( 'Custom', 'nova' ) => 'custom'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Custom label', 'nova' ),
@@ -1089,17 +1377,17 @@ class Nova_Addons_VC {
 					'type'        => 'textfield',
 					'dependency'  => array(
 						'element' => 'label_source',
-						'value'   => 'custom',
-					),
+						'value'   => 'custom'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
-				),
-			),
+					'param_name'  => 'el_class'
+				)
+			)
 		) );
 
 		// Message Box
@@ -1111,25 +1399,25 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
-					'heading'          => esc_html__( 'Type', 'nova' ),
-					'description'      => esc_html__( 'Select message box type', 'nova' ),
+					'heading'     => esc_html__( 'Type', 'nova' ),
+					'description' => esc_html__( 'Select message box type', 'nova' ),
 					'edit_field_class' => 'vc_col-xs-12 vc_message-type',
-					'type'             => 'dropdown',
-					'param_name'       => 'type',
-					'default'          => 'success',
-					'admin_label'      => true,
-					'value'            => array(
-						esc_html__( 'Success', 'nova' )       => 'success',
+					'type'        => 'dropdown',
+					'param_name'  => 'type',
+					'default'     => 'success',
+					'admin_label' => true,
+					'value'       => array(
+						esc_html__( 'Success', 'nova' ) => 'success',
 						esc_html__( 'Informational', 'nova' ) => 'info',
-						esc_html__( 'Error', 'nova' )         => 'danger',
-						esc_html__( 'Warning', 'nova' )       => 'warning',
-					),
+						esc_html__( 'Error', 'nova' ) => 'danger',
+						esc_html__( 'Warning', 'nova' ) => 'warning'
+					)
 				),
 				array(
-					'heading'    => esc_html__( 'Message Text', 'nova' ),
-					'type'       => 'textarea_html',
-					'param_name' => 'content',
-					'holder'     => 'div',
+					'heading'     => esc_html__( 'Message Text', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content',
+					'holder'      => 'div'
 				),
 				array(
 					'heading'     => esc_html__( 'Closeable', 'nova' ),
@@ -1137,7 +1425,7 @@ class Nova_Addons_VC {
 					'type'        => 'checkbox',
 					'param_name'  => 'closeable',
 					'value'       => array(
-						esc_html__( 'Yes', 'nova' ) => true,
+						esc_html__( 'Yes', 'nova' ) => true
 					),
 				),
 				vc_map_add_css_animation(),
@@ -1145,9 +1433,9 @@ class Nova_Addons_VC {
 					'type'        => 'textfield',
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'param_name'  => 'el_class',
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
-				),
-			),
+					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' )
+				)
+			)
 		) );
 
 		// Icon Box
@@ -1157,7 +1445,7 @@ class Nova_Addons_VC {
 			'base'        => 'nova_icon_box',
 			'icon'        => $this->get_icon( 'icon-box.png' ),
 			'category'    => esc_html__( 'Nova', 'nova' ),
-			'params'      => array(
+			'params'      => array_merge( array(
 				array(
 					'heading'     => esc_html__( 'Icon library', 'nova' ),
 					'description' => esc_html__( 'Select icon library.', 'nova' ),
@@ -1165,14 +1453,17 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'value'       => array(
 						esc_html__( 'Font Awesome', 'nova' ) => 'fontawesome',
-						esc_html__( 'Open Iconic', 'nova' )  => 'openiconic',
-						esc_html__( 'Typicons', 'nova' )     => 'typicons',
-						esc_html__( 'Entypo', 'nova' )       => 'entypo',
-						esc_html__( 'Linecons', 'nova' )     => 'linecons',
-						esc_html__( 'Mono Social', 'nova' )  => 'monosocial',
-						esc_html__( 'Material', 'nova' )     => 'material',
+						esc_html__( 'Open Iconic', 'nova' ) => 'openiconic',
+						esc_html__( 'Typicons', 'nova' ) => 'typicons',
+						esc_html__( 'Entypo', 'nova' ) => 'entypo',
+						esc_html__( 'Linecons', 'nova' ) => 'linecons',
+						esc_html__( 'Mono Social', 'nova' ) => 'monosocial',
+						esc_html__( 'Novaworks Icons', 'nova' ) => 'nova_icon_outline',
+						esc_html__( 'Nucleo Glyph', 'nova' ) => 'nucleo_glyph',
+						esc_html__( 'Material', 'nova' ) => 'material',
 						esc_html__( 'Custom Image', 'nova' ) => 'image',
-					),
+						esc_html__( 'Custom Number', 'nova' ) => 'number'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1182,12 +1473,12 @@ class Nova_Addons_VC {
 					'value'       => 'fa fa-adjust',
 					'settings'    => array(
 						'emptyIcon'    => false,
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'fontawesome',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'fontawesome'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1198,12 +1489,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'openiconic',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'openiconic',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'openiconic'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1214,12 +1505,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'typicons',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'typicons',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'typicons'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1230,12 +1521,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'entypo',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'entypo',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'entypo'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1246,12 +1537,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'linecons',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'linecons',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'linecons'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1262,12 +1553,44 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'monosocial',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'monosocial',
+						'element'      => 'icon_type',
+						'value'        => 'monosocial'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_nova_icon_outline',
+					'value'       => 'nova-icon nature_bear',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'nova_icon_outline',
+						'iconsPerPage' => 4000
 					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'nova_icon_outline'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_nucleo_glyph',
+					'value'       => 'nc-icon-glyph nature_bear',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'nucleo_glyph',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'nucleo_glyph'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon', 'nova' ),
@@ -1278,12 +1601,12 @@ class Nova_Addons_VC {
 					'settings'    => array(
 						'emptyIcon'    => false,
 						'type'         => 'material',
-						'iconsPerPage' => 4000,
+						'iconsPerPage' => 4000
 					),
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'material',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'material'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Icon Image', 'nova' ),
@@ -1292,47 +1615,466 @@ class Nova_Addons_VC {
 					'param_name'  => 'image',
 					'value'       => '',
 					'dependency'  => array(
-						'element' => 'icon_type',
-						'value'   => 'image',
-					),
+						'element'      => 'icon_type',
+						'value'        => 'image'
+					)
 				),
 				array(
-					'heading'     => esc_html__( 'Icon Style', 'nova' ),
-					'description' => esc_html__( 'Select icon style', 'nova' ),
-					'param_name'  => 'style',
-					'type'        => 'dropdown',
-					'value'       => array(
-						esc_html__( 'Normal', 'nova' ) => 'normal',
-						esc_html__( 'Circle', 'nova' ) => 'circle',
-						esc_html__( 'Round', 'nova' )  => 'round',
-					),
+					'heading'     => esc_html__( 'Enter the number', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'number',
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'number'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Title', 'nova' ),
 					'description' => esc_html__( 'The box title', 'nova' ),
 					'admin_label' => true,
-					'param_name'  => 'title',
 					'type'        => 'textfield',
-					'value'       => esc_html__( 'I am Icon Box', 'nova' ),
+					'param_name'  => 'title',
+					'value'       => esc_html__( 'I am Icon Box', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Content', 'nova' ),
 					'description' => esc_html__( 'The box title', 'nova' ),
 					'holder'      => 'div',
-					'param_name'  => 'content',
 					'type'        => 'textarea_html',
-					'value'       => esc_html__( 'I am icon box. Click edit button to change this text.', 'nova' ),
+					'param_name'  => 'content',
+					'value'       => esc_html__( 'I am icon box. Click edit button to change this text.', 'nova' )
+				),
+				// Select link option - to box or with read more text
+				array(
+					'heading'     => esc_html__( 'Apply link to:', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'read_more',
+					'value'       => array(
+						esc_html__( 'No Link', 'nova' ) => 'none',
+						esc_html__( 'Box Title', 'nova' ) => 'title',
+						esc_html__( 'Icon', 'nova' ) => 'icon'
+					)
+				),
+				// Add link to existing content or to another resource
+				array(
+					'heading'     => esc_html__( 'Add Link', 'nova' ),
+					'description' => esc_html__( 'Add a custom link or select existing page. You can remove existing link as well.', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link',
+					'dependency'  => array(
+						'element'      => 'read_more',
+						'value'        => array( 'box', 'title', 'icon' )
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Position', 'nova' ),
+					'description' => esc_html__( 'Select icon position. Icon box style will be changed according to the icon position.', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'icon_pos',
+					'value'	=> array(
+						esc_html__( 'Icon at Top', 'nova' ) => 'default',
+						esc_html__( 'Icon at Left', 'nova' ) => 'left',
+						esc_html__( 'Icon at Right', 'nova' ) => 'right',
+						esc_html__( 'Icon at left with heading', 'nova' ) => 'heading-left',
+						esc_html__( 'Icon at Right with heading', 'nova' ) => 'heading-right',
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Style', 'nova' ),
+					'description' => esc_html__( 'Select icon style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Normal', 'nova' ) => 'normal',
+						esc_html__( 'Circle', 'nova' ) => 'circle',
+						esc_html__( 'Square', 'nova' ) => 'square',
+						esc_html__( 'Round', 'nova' ) => 'round',
+						esc_html__( 'Advanced', 'nova' ) => 'advanced'
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Size', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_size',
+					'value'       => 50,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Box Width', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_width',
+					'value'       => 50,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Padding', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_padding',
+					'value'       => 0,
+					'min'         => 0,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color Type', 'nova' ),
+					'type' 		  => 'dropdown',
+					'param_name'  => 'icon_color_type',
+					'value' 	  => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'		  => 'simple',
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_color',
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Hover Color', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_h_color',
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color #2', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_color2',
+					'dependency'  => array(
+						'element' 	=> 'icon_color_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Hover Color #2', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_h_color2',
+					'dependency'  => array(
+						'element' 	=> 'icon_color_type',
+						'value' 	=> array('gradient')
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Type', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'icon_bg_type',
+					'value'       => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'         => 'simple',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_bg',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Background Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_bg',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Color #2', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_bg2',
+					'dependency'  => array(
+						'element' 	=> 'icon_bg_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Background Color #2', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_bg2',
+					'dependency'  => array(
+						'element' 	=> 'icon_bg_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'icon_border_style',
+					'value'       => array(
+						esc_html__( 'None', 'nova' ) => '',
+						esc_html__( 'Solid', 'nova' ) => 'solid',
+						esc_html__( 'Dashed', 'nova' ) => 'dashed',
+						esc_html__( 'Dotted', 'nova' ) => 'dotted',
+						esc_html__( 'Double', 'nova' ) => 'double',
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Width', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_border_width',
+					'value'       => 1,
+					'min'         => 1,
+					'max'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty'	=> true
+					),
+					'group' => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_border_color',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty' => true
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Border Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_border_color',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty' => true
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Radius', 'nova' ),
+					'description' => esc_html__( '0 pixel value will create a square border. As you increase the value, the shape convert in circle slowly. (e.g 500 pixels).', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_border_radius',
+					'value'       => 500,
+					'min'         => 1,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'advanced' )
+					),
+					'group'       => esc_html__('Icon Settings', 'nova')
 				),
 				vc_map_add_css_animation(),
+				Novaworks_Shortcodes_Helper::fieldExtraClass(),
+			), Novaworks_Shortcodes_Helper::fieldTitleGFont(), Novaworks_Shortcodes_Helper::fieldTitleGFont( 'desc', esc_html__( 'Description', 'nova' ) ), array( Novaworks_Shortcodes_Helper::fieldCssClass() ) )
+		) );
+		
+		// Custom Heading
+		vc_map( array(
+			'name'        => esc_html__( 'Title Heading', 'nova' ),
+			'description' => esc_html__( 'Awesome heading styles.', 'nova' ),
+			'base'        => 'nova_heading',
+			'icon'        => 'nova-wpb-icon fa fa-font nova_heading',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'params'      => array_merge( array(
 				array(
-					'heading'     => esc_html__( 'Extra class name', 'nova' ),
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
+					'heading'     => esc_html__( 'Heading', 'nova' ),
+					'param_name'  => 'title',
+					'admin_label' => true,
 				),
-			),
+				array(
+					'type'        => 'textarea_html',
+					'heading'     => esc_html__( 'Sub Heading(Optional)', 'nova' ),
+					'param_name'  => 'content'
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Heading tag', 'nova' ),
+					'param_name'  => 'tag',
+					'value' => array(
+						esc_html__( 'Default', 'nova' ) => 'h2',
+						esc_html__( 'H1', 'nova' ) => 'h1',
+						esc_html__( 'H3', 'nova' ) => 'h3',
+						esc_html__( 'H4', 'nova' ) => 'h4',
+						esc_html__( 'H5', 'nova' ) => 'h5',
+						esc_html__( 'H6', 'nova' ) => 'h6',
+						esc_html__( 'DIV', 'nova' ) => 'div',
+						esc_html__( 'p', 'nova' ) => 'p'
+					),
+					'default'     => 'h2',
+					'description' => esc_html__( 'Default is H2', 'nova' )
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Alignment', 'nova' ),
+					'param_name'  => 'alignment',
+					'value' => array(
+						esc_html__( 'Center', 'nova' ) => 'center',
+						esc_html__( 'Left','nova') => 'left',
+						esc_html__( 'Right','nova')	=> 'right',
+						esc_html__( 'Inline','nova') => 'inline'
+					),
+					'default'     => 'left'
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Separator', 'nova' ),
+					'param_name'  => 'spacer',
+					'value'       => array(
+						esc_html__( 'No Separator', 'nova' ) =>	'none',
+						esc_html__( 'Line', 'nova' ) =>	'line',
+					),
+					'default'     => 'none',
+					'dependency'  => array(
+						'element'   => 'alignment',
+						'value'     => array( 'center', 'left', 'right' )
+					)
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Separator Position', 'nova' ),
+					'param_name'  => 'spacer_position',
+					'value'       => array(
+						esc_html__( 'Top', 'nova' ) => 'top',
+						esc_html__( 'Bottom', 'nova' ) => 'bottom',
+						esc_html__( 'Left', 'nova' ) => 'left',
+						esc_html__( 'Right', 'nova' ) => 'right',
+						wp_kses_post( __( 'Between Heading - Subheading', 'nova' ) ) => 'middle',
+						esc_html__( 'Title between separator', 'nova' ) => 'separator'
+					),
+					'default'     => 'top',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Line Style', 'nova' ),
+					'param_name'  => 'line_style',
+					'value'       => array(
+						esc_html__( 'Solid', 'nova' ) => 'solid',
+						esc_html__( 'Dashed', 'nova' ) => 'dashed',
+						esc_html__( 'Dotted', 'nova' ) => 'dotted',
+						esc_html__( 'Double', 'nova' ) => 'double'
+					),
+					'default'     => 'solid',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'type'        => 'nova_column',
+					'heading'     => esc_html__('Line Width', 'nova'),
+					'param_name'  => 'line_width',
+					'unit'        => 'px',
+					'media'       => array(
+						'xlg'       => '',
+						'lg'        => '',
+						'md'        => '',
+						'sm'        => '',
+						'xs'        => '',
+						'mb'        => ''
+					),
+					'dependency' => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'type'        => 'nova_number',
+					'heading'     => esc_html__( 'Line Height', 'nova' ),
+					'param_name'  => 'line_height',
+					'value'       => 1,
+					'min'         => 1,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				array(
+					'type'        => 'colorpicker',
+					'heading'     => esc_html__( 'Line Color', 'nova' ),
+					'param_name'  => 'line_color',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
+					)
+				),
+				Novaworks_Shortcodes_Helper::fieldExtraClass(),
+				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
+					'heading'       => esc_html__( 'Extra Class for heading', 'nova' ),
+					'param_name'    => 'title_class',
+				) ),
+				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
+					'heading'       => esc_html__( 'Extra Class for subheading', 'nova' ),
+					'param_name'    => 'subtitle_class',
+				) ),
+				Novaworks_Shortcodes_Helper::fieldExtraClass(array(
+					'heading'       => esc_html__( 'Extra Class for Line', 'nova' ),
+					'param_name'    => 'line_class',
+					'dependency'    => array(
+						'element'     => 'spacer',
+						'value'       => 'line'
+					)
+				) )
+			), Novaworks_Shortcodes_Helper::fieldTitleGFont(), Novaworks_Shortcodes_Helper::fieldTitleGFont( 'subtitle', esc_html__( 'Subheading', 'nova' ) ), array( Novaworks_Shortcodes_Helper::fieldCssClass() ) )
 		) );
 
+		// Content Space
+		vc_map( array(
+			'name'        => esc_html__( 'Content Space', 'nova' ),
+			'base'        => 'nova_divider',
+			'icon'        => 'nova-wpb-icon nova_divider',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Blank space with custom height.','nova' ),
+			'params'      => array(
+				array(
+					'type'        => 'nova_column',
+					'heading'     => esc_html__( 'Space Height', 'nova' ),
+					'admin_label' => true,
+					'param_name'  => 'height',
+					'unit'        => 'px',
+					'media'       => array(
+						'xlg'   => '',
+						'lg'    => '',
+						'md'    => '',
+						'sm'    => '',
+						'xs'    => '',
+						'mb'    => ''
+					)
+				),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			)
+		) );
+		
 		// Pricing Table
 		vc_map( array(
 			'name'        => esc_html__( 'Pricing Table', 'nova' ),
@@ -1345,27 +2087,27 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Plan Name', 'nova' ),
 					'admin_label' => true,
 					'param_name'  => 'name',
-					'type'        => 'textfield',
+					'type'        => 'textfield'
 				),
 				array(
 					'heading'     => esc_html__( 'Price', 'nova' ),
 					'description' => esc_html__( 'Plan pricing', 'nova' ),
 					'param_name'  => 'price',
-					'type'        => 'textfield',
+					'type'        => 'textfield'
 				),
 				array(
 					'heading'     => esc_html__( 'Currency', 'nova' ),
 					'description' => esc_html__( 'Price currency', 'nova' ),
 					'param_name'  => 'currency',
 					'type'        => 'textfield',
-					'value'       => '$',
+					'value'       => '$'
 				),
 				array(
 					'heading'     => esc_html__( 'Recurrence', 'nova' ),
 					'description' => esc_html__( 'Recurring payment unit', 'nova' ),
 					'param_name'  => 'recurrence',
 					'type'        => 'textfield',
-					'value'       => esc_html__( 'Per Month', 'nova' ),
+					'value'       => esc_html__( 'Per Month', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Features', 'nova' ),
@@ -1376,42 +2118,47 @@ class Nova_Addons_VC {
 						array(
 							'heading'    => esc_html__( 'Feature name', 'nova' ),
 							'param_name' => 'name',
-							'type'       => 'textfield',
+							'type'       => 'textfield'
 						),
 						array(
 							'heading'    => esc_html__( 'Feature value', 'nova' ),
 							'param_name' => 'value',
-							'type'       => 'textfield',
-						),
-					),
+							'type'       => 'textfield'
+						)
+					)
 				),
 				array(
-					'heading'    => esc_html__( 'Button Text', 'nova' ),
-					'param_name' => 'button_text',
-					'type'       => 'textfield',
-					'value'      => esc_html__( 'Get Started', 'nova' ),
+					'heading'     => esc_html__( 'Button Text', 'nova' ),
+					'param_name'  => 'button_text',
+					'type'        => 'textfield',
+					'value'       => esc_html__( 'Get Started', 'nova' )
 				),
 				array(
-					'heading'    => esc_html__( 'Button Link', 'nova' ),
-					'param_name' => 'button_link',
-					'type'       => 'vc_link',
-					'value'      => esc_html__( 'Get Started', 'nova' ),
+					'heading'     => esc_html__( 'Button Link', 'nova' ),
+					'param_name'  => 'button_link',
+					'type'        => 'vc_link',
+					'value'       => esc_html__( 'Get Started', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Table color', 'nova' ),
 					'description' => esc_html__( 'Pick color scheme for this table. It will be applied to table header and button.', 'nova' ),
 					'param_name'  => 'color',
 					'type'        => 'colorpicker',
-					'value'       => '#6dcff6',
+					'value'       => '#6dcff6'
+				),
+				array(
+					'type'        => 'checkbox',
+					'param_name'  => 'package_featured',
+					'value'       => array( esc_html__( 'Make this pricing box as featured', 'nova' ) => 'yes' ),
 				),
 				vc_map_add_css_animation(),
 				array(
 					'type'        => 'textfield',
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'param_name'  => 'el_class',
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
-				),
-			),
+					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' )
+				)
+			)
 		) );
 
 		// Google Map
@@ -1426,55 +2173,55 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'API Key', 'nova' ),
 					'description' => esc_html__( 'Google requires an API key to work.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'api_key',
+					'param_name'  => 'api_key'
 				),
 				array(
 					'heading'     => esc_html__( 'Address', 'nova' ),
 					'description' => esc_html__( 'Enter address for map marker. If this option does not work correctly, use the Latitude and Longitude options bellow.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'address',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
-					'heading'          => esc_html__( 'Latitude', 'nova' ),
-					'type'             => 'textfield',
+					'heading'     => esc_html__( 'Latitude', 'nova' ),
+					'type'        => 'textfield',
 					'edit_field_class' => 'vc_col-xs-6',
-					'param_name'       => 'lat',
-					'admin_label'      => true,
+					'param_name'  => 'lat',
+					'admin_label' => true
 				),
 				array(
-					'heading'          => esc_html__( 'Longitude', 'nova' ),
-					'type'             => 'textfield',
-					'param_name'       => 'lng',
+					'heading'     => esc_html__( 'Longitude', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'lng',
 					'edit_field_class' => 'vc_col-xs-6',
-					'admin_label'      => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Marker', 'nova' ),
 					'description' => esc_html__( 'Upload custom marker icon or leave this to use default marker.', 'nova' ),
 					'param_name'  => 'marker',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Width', 'nova' ),
 					'description' => esc_html__( 'Map width in pixel or percentage.', 'nova' ),
 					'param_name'  => 'width',
 					'type'        => 'textfield',
-					'value'       => '100%',
+					'value'       => '100%'
 				),
 				array(
 					'heading'     => esc_html__( 'Height', 'nova' ),
 					'description' => esc_html__( 'Map height in pixel.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'height',
-					'value'       => '625px',
+					'value'       => '625px'
 				),
 				array(
 					'heading'     => esc_html__( 'Zoom', 'nova' ),
 					'description' => esc_html__( 'Enter zoom level. The value is between 1 and 20.', 'nova' ),
 					'param_name'  => 'zoom',
 					'type'        => 'textfield',
-					'value'       => '15',
+					'value'       => '15'
 				),
 				array(
 					'heading'          => esc_html__( 'Color', 'nova' ),
@@ -1486,24 +2233,24 @@ class Nova_Addons_VC {
 						esc_html__( 'Default', 'nova' )       => '',
 						esc_html__( 'Grey', 'nova' )          => 'grey',
 						esc_html__( 'Classic Black', 'nova' ) => 'inverse',
-						esc_html__( 'Vista Blue', 'nova' )    => 'vista-blue',
-					),
+						esc_html__( 'Vista Blue', 'nova' )    => 'vista-blue'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Content', 'nova' ),
 					'description' => esc_html__( 'Enter content of info window.', 'nova' ),
 					'type'        => 'textarea_html',
 					'param_name'  => 'content',
-					'holder'      => 'div',
+					'holder'      => 'div'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
-				),
-			),
+					'param_name'  => 'el_class'
+				)
+			)
 		) );
 
 		// Testimonial
@@ -1518,21 +2265,21 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Photo', 'nova' ),
 					'description' => esc_html__( 'Author photo or avatar. Recommend 160x160 in dimension.', 'nova' ),
 					'type'        => 'attach_image',
-					'param_name'  => 'image',
+					'param_name'  => 'image'
 				),
 				array(
 					'heading'     => esc_html__( 'Name', 'nova' ),
 					'description' => esc_html__( 'Enter full name of the author', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'name',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Company', 'nova' ),
 					'description' => esc_html__( 'Enter company name of author', 'nova' ),
 					'param_name'  => 'company',
 					'type'        => 'textfield',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Alignment', 'nova' ),
@@ -1542,24 +2289,24 @@ class Nova_Addons_VC {
 					'value'       => array(
 						esc_html__( 'Center', 'nova' ) => 'center',
 						esc_html__( 'Left', 'nova' )   => 'left',
-						esc_html__( 'Right', 'nova' )  => 'right',
-					),
+						esc_html__( 'Right', 'nova' )  => 'right'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Content', 'nova' ),
 					'description' => esc_html__( 'Testimonial content', 'nova' ),
 					'type'        => 'textarea_html',
 					'param_name'  => 'content',
-					'holder'      => 'div',
+					'holder'      => 'div'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
-				),
-			),
+					'param_name'  => 'el_class'
+				)
+			)
 		) );
 
 		// Partners
@@ -1577,8 +2324,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'source',
 					'value'       => array(
 						esc_html__( 'Media library', 'nova' )  => 'media_library',
-						esc_html__( 'External Links', 'nova' ) => 'external_link',
-					),
+						esc_html__( 'External Links', 'nova' ) => 'external_link'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Images', 'nova' ),
@@ -1587,8 +2334,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'images',
 					'dependency'  => array(
 						'element' => 'source',
-						'value'   => 'media_library',
-					),
+						'value'   => 'media_library'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
@@ -1597,8 +2344,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'img_size',
 					'dependency'  => array(
 						'element' => 'source',
-						'value'   => 'media_library',
-					),
+						'value'   => 'media_library'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'External links', 'nova' ),
@@ -1607,8 +2354,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'custom_srcs',
 					'dependency'  => array(
 						'element' => 'source',
-						'value'   => 'external_link',
-					),
+						'value'   => 'external_link'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Image size', 'nova' ),
@@ -1617,14 +2364,14 @@ class Nova_Addons_VC {
 					'param_name'  => 'external_img_size',
 					'dependency'  => array(
 						'element' => 'source',
-						'value'   => 'external_link',
-					),
+						'value'   => 'external_link'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Custom links', 'nova' ),
 					'description' => esc_html__( 'Enter links for each image here. Divide links with linebreaks (Enter).', 'nova' ),
 					'type'        => 'exploded_textarea_safe',
-					'param_name'  => 'custom_links',
+					'param_name'  => 'custom_links'
 				),
 				array(
 					'heading'     => esc_html__( 'Custom link target', 'nova' ),
@@ -1633,8 +2380,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'custom_links_target',
 					'value'       => array(
 						esc_html__( 'Same window', 'nova' ) => '_self',
-						esc_html__( 'New window', 'nova' )  => '_blank',
-					),
+						esc_html__( 'New window', 'nova' )  => '_blank'
+					)
 				),
 				array(
 					'heading'     => esc_html__( 'Layout', 'nova' ),
@@ -1643,17 +2390,20 @@ class Nova_Addons_VC {
 					'param_name'  => 'layout',
 					'value'       => array(
 						esc_html__( 'Bordered', 'nova' ) => 'bordered',
-						esc_html__( 'Plain', 'nova' )    => 'plain',
-					),
+						esc_html__( 'Plain', 'nova' )    => 'plain'
+					)
 				),
+				Novaworks_Shortcodes_Helper::fieldColumnGrid( array(
+					'heading' 		=> esc_html__( 'Items per row', 'nova' ),
+					'media'			=> array(
+						'lg'  => 4,
+						'md'  => 4,
+						'mb'  => 2
+					)
+				) ),
 				vc_map_add_css_animation(),
-				array(
-					'heading'     => esc_html__( 'Extra class name', 'nova' ),
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
-					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			)
 		) );
 
 		// Contact Box
@@ -1669,44 +2419,44 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'The office address', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'address',
-					'holder'      => 'p',
+					'holder'      => 'p'
 				),
 				array(
 					'heading'     => esc_html__( 'Phone', 'nova' ),
 					'description' => esc_html__( 'The phone number', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'phone',
-					'holder'      => 'p',
+					'holder'      => 'p'
 				),
 				array(
 					'heading'     => esc_html__( 'Fax', 'nova' ),
 					'description' => esc_html__( 'The fax number', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'fax',
-					'holder'      => 'p',
+					'holder'      => 'p'
 				),
 				array(
 					'heading'     => esc_html__( 'Email', 'nova' ),
 					'description' => esc_html__( 'The email adress', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'email',
-					'holder'      => 'p',
+					'holder'      => 'p'
 				),
 				array(
 					'heading'     => esc_html__( 'Website', 'nova' ),
 					'description' => esc_html__( 'The phone number', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'website',
-					'holder'      => 'p',
+					'holder'      => 'p'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
-				),
-			),
+					'param_name'  => 'el_class'
+				)
+			)
 		) );
 
 		// Info List
@@ -1726,28 +2476,28 @@ class Nova_Addons_VC {
 						array(
 							'icon'  => 'fa fa-home',
 							'label' => esc_html__( 'Address', 'nova' ),
-							'value' => '9606 North MoPac Expressway',
+							'value' => '9606 North MoPac Expressway'
 						),
 						array(
 							'icon'  => 'fa fa-phone',
 							'label' => esc_html__( 'Phone', 'nova' ),
-							'value' => '+1 248-785-8545',
+							'value' => '+1 248-785-8545'
 						),
 						array(
 							'icon'  => 'fa fa-fax',
 							'label' => esc_html__( 'Fax', 'nova' ),
-							'value' => '123123123',
+							'value' => '123123123'
 						),
 						array(
 							'icon'  => 'fa fa-envelope',
 							'label' => esc_html__( 'Email', 'nova' ),
-							'value' => 'nova@uix.store',
+							'value' => 'nova@uix.store'
 						),
 						array(
 							'icon'  => 'fa fa-globe',
 							'label' => esc_html__( 'Website', 'nova' ),
-							'value' => 'http://uix.store',
-						),
+							'value' => 'http://uix.store'
+						)
 					) ) ),
 					'params'      => array(
 						array(
@@ -1756,20 +2506,20 @@ class Nova_Addons_VC {
 							'param_name' => 'icon',
 							'settings'   => array(
 								'emptyIcon'    => false,
-								'iconsPerPage' => 4000,
-							),
+								'iconsPerPage' => 4000
+							)
 						),
 						array(
 							'type'        => 'textfield',
 							'heading'     => esc_html__( 'Label', 'nova' ),
 							'param_name'  => 'label',
-							'admin_label' => true,
+							'admin_label' => true
 						),
 						array(
 							'type'        => 'textfield',
 							'heading'     => esc_html__( 'Value', 'nova' ),
 							'param_name'  => 'value',
-							'admin_label' => true,
+							'admin_label' => true
 						),
 					),
 				),
@@ -1778,9 +2528,9 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'type'        => 'textfield',
-					'param_name'  => 'el_class',
-				),
-			),
+					'param_name'  => 'el_class'
+				)
+			)
 		) );
 
 		// FAQ
@@ -1799,7 +2549,7 @@ class Nova_Addons_VC {
 					'holder'      => 'h4',
 					'class'       => 'vc_toggle_title wpb_element_title',
 					'param_name'  => 'title',
-					'value'       => esc_html__( 'Question content goes here', 'nova' ),
+					'value'       => esc_html__( 'Question content goes here', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Answer', 'nova' ),
@@ -1808,7 +2558,7 @@ class Nova_Addons_VC {
 					'holder'      => 'div',
 					'class'       => 'vc_toggle_content',
 					'param_name'  => 'content',
-					'value'       => esc_html__( 'Answer content goes here, click edit button to change this text.', 'nova' ),
+					'value'       => esc_html__( 'Answer content goes here, click edit button to change this text.', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Default state', 'nova' ),
@@ -1817,17 +2567,17 @@ class Nova_Addons_VC {
 					'param_name'  => 'open',
 					'value'       => array(
 						esc_html__( 'Closed', 'nova' ) => 'false',
-						esc_html__( 'Open', 'nova' )   => 'true',
-					),
+						esc_html__( 'Open', 'nova' )   => 'true'
+					)
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 
 		// Team Member
@@ -1842,72 +2592,72 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Member photo', 'nova' ),
 					'param_name'  => 'image',
-					'type'        => 'attach_image',
+					'type'        => 'attach_image'
 				),
 				array(
 					'heading'     => esc_html__( 'Image Size', 'nova' ),
 					'description' => esc_html__( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)). Leave empty to use "thumbnail" size.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'image_size',
-					'value'       => 'full',
+					'value'       => 'full'
 				),
 				array(
 					'heading'     => esc_html__( 'Full Name', 'nova' ),
 					'description' => esc_html__( 'Member name', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'name',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'     => esc_html__( 'Job', 'nova' ),
 					'description' => esc_html__( 'The job/position name of member in your team', 'nova' ),
 					'param_name'  => 'job',
 					'type'        => 'textfield',
-					'admin_label' => true,
+					'admin_label' => true
 				),
 				array(
 					'heading'    => esc_html__( 'Facebook', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'facebook',
+					'param_name' => 'facebook'
 				),
 				array(
 					'heading'    => esc_html__( 'Twitter', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'twitter',
+					'param_name' => 'twitter'
 				),
 				array(
 					'heading'    => esc_html__( 'Google Plus', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'google',
+					'param_name' => 'google'
 				),
 				array(
 					'heading'    => esc_html__( 'Pinterest', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'pinterest',
+					'param_name' => 'pinterest'
 				),
 				array(
 					'heading'    => esc_html__( 'Linkedin', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'linkedin',
+					'param_name' => 'linkedin'
 				),
 				array(
 					'heading'    => esc_html__( 'Youtube', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'youtube',
+					'param_name' => 'youtube'
 				),
 				array(
 					'heading'    => esc_html__( 'Instagram', 'nova' ),
 					'type'       => 'textfield',
-					'param_name' => 'instagram',
+					'param_name' => 'instagram'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
-					'type'        => 'textfield',
-				),
-			),
+					'type'        => 'textfield'
+				)
+			)
 		) );
 	}
 
@@ -1952,7 +2702,7 @@ class Nova_Addons_VC {
 			$categories[] = array(
 				'label' => $cat->name,
 				'value' => $cat->slug,
-				'group' => 'category',
+				'group' => 'category'
 			);
 		}
 
@@ -1973,13 +2723,13 @@ class Nova_Addons_VC {
 		$fonts[] = (object) array(
 			'font_family' => 'Amatic SC',
 			'font_styles' => '400,700',
-			'font_types'  => '400 regular:400:normal,700 regular:700:normal',
+			'font_types'  => '400 regular:400:normal,700 regular:700:normal'
 		);
 
 		$fonts[] = (object) array(
 			'font_family' => 'Montez',
 			'font_styles' => '400',
-			'font_types'  => '400 regular:400:normal',
+			'font_types'  => '400 regular:400:normal'
 		);
 
 		usort( $fonts, array( $this, 'sort_fonts' ) );

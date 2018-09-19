@@ -67,7 +67,6 @@ class Nova_Addons {
 		include_once( NOVA_ADDONS_DIR . 'includes/import.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/user.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/portfolio.php' );
-		include_once( NOVA_ADDONS_DIR . 'includes/team.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/class-nova-vc.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/plugins/shortcodes/class-nova-shortcodes.php');
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes-row.php' );
@@ -103,7 +102,6 @@ class Nova_Addons {
 		add_filter( 'vc_iconpicker-type-nucleo_glyph', array( $shortcode_extension, 'get_nucleo_glyph_font_icon' ) );
 
 		add_action( 'init', array( 'Nova_Addons_Portfolio', 'init' ) );
-		add_action( 'init', array( 'Nova_Team_Member', 'init' ) );
 	}
 	/**
 	 * Check plugin dependencies

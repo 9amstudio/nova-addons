@@ -226,8 +226,6 @@ if(!empty($_icon_html)){
     $icon_html .= '</div>';
 }
 
-
-
 if(!empty($title)){
     if(!empty($title_fz) || !empty( $title_lh)){
         $titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(

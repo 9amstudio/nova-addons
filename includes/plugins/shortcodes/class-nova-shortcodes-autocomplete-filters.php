@@ -21,46 +21,20 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         $this->post_types = array(
             'post',
             'product',
-            'la_portfolio',
-            'la_testimonial',
-            'team_member',
-            'la_block',
-            'la_event',
-            'la_course',
+            'portfolio',
         );
         $this->taxonomies = array(
             'tag',
             'category',
             'product_cat',
             'product_tag',
-            'la_portfolio_category',
-            'la_portfolio_skill',
-            'la_event_category',
-            'la_course_category',
+            'portfolio_type',
         );
         $this->loadFilter();
     }
 
     private function loadFilter(){
         $filters = array(
-            'la_testimonial' => array(
-                'ids'	=> array(
-                    'callback' 	=> 'la_testimonialContentTypeCallback',
-                    'render' 	=> 'contentTypeRender'
-                )
-            ),
-            'la_block' 		 => array(
-                'id'	=> array(
-                    'callback' 	=> 'la_blockContentTypeCallback',
-                    'render' 	=> 'contentTypeRender'
-                )
-            ),
-            'nova_member' => array(
-                'ids'	=> array(
-                    'callback' 	=> 'team_memberContentTypeCallback',
-                    'render' 	=> 'contentTypeRender'
-                )
-            ),
             'la_show_posts' => array(
                 'category__in' 	=> array(
                     'callback' 	=> 'categoryTaxCallback',
@@ -257,11 +231,11 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
             foreach ( $array_category as $value ) {
                 $data = array();
                 $data[ 'value' ] = $slug ? $value[ 'slug' ] : $value[ 'id' ];
-                $data[ 'label' ] = __( 'Id', 'nova' ) . ': ' .
+                $data[ 'label' ] = esc_html__( 'Id', 'nova' ) . ': ' .
                     $value[ 'id' ] .
-                    ( ( strlen( $value[ 'name' ] ) > 0 ) ? ' - ' . __( 'Name', 'nova' ) . ': ' .
+                    ( ( strlen( $value[ 'name' ] ) > 0 ) ? ' - ' . esc_html__( 'Name', 'nova' ) . ': ' .
                         $value[ 'name' ] : '' ) .
-                    ( ( strlen( $value[ 'slug' ] ) > 0 ) ? ' - ' . __( 'Slug', 'nova' ) . ': ' .
+                    ( ( strlen( $value[ 'slug' ] ) > 0 ) ? ' - ' . esc_html__( 'Slug', 'nova' ) . ': ' .
                         $value[ 'slug' ] : '' );
                 $result[ ] = $data;
             }
@@ -292,15 +266,15 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
 
         $term_slug_display = '';
         if ( !empty( $term_slug ) ) {
-            $term_slug_display = ' - ' . __( 'Slug', 'nova' ) . ': ' . $term_slug;
+            $term_slug_display = ' - ' . esc_html__( 'Slug', 'nova' ) . ': ' . $term_slug;
         }
 
         $term_title_display = '';
         if ( !empty( $term_title ) ) {
-            $term_title_display = ' - ' . __( 'Title', 'nova' ) . ': ' . $term_title;
+            $term_title_display = ' - ' . esc_html__( 'Title', 'nova' ) . ': ' . $term_title;
         }
 
-        $term_id_display = __( 'Id', 'nova' ) . ': ' . $term_id;
+        $term_id_display = esc_html__( 'Id', 'nova' ) . ': ' . $term_id;
 
         $data = array();
         $data[ 'value' ] = $slug ? $term_slug : $term_id;
@@ -329,9 +303,9 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
             foreach ( $array_posts as $value ) {
                 $data = array();
                 $data[ 'value' ] = $value[ 'id' ];
-                $data[ 'label' ] = __( 'Id', 'nova' ) . ': ' .
+                $data[ 'label' ] = esc_html__( 'Id', 'nova' ) . ': ' .
                     $value[ 'id' ] .
-                    ( ( strlen( $value[ 'title' ] ) > 0 ) ? ' - ' . __( 'Title', 'nova' ) . ': ' .
+                    ( ( strlen( $value[ 'title' ] ) > 0 ) ? ' - ' . esc_html__( 'Title', 'nova' ) . ': ' .
                         $value[ 'title' ] : '' );
                 $results[ ] = $data;
             }
@@ -349,13 +323,13 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
                 $post_id = $post_object->ID;
                 $post_slug_display = '';
                 if ( !empty( $slug ) ) {
-                    $post_slug_display = ' - ' . __( 'Slug', 'nova' ) . ': ' . $slug;
+                    $post_slug_display = ' - ' . esc_html__( 'Slug', 'nova' ) . ': ' . $slug;
                 }
                 $post_title_display = '';
                 if ( !empty( $title ) ) {
-                    $post_title_display = ' - ' . __( 'Title', 'nova' ) . ': ' . $title;
+                    $post_title_display = ' - ' . esc_html__( 'Title', 'nova' ) . ': ' . $title;
                 }
-                $post_id_display = __( 'Id', 'nova' ) . ': ' . $post_id;
+                $post_id_display = esc_html__( 'Id', 'nova' ) . ': ' . $post_id;
                 $data = array();
                 $data[ 'value' ] = $post_id;
                 $data[ 'label' ] = $post_id_display . $post_title_display . $post_slug_display;

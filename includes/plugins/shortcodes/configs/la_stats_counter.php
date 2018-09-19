@@ -5,10 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-$icon_type = Novaworks_Shortcodes_Helper::fieldIconType(array(
+$icon_type = Novaworks_Shortcodes_Helper::fieldIconType( array(
 	'element' => 'icon_pos',
-	'value'	=> array('top','left','right')
-));
+	'value'	=> array( 'top', 'left', 'right' )
+) );
 
 $field_icon_settings = array(
 	array(
@@ -16,10 +16,10 @@ $field_icon_settings = array(
 		'heading'	=> __('Icon Position', 'nova'),
 		'param_name' => 'icon_pos',
 		'value'	=> array(
-			__('No display', 'nova')	=> 'none',
-			__('Icon at Top', 'nova') => 'top',
-			__('Icon at Left', 'nova') => 'left',
-			__('Icon at Right', 'nova') => 'right'
+			__( 'No display', 'nova' )	=> 'none',
+			__( 'Icon at Top', 'nova' ) => 'top',
+			__( 'Icon at Left', 'nova' ) => 'left',
+			__( 'Icon at Right', 'nova' ) => 'right'
 		),
 		'std' => 'top',
 		'description' => __('Select icon position. Icon box style will be changed according to the icon position.', 'nova')

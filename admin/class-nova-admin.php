@@ -31,10 +31,10 @@ class Novaworks_Admin {
 		 * class.
 		 */
 
-		wp_deregister_style('jquery-chosen');
+		wp_deregister_style( 'jquery-chosen' );
 
-		if(wp_style_is('font-awesome', 'registered')) {
-			wp_deregister_style('font-awesome');
+		if( wp_style_is( 'font-awesome', 'registered' ) ) {
+			wp_deregister_style( 'font-awesome' );
 		}
 
 		// wp core styles
@@ -42,20 +42,20 @@ class Novaworks_Admin {
 		wp_enqueue_style( 'wp-jquery-ui-dialog' );
 
 
-		wp_enqueue_style( 'nova-admin', plugin_dir_url( __FILE__ ) . 'css/nova-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'nova-admin', plugin_dir_url( __FILE__ ) . 'css/nova-admin.css', array(), NOVA_ADDONS_VER, 'all' );
 
-		wp_enqueue_style( 'font-awesome', plugin_dir_url( dirname(__FILE__) ) . 'public/css/font-awesome.min.css', array(), null);
+		wp_enqueue_style( 'font-awesome', plugin_dir_url( dirname(__FILE__) ) . 'public/css/font-awesome.min.css', array(), null );
 		wp_enqueue_style( 'nova-icons', plugin_dir_url( dirname(__FILE__) ) . 'public/css/nova-icons.css', array(), null);
-		wp_enqueue_style( 'font-nucleo-glyph', plugin_dir_url( dirname(__FILE__) ) . 'public/css/font-nucleo-glyph.min.css', array(), null);
+		wp_enqueue_style( 'font-nucleo-glyph', plugin_dir_url( dirname(__FILE__) ) . 'public/css/font-nucleo-glyph.min.css', array(), null );
 
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'nova-admin-rtl', plugin_dir_url(__FILE__) . 'css/nova-admin-rtl.css', array(), $this->version, 'all');
+			wp_enqueue_style( 'nova-admin-rtl', plugin_dir_url(__FILE__) . 'css/nova-admin-rtl.css', array(), NOVA_ADDONS_VER, 'all' );
 		}
 
-		$asset_font_without_domain = apply_filters('Novaworks/filter/assets_font_url', untrailingslashit(plugin_dir_url( dirname(__FILE__) )));
+		$asset_font_without_domain = apply_filters( 'Novaworks/filter/assets_font_url', untrailingslashit(plugin_dir_url( dirname(__FILE__) ) ) );
 
 		wp_add_inline_style(
-			$this->plugin_name,
+			'nova-addons',
 			"@font-face {
 				font-family: 'icomoon';
 				src:url('{$asset_font_without_domain}/public/fonts/icomoon.ttf');
@@ -127,7 +127,7 @@ class Novaworks_Admin {
 		 * class.
 		 */
 
-		wp_deregister_script('jquery-chosen');
+		wp_deregister_script( 'jquery-chosen' );
 		// admin utilities
 		wp_enqueue_media();
 
@@ -139,15 +139,15 @@ class Novaworks_Admin {
 			'jquery-ui-accordion'
 		);
 
-		wp_register_script( 'nova-plugins', plugin_dir_url( __FILE__ ) . 'js/nova-admin-plugin.js', $script_dependencies, $this->version, true );
+		wp_register_script( 'nova-plugins', plugin_dir_url( __FILE__ ) . 'js/nova-admin-plugin.js', $script_dependencies, NOVA_ADDONS_VER, true );
 
-		wp_enqueue_script( 'nova-admin', plugin_dir_url( __FILE__ ) . 'js/nova-admin.js', array( 'nova-plugins' ), $this->version, true );
+		wp_enqueue_script( 'nova-admin', plugin_dir_url( __FILE__ ) . 'js/nova-admin.js', array( 'nova-plugins' ), NOVA_ADDONS_VER, true );
 
 		$vars = array(
 			'ajax_url' => admin_url( 'admin-ajax.php', 'relative' ),
 			'swatches_nonce' => wp_create_nonce( 'swatches_nonce' )
 		);
-		wp_localize_script( $this->plugin_name , 'la_swatches_vars', $vars );
+		wp_localize_script( 'nova-addons' , 'la_swatches_vars', $vars );
 
 	}
 
@@ -244,7 +244,7 @@ class Novaworks_Admin {
 	 */
 	public static function validate_email( $value ) {
 		if ( ! sanitize_email( $value ) ) {
-			return __( 'Please write a valid email address!', 'nova' );
+			return esc_html__( 'Please write a valid email address!', 'nova' );
 		}
 	}
 
@@ -255,7 +255,7 @@ class Novaworks_Admin {
 	 */
 	public static function validate_numeric( $value ) {
 		if ( ! is_numeric( $value ) ) {
-			return __( 'Please write a numeric data!', 'nova' );
+			return esc_html__( 'Please write a numeric data!', 'nova' );
 		}
 	}
 
@@ -266,7 +266,7 @@ class Novaworks_Admin {
 	 */
 	public static function validate_required( $value ) {
 		if ( empty( $value ) ) {
-			return __( 'Fatal Error! This field is required!', 'nova' );
+			return esc_html__( 'Fatal Error! This field is required!', 'nova' );
 		}
 	}
 
@@ -274,26 +274,26 @@ class Novaworks_Admin {
 	private function get_icon_library(){
 
 		$cache = wp_cache_get('icon_fonts', 'la_studio');
-		if (empty($cache)) {
+		if ( empty( $cache ) ) {
 			$jsons = apply_filters('nova/filter/framework/field/icon/json', array(
 				plugin_dir_path( dirname(__FILE__) ) . 'public/fonts/font-awesome.json'
-			));
-			if (!empty($jsons)) {
+			) );
+			if ( ! empty( $jsons ) ) {
 				$cache_tmp = array();
-				foreach ($jsons as $path) {
-					$file_data = @file_get_contents($path);
-					if (!is_wp_error($file_data)) {
-						$cache_tmp[] = json_decode($file_data, false);
+				foreach ( $jsons as $path ) {
+					$file_data = @file_get_contents( $path );
+					if ( ! is_wp_error( $file_data ) ) {
+						$cache_tmp[] = json_decode( $file_data, false );
 					}
 				}
-				wp_cache_set('icon_fonts', maybe_serialize($cache_tmp), 'la_studio');
+				wp_cache_set('icon_fonts', maybe_serialize($cache_tmp), 'la_studio' );
 				return $cache_tmp;
 			}
 		}
-		if (empty($cache)) {
+		if ( empty( $cache ) ) {
 			return array();
 		}
-		return maybe_unserialize($cache);
+		return maybe_unserialize( $cache );
 	}
 
 	/**
@@ -311,7 +311,7 @@ class Novaworks_Admin {
 						echo '<a class="nova-icon-tooltip" data-nova-icon="'. $icon .'" data-title="'. $icon .'"><span class="nova-icon--selector la-selector"><i class="'. $icon .'"></i></span></a>';
 					}
 				} else {
-					echo '<h4 class="nova-icon-title">'. __( 'Error! Can not load json file.', 'nova' ) .'</h4>';
+					echo '<h4 class="nova-icon-title">'. esc_html__( 'Error! Can not load json file.', 'nova' ) .'</h4>';
 				}
 			}
 		}
@@ -324,7 +324,7 @@ class Novaworks_Admin {
 	 */
 	public function ajax_autocomplete(){
 		if ( empty( $_GET['query_args'] ) || empty( $_GET['s'] ) ) {
-			echo '<b>' . __('Query is empty ...', 'nova' ) . '</b>';
+			echo '<b>' . esc_html__( 'Query is empty ...', 'nova' ) . '</b>';
 			die();
 		}
 		ob_start();
@@ -336,7 +336,7 @@ class Novaworks_Admin {
 				echo '<div data-id="' . get_the_ID() . '">' . get_the_title() . '</div>';
 			}
 		} else {
-			echo '<b>' . __('Not found', 'nova' ) . '</b>';
+			echo '<b>' . esc_html__('Not found', 'nova' ) . '</b>';
 		}
 
 		wp_reset_postdata();
@@ -350,13 +350,13 @@ class Novaworks_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_export_options(){
-		$unique = isset($_REQUEST['unique']) ? $_REQUEST['unique'] : 'la_options';
+		$unique = isset( $_REQUEST['unique'] ) ? $_REQUEST['unique'] : 'la_options';
 		header('Content-Type: plain/text');
-		header('Content-disposition: attachment; filename=backup-'.esc_attr($unique).'-'. gmdate( 'd-m-Y' ) .'.txt');
+		header('Content-disposition: attachment; filename=backup-' . esc_attr( $unique ) . '-' . gmdate( 'd-m-Y' ) . '.txt' );
 		header('Content-Transfer-Encoding: binary');
 		header('Pragma: no-cache');
 		header('Expires: 0');
-		echo wp_json_encode(get_option($unique));
+		echo wp_json_encode( get_option( $unique ) );
 		die();
 	}
 

@@ -1,19 +1,19 @@
 <?php
 
 // Do not allow directly accessing this file.
-if (!defined('ABSPATH')) {
-    exit('Direct script access denied.');
+if ( !defined( 'ABSPATH' ) ) {
+    exit( 'Direct script access denied.' );
 }
 
 
-if (!function_exists('la_log')) {
-    function la_log($log)
+if (!function_exists( 'la_log' ) ) {
+    function la_log( $log )
     {
-        if (true === WP_DEBUG) {
-            if (is_array($log) || is_object($log)) {
-                error_log(print_r($log, true));
+        if ( true === WP_DEBUG ) {
+            if ( is_array( $log ) || is_object( $log ) ) {
+                error_log( print_r( $log, true ) );
             } else {
-                error_log($log);
+                error_log( $log );
             }
         }
     }
@@ -66,10 +66,10 @@ if (!function_exists('la_fw_add_element')) {
             $element->output();
             $output .= ob_get_clean();
         } else {
-            $output .= '<p>' . __('This field class is not available!', 'nova') . '</p>';
+            $output .= '<p>' . esc_html__( 'This field class is not available!', 'nova' ) . '</p>';
         }
 
-        $output .= (isset($field['title'])) ? '</div>' : '';
+        $output .= ( isset( $field['title'] ) ) ? '</div>' : '';
         $output .= '<div class="clear"></div>';
         $output .= '</div>';
 
@@ -380,13 +380,13 @@ if (!function_exists('la_get_product_grid_style')) {
     function la_get_product_grid_style()
     {
         return array(
-            __('Design 01', 'nova') => '1',
-            __('Design 02', 'nova') => '2',
-            __('Design 03', 'nova') => '3',
-            __('Design 04', 'nova') => '4',
-            __('Design 05', 'nova') => '5',
-            __('Design 06', 'nova') => '6',
-            __('Design 07', 'nova') => '7'
+            esc_html__('Design 01', 'nova') => '1',
+            esc_html__('Design 02', 'nova') => '2',
+            esc_html__('Design 03', 'nova') => '3',
+            esc_html__('Design 04', 'nova') => '4',
+            esc_html__('Design 05', 'nova') => '5',
+            esc_html__('Design 06', 'nova') => '6',
+            esc_html__('Design 07', 'nova') => '7'
         );
     }
 }
@@ -395,8 +395,8 @@ if (!function_exists('la_get_product_list_style')) {
     function la_get_product_list_style()
     {
         return array(
-            __('Default', 'nova') => 'default',
-            __('Mini', 'nova') => 'mini'
+            esc_html__('Default', 'nova') => 'default',
+            esc_html__('Mini', 'nova') => 'mini'
         );
     }
 }

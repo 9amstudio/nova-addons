@@ -11,46 +11,19 @@ class Novaworks_Shortcodes{
     public static $instance = null;
 
     private $_shortcodes = array(
-        'la_animation_block',
-        'la_btn',
-        'nova_icon_boxes',
-        'nova_heading',
-        'nova_member',
-        'nova_brands',
         'la_stats_counter',
-        'la_testimonial',
-        'la_show_posts',
         'la_show_portfolios',
         'la_portfolio_masonry',
         'la_portfolio_info',
-        'la_maps',
-        'la_social_link',
         'la_banner',
-        'la_spa_service',
-        'la_block',
-        'la_countdown',
-        'la_pricing_table',
-        'nova_divider',
-        'la_icon_list',
-        'la_icon_list_item',
+        //'la_pricing_table',
         'la_instagram_feed',
         'la_carousel',
         'la_hotspot',
         'la_image_with_hotspots'
     );
 
-    private $_woo_shortcodes = array(
-        'product',
-        'products',
-        'recent_products',
-        'featured_products',
-        'product_category',
-        'product_categories',
-        'sale_products',
-        'best_selling_products',
-        'top_rated_products',
-        'product_attribute'
-    );
+    private $_woo_shortcodes = array();
 
     public static function get_instance() {
         if ( null === self::$instance ) {
@@ -66,13 +39,11 @@ class Novaworks_Shortcodes{
     public function load_dependencies(){
         require_once self::$shortcode_path . 'class-nova-shortcodes-helper.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-row.php';
-        require_once self::$shortcode_path . 'class-nova-shortcodes-parallax-row.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-autocomplete-filters.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-param.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-woocommerce.php';
 
         Novaworks_Shortcodes_Row::get_instance();
-        Novaworks_Shortcodes_Parallax_Row::get_instance();
         Novaworks_Shortcodes_Autocomplete_Filters::get_instance();
     }
 
@@ -356,65 +327,65 @@ class Novaworks_Shortcodes{
             $style = array();
         }
         $style[] = array(
-            'label' => __( 'Infinite Animations', 'nova' ),
+            'label' => esc_html__( 'Infinite Animations', 'nova' ),
             'values' => array(
-                __( 'InfiniteRotate', 'nova' ) => array(
+                esc_html__( 'InfiniteRotate', 'nova' ) => array(
                     'value' => 'InfiniteRotate',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteRotateCounter', 'nova' ) => array(
+                esc_html__( 'InfiniteRotateCounter', 'nova' ) => array(
                     'value' => 'InfiniteRotateCounter',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteDangle', 'nova' ) => array(
+                esc_html__( 'InfiniteDangle', 'nova' ) => array(
                     'value' => 'InfiniteDangle',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteSwing', 'nova' ) => array(
+                esc_html__( 'InfiniteSwing', 'nova' ) => array(
                     'value' => 'InfiniteSwing',
                     'type' => 'infinite'
                 ),
-                __( 'InfinitePulse', 'nova' ) => array(
+                esc_html__( 'InfinitePulse', 'nova' ) => array(
                     'value' => 'InfinitePulse',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalShake', 'nova' ) => array(
+                esc_html__( 'InfiniteHorizontalShake', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalShake',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVericalShake', 'nova' ) => array(
+                esc_html__( 'InfiniteVericalShake', 'nova' ) => array(
                     'value' => 'InfiniteVericalShake',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteBounce', 'nova' ) => array(
+                esc_html__( 'InfiniteBounce', 'nova' ) => array(
                     'value' => 'InfiniteBounce',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteFlash', 'nova' ) => array(
+                esc_html__( 'InfiniteFlash', 'nova' ) => array(
                     'value' => 'InfiniteFlash',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteTADA', 'nova' ) => array(
+                esc_html__( 'InfiniteTADA', 'nova' ) => array(
                     'value' => 'InfiniteTADA',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteRubberBand', 'nova' ) => array(
+                esc_html__( 'InfiniteRubberBand', 'nova' ) => array(
                     'value' => 'InfiniteRubberBand',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalFlip', 'nova' ) => array(
+                esc_html__( 'InfiniteHorizontalFlip', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVericalFlip', 'nova' ) => array(
+                esc_html__( 'InfiniteVericalFlip', 'nova' ) => array(
                     'value' => 'InfiniteVericalFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteHorizontalScaleFlip', 'nova' ) => array(
+                esc_html__( 'InfiniteHorizontalScaleFlip', 'nova' ) => array(
                     'value' => 'InfiniteHorizontalScaleFlip',
                     'type' => 'infinite'
                 ),
-                __( 'InfiniteVerticalScaleFlip', 'nova' ) => array(
+                esc_html__( 'InfiniteVerticalScaleFlip', 'nova' ) => array(
                     'value' => 'InfiniteVerticalScaleFlip',
                     'type' => 'infinite'
                 )

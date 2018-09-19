@@ -19,7 +19,7 @@ return apply_filters(
 		'category'  	=> __('La Studio', 'nova'),
 		'description' 	=> __('Carousel anything.','nova'),
 		'as_parent'     => array( 'except' => array(
-			'la_carousel', 'la_animation_block'
+			'la_carousel'
 		) ),
 		'content_element'=> true,
 		'controls'       => 'full',

@@ -23,25 +23,25 @@ class Novaworks_Shortcodes_Helper{
         return array(
             array(
                 'type' => 'dropdown',
-                'heading' => __( 'Icon library', 'nova' ),
+                'heading' => esc_html__( 'Icon library', 'nova' ),
                 'value' => array(
-                    __( 'Font Awesome', 'nova' ) => 'fontawesome',
-                    __( 'Open Iconic', 'nova' ) => 'openiconic',
-                    __( 'Typicons', 'nova' ) => 'typicons',
-                    __( 'Entypo', 'nova' ) => 'entypo',
-                    __( 'Linecons', 'nova' ) => 'linecons',
-                    __( 'Mono Social', 'nova' ) => 'monosocial',
-                    __( 'Novaworks Icon', 'nova' ) => 'nova_icon_outline',
-                    __( 'Nucleo Glyph', 'nova' ) => 'nucleo_glyph',
-                    __( 'Custom Image', 'nova') => 'custom',
+                    esc_html__( 'Font Awesome', 'nova' ) => 'fontawesome',
+                    esc_html__( 'Open Iconic', 'nova' ) => 'openiconic',
+                    esc_html__( 'Typicons', 'nova' ) => 'typicons',
+                    esc_html__( 'Entypo', 'nova' ) => 'entypo',
+                    esc_html__( 'Linecons', 'nova' ) => 'linecons',
+                    esc_html__( 'Mono Social', 'nova' ) => 'monosocial',
+                    esc_html__( 'Novaworks Icon', 'nova' ) => 'nova_icon_outline',
+                    esc_html__( 'Nucleo Glyph', 'nova' ) => 'nucleo_glyph',
+                    esc_html__( 'Custom Image', 'nova') => 'custom',
                 ),
                 'param_name' => 'icon_type',
-                'description' => __( 'Select icon library.', 'nova' ),
+                'description' => esc_html__( 'Select icon library.', 'nova' ),
                 'dependency' => $dependency
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_fontawesome',
                 'value' => 'fa fa-info-circle',
                 'settings' => array(
@@ -55,7 +55,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_openiconic',
                 'settings' => array(
                     'emptyIcon' => $emptyIcon,
@@ -69,7 +69,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_typicons',
                 'settings' => array(
                     'emptyIcon' => $emptyIcon,
@@ -83,7 +83,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_entypo',
                 'settings' => array(
                     'emptyIcon' => $emptyIcon,
@@ -97,7 +97,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_linecons',
                 'settings' => array(
                     'emptyIcon' => $emptyIcon,
@@ -111,7 +111,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_monosocial',
                 'value' => 'vc-mono vc-mono-fivehundredpx',
                 'settings' => array(
@@ -126,7 +126,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_nova_icon_outline',
                 'value' => 'nova-icon design-2_image',
                 'settings' => array(
@@ -141,7 +141,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'iconpicker',
-                'heading' => __( 'Icon', 'nova' ),
+                'heading' => esc_html__( 'Icon', 'nova' ),
                 'param_name' => 'icon_nucleo_glyph',
                 'value' => 'nc-icon-glyph nature_bear',
                 'settings' => array(
@@ -156,7 +156,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' => 'attach_image',
-                'heading' => __('Upload the custom image icon', 'nova'),
+                'heading' => esc_html__('Upload the custom image icon', 'nova'),
                 'param_name' => "icon_image_id",
                 'dependency' => array(
                     'element' => 'icon_type',
@@ -169,7 +169,7 @@ class Novaworks_Shortcodes_Helper{
     public static function fieldColumn($options = array()){
         return array_merge(array(
             'type' 			=> 'nova_column',
-            'heading' 		=> __('Column', 'nova'),
+            'heading' 		=> esc_html__('Column', 'nova'),
             'param_name' 	=> 'column',
             'unit'			=> '',
             'media'			=> array(
@@ -185,7 +185,7 @@ class Novaworks_Shortcodes_Helper{
     public static function fieldColumnGrid($options = array()){
         return array_merge(array(
             'type' 			=> 'nova_column',
-            'heading' 		=> __('Column', 'nova'),
+            'heading' 		=> esc_html__('Column', 'nova'),
             'param_name' 	=> 'column',
             'unit'			=> '',
             'media'			=> array(
@@ -199,10 +199,10 @@ class Novaworks_Shortcodes_Helper{
         return array_merge(
             array(
                 'type' 			=> 'textfield',
-                'heading' 		=> __('Image size', 'nova'),
+                'heading' 		=> esc_html__('Image size', 'nova'),
                 'param_name' 	=> 'img_size',
                 'value'			=> 'thumbnail',
-                'description' 	=> __('Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)).', 'nova'),
+                'description' 	=> esc_html__('Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)).', 'nova'),
             ),
             $options
         );
@@ -212,7 +212,7 @@ class Novaworks_Shortcodes_Helper{
         return array_merge(
             array(
                 'type' => 'animation_style',
-                'heading' => __( 'CSS Animation', 'nova' ),
+                'heading' => esc_html__( 'CSS Animation', 'nova' ),
                 'param_name' => 'css_animation',
                 'value' => 'none',
                 'settings' => array(
@@ -221,7 +221,7 @@ class Novaworks_Shortcodes_Helper{
                         'other',
                     ),
                 ),
-                'description' => __( 'Select initial loading animation for element.', 'nova' ),
+                'description' => esc_html__( 'Select initial loading animation for element.', 'nova' ),
             ),
             $options
         );
@@ -231,9 +231,9 @@ class Novaworks_Shortcodes_Helper{
         return array_merge(
             array(
                 'type' 			=> 'textfield',
-                'heading' 		=> __('Extra Class name', 'nova'),
+                'heading' 		=> esc_html__('Extra Class name', 'nova'),
                 'param_name' 	=> 'el_class',
-                'description' 	=> __('Style particular content element differently - add a class name and refer to it in custom CSS.', 'nova')
+                'description' 	=> esc_html__('Style particular content element differently - add a class name and refer to it in custom CSS.', 'nova')
             ),
             $options
         );
@@ -243,7 +243,7 @@ class Novaworks_Shortcodes_Helper{
         return array_merge(
             array(
                 'type' => 'textfield',
-                'heading' => __( 'Element ID', 'nova' ),
+                'heading' => esc_html__( 'Element ID', 'nova' ),
                 'param_name' => 'shortcode_id',
                 'description' => sprintf( __( 'Enter element ID (Note: make sure it is unique and valid according to <a href="%s" target="_blank">w3c specification</a>).', 'nova' ), 'http://www.w3schools.com/tags/att_global_id.asp' ),
             ),
@@ -255,9 +255,9 @@ class Novaworks_Shortcodes_Helper{
         return array_merge(
             array(
                 'type' 			=> 'css_editor',
-                'heading' 		=> __('CSS box', 'nova'),
+                'heading' 		=> esc_html__('CSS box', 'nova'),
                 'param_name' 	=> 'css',
-                'group' 		=> __('Design Options', 'nova')
+                'group' 		=> esc_html__('Design Options', 'nova')
             ),
             $options
         );
@@ -287,21 +287,21 @@ class Novaworks_Shortcodes_Helper{
     }
 
     public static function fieldTitleGFont( $name = 'title', $title = 'Title',  $dependency = array() ){
-        $group = __('Typography', 'nova');
+        $group = esc_html__('Typography', 'nova');
         $array = array();
         $array[] = array(
             'type' 			=> 'nova_heading',
             'param_name' 	=> $name . '__typography',
-            'text' 			=> $title . __(' settings', 'nova'),
+            'text' 			=> $title . esc_html__(' settings', 'nova'),
             'group' 		=> $group,
             'dependency'    => $dependency
         );
         $array[] = array(
             'type' => 'checkbox',
-            'heading' => __( 'Use google fonts family?', 'nova' ),
+            'heading' => esc_html__( 'Use google fonts family?', 'nova' ),
             'param_name' => 'use_gfont_' . $name,
-            'value' => array( __( 'Yes', 'nova' ) => 'yes' ),
-            'description' => __( 'Use font family from the theme.', 'nova' ),
+            'value' => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+            'description' => esc_html__( 'Use font family from the theme.', 'nova' ),
             'group' 		=> $group,
             'dependency'    => $dependency
         );
@@ -316,7 +316,7 @@ class Novaworks_Shortcodes_Helper{
         );
         $array[] = array(
             'type' 			=> 'nova_column',
-            'heading' 		=> __('Font size', 'nova'),
+            'heading' 		=> esc_html__('Font size', 'nova'),
             'param_name' 	=> $name . '_fz',
             'unit' 			=> 'px',
             'media' => array(
@@ -332,7 +332,7 @@ class Novaworks_Shortcodes_Helper{
         );
         $array[] = array(
             'type' 			=> 'nova_column',
-            'heading' 		=> __('Line Height', 'nova'),
+            'heading' 		=> esc_html__('Line Height', 'nova'),
             'param_name' 	=> $name . '_lh',
             'unit' 			=> 'px',
             'media' => array(
@@ -349,7 +349,7 @@ class Novaworks_Shortcodes_Helper{
         $array[] = array(
             'type' 			=> 'colorpicker',
             'param_name' 	=> $name . '_color',
-            'heading' 		=> __('Color', 'nova'),
+            'heading' 		=> esc_html__('Color', 'nova'),
             'group' 		=> $group,
             'dependency'    => $dependency
         );
@@ -694,7 +694,7 @@ class Novaworks_Shortcodes_Helper{
         $params = array(
             array(
                 'type'       => 'dropdown',
-                'heading'    => __( 'Slider Type', 'nova' ),
+                'heading'    => esc_html__( 'Slider Type', 'nova' ),
                 'param_name' => 'slider_type',
                 'value'      => array(
                     esc_html__('Horizontal', 'nova')            => 'horizontal',
@@ -705,7 +705,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'dropdown',
-                'heading'    => __( 'Slides to Scroll', 'nova' ),
+                'heading'    => esc_html__( 'Slides to Scroll', 'nova' ),
                 'param_name' => 'slide_to_scroll',
                 'value'      => array(
                     esc_html__('All visible', 'nova') => 'all',
@@ -715,18 +715,18 @@ class Novaworks_Shortcodes_Helper{
                 'dependency' => $dependency
             ),
             Novaworks_Shortcodes_Helper::fieldColumn(array(
-                'heading' 		=> __('Items to Show', 'nova'),
+                'heading' 		=> esc_html__('Items to Show', 'nova'),
                 'param_name' 	=> 'slides_column',
                 'group'      => $general_name,
                 'dependency' => $dependency
             )),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Infinite loop', 'nova'),
-                'description'	=> __( 'Restart the slider automatically as it passes the last slide.', 'nova' ),
+                'heading' 		=> esc_html__('Infinite loop', 'nova'),
+                'description'	=> esc_html__( 'Restart the slider automatically as it passes the last slide.', 'nova' ),
                 'param_name' 	=> 'infinite_loop',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      => $general_name,
                 'dependency' => $dependency
@@ -734,30 +734,30 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'        => 'nova_number',
-                'heading'     => __( 'Transition speed', 'nova' ),
+                'heading'     => esc_html__( 'Transition speed', 'nova' ),
                 'param_name'  => 'speed',
                 'value'       => '300',
                 'min'         => '100',
                 'max'         => '10000',
                 'step'        => '100',
                 'suffix'      => 'ms',
-                'description' => __( 'Speed at which next slide comes.', 'nova' ),
+                'description' => esc_html__( 'Speed at which next slide comes.', 'nova' ),
                 'group'      => $general_name,
                 'dependency' => $dependency
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Autoplay Slides', 'nova'),
+                'heading' 		=> esc_html__('Autoplay Slides', 'nova'),
                 'param_name' 	=> 'autoplay',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      => $general_name,
                 'dependency' => $dependency
             ),
             array(
                 'type'       => 'nova_number',
-                'heading'    => __( 'Autoplay Speed', 'nova' ),
+                'heading'    => esc_html__( 'Autoplay Speed', 'nova' ),
                 'param_name' => 'autoplay_speed',
                 'value'      => '5000',
                 'min'        => '100',
@@ -771,18 +771,18 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Navigation Arrows', 'nova'),
-                'description' 	=> __( 'Display next / previous navigation arrows', 'nova' ),
+                'heading' 		=> esc_html__('Navigation Arrows', 'nova'),
+                'description' 	=> esc_html__( 'Display next / previous navigation arrows', 'nova' ),
                 'param_name' 	=> 'arrows',
                 'value' 		=> array(
-                    __('Show', 'nova') => 'yes'
+                    esc_html__('Show', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Navigation',
                 'dependency' => $dependency
             ),
             array(
                 'type'       => 'dropdown',
-                'heading'    => __( 'Arrow Style', 'nova' ),
+                'heading'    => esc_html__( 'Arrow Style', 'nova' ),
                 'param_name' => 'arrow_style',
                 'value'      => array(
                     'Default'           => 'default',
@@ -798,7 +798,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'colorpicker',
-                'heading'    => __( 'Background Color', 'nova' ),
+                'heading'    => esc_html__( 'Background Color', 'nova' ),
                 'param_name' => 'arrow_bg_color',
                 'dependency' => array(
                     'element' => 'arrow_style',
@@ -808,7 +808,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'colorpicker',
-                'heading'    => __( 'Border Color', 'nova' ),
+                'heading'    => esc_html__( 'Border Color', 'nova' ),
                 'param_name' => 'arrow_border_color',
                 'dependency' => array(
                     'element' => 'arrow_style',
@@ -818,7 +818,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'nova_number',
-                'heading'    => __( 'Border Size', 'nova' ),
+                'heading'    => esc_html__( 'Border Size', 'nova' ),
                 'param_name' => 'border_size',
                 'value'      => '2',
                 'min'        => '1',
@@ -833,7 +833,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'colorpicker',
-                'heading'    => __( 'Arrow Color', 'nova' ),
+                'heading'    => esc_html__( 'Arrow Color', 'nova' ),
                 'param_name' => 'arrow_color',
                 'value'      => '#333333',
                 'dependency' => array(
@@ -843,7 +843,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'nova_number',
-                'heading'    => __( 'Arrow Size', 'nova' ),
+                'heading'    => esc_html__( 'Arrow Size', 'nova' ),
                 'param_name' => 'arrow_size',
                 'value'      => '24',
                 'min'        => '10',
@@ -857,7 +857,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'la_slides_navigation',
-                'heading'    => __( "Select icon for 'Next Arrow'", 'nova' ),
+                'heading'    => esc_html__( "Select icon for 'Next Arrow'", 'nova' ),
                 'param_name' => 'next_icon',
                 'value'      => 'dlicon-arrow-right1',
                 'dependency' => array(
@@ -867,7 +867,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'la_slides_navigation',
-                'heading'    => __( "Select icon for 'Previous Arrow'", 'nova' ),
+                'heading'    => esc_html__( "Select icon for 'Previous Arrow'", 'nova' ),
                 'param_name' => 'prev_icon',
                 'value'      => 'dlicon-arrow-left1',
                 'dependency' => array(
@@ -878,7 +878,7 @@ class Novaworks_Shortcodes_Helper{
 
             array(
                 'type' 			=> 'textfield',
-                'heading' 		=> __( 'Custom Navigation Carousel Element', 'nova' ),
+                'heading' 		=> esc_html__( 'Custom Navigation Carousel Element', 'nova' ),
                 'param_name' 	=> 'custom_nav',
                 'description' 	=> 'Enter classname OR ID of Navigation, Ex: ".navigation_carousel", "#navigation_carousel"',
                 'dependency' 	=> array(
@@ -889,11 +889,11 @@ class Novaworks_Shortcodes_Helper{
 
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Dots Navigation', 'nova'),
-                'description' 	=> __( 'Display dot navigation', 'nova' ),
+                'heading' 		=> esc_html__('Dots Navigation', 'nova'),
+                'description' 	=> esc_html__( 'Display dot navigation', 'nova' ),
                 'param_name' 	=> 'dots',
                 'value' 		=> array(
-                    __('Show', 'nova') => 'yes'
+                    esc_html__('Show', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Navigation',
                 'dependency' => $dependency
@@ -901,7 +901,7 @@ class Novaworks_Shortcodes_Helper{
 
             array(
                 'type'       => 'colorpicker',
-                'heading'    => __( 'Color of dots', 'nova' ),
+                'heading'    => esc_html__( 'Color of dots', 'nova' ),
                 'param_name' => 'dots_color',
                 'value'      => '#333333',
                 'dependency' => array(
@@ -911,7 +911,7 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type'       => 'la_slides_navigation',
-                'heading'    => __( "Select icon for 'Navigation Dots'", 'nova' ),
+                'heading'    => esc_html__( "Select icon for 'Navigation Dots'", 'nova' ),
                 'param_name' => 'dots_icon',
                 'value'      => 'dlicon-dot7',
                 'dependency' => array(
@@ -921,11 +921,11 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Draggable Effect', 'nova'),
-                'description' 	=> __( 'Allow slides to be draggable', 'nova' ),
+                'heading' 		=> esc_html__('Draggable Effect', 'nova'),
+                'description' 	=> esc_html__( 'Allow slides to be draggable', 'nova' ),
                 'param_name' 	=> 'draggable',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'std'           => 'yes',
                 'group'      	=> 'Advanced',
@@ -933,11 +933,11 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Touch Move', 'nova'),
-                'description' 	=> __( 'Enable slide moving with touch', 'nova' ),
+                'heading' 		=> esc_html__('Touch Move', 'nova'),
+                'description' 	=> esc_html__( 'Enable slide moving with touch', 'nova' ),
                 'param_name' 	=> 'touch_move',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'std'           => 'yes',
                 'dependency'  => array(
@@ -947,33 +947,33 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('RTL Mode', 'nova'),
-                'description' 	=> __( 'Turn on RTL mode', 'nova' ),
+                'heading' 		=> esc_html__('RTL Mode', 'nova'),
+                'description' 	=> esc_html__( 'Turn on RTL mode', 'nova' ),
                 'param_name' 	=> 'rtl',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Advanced',
                 'dependency' => $dependency
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Adaptive Height', 'nova'),
-                'description' 	=> __('Turn on Adaptive Height', 'nova' ),
+                'heading' 		=> esc_html__('Adaptive Height', 'nova'),
+                'description' 	=> esc_html__('Turn on Adaptive Height', 'nova' ),
                 'param_name' 	=> 'adaptive_height',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Advanced',
                 'dependency' => $dependency
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Pause on hover', 'nova'),
-                'description' 	=> __('Pause the slider on hover', 'nova' ),
+                'heading' 		=> esc_html__('Pause on hover', 'nova'),
+                'description' 	=> esc_html__('Pause the slider on hover', 'nova' ),
                 'param_name' 	=> 'pauseohover',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'dependency'  => array(
                     'element' => 'autoplay', 'value' => array( 'yes' )
@@ -982,22 +982,22 @@ class Novaworks_Shortcodes_Helper{
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Center mode', 'nova'),
-                'description' 	=> __("Enables centered view with partial prev/next slides. <br>Animations do not work with center mode.<br>Slides to scroll -> 'All Visible' do not work with center mode.", 'nova'),
+                'heading' 		=> esc_html__('Center mode', 'nova'),
+                'description' 	=> wp_kses_post( __( "Enables centered view with partial prev/next slides. <br>Animations do not work with center mode.<br>Slides to scroll -> 'All Visible' do not work with center mode.", 'nova' ) ),
                 'param_name' 	=> 'centermode',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Advanced',
                 'dependency' => $dependency
             ),
             array(
                 'type' 			=> 'checkbox',
-                'heading' 		=> __('Item Auto Width', 'nova'),
-                'description' 	=> __('Variable width slides', 'nova' ),
+                'heading' 		=> esc_html__('Item Auto Width', 'nova'),
+                'description' 	=> esc_html__('Variable width slides', 'nova' ),
                 'param_name' 	=> 'autowidth',
                 'value' 		=> array(
-                    __('Yes', 'nova') => 'yes'
+                    esc_html__('Yes', 'nova') => 'yes'
                 ),
                 'group'      	=> 'Advanced',
                 'dependency' => $dependency
@@ -1006,7 +1006,7 @@ class Novaworks_Shortcodes_Helper{
         if($full_control){
             $params[] = array(
                 'type'       => 'nova_number',
-                'heading'    => __( 'Space between two items', 'nova' ),
+                'heading'    => esc_html__( 'Space between two items', 'nova' ),
                 'param_name' => 'item_space',
                 'value'      => '15',
                 'min'        => 0,
@@ -1017,15 +1017,15 @@ class Novaworks_Shortcodes_Helper{
             );
             $params[] = array(
                 'type'       => 'textfield',
-                'heading'    => __( 'Extra Class', 'nova' ),
+                'heading'    => esc_html__( 'Extra Class', 'nova' ),
                 'param_name' => 'el_class',
                 'group'      => esc_html__('General', 'nova')
             );
             $params[] = array(
                 'type'             => 'css_editor',
-                'heading'          => __( 'Css', 'nova' ),
+                'heading'          => esc_html__( 'Css', 'nova' ),
                 'param_name'       => 'css_ad_carousel',
-                'group'            => __( 'Design ', 'nova' )
+                'group'            => esc_html__( 'Design ', 'nova' )
             );
         }
         return $params;
@@ -1034,26 +1034,26 @@ class Novaworks_Shortcodes_Helper{
     public static function getParamItemSpace($options = array()){
         return array_merge(array(
             'type' => 'dropdown',
-            'heading' => __( 'Item Space', 'nova' ),
+            'heading' => esc_html__( 'Item Space', 'nova' ),
             'value' => array (
-                __( 'Default', 'nova' ) => 'default',
-                __( '0px', 'nova' ) => '0',
-                __( '5px', 'nova' ) => '5',
-                __( '10px', 'nova' ) => '10',
-                __( '15px', 'nova' ) => '15',
-                __( '20px', 'nova' ) => '20',
-                __( '25px', 'nova' ) => '25',
-                __( '30px', 'nova' ) => '30',
-                __( '35px', 'nova' ) => '35',
-                __( '40px', 'nova' ) => '40',
-                __( '45px', 'nova' ) => '45',
-                __( '50px', 'nova' ) => '50',
-                __( '55px', 'nova' ) => '55',
-                __( '60px', 'nova' ) => '60',
-                __( '65px', 'nova' ) => '65',
-                __( '70px', 'nova' ) => '70',
-                __( '75px', 'nova' ) => '75',
-                __( '80px', 'nova' ) => '80'
+                esc_html__( 'Default', 'nova' ) => 'default',
+                esc_html__( '0px', 'nova' ) => '0',
+                esc_html__( '5px', 'nova' ) => '5',
+                esc_html__( '10px', 'nova' ) => '10',
+                esc_html__( '15px', 'nova' ) => '15',
+                esc_html__( '20px', 'nova' ) => '20',
+                esc_html__( '25px', 'nova' ) => '25',
+                esc_html__( '30px', 'nova' ) => '30',
+                esc_html__( '35px', 'nova' ) => '35',
+                esc_html__( '40px', 'nova' ) => '40',
+                esc_html__( '45px', 'nova' ) => '45',
+                esc_html__( '50px', 'nova' ) => '50',
+                esc_html__( '55px', 'nova' ) => '55',
+                esc_html__( '60px', 'nova' ) => '60',
+                esc_html__( '65px', 'nova' ) => '65',
+                esc_html__( '70px', 'nova' ) => '70',
+                esc_html__( '75px', 'nova' ) => '75',
+                esc_html__( '80px', 'nova' ) => '80'
             ),
             'param_name' => 'item_space',
             'std' => '30'
