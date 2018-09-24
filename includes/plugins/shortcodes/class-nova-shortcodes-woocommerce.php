@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @version  3.3.0
  */
 
-class Novaworks_Shortcodes_WooCommerce{
+class Novaworks_Shortcodes_WooCommerce {
 
     /**
      * Shortcode type.
@@ -65,66 +65,66 @@ class Novaworks_Shortcodes_WooCommerce{
 
     }
 
-    public static function render_default_atts($atts){
-        return shortcode_atts(array(
-            'scenario' => 'recent_products',
-            'layout' => 'grid',
-            'list_style' => 'default',
-            'grid_style' => '1',
-            'masonry_style' => '1',
-            'category' => '',
-            'operator' => 'IN',
-            'attribute' => '',
-            'filter' => '',
-            'orderby' => '',
-            'order' => '',
-            'ids' => '',
-            'per_page' => 12,
-            'item_space' => 'default',
+    public static function render_default_atts( $atts ) {
+        return shortcode_atts( array(
+            'scenario'                 => 'recent_products',
+            'layout'                   => 'grid',
+            'list_style'               => 'default',
+            'grid_style'               => '1',
+            'masonry_style'            => '1',
+            'category'                 => '',
+            'operator'                 => 'IN',
+            'attribute'                => '',
+            'filter'                   => '',
+            'orderby'                  => '',
+            'order'                    => '',
+            'ids'                      => '',
+            'per_page'                 => 12,
+            'item_space'               => 'default',
             'enable_custom_image_size' => '',
-            'img_size' => 'shop_catalog',
-            'disable_alt_image' => '',
-            'column_type' => 'default',
-            'base_item_w' => 300,
-            'base_item_h' => 300,
-            'mb_columns' => '',
-            'custom_item_size' => '',
-            'item_sizes' => '%5B%7B%22w%22%3A%221%22%2C%22h%22%3A%221%22%2C%22s%22%3A%22%22%7D%5D',
-            'columns' => '',
-            'display_style' => 'all',
-            'load_more_text' => '',
-            'enable_carousel' => '',
-            'enable_ajax_loader' => '',
-            'shortcode_id' => '',
-            'el_class' => '',
-            'skus' => '',
-            'paged' => '1',
-            'slider_type' => 'horizontal',
-            'slide_to_scroll' => 'all',
-            'infinite_loop' => '',
-            'speed' => '300',
-            'autoplay' => '',
-            'autoplay_speed' => '5000',
-            'arrows' => '',
-            'arrow_style' => 'default',
-            'arrow_bg_color' => '',
-            'arrow_border_color' => '',
-            'border_size' => '2',
-            'arrow_color' => '#333333',
-            'arrow_size' => '24',
-            'next_icon' => 'dlicon-arrow-right1',
-            'prev_icon' => 'dlicon-arrow-left1',
-            'custom_nav' => '',
-            'dots' => '',
-            'dots_color' => '#333333',
-            'dots_icon' => 'dlicon-dot7',
-            'draggable' => 'yes',
-            'touch_move' => 'yes',
-            'rtl' => '',
-            'adaptive_height' => '',
-            'pauseohover' => '',
-            'centermode' => '',
-            'autowidth' => ''
+            'img_size'                 => 'shop_catalog',
+            'disable_alt_image'        => '',
+            'column_type'              => 'default',
+            'base_item_w'              => 300,
+            'base_item_h'              => 300,
+            'mb_columns'               => '',
+            'custom_item_size'         => '',
+            'item_sizes'               => '%5B%7B%22w%22%3A%221%22%2C%22h%22%3A%221%22%2C%22s%22%3A%22%22%7D%5D',
+            'columns'                  => '',
+            'display_style'            => 'all',
+            'load_more_text'           => '',
+            'enable_carousel'          => '',
+            'enable_ajax_loader'       => '',
+            'shortcode_id'             => '',
+            'el_class'                 => '',
+            'skus'                     => '',
+            'paged'                    => '1',
+            'slider_type'              => 'horizontal',
+            'slide_to_scroll'          => 'all',
+            'infinite_loop'            => '',
+            'speed'                    => '300',
+            'autoplay'                 => '',
+            'autoplay_speed'           => '5000',
+            'arrows'                   => '',
+            'arrow_style'              => 'default',
+            'arrow_bg_color'           => '',
+            'arrow_border_color'       => '',
+            'border_size'              => '2',
+            'arrow_color'              => '#333333',
+            'arrow_size'               => '24',
+            'next_icon'                => 'dlicon-arrow-right1',
+            'prev_icon'                => 'dlicon-arrow-left1',
+            'custom_nav'               => '',
+            'dots'                     => '',
+            'dots_color'               => '#333333',
+            'dots_icon'                => 'dlicon-dot7',
+            'draggable'                => 'yes',
+            'touch_move'               => 'yes',
+            'rtl'                      => '',
+            'adaptive_height'          => '',
+            'pauseohover'              => '',
+            'centermode'               => '',
+            'autowidth'                => ''
         ), $atts );
     }
 
@@ -180,44 +180,41 @@ class Novaworks_Shortcodes_WooCommerce{
         $attributes = $this->parse_legacy_attributes( $attributes );
 
         return shortcode_atts( array(
-            'limit'          => '-1',      // Results limit.
-            'columns'        => '4',       // Number of columns.
-            'rows'           => '',        // Number of rows. If defined, limit will be ignored.
-            'orderby'        => 'title',   // menu_order, title, date, rand, price, popularity, rating, or id.
-            'order'          => 'ASC',     // ASC or DESC.
-            'ids'            => '',        // Comma separated IDs.
-            'skus'           => '',        // Comma separated SKUs.
-            'category'       => '',        // Comma separated category slugs.
-            'cat_operator'   => 'IN',      // Operator to compare categories. Possible values are 'IN', 'NOT IN', 'AND'.
-            'attribute'      => '',        // Single attribute slug.
-            'terms'          => '',        // Comma separated term slugs.
-            'terms_operator' => 'IN',      // Operator to compare terms. Possible values are 'IN', 'NOT IN', 'AND'.
-            'visibility'     => 'visible', // Possible values are 'visible', 'catalog', 'search', 'hidden', 'featured'.
-            'class'          => '',        // HTML class.
-
-            'page'           => 1,         // Page for pagination.
-            'cache'          => true,      // Should shortcode output be cached.
-
-            'shortcode_id'   => '',
-            'layout'         => 'grid',    // Possible values are 'grid', 'list', 'masonry',
-            'grid_style'     => '1',
-            'list_style'     => '1',
-            'masonry_style'  => '1',
-            'item_space'                => 'default',
-            'enable_custom_image_size'  => 'no',
-            'disable_alt_image'         => 'no',
-            'enable_carousel'           => 'no',
-            'img_size'                  => 'shop_catalog',
-            'display_style'             => 'all', // Possible values are 'all', 'load-more', 'pagination',
-            'load_more_text'            => '',
-            'items_per_page'            => '',
-
-            'column_type' => 'default',
-            'base_item_w' => '',
-            'base_item_h' => '',
-            'mb_columns' => '',
-            'custom_item_size' => '',
-            'item_sizes' => ''
+            'limit'                    => '-1',      // Results limit.
+            'columns'                  => '4',       // Number of columns.
+            'rows'                     => '',        // Number of rows. If defined, limit will be ignored.
+            'orderby'                  => 'title',   // menu_order, title, date, rand, price, popularity, rating, or id.
+            'order'                    => 'ASC',     // ASC or DESC.
+            'ids'                      => '',        // Comma separated IDs.
+            'skus'                     => '',        // Comma separated SKUs.
+            'category'                 => '',        // Comma separated category slugs.
+            'cat_operator'             => 'IN',      // Operator to compare categories. Possible values are 'IN', 'NOT IN', 'AND'.
+            'attribute'                => '',        // Single attribute slug.
+            'terms'                    => '',        // Comma separated term slugs.
+            'terms_operator'           => 'IN',      // Operator to compare terms. Possible values are 'IN', 'NOT IN', 'AND'.
+            'visibility'               => 'visible', // Possible values are 'visible', 'catalog', 'search', 'hidden', 'featured'.
+            'class'                    => '',        // HTML class.
+            'page'                     => 1,         // Page for pagination.
+            'cache'                    => true,      // Should shortcode output be cached.
+            'shortcode_id'             => '',
+            'layout'                   => 'grid',    // Possible values are 'grid', 'list', 'masonry',
+            'grid_style'               => '1',
+            'list_style'               => '1',
+            'masonry_style'            => '1',
+            'item_space'               => 'default',
+            'enable_custom_image_size' => 'no',
+            'disable_alt_image'        => 'no',
+            'enable_carousel'          => 'no',
+            'img_size'                 => 'shop_catalog',
+            'display_style'            => 'all', // Possible values are 'all', 'load-more', 'pagination',
+            'load_more_text'           => '',
+            'items_per_page'           => '',
+            'column_type'              => 'default',
+            'base_item_w'              => '',
+            'base_item_h'              => '',
+            'mb_columns'               => '',
+            'custom_item_size'         => '',
+            'item_sizes'               => ''
 
         ), $attributes, $this->type );
     }
@@ -246,8 +243,7 @@ class Novaworks_Shortcodes_WooCommerce{
             }
         }
 
-
-        if($this->type == 'featured' || $this->type == 'featured_products') {
+        if( $this->type == 'featured' || $this->type == 'featured_products' ) {
             $attributes['visibility'] = 'featured';
         }
 
@@ -571,12 +567,12 @@ class Novaworks_Shortcodes_WooCommerce{
         return $transient_name;
     }
 
-    protected function get_wrapper_shortcode_id(){
-        if(!empty($this->attributes['shortcode_id'])){
+    protected function get_wrapper_shortcode_id() {
+        if( ! empty( $this->attributes['shortcode_id'] ) ) {
             $shortcode_id = $this->attributes['shortcode_id'];
         }
         else{
-            $shortcode_id = uniqid($this->type . '_');
+            $shortcode_id = uniqid( $this->type . '_' );
         }
         return $shortcode_id;
     }
@@ -622,7 +618,7 @@ class Novaworks_Shortcodes_WooCommerce{
      */
     protected function product_loop() {
 
-        $existsGlobalWcLoop         = isset($GLOBALS['woocommerce_loop']) ? true : false;
+        $existsGlobalWcLoop         = isset( $GLOBALS['woocommerce_loop'] ) ? true : false;
         $globalWcLoopTmp            = array();
 
         $unique_id                  = $this->get_wrapper_shortcode_id();
@@ -654,7 +650,7 @@ class Novaworks_Shortcodes_WooCommerce{
         $globalWcLoopTmp['item_space']     = $item_space;
 
 
-        if($image_size){
+        if( $image_size ){
             $globalWcLoopTmp['image_size'] = Novaworks_Shortcodes_Helper::getImageSizeFormString( $this->attributes['img_size'] );
         }
         if($disable_alt_image){
@@ -663,26 +659,26 @@ class Novaworks_Shortcodes_WooCommerce{
 
         $loopCssClass[] = 'products';
 
-        if($layout != 'list'){
+        if( $layout != 'list' ){
             $loopCssClass[] = 'grid-space-' . $item_space;
-            if( $layout != 'masonry' || ($layout == 'masonry' && 'custom' != $this->attributes['column_type']) ){
+            if( $layout != 'masonry' || ( $layout == 'masonry' && 'custom' != $this->attributes['column_type'] ) ) {
                 $loopCssClass[] = 'grid-items';
-                foreach( $columns as $screen => $value ){
-                    $loopCssClass[]  =  sprintf('%s-grid-%s-items', $screen, $value);
+                foreach( $columns as $screen => $value ) {
+                    $loopCssClass[]  =  sprintf( '%s-grid-%s-items', $screen, $value );
                 }
             }
             $loopCssClass[] = 'products-grid';
             $loopCssClass[] = 'products-grid-' . $style;
 
-            if($layout == 'masonry'){
+            if( $layout == 'masonry' ) {
 
                 $loopCssClass[] = 'js-el la-isotope-container';
                 $loopCssClass[] = 'prods_masonry';
                 $loopCssClass[] = 'masonry__column-type-'. $this->attributes['column_type'];
-                if('custom' != $this->attributes['column_type']){
+                if( 'custom' != $this->attributes['column_type'] ) {
                     $container_attr = ' data-la_component="DefaultMasonry"';
                 }
-                else{
+                else {
                     $mb_columns = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['mb_columns'] );
                     $container_attr = ' data-la_component="AdvancedMasonry"';
                     $container_attr .= ' data-item-width="' . ( $this->attributes['base_item_w'] ? intval($this->attributes['base_item_w']) : 300 ) . '"';
@@ -695,11 +691,11 @@ class Novaworks_Shortcodes_WooCommerce{
                     if( 'yes' == $this->attributes['custom_item_size'] ) {
                         $_item_sizes = (array) json_decode( urldecode( $this->attributes['item_sizes'] ), true );
                         $__new_item_sizes = array();
-                        if(!empty($_item_sizes)){
-                            foreach($_item_sizes as $k => $size){
+                        if( ! empty( $_item_sizes ) ) {
+                            foreach($_item_sizes as $k => $size) {
                                 $__new_item_sizes[$k] = $size;
-                                if(!empty($size['s'])){
-                                    $__new_item_sizes[$k]['s'] = Novaworks_Shortcodes_Helper::getImageSizeFormString($size['s']);
+                                if( ! empty( $size['s'] ) ) {
+                                    $__new_item_sizes[$k]['s'] = Novaworks_Shortcodes_Helper::getImageSizeFormString( $size['s'] );
                                 }
                             }
                         }
@@ -737,7 +733,7 @@ class Novaworks_Shortcodes_WooCommerce{
                 $original_wc_loop = $GLOBALS['woocommerce_loop'];
             }
 
-            $GLOBALS['woocommerce_loop'] = wp_parse_args( $globalWcLoopTmp,  array(
+            $GLOBALS['woocommerce_loop'] = wp_parse_args( $globalWcLoopTmp, array(
                 'columns'      => $columns['lg'],
                 'name'         => $this->type,
                 'is_shortcode' => true,
@@ -747,18 +743,18 @@ class Novaworks_Shortcodes_WooCommerce{
                 'total_pages'  => $products->total_pages,
                 'per_page'     => $products->per_page,
                 'current_page' => $products->current_page
-            ));
+            ) );
 
             $original_post = $GLOBALS['post'];
 
-            do_action('Novaworks/shortcodes/before_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
+            do_action( 'Novaworks/shortcodes/before_loop', 'woo_shortcode', $this->type, $this->origin_attributes );
             do_action( "woocommerce_shortcode_before_{$this->type}_loop", $this->attributes );
 
             if($products->total){
 
                 echo sprintf(
                     '<div class="row"><div class="col-xs-12"><ul class="%s"%s>',
-                    esc_attr(implode(' ', $loopCssClass)),
+                    esc_attr( implode(' ', $loopCssClass) ),
                     $container_attr ? $container_attr : ''
                 );
 
@@ -768,7 +764,7 @@ class Novaworks_Shortcodes_WooCommerce{
                     // Set custom product visibility when quering hidden products.
                     add_action( 'woocommerce_product_is_visible', array( $this, 'set_product_as_visible' ) );
                     // Render product template.
-                    locate_template($loop_tpl, true, false);
+                    locate_template( $loop_tpl, true, false );
                     // Restore product visibility.
                     remove_action( 'woocommerce_product_is_visible', array( $this, 'set_product_as_visible' ) );
                 }
@@ -780,15 +776,15 @@ class Novaworks_Shortcodes_WooCommerce{
 
             do_action( "woocommerce_shortcode_after_{$this->type}_loop", $this->attributes );
 
-            do_action('Novaworks/shortcodes/after_loop', 'woo_shortcode', $this->type, $this->origin_attributes);
+            do_action( 'Novaworks/shortcodes/after_loop', 'woo_shortcode', $this->type, $this->origin_attributes );
 
 
-            if( ( !empty($this->attributes['display_style']) && $this->attributes['display_style'] != 'all' )
-                && !empty($products->total_pages) && !empty($products->current_page) && ($products->total_pages >= $products->current_page )
+            if( ( ! empty( $this->attributes['display_style'] ) && $this->attributes['display_style'] != 'all' )
+                && ! empty( $products->total_pages ) && ! empty( $products->current_page ) && ( $products->total_pages >= $products->current_page )
             ) {
 
-                if($this->attributes['display_style'] == 'pagination'){
-                    $__url = add_query_arg('la_paged', 999999999, add_query_arg(null,null));
+                if( $this->attributes['display_style'] == 'pagination' ) {
+                    $__url = add_query_arg( 'la_paged', 999999999, add_query_arg( null,null ) );
                     $_paginate_links = paginate_links( array(
                         'base'         => esc_url_raw( str_replace( 999999999, '%#%', $__url ) ),
                         'format'       => '?la_paged=%#%',
@@ -800,21 +796,21 @@ class Novaworks_Shortcodes_WooCommerce{
                         'type'         => 'list'
                     ) );
 
-                    echo sprintf('<div class="elm-pagination-ajax" data-query-settings="%s" data-request="%s" data-append-type="replace" data-paged="%s" data-parent-container="#%s" data-container="#%s ul.products" data-item-class=".product_item"><div class="la-loading-icon">%s</div><div class="la-pagination">%s</div></div>',
+                    echo sprintf( '<div class="elm-pagination-ajax" data-query-settings="%s" data-request="%s" data-append-type="replace" data-paged="%s" data-parent-container="#%s" data-container="#%s ul.products" data-item-class=".product_item"><div class="la-loading-icon">%s</div><div class="la-pagination">%s</div></div>',
                         esc_attr( wp_json_encode( array(
                             'tag' => $this->type,
                             'atts' => $this->origin_attributes
                         ))),
                         esc_url( admin_url( 'admin-ajax.php', 'relative' ) ),
-                        esc_attr($products->current_page),
-                        esc_attr($unique_id),
-                        esc_attr($unique_id),
+                        esc_attr( $products->current_page ),
+                        esc_attr( $unique_id ),
+                        esc_attr( $unique_id ),
                         Novaworks_Shortcodes_Helper::getLoadingIcon(),
                         $_paginate_links
                     );
                 }
 
-                if($this->attributes['display_style'] == 'load-more'){
+                if( $this->attributes['display_style'] == 'load-more' ){
                     echo sprintf(
                         '<div class="elm-loadmore-ajax" data-query-settings="%s" data-request="%s" data-paged="%s" data-max-page="%s" data-container="#%s ul.products" data-item-class=".product_item">%s<a href="#">%s</a></div>',
                         esc_attr( wp_json_encode( array(
@@ -822,25 +818,25 @@ class Novaworks_Shortcodes_WooCommerce{
                             'atts' => $this->origin_attributes
                         ) ) ),
                         esc_url( admin_url( 'admin-ajax.php', 'relative' ) ),
-                        esc_attr($products->current_page),
-                        esc_attr($products->total_pages),
-                        esc_attr($unique_id),
+                        esc_attr( $products->current_page ),
+                        esc_attr( $products->total_pages ),
+                        esc_attr( $unique_id ),
                         Novaworks_Shortcodes_Helper::getLoadingIcon(),
-                        esc_html($this->attributes['load_more_text'])
+                        esc_html( $this->attributes['load_more_text'] )
                     );
                 }
             }
 
             wp_reset_postdata();
 
-            if(function_exists('wc_reset_loop')){
+            if( function_exists( 'wc_reset_loop' ) ){
                 wc_reset_loop();
             }
             else{
                 woocommerce_reset_loop();
             }
 
-            if($existsGlobalWcLoop){
+            if( $existsGlobalWcLoop ) {
                 $GLOBALS['woocommerce_loop'] = $original_wc_loop; // WPCS: override ok.
             }
         }

@@ -271,9 +271,9 @@ class Novaworks_Admin {
 	}
 
 
-	private function get_icon_library(){
+	private function get_icon_library() {
 
-		$cache = wp_cache_get('icon_fonts', 'la_studio');
+		$cache = wp_cache_get( 'icon_fonts', 'la_studio' );
 		if ( empty( $cache ) ) {
 			$jsons = apply_filters('nova/filter/framework/field/icon/json', array(
 				plugin_dir_path( dirname(__FILE__) ) . 'public/fonts/font-awesome.json'
@@ -301,17 +301,17 @@ class Novaworks_Admin {
 	 *
 	 * @since 1.0.0
 	 */
-	public function ajax_get_icons(){
+	public function ajax_get_icons() {
 		$icons = $this->get_icon_library();
 		if( ! empty( $icons ) ) {
 			foreach ( $icons as $icon_object ) {
 				if( is_object( $icon_object ) ) {
 					echo ( count( $icons ) >= 2 ) ? '<h4 class="nova-icon-title">'. $icon_object->name .'</h4>' : '';
 					foreach ( $icon_object->icons as $icon ) {
-						echo '<a class="nova-icon-tooltip" data-nova-icon="'. $icon .'" data-title="'. $icon .'"><span class="nova-icon--selector la-selector"><i class="'. $icon .'"></i></span></a>';
+						echo '<a class="nova-icon-tooltip" data-nova-icon="' . $icon . '" data-title="' . $icon . '"><span class="nova-icon--selector la-selector"><i class="' . $icon . '"></i></span></a>';
 					}
 				} else {
-					echo '<h4 class="nova-icon-title">'. esc_html__( 'Error! Can not load json file.', 'nova' ) .'</h4>';
+					echo '<h4 class="nova-icon-title">' . esc_html__( 'Error! Can not load json file.', 'nova' ) . '</h4>';
 				}
 			}
 		}
@@ -322,7 +322,7 @@ class Novaworks_Admin {
 	 *
 	 * @since 1.0.0
 	 */
-	public function ajax_autocomplete(){
+	public function ajax_autocomplete() {
 		if ( empty( $_GET['query_args'] ) || empty( $_GET['s'] ) ) {
 			echo '<b>' . esc_html__( 'Query is empty ...', 'nova' ) . '</b>';
 			die();
@@ -349,7 +349,7 @@ class Novaworks_Admin {
 	 *
 	 * @since 1.0.0
 	 */
-	public function ajax_export_options(){
+	public function ajax_export_options() {
 		$unique = isset( $_REQUEST['unique'] ) ? $_REQUEST['unique'] : 'la_options';
 		header('Content-Type: plain/text');
 		header('Content-disposition: attachment; filename=backup-' . esc_attr( $unique ) . '-' . gmdate( 'd-m-Y' ) . '.txt' );

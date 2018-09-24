@@ -266,8 +266,78 @@ jQuery( document ).ready( function ( $ ) {
 	/**
 	 * Stats Counter
 	 */
-	
-	
+	$( '.nova-stats-counter' ).each( function () {
+		var $el = $( this ),
+			$elm = $el.find( '.stats-value' );
+		
+		var endNum = parseFloat( $elm.data( 'counterup-nums' ) );
+
+		$elm.counterUp( {
+			delay: $elm.data( 'speed' ),
+			time: 1000
+		} );
+		
+	} );
+
+	/**
+	 * Image with Hotspots
+	 */
+	$( '.nova-image-with-hotspots' ).each( function () {
+		var $this = $( this ),
+			tooltip_func = $this.data( 'tooltip-func' );
+
+		var delay = 100, setTimeoutConst, 
+			delay2 = 300, setTimeoutConst2;
+
+		if( tooltip_func == 'hover' ) {
+
+			$this.find( '.nova_hotspot_wrap' ).on( 'mouseup.hoverdir, mousedown.hoverdir, mouseenter.hoverdir, mouseleave.hoverdir', function( event ) {
+				var $el = $( this );
+
+
+				if( event.type == 'mouseenter' ) {
+					setTimeoutConst = setTimeout( function() {
+						$el.find( '.nova_hotspot' ).addClass( 'open' );
+						$el.find( '.nttip' ).addClass( 'open' );
+					}, delay );
+				}
+				else if( event.type == 'mouseleave' ){
+					clearTimeout( setTimeoutConst );
+					setTimeoutConst2 = setTimeout( function() {
+						var isHover = $el.find( '.nttip' ).is( ":hover" );
+						if( isHover !== true ) {
+							$el.find( '.nova_hotspot' ).removeClass( 'open' );
+							$el.find( '.nttip' ).removeClass( 'open' );
+						}
+					}, delay2 );
+				}
+			} );
+
+		}
+
+		else if( tooltip_func == 'click' ) {
+			$this.find( '.nova_hotspot_wrap' ).on( 'mouseup.hoverdir, mousedown.hoverdir, mouseenter.hoverdir, mouseleave.hoverdir', function( event ) {
+				var $el = $( this );
+
+				if( event.type == 'mouseup' ) {
+					setTimeoutConst = setTimeout( function() {
+						$el.find( '.nova_hotspot' ).addClass( 'open' );
+						$el.find( '.nttip' ).addClass( 'open' );
+					}, delay );
+				}
+				else if( event.type == 'mouseleave' ) {
+					clearTimeout( setTimeoutConst );
+					setTimeoutConst2 = setTimeout( function() {
+						var isHover = $el.find( '.nttip' ).is( ":hover" );
+						if( isHover !== true ) {
+							$el.find( '.nova_hotspot' ).removeClass( 'open' );
+							$el.find( '.nttip' ).removeClass( 'open' );
+						}
+					}, delay2 );
+				}
+			} );
+		}
+	} );
 	
 	/**
 	 * Init banner grid layout 5

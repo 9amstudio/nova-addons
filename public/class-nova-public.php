@@ -40,32 +40,32 @@ class Novaworks_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_register_style( 'nova-icons', plugin_dir_url( __FILE__ ) . 'css/nova-icons.css', array(), null);
-		wp_register_style( 'font-nucleo-glyph', plugin_dir_url( __FILE__ ) . 'css/font-nucleo-glyph.min.css', array(), null);
+		wp_register_style( 'nova-icons', plugin_dir_url( __FILE__ ) . 'css/nova-icons.css', array(), null );
+		wp_register_style( 'font-nucleo-glyph', plugin_dir_url( __FILE__ ) . 'css/font-nucleo-glyph.min.css', array(), null );
 
-		if(wp_style_is('font-awesome', 'registered')){
-			wp_deregister_style('font-awesome');
+		if( wp_style_is( 'font-awesome', 'registered' ) ) {
+			wp_deregister_style( 'font-awesome' );
 		}
-		if(wp_style_is('animate-css', 'registered')){
-			wp_deregister_style('animate-css');
+		if( wp_style_is( 'animate-css', 'registered' ) ) {
+			wp_deregister_style( 'animate-css' );
 		}
 
 	}
-	public function add_fonts_to_visual_composer( $font_name ){
+	public function add_fonts_to_visual_composer( $font_name ) {
 
 		global $nova_external_icon_font;
 
-		if(!is_array($nova_external_icon_font)){
+		if( ! is_array( $nova_external_icon_font ) ) {
 			$nova_external_icon_font = array();
 		}
 
-		$asset_font_without_domain = apply_filters('Novaworks/filter/assets_font_url', untrailingslashit(plugin_dir_url( dirname(__FILE__) )));
+		$asset_font_without_domain = apply_filters( 'Novaworks/filter/assets_font_url', untrailingslashit( plugin_dir_url( dirname(__FILE__) ) ) );
 
 		$font_face_html = '';
 
-		if( 'nova_icon_outline' == $font_name ){
-			wp_enqueue_style('nova-icons');
-			if(!isset($nova_external_icon_font[$font_name])){
+		if( 'nova_icon_outline' == $font_name ) {
+			wp_enqueue_style( 'nova-icons' );
+			if( ! isset( $nova_external_icon_font[$font_name] ) ) {
 				$font_face_html .= "@font-face {
 					font-family: 'Nova-Icons';
 					src:  url('{$asset_font_without_domain}/public/fonts/Nova-Icons.eot?sxsdz3');
@@ -79,9 +79,9 @@ class Novaworks_Public {
 				$nova_external_icon_font[$font_name] = $font_name;
 			}
 		}
-		if( 'nucleo_glyph' == $font_name ){
-			wp_enqueue_style('font-nucleo-glyph');
-			if(!isset($nova_external_icon_font[$font_name])){
+		if( 'nucleo_glyph' == $font_name ) {
+			wp_enqueue_style( 'font-nucleo-glyph' );
+			if( ! isset( $nova_external_icon_font[$font_name] ) ) {
 				$font_face_html .= "@font-face {
 					font-family: 'Nucleo Glyph';
 					src: url('{$asset_font_without_domain}/public/fonts/nucleo-glyph.eot');
@@ -96,12 +96,11 @@ class Novaworks_Public {
 				$nova_external_icon_font[$font_name] = $font_name;
 			}
 		}
-		if( !empty( $font_face_html ) ) {
+		if( ! empty( $font_face_html ) ) {
 			printf(
 				'<span data-nova_component="InsertCustomCSS" class="js-el hidden">%s</span>',
 				$font_face_html
 			);
 		}
 	}
-
 }

@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class Novaworks_Shortcodes_Row{
+class Novaworks_Shortcodes_Row {
 
     public static $instance = null;
 
@@ -16,53 +16,53 @@ class Novaworks_Shortcodes_Row{
         return self::$instance;
     }
 
-    private function __construct(){
-        add_action('vc_after_init', array( $this, 'vc_after_init' ) );
-        add_filter('vc_shortcode_output',array($this, 'modify_vc_row_output'),10,3);
+    private function __construct() {
+        add_action( 'vc_after_init', array( $this, 'vc_after_init' ) );
+        add_filter( 'vc_shortcode_output',array( $this, 'modify_vc_row_output' ), 10, 3 );
     }
-    public function vc_after_init(){
-        $group_name = __('Background Gradient', 'nova');
+    public function vc_after_init() {
+        $group_name = esc_html__( 'Background Gradient', 'nova' );
 
-        vc_add_param('vc_row',array(
+        vc_add_param( 'vc_row', array(
             'type' => 'checkbox',
-            'heading' => __('Use Background Gradient',  'nova'),
+            'heading' => esc_html__( 'Use Background Gradient',  'nova' ),
             'param_name' => 'use_grad',
-            'value' => array( __( 'Yes', 'js_composer' ) => 'yes' ),
+            'value' => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
             'group' => $group_name,
-        ));
+        ) );
 
-        vc_add_param('vc_row',array(
+        vc_add_param( 'vc_row', array(
             'type' => 'gradient',
-            'heading' => __('Gradient Type',  'nova'),
+            'heading' => esc_html__('Gradient Type',  'nova'),
             'param_name' => 'bg_grad',
-            'description' => __('At least two color points should be selected.', 'nova'),
-            'dependency' => array('element' => 'use_grad','value' => array('yes')),
+            'description' => esc_html__('At least two color points should be selected.', 'nova'),
+            'dependency' => array( 'element' => 'use_grad', 'value' => array( 'yes' ) ),
             'group' => $group_name,
-        ));
+        ) );
     }
 
-    public function modify_vc_row_output($output, $obj, $attr){
-        if($obj->settings('base')=='vc_row') {
-            $output = $this->output($attr, '') . $output;
+    public function modify_vc_row_output( $output, $obj, $attr ) {
+        if( $obj->settings( 'base' ) == 'vc_row' ) {
+            $output = $this->output( $attr, '' ) . $output;
         }
         return $output;
     }
 
-    public static function output($atts, $content){
+    public static function output( $atts, $content ) {
         $output = $use_grad = $bg_grad = '';
         extract( shortcode_atts( array(
             'use_grad'  => '',
             'bg_grad'   => ''
-        ), $atts ));
+        ), $atts ) );
 
-        if(empty($use_grad)){
+        if( empty( $use_grad ) ) {
             return $output;
         }
-        if(empty($bg_grad)){
+        if( empty( $bg_grad ) ){
             return $output;
         }
 
-        $output = '<div class="js-el la_row_grad" data-la_component="GradientBackground" data-grad="'.$bg_grad.'" ></div>';
+        $output = '<div class="js-el la_row_grad" data-la_component="GradientBackground" data-grad="' . $bg_grad . '" ></div>';
         return $output;
     }
 

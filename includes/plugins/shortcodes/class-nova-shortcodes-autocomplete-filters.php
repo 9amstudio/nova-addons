@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class Novaworks_Shortcodes_Autocomplete_Filters{
+class Novaworks_Shortcodes_Autocomplete_Filters {
 
     public $post_types = array();
     public $taxonomies = array();
@@ -17,7 +17,7 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         return self::$instance;
     }
 
-    private function __construct(){
+    private function __construct() {
         $this->post_types = array(
             'post',
             'product',
@@ -33,7 +33,7 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         $this->loadFilter();
     }
 
-    private function loadFilter(){
+    private function loadFilter() {
         $filters = array(
             'la_show_posts' => array(
                 'category__in' 	=> array(
@@ -169,50 +169,50 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
             )
         );
 
-        foreach ($filters as $shortcode_name => $fields){
-            foreach ( $fields as $field_name => $field){
-                foreach( $field as $type => $method ){
+        foreach ( $filters as $shortcode_name => $fields ) {
+            foreach ( $fields as $field_name => $field ) {
+                foreach( $field as $type => $method ) {
                     add_filter( "vc_autocomplete_{$shortcode_name}_{$field_name}_{$type}", array( $this, $method) );
                 }
             }
         }
     }
 
-    public function __call($name, $arguments){
-        if(strpos($name, 'TaxCallback') !== FALSE){
-            $taxonomy = str_replace('TaxCallback', '', $name);
-            if(in_array($taxonomy, $this->taxonomies)){
-                $query = isset($arguments[0]) ? $arguments[0] : array();
-                $slug = isset($arguments[1]) ? $arguments[1] : false;
+    public function __call( $name, $arguments ) {
+        if( strpos( $name, 'TaxCallback' ) !== FALSE ) {
+            $taxonomy = str_replace( 'TaxCallback', '', $name );
+            if(in_array( $taxonomy, $this->taxonomies ) ) {
+                $query = isset( $arguments[0] ) ? $arguments[0] : array();
+                $slug = isset( $arguments[1] ) ? $arguments[1] : false;
                 if( $taxonomy == 'product_cat' ) {
                     $slug = true;
                 }
-                return $this->getTaxCallback($query, $taxonomy, $slug);
+                return $this->getTaxCallback( $query, $taxonomy, $slug );
             }
         }
-        elseif(strpos($name, 'TaxRender') !== FALSE){
-            $taxonomy = str_replace('TaxRender', '', $name);
-            if(in_array($taxonomy, $this->taxonomies)){
-                $query = isset($arguments[0]) ? $arguments[0] : array();
-                $slug = isset($arguments[1]) ? $arguments[1] : false;
+        elseif( strpos( $name, 'TaxRender' ) !== FALSE ) {
+            $taxonomy = str_replace( 'TaxRender', '', $name );
+            if( in_array( $taxonomy, $this->taxonomies ) ) {
+                $query = isset( $arguments[0] ) ? $arguments[0] : array();
+                $slug = isset( $arguments[1] ) ? $arguments[1] : false;
                 if( $taxonomy == 'product_cat' ) {
                     $slug = true;
                 }
-                return $this->getTaxRender($query, $taxonomy, $slug);
+                return $this->getTaxRender( $query, $taxonomy, $slug );
             }
         }
-        elseif(strpos($name, 'ContentTypeCallback') !== FALSE){
-            $post_type = str_replace('ContentTypeCallback', '', $name);
-            if(in_array($post_type, $this->post_types)){
-                $query = isset($arguments[0]) ? $arguments[0] : array();
+        elseif( strpos( $name, 'ContentTypeCallback' ) !== FALSE ) {
+            $post_type = str_replace( 'ContentTypeCallback', '', $name );
+            if( in_array( $post_type, $this->post_types ) ) {
+                $query = isset( $arguments[0] ) ? $arguments[0] : array();
                 return $this->getPostTypeCallback($query, $post_type);
             }
         }
     }
 
-    private function getTaxCallback( $query, $taxonomy, $slug = false){
+    private function getTaxCallback( $query, $taxonomy, $slug = false ) {
         global $wpdb;
-        $cat_id = (int) $query;
+        $cat_id = ( int ) $query;
         $query = trim( $query );
         $array_category = $wpdb->get_results(
             $wpdb->prepare(
@@ -244,19 +244,19 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         return $result;
     }
 
-    private function getTaxRender( $query, $taxonomy, $slug = false){
+    private function getTaxRender( $query, $taxonomy, $slug = false ) {
         $query = $query[ 'value' ];
 
-        if($slug){
-            $cat_id = sanitize_title($query);
-            $term = get_term_by('slug', $cat_id, $taxonomy);
+        if( $slug ){
+            $cat_id = sanitize_title( $query );
+            $term = get_term_by( 'slug', $cat_id, $taxonomy );
         }
         else{
             $cat_id = (int) $query;
             $term = get_term( $cat_id, $taxonomy );
         }
 
-        if(is_wp_error($term)){
+        if( is_wp_error( $term ) ){
             return false;
         }
 
@@ -265,12 +265,12 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         $term_id = $term->term_id;
 
         $term_slug_display = '';
-        if ( !empty( $term_slug ) ) {
+        if ( ! empty( $term_slug ) ) {
             $term_slug_display = ' - ' . esc_html__( 'Slug', 'nova' ) . ': ' . $term_slug;
         }
 
         $term_title_display = '';
-        if ( !empty( $term_title ) ) {
+        if ( ! empty( $term_title ) ) {
             $term_title_display = ' - ' . esc_html__( 'Title', 'nova' ) . ': ' . $term_title;
         }
 
@@ -280,12 +280,12 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         $data[ 'value' ] = $slug ? $term_slug : $term_id;
         $data[ 'label' ] = $term_id_display . $term_title_display . $term_slug_display;
 
-        return !empty( $data ) ? $data : false;
+        return ! empty( $data ) ? $data : false;
     }
 
-    private function getPostTypeCallback($query,$post_type){
+    private function getPostTypeCallback( $query, $post_type ) {
         global $wpdb;
-        $post_id = (int) $query;
+        $post_id = ( int ) $query;
         $array_posts = $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT a.ID AS id, a.post_title AS title
@@ -313,27 +313,27 @@ class Novaworks_Shortcodes_Autocomplete_Filters{
         return $results;
     }
 
-    public function contentTypeRender($query){
+    public function contentTypeRender( $query ) {
         $query = trim( $query[ 'value' ] );
-        if ( !empty( $query ) ) {
+        if ( ! empty( $query ) ) {
             $post_object = get_post( (int) $query );
             if ( is_object( $post_object ) ) {
                 $slug = $post_object->post_name;
                 $title = $post_object->post_title;
                 $post_id = $post_object->ID;
                 $post_slug_display = '';
-                if ( !empty( $slug ) ) {
+                if ( ! empty( $slug ) ) {
                     $post_slug_display = ' - ' . esc_html__( 'Slug', 'nova' ) . ': ' . $slug;
                 }
                 $post_title_display = '';
-                if ( !empty( $title ) ) {
+                if ( ! empty( $title ) ) {
                     $post_title_display = ' - ' . esc_html__( 'Title', 'nova' ) . ': ' . $title;
                 }
                 $post_id_display = esc_html__( 'Id', 'nova' ) . ': ' . $post_id;
                 $data = array();
                 $data[ 'value' ] = $post_id;
                 $data[ 'label' ] = $post_id_display . $post_title_display . $post_slug_display;
-                return !empty( $data ) ? $data : false;
+                return ! empty( $data ) ? $data : false;
             }
             return false;
         }

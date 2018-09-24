@@ -111,9 +111,9 @@ class Nova_Addons_VC {
 					'type'        => 'autocomplete',
 					'value'       => '',
 					'settings'    => array(
-						'multiple' => true,
-						'sortable' => true,
-						'values'   => $this->get_terms()
+						'multiple'  => true,
+						'sortable'  => true,
+						'values'    => $this->get_terms()
 					)
 				),
 				array(
@@ -192,13 +192,13 @@ class Nova_Addons_VC {
 					'type'        => 'autocomplete',
 					'value'       => '',
 					'settings'    => array(
-						'multiple' => true,
-						'sortable' => true,
-						'values'   => $this->get_terms()
+						'multiple'  => true,
+						'sortable'  => true,
+						'values'    => $this->get_terms()
 					),
 					'dependency'  => array(
-						'element' => 'filter',
-						'value'   => 'category'
+						'element'   => 'filter',
+						'value'     => 'category'
 					)
 				),
 				array(
@@ -278,9 +278,9 @@ class Nova_Addons_VC {
 					'type'        => 'autocomplete',
 					'value'       => '',
 					'settings'    => array(
-						'multiple' => true,
-						'sortable' => true,
-						'values'   => $this->get_terms()
+						'multiple'  => true,
+						'sortable'  => true,
+						'values'    => $this->get_terms()
 					)
 				),
 				array(
@@ -338,9 +338,9 @@ class Nova_Addons_VC {
 					'param_name'  => 'category',
 					'type'        => 'autocomplete',
 					'settings'    => array(
-						'multiple' => true,
-						'sortable' => true,
-						'values'   => $this->get_terms( 'category' )
+						'multiple'  => true,
+						'sortable'  => true,
+						'values'    => $this->get_terms( 'category' )
 					)
 				),
 				array(
@@ -370,14 +370,14 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
-					'heading'     => esc_html__('Style', 'nova'),
+					'heading'     => esc_html__( 'Style', 'nova' ),
 					'param_name'  => 'style',
 					'type'        => 'dropdown',
 					'value' => array(
-						esc_html__('Style 01','nova') => '1',
-						esc_html__('Style 02','nova') => '2',
-						esc_html__('Style 03','nova') => '3',
-						esc_html__('Style 04','nova') => '4'
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+						esc_html__( 'Style 03', 'nova' ) => '3',
+						esc_html__( 'Style 04', 'nova' ) => '4'
 					)
 				),
 				array(
@@ -673,11 +673,11 @@ class Nova_Addons_VC {
 				) ),
 				Novaworks_Shortcodes_Helper::fieldExtraClass(),
 				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
-					'heading'     => esc_html__('Extra class name for value', 'nova'),
+					'heading'     => esc_html__( 'Extra class name for value', 'nova' ),
 					'param_name'  => 'el_class_value'
 				) ),
 				Novaworks_Shortcodes_Helper::fieldExtraClass(array(
-					'heading'     => esc_html__('Extra Class name for heading', 'nova'),
+					'heading'     => esc_html__( 'Extra Class name for heading', 'nova' ),
 					'param_name'  => 'el_class_heading'
 				) )
 			),
@@ -799,7 +799,7 @@ class Nova_Addons_VC {
 				array(
 					'heading'     => esc_html__( 'Banner Text', 'nova' ),
 					'description' => esc_html__( 'Enter the banner text', 'nova' ),
-					'type'        => 'textarea',
+					'type'        => 'textarea_html',
 					'param_name'  => 'content',
 					'admin_label' => true
 				),
@@ -834,7 +834,8 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Use font family from the theme.', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'use_theme_fonts',
-					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'std'         => 'yes'
 				),
 				array(
 					'type'        => 'google_fonts',
@@ -990,7 +991,7 @@ class Nova_Addons_VC {
 				array(
 					'heading'     => esc_html__( 'Banner Text', 'nova' ),
 					'description' => esc_html__( 'Enter banner text', 'nova' ),
-					'type'        => 'textfield',
+					'type'        => 'textarea_html',
 					'param_name'  => 'text',
 					'admin_label' => true
 				),
@@ -2616,48 +2617,201 @@ class Nova_Addons_VC {
 					'admin_label' => true
 				),
 				array(
-					'heading'    => esc_html__( 'Facebook', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'facebook'
+					'heading'     => esc_html__( 'Facebook', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'facebook'
 				),
 				array(
-					'heading'    => esc_html__( 'Twitter', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'twitter'
+					'heading'     => esc_html__( 'Twitter', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'twitter'
 				),
 				array(
-					'heading'    => esc_html__( 'Google Plus', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'google'
+					'heading'     => esc_html__( 'Google Plus', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'google'
 				),
 				array(
-					'heading'    => esc_html__( 'Pinterest', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'pinterest'
+					'heading'     => esc_html__( 'Pinterest', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'pinterest'
 				),
 				array(
-					'heading'    => esc_html__( 'Linkedin', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'linkedin'
+					'heading'     => esc_html__( 'Linkedin', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'linkedin'
 				),
 				array(
-					'heading'    => esc_html__( 'Youtube', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'youtube'
+					'heading'     => esc_html__( 'Youtube', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'youtube'
 				),
 				array(
-					'heading'    => esc_html__( 'Instagram', 'nova' ),
-					'type'       => 'textfield',
-					'param_name' => 'instagram'
+					'heading'     => esc_html__( 'Instagram', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'instagram'
 				),
 				vc_map_add_css_animation(),
 				array(
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
-					'param_name'  => 'el_class',
-					'type'        => 'textfield'
+					'type'        => 'textfield',
+					'param_name'  => 'el_class'
 				)
 			)
+		) );
+		
+		// Hotspot
+		vc_map( array(
+			'name'                      => esc_html__( 'Nova Hotspot', 'nova' ),
+			'base'                      => 'nova_hotspot',
+			'allowed_container_element' => 'vc_row',
+			'content_element'           => false,
+			'params'                    => array(
+				array(
+					'heading'     => esc_html__( 'Position', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'position',
+					'value'       => array(
+						esc_html__( 'Top', 'nova' ) => 'top',
+						esc_html__( 'Right', 'nova' ) => 'right',
+						esc_html__( 'Bottom', 'nova' ) => 'bottom',
+						esc_html__( 'Left', 'nova' ) => 'left'
+					),
+					'save_always' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Left', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'left'
+				),
+				array(
+					'heading'     => esc_html__( 'Top', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'top'
+				),
+				array(
+					'heading'     => esc_html__( 'Content', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content'
+				)
+			)
+		) );
+		
+		// Image with hotspots
+		vc_map( array(
+			'name'        => esc_html__( 'Image With Hotspots', 'nova' ),
+			'base'        => 'nova_image_with_hotspots',
+			'icon'        => 'icon-wpb-single-image',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Add Hotspots On Your Image', 'nova' ),
+			'params'      => array(
+				array(
+					'heading'     => esc_html__( 'Image', 'nova' ),
+					'description' => esc_html__( 'Choose your image that will show the hotspots. <br/> You can then click on the image in the preview area to add your hotspots in the desired locations.', 'nova' ),
+					'type'        => 'attach_image',
+					'param_name'  => 'image'
+				),
+				array(
+					'heading'     => esc_html__( 'Preview', 'nova' ),
+					'description' => wp_kses_post( __( "Click to add - Drag to move - Edit content below<br/> Note: this preview will not reflect hotspot style choices or show tooltips. <br/>This is only used as a visual guide for positioning.", 'nova' ) ),
+					'type'        => 'nova_hotspot_image_preview',
+					'param_name'  => 'preview'
+				),
+				array(
+					'heading'     => esc_html__( 'Hotspots', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content'
+				),
+				array(
+					'heading'     => esc_html__( 'Extra Class name', 'nova' ),
+					'description' => esc_html__( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'el_class',
+					'group'       => esc_html__( 'Style', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Color', 'nova' ),
+					'description' => esc_html__( 'Choose the color which the hotspot will use', 'nova' ),
+					'admin_label' => true,
+					'type'        => 'dropdown',
+					'param_name'  => 'color',
+					'value'       => array(
+						esc_html__( 'Primary', 'nova' ) => 'primary',
+						esc_html__( 'Secondary', 'nova' ) => 'secondary',
+						esc_html__( 'Blue', 'nova' ) => 'blue',
+						esc_html__( 'Turquoise', 'nova' ) => 'turquoise',
+						esc_html__( 'Pink', 'nova' ) => 'pink',
+						esc_html__( 'Violet', 'nova' ) => 'violet',
+						esc_html__( 'Peacoc', 'nova' ) => 'peacoc',
+						esc_html__( 'Chino', 'nova' ) => 'chino',
+						esc_html__( 'Mulled Wine', 'nova' ) => 'mulled_wine',
+						esc_html__( 'Vista Blue', 'nova' ) => 'vista_blue',
+						esc_html__( 'Black', 'nova' ) => 'black',
+						esc_html__( 'Grey', 'nova' ) => 'grey',
+						esc_html__( 'Orange', 'nova' ) => 'orange',
+						esc_html__( 'Sky', 'nova' ) => 'sky',
+						esc_html__( 'Green', 'nova' ) => 'green',
+						esc_html__( 'Juicy pink', 'nova' ) => 'juicy_pink',
+						esc_html__( 'Sandy brown', 'nova' ) => 'sandy_brown',
+						esc_html__( 'Purple', 'nova' ) => 'purple',
+						esc_html__( 'White', 'nova' ) => 'white'
+					),
+					'std'         => 'primary',
+					'save_always' => true,
+					'group'       => esc_html__( 'Style', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Hotspot Icon', 'nova' ),
+					'description' => esc_html__( 'The icon that will be shown on the hotspots', 'nova' ),
+					'admin_label' => true,
+					'type'        => 'dropdown',
+					'param_name'  => 'hotspot_icon',
+					'value'       => array(
+						esc_html__( 'Plus Sign', 'nova' ) => 'plus_sign',
+						esc_html__( 'Numerical', 'nova' ) => 'numerical'
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Style', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Tooltip Functionality', 'nova' ),
+					'description' => esc_html__( 'Select how you want your tooltips to display to the user', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'tooltip',
+					'value'       => array(
+						esc_html__( 'Show On Hover', 'nova' ) => 'hover',
+						esc_html__( 'Show On Click', 'nova' ) => 'click',
+						esc_html__( 'Always Show', 'nova' ) => 'always_show'
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Style', 'nova' ),
+				),
+				array(
+					'heading'     => esc_html__( 'Tooltip Shadow', 'nova' ),
+					'description' => esc_html__( 'Select the shadow size for your tooltip', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'tooltip_shadow',
+					'value'       => array(
+						esc_html__( 'None', 'nova' ) => 'none',
+						esc_html__( 'Small Depth', 'nova' ) => 'small_depth',
+						esc_html__( 'Medium Depth', 'nova' ) => 'medium_depth',
+						esc_html__( 'Large Depth', 'nova' ) => 'large_depth'
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Style', 'nova' )
+				),
+				array(
+					'heading'       => esc_html__( 'Enable Animation', 'nova' ),
+					'description'   => esc_html__( 'Turning this on will make your hotspots animate in when the user scrolls to the element', 'nova' ),
+					'type'          => 'checkbox',
+					'param_name'    => 'animation',
+					'value'         => array(
+						esc_html__('Yes, please', 'nova') => 'true'
+					),
+					'group'         => esc_html__( 'Style', 'nova' )
+				)
+			)		
 		) );
 	}
 
@@ -2720,7 +2874,7 @@ class Nova_Addons_VC {
 	 * @return array
 	 */
 	public function add_google_fonts( $fonts ) {
-		$fonts[] = (object) array(
+		$fonts[] = ( object ) array(
 			'font_family' => 'Amatic SC',
 			'font_styles' => '400,700',
 			'font_types'  => '400 regular:400:normal,700 regular:700:normal'

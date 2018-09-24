@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class WPBakeryShortCode_Nova_Row{
+class WPBakeryShortCode_Nova_Row {
 
     public static $instance = null;
 
@@ -16,15 +16,15 @@ class WPBakeryShortCode_Nova_Row{
         return self::$instance;
     }
 
-    private function __construct(){
-        add_action('vc_after_init', array( $this, 'vc_after_init' ) );
+    private function __construct() {
+        add_action( 'vc_after_init', array( $this, 'vc_after_init' ) );
     }
     public function vc_after_init(){
-        $group_name = __('Burger Header', 'nova');
+        $group_name = esc_html__( 'Burger Header', 'nova' );
 
-        vc_add_param('vc_row',array(
+        vc_add_param( 'vc_row', array(
             'type' => 'dropdown',
-            'heading' => __('Header Preset',  'nova'),
+            'heading' => esc_html__( 'Header Preset', 'nova' ),
             'param_name' => 'burder_header_preset',
             'value'       => array(
   						esc_html__( 'Default', 'nova' ) => '',
@@ -32,6 +32,6 @@ class WPBakeryShortCode_Nova_Row{
   						esc_html__( 'Light', 'nova' ) => 'light',
   					),
             'group' => $group_name,
-        ));
+        ) );
     }
 }

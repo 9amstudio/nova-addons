@@ -5,9 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( class_exists( 'WPBakeryShortCode' ) ) :
 /**
- * Class WPBakeryShortCode_Nova_Banner
+ * Class WPBakeryShortCode_nova_banner
  */
-class WPBakeryShortCode_Nova_Banner extends WPBakeryShortCode {
+class WPBakeryShortCode_nova_banner extends WPBakeryShortCode {
+
 	/**
 	 * Defines fields names for google_fonts, font_container and etc
 	 * @since 4.4

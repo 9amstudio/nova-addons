@@ -4,23 +4,19 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit( 'Direct script access denied.' );
 }
 
-class Novaworks_Shortcodes{
+class Novaworks_Shortcodes {
 
     public static $shortcode_path;
 
     public static $instance = null;
 
     private $_shortcodes = array(
-        'la_stats_counter',
         'la_show_portfolios',
         'la_portfolio_masonry',
         'la_portfolio_info',
         'la_banner',
-        //'la_pricing_table',
         'la_instagram_feed',
-        'la_carousel',
-        'la_hotspot',
-        'la_image_with_hotspots'
+        'la_carousel'
     );
 
     private $_woo_shortcodes = array();
@@ -33,10 +29,10 @@ class Novaworks_Shortcodes{
     }
 
     public function __construct() {
-        self::$shortcode_path = plugin_dir_path(__FILE__);
+        self::$shortcode_path = plugin_dir_path( __FILE__ );
     }
 
-    public function load_dependencies(){
+    public function load_dependencies() {
         require_once self::$shortcode_path . 'class-nova-shortcodes-helper.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-row.php';
         require_once self::$shortcode_path . 'class-nova-shortcodes-autocomplete-filters.php';
@@ -47,19 +43,19 @@ class Novaworks_Shortcodes{
         Novaworks_Shortcodes_Autocomplete_Filters::get_instance();
     }
 
-    public function create_shortcode(){
+    public function create_shortcode() {
 
-        add_shortcode('la_dropcap',     array( $this, 'add_dropcap') );
-        add_shortcode('la_quote',       array( $this, 'add_quote_shortcode') );
-        add_shortcode('la_text',        array( $this, 'add_text_shortcode') );
-        add_shortcode('wp_nav_menu',    array( $this, 'add_navmenu') );
+        add_shortcode( 'la_dropcap',     array( $this, 'add_dropcap' ) );
+        add_shortcode( 'la_quote',       array( $this, 'add_quote_shortcode' ) );
+        add_shortcode( 'la_text',        array( $this, 'add_text_shortcode' ) );
+        add_shortcode( 'wp_nav_menu',    array( $this, 'add_navmenu' ) );
 
         foreach ($this->_shortcodes as $shortcode) {
             add_shortcode( $shortcode, array( $this, 'auto_detect_shortcode_callback' ) );
         }
-        if(class_exists('WooCommerce')){
-            add_shortcode('la_wishlist',    array( $this, 'add_wishlist') );
-            add_shortcode('la_compare',     array( $this, 'add_compare') );
+        if( class_exists( 'WooCommerce' ) ) {
+            add_shortcode( 'la_wishlist', array( $this, 'add_wishlist' ) );
+            add_shortcode( 'la_compare', array( $this, 'add_compare' ) );
             foreach ( $this->_woo_shortcodes as $shortcode ) {
                 add_filter( "{$shortcode}_shortcode_tag", array( $this, 'modify_woocommerce_shortcodes' ) );
                 add_shortcode( $shortcode, array( $this, 'auto_detect_shortcode_callback' ) );
@@ -67,18 +63,18 @@ class Novaworks_Shortcodes{
         }
     }
 
-    public function vc_after_init(){
+    public function vc_after_init() {
 
-        foreach ($this->_shortcodes as $shortcode) {
+        foreach ( $this->_shortcodes as $shortcode ) {
             $config_file = self::$shortcode_path . 'configs/' . $shortcode . '.php';
             if(file_exists( $config_file ) ) {
                 vc_lean_map( $shortcode, null, $config_file );
             }
         }
-        if(class_exists('WooCommerce')){
-            foreach ($this->_woo_shortcodes as $shortcode) {
+        if(class_exists( 'WooCommerce' ) ) {
+            foreach ( $this->_woo_shortcodes as $shortcode ) {
                 $config_file = self::$shortcode_path . 'configs/' . $shortcode . '.php';
-                if(file_exists( $config_file)){
+                if( file_exists( $config_file ) ) {
                     vc_lean_map( $shortcode, null, $config_file );
                 }
             }
@@ -88,83 +84,83 @@ class Novaworks_Shortcodes{
         Novaworks_Shortcodes_Param::get_instance();
     }
 
-    public function formatting($content) {
-        $shortcodes = array_merge($this->_shortcodes, $this->_woo_shortcodes, array('la_dropcap', 'la_quote', 'la_text'));
-        $block = join("|", $shortcodes);
-        $content = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]", $content);
-        $content = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)/","[/$2]", $content);
+    public function formatting( $content ) {
+        $shortcodes = array_merge( $this->_shortcodes, $this->_woo_shortcodes, array( 'la_dropcap', 'la_quote', 'la_text' ) );
+        $block = join( "|", $shortcodes );
+        $content = preg_replace( "/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", "[$2$3]", $content );
+        $content = preg_replace( "/(<p>)?\[\/($block)](<\/p>|<br \/>)/", "[/$2]", $content );
         return $content;
     }
 
     public function ajax_render_shortcode() {
-        $tag = isset($_REQUEST['tag']) ? $_REQUEST['tag'] : '';
-        $data = isset($_REQUEST['data']) ? $_REQUEST['data'] : '';
-        if( !empty($tag) && !empty($data) ) {
-            $atts = isset($data['atts']) ? $data['atts'] : array();
-            $content = isset($data['content']) ? $data['content'] : null;
-            echo self::auto_detect_shortcode_callback($atts, $content, $tag);
+        $tag = isset( $_REQUEST['tag'] ) ? $_REQUEST['tag'] : '';
+        $data = isset( $_REQUEST['data'] ) ? $_REQUEST['data'] : '';
+        if( ! empty( $tag ) && ! empty( $data ) ) {
+            $atts = isset( $data['atts'] ) ? $data['atts'] : array();
+            $content = isset( $data['content'] ) ? $data['content'] : null;
+            echo self::auto_detect_shortcode_callback( $atts, $content, $tag );
         }
         die();
     }
 
-    public function add_wishlist( $atts, $content = null){
+    public function add_wishlist( $atts, $content = null ) {
         ob_start();
-        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_wishlist');
+        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_wishlist' );
         return ob_get_clean();
     }
 
-    public function add_compare( $atts, $content = null){
+    public function add_compare( $atts, $content = null ) {
         ob_start();
-        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_compare');
+        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_compare' );
         return ob_get_clean();
     }
 
-    public function add_dropcap( $atts, $content = null){
+    public function add_dropcap( $atts, $content = null ) {
         $style = $color = '';
-        extract(shortcode_atts(array(
+        extract( shortcode_atts( array(
             'style' => 1,
             'color' => '',
-        ), $atts));
+        ), $atts ) );
 
         ob_start();
 
-        ?><span class="la-dropcap style-<?php echo esc_attr($style);?>" style="color:<?php echo esc_attr($color); ?>"><?php echo wp_strip_all_tags($content, true); ?></span><?php
+        ?><span class="la-dropcap style-<?php echo esc_attr( $style );?>" style="color:<?php echo esc_attr( $color ); ?>"><?php echo wp_strip_all_tags( $content, true ); ?></span><?php
 
         return ob_get_clean();
     }
 
     public function add_quote_shortcode( $atts, $content = null ){
         $output = $style = $author = $link = $role = $el_class = '';
-        extract(shortcode_atts(array(
+        extract( shortcode_atts( array(
             'style' => 1,
             'author' => '',
             'role' => '',
             'link'  => '',
             'el_class'  => ''
-        ), $atts));
+        ), $atts ) );
 
-        if(empty($content)){
+        if( empty( $content ) ){
             return '';
         }
-        $output .= '<blockquote class="la-blockquote style-'.esc_attr($style) . Novaworks_Shortcodes_Helper::getExtraClass($el_class).'"';
-        if(!empty($link)){
-            $output .= ' cite="'.esc_url($link).'"';
+        $output .= '<blockquote class="la-blockquote style-' . esc_attr( $style ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"';
+        if( ! empty( $link ) ) {
+            $output .= ' cite="' . esc_url( $link ) . '"';
         }
         $output .= '>';
 
-        $output .= Novaworks_Shortcodes_Helper::remove_js_autop($content, true);
+        $output .= Novaworks_Shortcodes_Helper::remove_js_autop( $content, true );
 
-        if(!empty($author)){
+        if( ! empty( $author ) ) {
             $output .= '<footer>';
-            if(!empty($link)){
-                $output .= '<cite><a href="'.esc_url($link).'">';
+            if( ! empty( $link ) ) {
+                $output .= '<cite><a href="' . esc_url( $link ) . '">';
             }
-            $output .= esc_html($author);
-            if(!empty($link)){
+            $output .= esc_html( $author );
+            if( ! empty( $link ) ) {
                 $output .= '</a></cite>';
             }
-            if(!empty($role)){
-                $output .= sprintf('<span>%s</span>', esc_html($role));
+            if( ! empty( $role ) ) {
+                $output .= sprintf( '<span>%s</span>', esc_html( $role ) );
             }
             $output .= '</footer>';
         }
@@ -172,63 +168,63 @@ class Novaworks_Shortcodes{
         return $output;
     }
 
-    public function add_text_shortcode( $atts, $content = null){
+    public function add_text_shortcode( $atts, $content = null ) {
         $output = $color = $font_size = $line_height = $el_class = '';
 
-        extract(shortcode_atts(array(
+        extract( shortcode_atts( array(
             'color' => '',
             'font_size' => '',
             'line_height' => '',
             'el_class'  => ''
-        ), $atts));
+        ), $atts ) );
 
         $adv_atts = '';
 
-        if(empty($content)){
+        if( empty( $content ) ) {
             return $output;
         }
-        $unique_id = uniqid('la_text_');
-        if(!empty($color)){
+        $unique_id = uniqid( 'la_text_' );
+        if( ! empty( $color ) ) {
             $adv_atts = 'style="color:';
-            $adv_atts .= esc_attr($color);
+            $adv_atts .= esc_attr( $color );
             $adv_atts .= '"';
         }
-        if(!empty($font_size) || !empty($line_height)){
-            $adv_atts .= Novaworks_Shortcodes_Helper::getResponsiveMediaCss(array(
+        if( ! empty( $font_size ) || ! empty( $line_height ) ){
+            $adv_atts .= Novaworks_Shortcodes_Helper::getResponsiveMediaCss( array(
                 'target' => '#'. $unique_id ,
                 'media_sizes' => array(
                     'font-size' => $font_size,
                     'line-height' => $line_height
                 )
-            ));
+            ) );
         }
-        $output = '<div id="'.$unique_id.'" class="js-el la-text '. Novaworks_Shortcodes_Helper::getExtraClass($el_class) .'"'. $adv_atts .'>';
+        $output = '<div id="' . $unique_id . '" class="js-el la-text ' . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"' . $adv_atts . '>';
         $output .= $content;
         $output .= '</div>';
         return $output;
     }
 
-    public function add_js_to_edit_vc_form(){
+    public function add_js_to_edit_vc_form() {
         echo '<script type="text/javascript">';
-        if(!empty($_POST['tag']) && $_POST['tag'] == 'vc_section'){
+        if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'vc_section' ) {
             echo 'LaVCAdminEditForm("vc_section");';
         }
-        if(!empty($_POST['tag']) && $_POST['tag'] == 'vc_row' && !empty($_POST['parent_tag']) && $_POST['parent_tag'] == 'vc_section'){
+        if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'vc_row' && ! empty( $_POST['parent_tag'] ) && $_POST['parent_tag'] == 'vc_section' ) {
             echo 'LaVCAdminEditForm("vc_row");';
         }
-        if(!empty($_POST['tag']) && $_POST['tag'] == 'la_image_with_hotspots'){
-            echo 'LaVCAdminEditForm("la_image_with_hotspots");';
+        if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'nova_image_with_hotspots' ){
+            echo 'NovaVCAdminEditForm("nova_image_with_hotspots");';
         }
         echo '</script>';
     }
 
-    public function add_navmenu( $atts, $content = null){
+    public function add_navmenu( $atts, $content = null ) {
         $menu_id = $container_class = '';
-        extract(shortcode_atts(array(
+        extract( shortcode_atts( array(
             'menu_id' => '',
             'container_class' => '',
-        ), $atts));
-        if(!is_nav_menu( $menu_id)){
+        ), $atts ) );
+        if( ! is_nav_menu( $menu_id ) ) {
             return '';
         }
 
@@ -277,11 +273,11 @@ class Novaworks_Shortcodes{
         $theme_template = $vc_templates . $path . '.php';
         $plugin_template = self::$shortcode_path . 'templates/' . $path . '.php';
 
-        $located = locate_template(array(
+        $located = locate_template( array(
             $theme_template
-        ));
+        ) );
 
-        if( ! $located && file_exists( $plugin_template ) ){
+        if( ! $located && file_exists( $plugin_template ) ) {
             return apply_filters( 'Novaworks/shortcode/locate_template', $plugin_template, $path );
         }
 
@@ -312,18 +308,18 @@ class Novaworks_Shortcodes{
     * For WooCommerce
     */
 
-    public function modify_woocommerce_shortcodes( $shortcode ){
+    public function modify_woocommerce_shortcodes( $shortcode ) {
         return "{$shortcode}_deprecated";
     }
 
-    public function remove_old_woocommerce_shortcode(){
-        foreach ($this->_woo_shortcodes as $shortcode) {
+    public function remove_old_woocommerce_shortcode() {
+        foreach ( $this->_woo_shortcodes as $shortcode ) {
             remove_shortcode( "{$shortcode}_deprecated" );
         }
     }
 
     public function vc_param_animation_style_list( $style ){
-        if(!is_array( $style ) ){
+        if( ! is_array( $style ) ) {
             $style = array();
         }
         $style[] = array(
@@ -399,26 +395,26 @@ class Novaworks_Shortcodes{
      */
     public function get_nova_icon_outline_font_icon( $icons = array() ) {
 
-      $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nova-icon-outline-object.json';
+        $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nova-icon-outline-object.json';
 
-      if(file_exists($json_file)){
-        $file_data = @file_get_contents( $json_file );
-        if( !is_wp_error( $file_data ) ) {
-          $file_data = json_decode( $file_data, true);
-          return array_merge( $icons, $file_data );
+        if( file_exists( $json_file ) ) {
+            $file_data = @file_get_contents( $json_file );
+            if( ! is_wp_error( $file_data ) ) {
+                $file_data = json_decode( $file_data, true);
+                return array_merge( $icons, $file_data );
+            }
         }
-      }
-      return $icons;
+        return $icons;
     }
     public function get_nucleo_glyph_font_icon( $icons = array() ) {
         $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nucleo-glyph-object.json';
-      if(file_exists($json_file)){
-        $file_data = @file_get_contents( $json_file );
-        if( !is_wp_error( $file_data ) ) {
-          $file_data = json_decode( $file_data, true);
-          return array_merge( $icons, $file_data );
+        if( file_exists( $json_file ) ) {
+            $file_data = @file_get_contents( $json_file );
+            if( !is_wp_error( $file_data ) ) {
+                $file_data = json_decode( $file_data, true);
+                return array_merge( $icons, $file_data );
+            }
         }
-      }
-      return $icons;
-  }
+        return $icons;
+    }
 }
