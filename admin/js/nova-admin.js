@@ -1,28 +1,28 @@
 ;( function ( $, window, document, undefined ) {
 	'use strict';
 
-	$.LA_FRAMEWORK = $.LA_FRAMEWORK || {};
+	$.NOVA_FRAMEWORK = $.NOVA_FRAMEWORK || {};
 
 	// caching selector
-	var $la_body = $( 'body' );
+	var $nova_body = $( 'body' );
 
 	// caching variables
-	var la_is_rtl  = $la_body.hasClass( 'rtl' );
+	var nova_is_rtl  = $nova_body.hasClass( 'rtl' );
 
 	// ======================================================
-	// LA_FRAMEWORK TAB NAVIGATION
+	// NOVA_FRAMEWORK TAB NAVIGATION
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_TAB_NAVIGATION = function() {
+	$.fn.NOVA_FRAMEWORK_TAB_NAVIGATION = function() {
 		return this.each( function() {
 
 			var $this   = $( this ),
-				$nav    = $this.find( '.la-nav' ),
-				$reset  = $this.find( '.la-reset' ),
-				$expand = $this.find( '.la-expand-all' );
+				$nav    = $this.find( '.nova-nav' ),
+				$reset  = $this.find( '.nova-reset' ),
+				$expand = $this.find( '.nova-expand-all' );
 
 			var flag = true;
 
-			if( $this.hasClass( 'la-metabox-framework' ) || $this.hasClass( 'la-taxonomy-framework' ) ) {
+			if( $this.hasClass( 'nova-metabox-framework' ) || $this.hasClass( 'nova-taxonomy-framework' ) ) {
 				flag = false;
 			}
 
@@ -38,47 +38,47 @@
 					var $parent = $el.closest( 'li' ),
 						$parent_siblings = $parent.siblings( 'li' );
 					$next.slideToggle( 'fast' );
-					$parent_siblings.removeClass( 'la-tab-active' ).find( 'ul' ).slideUp( 'fast' );
-					$parent_siblings.find( 'a' ).removeClass( 'la-section-active' );
-					$parent.toggleClass( 'la-tab-active' );
+					$parent_siblings.removeClass( 'nova-tab-active' ).find( 'ul' ).slideUp( 'fast' );
+					$parent_siblings.find( 'a' ).removeClass( 'nova-section-active' );
+					$parent.toggleClass( 'nova-tab-active' );
 					$next.find( '> li:first-child > a' ).trigger( 'click' );
 
 				} else {
 
-					if( ! $el.closest( 'ul' ).hasClass( 'la-nav-sub-ul' ) ) {
-						$nav.find( 'li.la-sub' ).removeClass( 'la-tab-active' );
-						$nav.find( 'li.la-sub > ul' ).slideUp( 'fast' );
+					if( ! $el.closest( 'ul' ).hasClass( 'nova-nav-sub-ul' ) ) {
+						$nav.find( 'li.nova-sub' ).removeClass( 'nova-tab-active' );
+						$nav.find( 'li.nova-sub > ul' ).slideUp( 'fast' );
 					}
 
-					$( '#la-tab-' + $target ).show().siblings().hide();
+					$( '#nova-tab-' + $target ).show().siblings().hide();
 
-					if( $( '.la-field-code-editor-texarea.has_init_code', $( '#la-tab-' + $target ) ).length ) {
-						$( '.la-field-code-editor-texarea.has_init_code', $( '#la-tab-' + $target ) ).each( function() {
+					if( $( '.nova-field-code-editor-texarea.has_init_code', $( '#nova-tab-' + $target ) ).length ) {
+						$( '.nova-field-code-editor-texarea.has_init_code', $( '#nova-tab-' + $target ) ).each( function() {
 							$( this ).data('CodeMirrorInstance').codemirror.refresh();
 						} )
 					}
 
-					$nav.find( 'a' ).removeClass( 'la-section-active' );
-					$el.addClass( 'la-section-active' );
+					$nav.find( 'a' ).removeClass( 'nova-section-active' );
+					$el.addClass( 'nova-section-active' );
 					$reset.val( $target );
 					try{
 						if( flag ){
-							Cookies.set( 'laframework_active_section', $target );
+							Cookies.set( 'novaframework_active_section', $target );
 						}
 					} catch ( ex ){ }
 				}
 			} );
 
 			try{
-				var current_target = Cookies.get( 'laframework_active_section' ),
+				var current_target = Cookies.get( 'novaframework_active_section' ),
 					$current_target = $( 'a[data-section="' + current_target + '"]' );
 				if( flag && current_target !== 'undefined' && $current_target.length > 0 ) {
 					$current_target.trigger( 'click' );
 					var $target_parent = $current_target.parent().parent();
-					if( $target_parent.hasClass( 'la-nav-sub-ul' ) ) {
-						$( 'ul.la-nav-sub-ul', $nav ).removeAttr( 'style' );
-						$( 'li', $nav ).removeClass( 'la-tab-active' );
-						$target_parent.parent().addClass( 'la-tab-active' );
+					if( $target_parent.hasClass( 'nova-nav-sub-ul' ) ) {
+						$( 'ul.nova-nav-sub-ul', $nav ).removeAttr( 'style' );
+						$( 'li', $nav ).removeClass( 'nova-tab-active' );
+						$target_parent.parent().addClass( 'nova-tab-active' );
 						$target_parent.slideToggle( 'fast' );
 					}
 				}
@@ -86,47 +86,46 @@
 
 			$expand.on( 'click', function ( e ) {
 				e.preventDefault();
-				$this.find( '.la-body' ).toggleClass( 'la-show-all' );
+				$this.find( '.nova-body' ).toggleClass( 'nova-show-all' );
 				$( this ).find( '.fa' ).toggleClass( 'fa-eye-slash' ).toggleClass( 'fa-eye' );
 			} );
 		} );
 	};
 	// ======================================================
 
-	$.fn.LA_FRAMEWORK_STICKYHEADER = function() {
+	$.fn.NOVA_FRAMEWORK_STICKYHEADER = function() {
 		if ( this.length ) {
 			var header        = this,
 				headerOffset  = header.offset().top;
 
-			$( window ).on( 'scroll.laStickyHeader', function(){
+			$( window ).on( 'scroll.NovaStickyHeader', function(){
 				//Update Header Width and Height When Scroll
 				var headerHeight  = header.outerHeight(),
 					headerWidth   = header.outerWidth();
 
 				if ( $(this).scrollTop() > headerOffset - 32 ) {
-					header.addClass( 'la-sticky-header' );
+					header.addClass( 'nova-sticky-header' );
 					header.css( {
 						'width'       : headerWidth + 'px',
 						'height'      : headerHeight + 'px'
 					} );
-					$( '.la-option-framework' ).css( 'padding-top', headerHeight );
+					$( '.nova-option-framework' ).css( 'padding-top', headerHeight );
 				}else {
-					header.removeClass( 'la-sticky-header' );
+					header.removeClass( 'nova-sticky-header' );
 					header.css( {
 						'width'       : '',
 						'height'      : ''
 					} );
-					$( '.la-option-framework' ).css( 'padding-top', '' );
+					$( '.nova-option-framework' ).css( 'padding-top', '' );
 				}
 			} );
 		}
 	};
 
-
 	// ======================================================
-	// LA_FRAMEWORK DEPENDENCY
+	// NOVA_FRAMEWORK DEPENDENCY
 	// ------------------------------------------------------
-	$.LA_FRAMEWORK.DEPENDENCY = function( el, param ) {
+	$.NOVA_FRAMEWORK.DEPENDENCY = function( el, param ) {
 
 		// Access to jQuery and DOM versions of element
 		var base     = this;
@@ -141,8 +140,8 @@
 			var cfg = {
 				show: function( el ) {
 					el.removeClass( 'hidden' );
-					if( el.hasClass( 'la-field-code_editor' ) ) {
-						var myInstance = el.find( '.la-field-code-editor-texarea.has_init_code' ).data( 'CodeMirrorInstance' ).codemirror.refresh();
+					if( el.hasClass( 'nova-field-code_editor' ) ) {
+						var myInstance = el.find( '.nova-field-code-editor-texarea.has_init_code' ).data( 'CodeMirrorInstance' ).codemirror.refresh();
 					}
 				},
 				hide: function( el ) {
@@ -222,17 +221,17 @@
 		base.init();
 	};
 
-	$.fn.LA_FRAMEWORK_DEPENDENCY = function ( param ) {
+	$.fn.NOVA_FRAMEWORK_DEPENDENCY = function ( param ) {
 		return this.each( function () {
-			new $.LA_FRAMEWORK.DEPENDENCY( this, param );
+			new $.NOVA_FRAMEWORK.DEPENDENCY( this, param );
 		} );
 	};
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK CHOSEN
+	// NOVA_FRAMEWORK CHOSEN
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_CHOSEN = function() {
+	$.fn.NOVA_FRAMEWORK_CHOSEN = function() {
 		return this.each( function() {
 			$( this ).chosen( { allow_single_deselect: true, disable_search_threshold: 15, width: parseFloat( $( this ).actual( 'width' ) + 25 ) + 'px' } );
 		} );
@@ -240,9 +239,9 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK IMAGE SELECTOR
+	// NOVA_FRAMEWORK IMAGE SELECTOR
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_IMAGE_SELECTOR = function() {
+	$.fn.NOVA_FRAMEWORK_IMAGE_SELECTOR = function() {
 		return this.each( function() {
 
 			$( this ).find('label').on( 'click', function () {
@@ -254,14 +253,14 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK SORTER
+	// NOVA_FRAMEWORK SORTER
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_SORTER = function() {
+	$.fn.NOVA_FRAMEWORK_SORTER = function() {
 		return this.each( function() {
 
 			var $this     = $( this ),
-				$enabled  = $this.find( '.la-enabled' ),
-				$disabled = $this.find( '.la-disabled' );
+				$enabled  = $this.find( '.nova-enabled' ),
+				$disabled = $this.find( '.nova-disabled' );
 
 			$enabled.sortable( {
 				connectWith: $disabled,
@@ -269,13 +268,13 @@
 				update: function( event, ui ){
 					var $el = ui.item.find( 'input' );
 
-					if( ui.item.parent().hasClass( 'la-enabled' ) ) {
+					if( ui.item.parent().hasClass( 'nova-enabled' ) ) {
 						$el.attr( 'name', $el.attr( 'name' ).replace( 'disabled', 'enabled' ) );
 					} else {
 						$el.attr( 'name', $el.attr( 'name' ).replace( 'enabled', 'disabled' ) );
 					}
 
-					$this.trigger( 'LA_FRAMEWORK_field_sorter:update' );
+					$this.trigger( 'NOVA_FRAMEWORK_field_sorter:update' );
 
 				}
 			} );
@@ -291,12 +290,12 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK MEDIA UPLOADER / UPLOAD
+	// NOVA_FRAMEWORK MEDIA UPLOADER / UPLOAD
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_UPLOADER = function() {
+	$.fn.NOVA_FRAMEWORK_UPLOADER = function() {
 		return this.each( function() {
 			var $this  = $( this ),
-				$add   = $this.find( '.la-add' ),
+				$add   = $this.find( '.nova-add' ),
 				$input = $this.find( 'input' ),
 				wp_media_frame;
 
@@ -354,15 +353,15 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK IMAGE UPLOADER
+	// NOVA_FRAMEWORK IMAGE UPLOADER
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_IMAGE_UPLOADER = function() {
+	$.fn.NOVA_FRAMEWORK_IMAGE_UPLOADER = function() {
 		return this.each( function() {
 
 			var $this    = $( this ),
-				$add     = $this.find( '.la-add' ),
-				$preview = $this.find( '.la-image-preview' ),
-				$remove  = $this.find( '.la-remove' ),
+				$add     = $this.find( '.nova-add' ),
+				$preview = $this.find( '.nova-image-preview' ),
+				$remove  = $this.find( '.nova-remove' ),
 				$input   = $this.find( 'input' ),
 				$img     = $this.find( 'img' ),
 				wp_media_frame;
@@ -419,24 +418,24 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK IMAGE GALLERY
+	// NOVA_FRAMEWORK IMAGE GALLERY
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_IMAGE_GALLERY = function() {
+	$.fn.NOVA_FRAMEWORK_IMAGE_GALLERY = function() {
 		return this.each( function() {
 
 			var $this   = $( this ),
-				$edit   = $this.find( '.la-edit' ),
-				$remove = $this.find( '.la-remove' ),
+				$edit   = $this.find( '.nova-edit' ),
+				$remove = $this.find( '.nova-remove' ),
 				$list   = $this.find( 'ul' ),
 				$input  = $this.find( 'input' ),
 				$img    = $this.find( 'img' ),
 				wp_media_frame,
 				wp_media_click;
 
-			$this.on( 'click', '.la-add, .la-edit', function( e ) {
+			$this.on( 'click', '.nova-add, .nova-edit', function( e ) {
 
 				var $el   = $( this ),
-					what  = ( $el.hasClass( 'la-edit' ) ) ? 'edit' : 'add',
+					what  = ( $el.hasClass( 'nova-edit' ) ) ? 'edit' : 'add',
 					state = ( what === 'edit' ) ? 'gallery-edit' : 'gallery-library';
 
 				e.preventDefault();
@@ -528,14 +527,14 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK TYPOGRAPHY
+	// NOVA_FRAMEWORK TYPOGRAPHY
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_TYPOGRAPHY = function() {
+	$.fn.NOVA_FRAMEWORK_TYPOGRAPHY = function() {
 		return this.each( function() {
 			var typography      = $( this ),
-				family_select   = typography.find( '.la-typo-family' ),
-				variants_select = typography.find( '.la-typo-variant' ),
-				typography_type = typography.find( '.la-typo-font' );
+				family_select   = typography.find( '.nova-typo-family' ),
+				variants_select = typography.find( '.nova-typo-variant' ),
+				typography_type = typography.find( '.nova-typo-font' );
 
 			family_select.on( 'change', function() {
 
@@ -564,21 +563,21 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK GROUP
+	// NOVA_FRAMEWORK GROUP
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_GROUP = function() {
+	$.fn.NOVA_FRAMEWORK_GROUP = function() {
 		return this.each( function() {
 
 			var _this           = $( this ),
-				field_groups    = _this.find( '.la-groups' ),
-				accordion_group = _this.find( '.la-accordion' ),
-				clone_group     = _this.find( '.la-group:first' ).clone(),
+				field_groups    = _this.find( '.nova-groups' ),
+				accordion_group = _this.find( '.nova-accordion' ),
+				clone_group     = _this.find( '.nova-group:first' ).clone(),
 				max_item        = parseInt( field_groups.attr( 'data-max-item-group' ) ),
-				$group_notice   = field_groups.next( '.la_group__notice' );
+				$group_notice   = field_groups.next( '.nova_group__notice' );
 
 			if ( accordion_group.length ) {
 				accordion_group.accordion( {
-					header: '.la-group-title',
+					header: '.nova-group-title',
 					collapsible : true,
 					active: false,
 					animate: 250,
@@ -588,36 +587,36 @@
 						'activeHeader': 'dashicons dashicons-arrow-down'
 					},
 					beforeActivate: function( event, ui ) {
-						$( ui.newPanel ).LA_FRAMEWORK_DEPENDENCY( 'sub' );
+						$( ui.newPanel ).NOVA_FRAMEWORK_DEPENDENCY( 'sub' );
 					}
 				} );
 			}
 
 			field_groups.sortable( {
 				axis: 'y',
-				handle: '.la-group-title',
+				handle: '.nova-group-title',
 				helper: 'original',
 				cursor: 'move',
 				placeholder: 'widget-placeholder',
 				start: function( event, ui ) {
-					var inside = ui.item.children( '.la-group-content' );
+					var inside = ui.item.children( '.nova-group-content' );
 					if ( inside.css( 'display' ) === 'block' ) {
 						inside.hide();
 						field_groups.sortable( 'refreshPositions' );
 					}
 				},
 				stop: function( event, ui ) {
-					ui.item.children( '.la-group-title' ).triggerHandler( 'focusout' );
+					ui.item.children( '.nova-group-title' ).triggerHandler( 'focusout' );
 					accordion_group.accordion( { active:false } );
-					field_groups.trigger( 'LA_FRAMEWORK_field_groups:sorted' );
+					field_groups.trigger( 'NOVA_FRAMEWORK_field_groups:sorted' );
 				}
 			} );
 
-			$( '.la-add-group', _this ).on( 'click', function( e ) {
+			$( '.nova-add-group', _this ).on( 'click', function( e ) {
 
 				e.preventDefault();
 
-				var _total_item = field_groups.children( '.la-group' ).length;
+				var _total_item = field_groups.children( '.nova-group' ).length;
 				if( max_item > 1 && _total_item >= max_item ){
 					$group_notice.removeClass( 'hidden' );
 					return;
@@ -641,23 +640,23 @@
 					this.name = this.name.replace( '[_nonce]', '' );
 				} );
 
-				field_groups.trigger( 'LA_FRAMEWORK_field_groups:sorted' );
+				field_groups.trigger( 'NOVA_FRAMEWORK_field_groups:sorted' );
 
 				// run all field plugins
-				cloned.LA_FRAMEWORK_DEPENDENCY( 'sub' );
-				cloned.LA_FRAMEWORK_RELOAD_PLUGINS();
+				cloned.NOVA_FRAMEWORK_DEPENDENCY( 'sub' );
+				cloned.NOVA_FRAMEWORK_RELOAD_PLUGINS();
 			} );
 
-			field_groups.on( 'click', '.la-clone-group', function( e ) {
+			field_groups.on( 'click', '.nova-clone-group', function( e ) {
 				e.preventDefault();
 
-				var _total_item = field_groups.children( '.la-group' ).length;
+				var _total_item = field_groups.children( '.nova-group' ).length;
 				if( max_item > 1 && _total_item >= max_item ){
 					$group_notice.removeClass( 'hidden' );
 					return;
 				}
 
-				var $_clone = $( this ).closest( '.la-group' ).clone();
+				var $_clone = $( this ).closest( '.nova-group' ).clone();
 				field_groups.append( $_clone );
 
 				if ( accordion_group.length ) {
@@ -665,17 +664,17 @@
 					field_groups.accordion( { active: $_clone.index() } );
 				}
 
-				field_groups.trigger( 'LA_FRAMEWORK_field_groups:sorted' );
+				field_groups.trigger( 'NOVA_FRAMEWORK_field_groups:sorted' );
 				// run all field plugins
-				$_clone.LA_FRAMEWORK_DEPENDENCY( 'sub' );
-				$_clone.LA_FRAMEWORK_RELOAD_PLUGINS();
+				$_clone.NOVA_FRAMEWORK_DEPENDENCY( 'sub' );
+				$_clone.NOVA_FRAMEWORK_RELOAD_PLUGINS();
 			});
 
 			var group_title_id = field_groups.attr( 'data-accordion-title' );
 			if( group_title_id ){
 				field_groups.on( 'change keyup', '[data-sub-depend-id="' + group_title_id + '"]', function( e ) {
-					var $_parent = $( this ).closest( '.la-group' ),
-						$_heading = $_parent.find( '.la-group-title .a-title' );
+					var $_parent = $( this ).closest( '.nova-group' ),
+						$_heading = $_parent.find( '.nova-group-title .a-title' );
 					if( $(this).is( 'select' ) ){
 						$_heading.html( $( 'option:selected', $( this ) ).html() );
 					}else{
@@ -684,15 +683,15 @@
 				} );
 			}
 
-			field_groups.on( 'click', '.la-remove-group', function( e ) {
+			field_groups.on( 'click', '.nova-remove-group', function( e ) {
 				e.preventDefault();
-				$( this ).closest( '.la-group' ).remove();
+				$( this ).closest( '.nova-group' ).remove();
 				$group_notice.addClass( 'hidden' );
-				field_groups.trigger( 'LA_FRAMEWORK_field_groups:sorted' );
+				field_groups.trigger( 'NOVA_FRAMEWORK_field_groups:sorted' );
 			} );
 
-			field_groups.on( 'LA_FRAMEWORK_field_groups:sorted', function( e ){
-				var $group = $( '.la-group', $( this ) );
+			field_groups.on( 'NOVA_FRAMEWORK_field_groups:sorted', function( e ){
+				var $group = $( '.nova-group', $( this ) );
 				// then change key of group
 				$group.each( function( idx ) {
 					$( this ).find( 'input, select, textarea' ).each( function () {
@@ -707,9 +706,9 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK RESET CONFIRM
+	// NOVA_FRAMEWORK RESET CONFIRM
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_CONFIRM = function() {
+	$.fn.NOVA_FRAMEWORK_CONFIRM = function() {
 		return this.each( function() {
 			$( this ).on( 'click', function( e ) {
 				if ( !confirm('Are you sure?') ) {
@@ -721,15 +720,15 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK SAVE OPTIONS
+	// NOVA_FRAMEWORK SAVE OPTIONS
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_SAVE = function() {
+	$.fn.NOVA_FRAMEWORK_SAVE = function() {
 		return this.each( function() {
 
 			var $this  = $( this ),
 				$text  = $this.data( 'save' ),
 				$value = $this.val(),
-				$ajax  = $( '#la-save-ajax' );
+				$ajax  = $( '#nova-save-ajax' );
 
 			$( document ).on( 'keydown', function( event ) {
 				if ( event.ctrlKey || event.metaKey ) {
@@ -750,7 +749,7 @@
 
 					$this.prop( 'disabled', true ).attr( 'value', $text );
 
-					var serializedOptions = $( '#laframework_form' ).serialize();
+					var serializedOptions = $( '#novaframework_form' ).serialize();
 
 					$.post( 'options.php', serializedOptions ).error( function() {
 						alert( 'Error, Please try again.' );
@@ -776,9 +775,9 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK SAVE TAXONOMY CLEAR FORM ELEMENTS
+	// NOVA_FRAMEWORK SAVE TAXONOMY CLEAR FORM ELEMENTS
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_TAXONOMY = function() {
+	$.fn.NOVA_FRAMEWORK_TAXONOMY = function() {
 		return this.each( function() {
 
 			var $this   = $( this ),
@@ -788,7 +787,7 @@
 			if( $parent.attr( 'id' ) === 'addtag' ) {
 
 				var $submit  = $parent.find( '#submit' ),
-					$wrap    = $this.find( '.la-content-taxonomy' ),
+					$wrap    = $this.find( '.nova-content-taxonomy' ),
 					$clone   = $wrap.clone(),
 					$list    = $( '#the-list' ),
 					flooding = false;
@@ -805,13 +804,13 @@
 								$wrap = $wrap.html($clone);
 								$clone = $clone.clone();
 
-								$this.LA_FRAMEWORK_RELOAD_PLUGINS();
-								$this.LA_FRAMEWORK_TAB_NAVIGATION();
-								$this.LA_FRAMEWORK_DEPENDENCY();
-								$('.la-field-group', $this).LA_FRAMEWORK_GROUP();
-								$('.la-field-ace_editor', $this).LA_FRAMEWORK_ACE();
-								$('.la-field-code_editor', $this).LA_FRAMEWORK_CODE_EDITOR();
-								$('.la-field-slider', $this).LA_FRAMEWORK_SLIDER();
+								$this.NOVA_FRAMEWORK_RELOAD_PLUGINS();
+								$this.NOVA_FRAMEWORK_TAB_NAVIGATION();
+								$this.NOVA_FRAMEWORK_DEPENDENCY();
+								$('.nova-field-group', $this).NOVA_FRAMEWORK_GROUP();
+								$('.nova-field-ace_editor', $this).NOVA_FRAMEWORK_ACE();
+								$('.nova-field-code_editor', $this).NOVA_FRAMEWORK_CODE_EDITOR();
+								$('.nova-field-slider', $this).NOVA_FRAMEWORK_SLIDER();
 
 								flooding = false;
 
@@ -831,7 +830,7 @@
 	};
 	// ======================================================
 
-	$.fn.LA_FRAMEWORK_ACE = function() {
+	$.fn.NOVA_FRAMEWORK_ACE = function() {
 		this.each( function() {
 			var $this = $( this );
 			$( '.ace-editor', $this ).each( function( index, element ) {
@@ -854,11 +853,10 @@
 		} );
 	};
 
-
-	$.fn.LA_FRAMEWORK_CODE_EDITOR = function() {
+	$.fn.NOVA_FRAMEWORK_CODE_EDITOR = function() {
 		this.each( function() {
 			var $this = $( this );
-			$( '.la-field-code-editor-texarea:not(.has_init_code)', $this ).each( function( index, element ) {
+			$( '.nova-field-code-editor-texarea:not(.has_init_code)', $this ).each( function( index, element ) {
 				var code_editor_setting = JSON.parse( $( this ).parent().find( '.localize_data' ).val() ),
 					code_editor = wp.codeEditor.initialize( element, code_editor_setting );
 				$( this ).addClass( 'has_init_code' ).data( 'CodeMirrorInstance', code_editor );
@@ -867,7 +865,7 @@
 	};
 
 	// ======================================================
-	// LA_FRAMEWORK UI DIALOG OVERLAY HELPER
+	// NOVA_FRAMEWORK UI DIALOG OVERLAY HELPER
 	// ------------------------------------------------------
 	if( typeof $.widget !== 'undefined' && typeof $.ui !== 'undefined' && typeof $.ui.dialog !== 'undefined' ) {
 		$.widget( 'ui.dialog', $.ui.dialog, {
@@ -881,9 +879,9 @@
 	}
 
 	// ======================================================
-	// LA_FRAMEWORK ICONS MANAGER
+	// NOVA_FRAMEWORK ICONS MANAGER
 	// ------------------------------------------------------
-	$.LA_FRAMEWORK.ICONS_MANAGER = function() {
+	$.NOVA_FRAMEWORK.ICONS_MANAGER = function() {
 
 		var base   = this,
 			onload = true,
@@ -891,15 +889,15 @@
 
 		base.init = function () {
 
-			$la_body.on('click', '.la-btn-add-icon', function( e ) {
+			$nova_body.on('click', '.nova-btn-add-icon', function( e ) {
 
 				e.preventDefault();
 
 				var $this   = $( this ),
 					$dialog = $( '#nova-icon-dialog' ),
-					$load   = $dialog.find( '.la-dialog-load' ),
-					$select = $dialog.find( '.la-dialog-select' ),
-					$insert = $dialog.find( '.la-dialog-insert' ),
+					$load   = $dialog.find( '.nova-dialog-load' ),
+					$select = $dialog.find( '.nova-dialog-select' ),
+					$insert = $dialog.find( '.nova-dialog-insert' ),
 					$search = $dialog.find( '.nova-icon-search' );
 
 				// set parent
@@ -916,7 +914,7 @@
 					open: function() {
 
 						// fix scrolling
-						$la_body.addClass( 'nova-icon-scrolling' );
+						$nova_body.addClass( 'nova-icon-scrolling' );
 
 						// fix button for VC
 						$( '.ui-dialog-titlebar-close' ).addClass( 'ui-button' );
@@ -936,7 +934,7 @@
 
 					},
 					close: function() {
-						$la_body.removeClass( 'nova-icon-scrolling' );
+						$nova_body.removeClass( 'nova-icon-scrolling' );
 					}
 				} );
 
@@ -947,7 +945,7 @@
 						type: 'POST',
 						url: ajaxurl,
 						data: {
-							action: 'la-fw-get-icons'
+							action: 'nova-fw-get-icons'
 						},
 						success: function( content ) {
 
@@ -996,7 +994,7 @@
 
 			} );
 
-			$la_body.on( 'click', '.nova-icon-remove', function( e ) {
+			$nova_body.on( 'click', '.nova-icon-remove', function( e ) {
 
 				e.preventDefault();
 
@@ -1016,18 +1014,18 @@
 	};
 
 	// ======================================================
-	// LA_FRAMEWORK SHORTCODE MANAGER
+	// NOVA_FRAMEWORK SHORTCODE MANAGER
 	// ------------------------------------------------------
-	$.LA_FRAMEWORK.SHORTCODE_MANAGER = function() {
+	$.NOVA_FRAMEWORK.SHORTCODE_MANAGER = function() {
 
 		var base = this, deploy_atts;
 
 		base.init = function () {
 
-			var $dialog          = $( '#la-shortcode-dialog' ),
-				$insert          = $dialog.find( '.la-dialog-insert' ),
-				$shortcodeload   = $dialog.find( '.la-dialog-load' ),
-				$selector        = $dialog.find( '.la-dialog-select' ),
+			var $dialog          = $( '#nova-shortcode-dialog' ),
+				$insert          = $dialog.find( '.nova-dialog-insert' ),
+				$shortcodeload   = $dialog.find( '.nova-dialog-load' ),
+				$selector        = $dialog.find( '.nova-dialog-select' ),
 				shortcode_target = false,
 				shortcode_name,
 				shortcode_view,
@@ -1035,15 +1033,15 @@
 				$shortcode_button,
 				editor_id;
 
-			$la_body.on( 'click', '.la-shortcode', function( e ) {
+			$nova_body.on( 'click', '.nova-shortcode', function( e ) {
 
 				e.preventDefault();
 
 				// init chosen
-				$selector.LA_FRAMEWORK_CHOSEN();
+				$selector.NOVA_FRAMEWORK_CHOSEN();
 
 				$shortcode_button = $(this);
-				shortcode_target  = $shortcode_button.hasClass( 'la-shortcode-textarea' );
+				shortcode_target  = $shortcode_button.hasClass( 'nova-shortcode-textarea' );
 				editor_id         = $shortcode_button.data( 'editor-id' );
 
 				$dialog.dialog( {
@@ -1056,7 +1054,7 @@
 					open: function() {
 
 						// fix scrolling
-						$la_body.addClass( 'la-shortcode-scrolling' );
+						$nova_body.addClass( 'nova-shortcode-scrolling' );
 
 						// fix button for VC
 						$( '.ui-dialog-titlebar-close' ).addClass( 'ui-button' );
@@ -1077,7 +1075,7 @@
 					},
 					close: function() {
 						shortcode_target = false;
-						$la_body.removeClass( 'la-shortcode-scrolling' );
+						$nova_body.removeClass( 'nova-shortcode-scrolling' );
 					}
 				} );
 
@@ -1096,7 +1094,7 @@
 						type: 'POST',
 						url: ajaxurl,
 						data: {
-							action: 'la-get-shortcode',
+							action: 'nova-get-shortcode',
 							shortcode: shortcode_name
 						},
 						success: function( content ) {
@@ -1104,11 +1102,11 @@
 							$shortcodeload.html( content );
 							$insert.parent().removeClass( 'hidden' );
 
-							shortcode_clone = $( '.la-shortcode-clone', $dialog ).clone();
+							shortcode_clone = $( '.nova-shortcode-clone', $dialog ).clone();
 
-							$shortcodeload.LA_FRAMEWORK_DEPENDENCY();
-							$shortcodeload.LA_FRAMEWORK_DEPENDENCY( 'sub' );
-							$shortcodeload.LA_FRAMEWORK_RELOAD_PLUGINS();
+							$shortcodeload.NOVA_FRAMEWORK_DEPENDENCY();
+							$shortcodeload.NOVA_FRAMEWORK_DEPENDENCY( 'sub' );
+							$shortcodeload.NOVA_FRAMEWORK_RELOAD_PLUGINS();
 
 						}
 					} );
@@ -1135,7 +1133,7 @@
 
 					case 'contents':
 
-						$( '[' + ruleAttr + ']', '.la-dialog-load' ).each( function() {
+						$( '[' + ruleAttr + ']', '.nova-dialog-load' ).each( function() {
 							var _this = $( this ), _atts = _this.data( 'atts' );
 							send_to_shortcode += '[' + _atts + ']';
 							send_to_shortcode += _this.val();
@@ -1149,7 +1147,7 @@
 						send_to_shortcode += '[' + shortcode_name; // begin: main-shortcode
 
 						// main-shortcode attributes
-						$( '[' + ruleAttr + ']', '.la-dialog-load .la-element:not(.hidden)' ).each( function() {
+						$( '[' + ruleAttr + ']', '.nova-dialog-load .nova-element:not(.hidden)' ).each( function() {
 							var _this_main = $( this ), _this_main_atts = _this_main.data( 'atts' );
 
 							console.log( _this_main_atts );
@@ -1159,7 +1157,7 @@
 						send_to_shortcode += ']'; // end: main-shortcode attributes
 
 						// multiple-shortcode each
-						$( '[' + cloneID + ']', '.la-dialog-load' ).each( function() {
+						$( '[' + cloneID + ']', '.nova-dialog-load' ).each( function() {
 
 							var _this_clone = $( this ),
 								_clone_id   = _this_clone.data( 'clone-id' );
@@ -1167,7 +1165,7 @@
 							send_to_shortcode += '[' + _clone_id; // begin: multiple-shortcode
 
 							// multiple-shortcode attributes
-							$( '[' + cloneAttr + ']', _this_clone.find( '.la-element' ).not( '.hidden' ) ).each( function() {
+							$( '[' + cloneAttr + ']', _this_clone.find( '.nova-element' ).not( '.hidden' ) ).each( function() {
 
 								var _this_multiple = $(this), _atts_multiple = _this_multiple.data( 'clone-atts' );
 
@@ -1192,7 +1190,7 @@
 					case 'clone_duplicate':
 
 						// multiple-shortcode each
-						$( '[' + cloneID + ']', '.la-dialog-load' ).each( function() {
+						$( '[' + cloneID + ']', '.nova-dialog-load' ).each( function() {
 
 							var _this_clone = $( this ),
 								_clone_id   = _this_clone.data( 'clone-id' );
@@ -1200,7 +1198,7 @@
 							send_to_shortcode += '[' + _clone_id; // begin: multiple-shortcode
 
 							// multiple-shortcode attributes
-							$( '[' + cloneAttr + ']', _this_clone.find( '.la-element' ).not( '.hidden' ) ).each( function() {
+							$( '[' + cloneAttr + ']', _this_clone.find( '.nova-element' ).not( '.hidden' ) ).each( function() {
 
 								var _this_multiple = $( this ),
 									_atts_multiple = _this_multiple.data( 'clone-atts' );
@@ -1226,7 +1224,7 @@
 
 						send_to_shortcode += '[' + shortcode_name;
 
-						$( '[' + ruleAttr + ']', '.la-dialog-load .la-element:not(.hidden)' ).each( function() {
+						$( '[' + ruleAttr + ']', '.nova-dialog-load .nova-element:not(.hidden)' ).each( function() {
 
 							var _this = $( this ), _atts = _this.data( 'atts' );
 
@@ -1271,12 +1269,12 @@
 
 				cloned_el.find( 'input:radio' ).attr( 'name', '_nonce_' + cloned );
 
-				$( '.la-shortcode-clone:last' ).after( cloned_el );
+				$( '.nova-shortcode-clone:last' ).after( cloned_el );
 
 				// add - remove effects
 				cloned_el.slideDown( 100 );
 
-				cloned_el.find( '.la-remove-clone' ).show().on( 'click', function( e ) {
+				cloned_el.find( '.nova-remove-clone' ).show().on( 'click', function( e ) {
 
 					cloned_el.slideUp( 100, function(){ cloned_el.remove(); } );
 					e.preventDefault();
@@ -1284,8 +1282,8 @@
 				});
 
 				// reloadPlugins
-				cloned_el.LA_FRAMEWORK_DEPENDENCY( 'sub' );
-				cloned_el.LA_FRAMEWORK_RELOAD_PLUGINS();
+				cloned_el.NOVA_FRAMEWORK_DEPENDENCY( 'sub' );
+				cloned_el.NOVA_FRAMEWORK_RELOAD_PLUGINS();
 				cloned++;
 
 			});
@@ -1310,13 +1308,13 @@
 			}
 
 			if( _this.data( 'check' ) !== undefined ) {
-				el_value = _this.closest( '.la-element' ).find( 'input:checked' ).map( function() {
+				el_value = _this.closest( '.nova-element' ).find( 'input:checked' ).map( function() {
 					return $( this ).val();
 				} ).get();
 			}
 
 			if( _this.data( 'parent-field' ) !== undefined ) {
-				el_value = $( '.la-child-field[data-child-atts]', _this ).map( function() {
+				el_value = $( '.nova-child-field[data-child-atts]', _this ).map( function() {
 					var __that = $( this );
 					if( __that.val() ) {
 						return __that.data( 'child-atts' ) + ':' + __that.val()
@@ -1387,7 +1385,7 @@
 	// ======================================================
 
 	// ======================================================
-	// LA_FRAMEWORK COLORPICKER
+	// NOVA_FRAMEWORK COLORPICKER
 	// ------------------------------------------------------
 	if( typeof Color === 'function' ) {
 
@@ -1416,7 +1414,7 @@
 
 	}
 
-	$.LA_FRAMEWORK.PARSE_COLOR_VALUE = function( val ) {
+	$.NOVA_FRAMEWORK.PARSE_COLOR_VALUE = function( val ) {
 
 		var value = val.replace( /\s+/g, '' ),
 			alpha = ( value.indexOf('rgba') !== -1 ) ? parseFloat( value.replace(/^.*,(.+)\)/, '$1') * 100 ) : 100,
@@ -1426,7 +1424,7 @@
 
 	};
 
-	$.fn.LA_FRAMEWORK_COLORPICKER = function() {
+	$.fn.NOVA_FRAMEWORK_COLORPICKER = function() {
 
 		return this.each( function() {
 
@@ -1436,7 +1434,7 @@
 			if( $this.data( 'rgba' ) !== false ) {
 
 				// parse value
-				var picker = $.LA_FRAMEWORK.PARSE_COLOR_VALUE( $this.val() );
+				var picker = $.NOVA_FRAMEWORK.PARSE_COLOR_VALUE( $this.val() );
 
 				// wpColorPicker core
 				$this.wpColorPicker( {
@@ -1452,7 +1450,7 @@
 						var ui_color_value = ui.color.toString();
 
 						// update checkerboard background color
-						$this.closest( '.wp-picker-container' ).find( '.la-alpha-slider-offset' ).css( 'background-color', ui_color_value );
+						$this.closest( '.wp-picker-container' ).find( '.nova-alpha-slider-offset' ).css( 'background-color', ui_color_value );
 						$this.val( ui_color_value ).trigger( 'change' );
 
 					},
@@ -1465,15 +1463,15 @@
 							$container    = $this.closest( '.wp-picker-container' ),
 
 						// appending alpha wrapper
-							$alpha_wrap   = $( '<div class="la-alpha-wrap">' +
-								'<div class="la-alpha-slider"></div>' +
-								'<div class="la-alpha-slider-offset"></div>' +
-								'<div class="la-alpha-text"></div>' +
+							$alpha_wrap   = $( '<div class="nova-alpha-wrap">' +
+								'<div class="nova-alpha-slider"></div>' +
+								'<div class="nova-alpha-slider-offset"></div>' +
+								'<div class="nova-alpha-text"></div>' +
 								'</div>' ).appendTo( $container.find( '.wp-picker-holder' ) ),
 
-							$alpha_slider = $alpha_wrap.find( '.la-alpha-slider' ),
-							$alpha_text   = $alpha_wrap.find( '.la-alpha-text' ),
-							$alpha_offset = $alpha_wrap.find( '.la-alpha-slider-offset' );
+							$alpha_slider = $alpha_wrap.find( '.nova-alpha-slider' ),
+							$alpha_text   = $alpha_wrap.find( '.nova-alpha-text' ),
+							$alpha_offset = $alpha_wrap.find( '.nova-alpha-slider-offset' );
 
 						// alpha slider
 						$alpha_slider.slider( {
@@ -1512,7 +1510,7 @@
 								// wpColorPicker default button for update iris data alpha && alpha text && slider color option
 								$container.on( 'click', '.wp-picker-default', function() {
 
-									var default_picker = $.LA_FRAMEWORK.PARSE_COLOR_VALUE( $this.data( 'default-color' ) ),
+									var default_picker = $.NOVA_FRAMEWORK.PARSE_COLOR_VALUE( $this.data( 'default-color' ) ),
 										default_value  = parseFloat( default_picker.alpha / 100 ),
 										default_text   = default_value < 1 ? default_value : '';
 
@@ -1528,7 +1526,7 @@
 								} );
 
 								// hide alpha wrapper on click body
-								$la_body.on( 'click.wpcolorpicker', function() {
+								$nova_body.on( 'click.wpcolorpicker', function() {
 									$alpha_wrap.hide();
 								} );
 
@@ -1567,19 +1565,19 @@
 	// ======================================================
 	// ON WIDGET-ADDED RELOAD FRAMEWORK PLUGINS
 	// ------------------------------------------------------
-	$.LA_FRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
+	$.NOVA_FRAMEWORK.WIDGET_RELOAD_PLUGINS = function() {
 		$( document ).on( 'widget-added widget-updated', function( event, $widget ) {
-			$widget.LA_FRAMEWORK_RELOAD_PLUGINS();
-			$widget.LA_FRAMEWORK_DEPENDENCY();
+			$widget.NOVA_FRAMEWORK_RELOAD_PLUGINS();
+			$widget.NOVA_FRAMEWORK_DEPENDENCY();
 		} );
 	};
 
 	// ======================================================
 	// TOOLTIP HELPER
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_TOOLTIP = function() {
+	$.fn.NOVA_FRAMEWORK_TOOLTIP = function() {
 		return this.each(function() {
-			var placement = ( la_is_rtl ) ? 'right' : 'left';
+			var placement = ( nova_is_rtl ) ? 'right' : 'left';
 			if( $( this ).data('position') ) {
 				placement = $(this).data( 'position' );
 			}
@@ -1587,7 +1585,7 @@
 		});
 	};
 
-	$.fn.LA_FRAMEWORK_AUTOCOMPLETE = function() {
+	$.fn.NOVA_FRAMEWORK_AUTOCOMPLETE = function() {
 		return this.each(function() {
 			var ac    = $( this ),
 				time  = false,
@@ -1652,7 +1650,7 @@
 				$( this ).parent().parent().detach();
 			} );
 
-			$( '.la-autocomplete, .ajax_items' ).on( 'click', function(e) {
+			$( '.nova-autocomplete, .ajax_items' ).on( 'click', function(e) {
 				e.stopPropagation();
 			} );
 
@@ -1666,51 +1664,51 @@
 	// ======================================================
 	// RELOAD FRAMEWORK PLUGINS
 	// ------------------------------------------------------
-	$.fn.LA_FRAMEWORK_RELOAD_PLUGINS = function() {
+	$.fn.NOVA_FRAMEWORK_RELOAD_PLUGINS = function() {
 		return this.each( function() {
-			$( '.chosen', this ).LA_FRAMEWORK_CHOSEN();
-			$( '.la-field-image-select', this ).LA_FRAMEWORK_IMAGE_SELECTOR();
-			$( '.la-field-image', this ).LA_FRAMEWORK_IMAGE_UPLOADER();
-			$( '.la-field-gallery', this ).LA_FRAMEWORK_IMAGE_GALLERY();
-			$( '.la-field-sorter', this ).LA_FRAMEWORK_SORTER();
-			$( '.la-field-upload', this ).LA_FRAMEWORK_UPLOADER();
-			$( '.la-field-typography', this ).LA_FRAMEWORK_TYPOGRAPHY();
-			$( '.la-field-color-picker', this ).LA_FRAMEWORK_COLORPICKER();
-			$( '.la-help', this ).LA_FRAMEWORK_TOOLTIP();
-			$( '.la-tip', this ).LA_FRAMEWORK_TOOLTIP();
-			$( '.la-autocomplete', this ).LA_FRAMEWORK_AUTOCOMPLETE();
-			$( '.la-field-slider', this ).LA_FRAMEWORK_SLIDER();
+			$( '.chosen', this ).NOVA_FRAMEWORK_CHOSEN();
+			$( '.nova-field-image-select', this ).NOVA_FRAMEWORK_IMAGE_SELECTOR();
+			$( '.nova-field-image', this ).NOVA_FRAMEWORK_IMAGE_UPLOADER();
+			$( '.nova-field-gallery', this ).NOVA_FRAMEWORK_IMAGE_GALLERY();
+			$( '.nova-field-sorter', this ).NOVA_FRAMEWORK_SORTER();
+			$( '.nova-field-upload', this ).NOVA_FRAMEWORK_UPLOADER();
+			$( '.nova-field-typography', this ).NOVA_FRAMEWORK_TYPOGRAPHY();
+			$( '.nova-field-color-picker', this ).NOVA_FRAMEWORK_COLORPICKER();
+			$( '.nova-help', this ).NOVA_FRAMEWORK_TOOLTIP();
+			$( '.nova-tip', this ).NOVA_FRAMEWORK_TOOLTIP();
+			$( '.nova-autocomplete', this ).NOVA_FRAMEWORK_AUTOCOMPLETE();
+			$( '.nova-field-slider', this ).NOVA_FRAMEWORK_SLIDER();
 		});
 	};
 
-	$.LA_FRAMEWORK.SEARCH_FIELD = function(){
-		$( '<input id="la_searchbox" type="search" placeholder="Search for option(s)" />' ).insertBefore( '.la-header fieldset .la-save' );
-		$( '#la_searchbox' ).css( 'margin-left', '30px' );
+	$.NOVA_FRAMEWORK.SEARCH_FIELD = function(){
+		$( '<input id="nova_searchbox" type="search" placeholder="Search for option(s)" />' ).insertBefore( '.nova-header fieldset .nova-save' );
+		$( '#nova_searchbox' ).css( 'margin-left', '30px' );
 		$.expr[':'].Contains = function( a, i, m ) {
 			return $( a ).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
 		};
 
-		$( '#la_searchbox' ).on( 'keyup search', function() {
+		$( '#nova_searchbox' ).on( 'keyup search', function() {
 			var w = $(this).val();
 			if ( w ) {
-				$( '.la-body' ).addClass( 'la-show-all la-active-search' );
-				$( '.la-expand-all' ).hide();
-				$( '.la-title h4' ).closest( '.la-element' ).hide();
-				$( '.la-title h4:Contains(' + w + ')' ).closest( '.la-element' ).show();
+				$( '.nova-body' ).addClass( 'nova-show-all nova-active-search' );
+				$( '.nova-expand-all' ).hide();
+				$( '.nova-title h4' ).closest( '.nova-element' ).hide();
+				$( '.nova-title h4:Contains(' + w + ')' ).closest( '.nova-element' ).show();
 			} else {
-				$( '.la-body' ).removeClass( 'la-show-all la-active-search' );
-				$( '.la-expand-all' ).show();
-				$( '.la-title h4' ).closest( '.la-element' ).removeAttr( 'style' );
+				$( '.nova-body' ).removeClass( 'nova-show-all nova-active-search' );
+				$( '.nova-expand-all' ).show();
+				$( '.nova-title h4' ).closest( '.nova-element' ).removeAttr( 'style' );
 			}
 		} );
 
 	};
 
-	$.fn.LA_FRAMEWORK_SLIDER = function() {
+	$.fn.NOVA_FRAMEWORK_SLIDER = function() {
 		return this.each( function() {
 			var dis    = $( this ),
 				input  = $( 'input', dis ),
-				slider = $( '.la-slider > div', dis ),
+				slider = $( '.nova-slider > div', dis ),
 				data   = input.data( 'slider' ),
 				val    = input.val() || 0,
 				step   = data.step || 1,
@@ -1739,24 +1737,24 @@
 	// JQUERY DOCUMENT READY
 	// ------------------------------------------------------
 	$( document ).ready( function() {
-		$( '.la-framework' ).LA_FRAMEWORK_TAB_NAVIGATION();
-		$( '.la-header' ).LA_FRAMEWORK_STICKYHEADER();
-		$( '.la-reset-confirm, .la-import-backup' ).LA_FRAMEWORK_CONFIRM();
-		$( '.la-content, .wp-customizer, .widget-content' ).LA_FRAMEWORK_DEPENDENCY();
-		$( '.la-field-group' ).LA_FRAMEWORK_GROUP();
-		$( '.la-save' ).LA_FRAMEWORK_SAVE();
-		$( '.la-taxonomy' ).LA_FRAMEWORK_TAXONOMY();
-		$( '.la-field-ace_editor' ).LA_FRAMEWORK_ACE();
-		$( '.la-field-code_editor' ).LA_FRAMEWORK_CODE_EDITOR();
-		$( '.la-framework, #widgets-right' ).LA_FRAMEWORK_RELOAD_PLUGINS();
-		$.LA_FRAMEWORK.ICONS_MANAGER();
-		$.LA_FRAMEWORK.SHORTCODE_MANAGER();
-		$.LA_FRAMEWORK.WIDGET_RELOAD_PLUGINS();
-		$.LA_FRAMEWORK.SEARCH_FIELD();
+		$( '.nova-framework' ).NOVA_FRAMEWORK_TAB_NAVIGATION();
+		$( '.nova-header' ).NOVA_FRAMEWORK_STICKYHEADER();
+		$( '.nova-reset-confirm, .nova-import-backup' ).NOVA_FRAMEWORK_CONFIRM();
+		$( '.nova-content, .wp-customizer, .widget-content' ).NOVA_FRAMEWORK_DEPENDENCY();
+		$( '.nova-field-group' ).NOVA_FRAMEWORK_GROUP();
+		$( '.nova-save' ).NOVA_FRAMEWORK_SAVE();
+		$( '.nova-taxonomy' ).NOVA_FRAMEWORK_TAXONOMY();
+		$( '.nova-field-ace_editor' ).NOVA_FRAMEWORK_ACE();
+		$( '.nova-field-code_editor' ).NOVA_FRAMEWORK_CODE_EDITOR();
+		$( '.nova-framework, #widgets-right' ).NOVA_FRAMEWORK_RELOAD_PLUGINS();
+		$.NOVA_FRAMEWORK.ICONS_MANAGER();
+		$.NOVA_FRAMEWORK.SHORTCODE_MANAGER();
+		$.NOVA_FRAMEWORK.WIDGET_RELOAD_PLUGINS();
+		$.NOVA_FRAMEWORK.SEARCH_FIELD();
 
-		$( '.la-field-slider' ).LA_FRAMEWORK_SLIDER();
+		$( '.nova-field-slider' ).NOVA_FRAMEWORK_SLIDER();
 
-	});
+	} );
 
 } )( jQuery, window, document );
 
@@ -1774,7 +1772,7 @@
 			var vals = mv.split( ";" );
 			$.each( vals, function( i, vl ) {
 				if ( vl != "" ) {
-					t.find( '.la-responsive-input' ).each( function() {
+					t.find( '.nova-responsive-input' ).each( function() {
 						var that        = $( this ),
 							splitval    = vl.split( ":" );
 						if( that.attr( 'data-id' ) == splitval[0] ) {
@@ -1787,17 +1785,17 @@
 			} );
 
 			if( counter > 1 ) {
-				t.find( '.simplify' ).attr( 'la-toggle', 'expand' );
-				t.find( '.la-responsive-item.optional, .nova-unit-section' ).show();
+				t.find( '.simplify' ).attr( 'nova-toggle', 'expand' );
+				t.find( '.nova-responsive-item.optional, .nova-unit-section' ).show();
 			}
 			else {
-				t.find( '.simplify' ).attr( 'la-toggle', 'collapse' );
-				t.find( '.la-responsive-item.optional, .nova-unit-section' ).hide();
+				t.find( '.simplify' ).attr( 'nova-toggle', 'collapse' );
+				t.find( '.nova-responsive-item.optional, .nova-unit-section' ).hide();
 			}
 		}
 		else {
 			var i = 0;      // set default - Values
-			t.find( ".la-responsive-input" ).each( function() {
+			t.find( ".nova-responsive-input" ).each( function() {
 				var that = $(this),
 					d    = that.attr( 'data-default' );
 				if( d != '' ){
@@ -1806,8 +1804,8 @@
 				}
 			} );
 			if( i <= 1 ) {    // set default - Collapse
-				t.find( '.simplify' ).attr( 'la-toggle', 'collapse' );
-				t.find( '.la-responsive-item.optional, .nova-unit-section' ).hide();
+				t.find( '.simplify' ).attr( 'nova-toggle', 'collapse' );
+				t.find( '.nova-responsive-item.optional, .nova-unit-section' ).hide();
 			}
 		}
 	}
@@ -1816,7 +1814,7 @@
 	 *---------------------------------------------------*/
 	function set_responsive_values_in_hidden( t ) {
 		var new_val = '';
-		t.find( '.la-responsive-input' ).each( function() {
+		t.find( '.nova-responsive-input' ).each( function() {
 			var that    =   $( this ),
 				unit    =   that.attr( 'data-unit' ),
 				ival    =   that.val();
@@ -1837,24 +1835,24 @@
 			})
 			.on( 'click', '.simplify', function( e ) {
 				var $this   = $( this ).closest( '.nova-responsive-wrapper' ),
-					status  = $( this ).attr( 'la-toggle' );
+					status  = $( this ).attr( 'nova-toggle' );
 				switch( status ) {
 					case 'expand':
-						$this.find( '.simplify' ).attr( 'la-toggle', 'collapse' );
-						$this.find( '.la-responsive-item.optional, .nova-unit-section' ).hide();
+						$this.find( '.simplify' ).attr( 'nova-toggle', 'collapse' );
+						$this.find( '.nova-responsive-item.optional, .nova-unit-section' ).hide();
 						break;
 					case 'collapse':
-						$this.find( '.simplify' ).attr( 'la-toggle', 'expand' );
-						$this.find( '.la-responsive-item.optional, .nova-unit-section' ).show();
+						$this.find( '.simplify' ).attr( 'nova-toggle', 'expand' );
+						$this.find( '.nova-responsive-item.optional, .nova-unit-section' ).show();
 						break;
 					default:
-						$this.find( '.simplify' ).attr( 'la-toggle', 'collapse' );
-						$this.find( '.la-responsive-item.optional, .nova-unit-section' ).hide();
+						$this.find( '.simplify' ).attr( 'nova-toggle', 'collapse' );
+						$this.find( '.nova-responsive-item.optional, .nova-unit-section' ).hide();
 						break;
 				}
 			} )
 			/* On change - input / select */
-			.on( 'change', '.la-responsive-input', function( e ) {
+			.on( 'change', '.nova-responsive-input', function( e ) {
 				set_responsive_values_in_hidden( $( this ).closest( '.nova-responsive-wrapper' ) );
 			} );
 
@@ -1865,8 +1863,8 @@
 
 		$( '.nova-responsive-wrapper' ).trigger( 'vc_param.nova_columns' );
 
-		$( document ).on( 'click', '.la-field-fieldset.la-fieldset-toggle > .la-title', function() {
-			$(this).toggleClass( 'active' );
+		$( document ).on( 'click', '.nova-field-fieldset.nova-fieldset-toggle > .nova-title', function() {
+			$( this ).toggleClass( 'active' );
 		} );
 
 		$( document ).on( 'click', '[data-trace*="#trace-"] li', function( e ){
@@ -2077,9 +2075,9 @@
 if ( ! window.ajaxurl ) {
 	window.ajaxurl = window.location.href;
 }
-var laWoocommerceProductAttributeFilterDependencyCallback, laWoocommerceProductColumnsDependencyCallback;
+var NovaWoocommerceProductAttributeFilterDependencyCallback, NovaWoocommerceProductColumnsDependencyCallback;
 
-laWoocommerceProductAttributeFilterDependencyCallback = function () {
+NovaWoocommerceProductAttributeFilterDependencyCallback = function () {
 	( function ( $, that ) {
 
 		var $filterDropdown, $empty, $scenarioValue, $edit_form_line;
@@ -2152,7 +2150,7 @@ laWoocommerceProductAttributeFilterDependencyCallback = function () {
 
 					if ( $empty.length ) {
 						$empty.parent().remove();
-						$( '.edit_form_line', $filterDropdown ).prepend( $('<div class="vc_checkbox-label"><span>No values found</span></div>') );
+						$( '.edit_form_line', $filterDropdown ).prepend( $( '<div class="vc_checkbox-label"><span>No values found</span></div>' ) );
 					}
 				}
 			}
@@ -2161,7 +2159,7 @@ laWoocommerceProductAttributeFilterDependencyCallback = function () {
 	}( window.jQuery, this ) );
 };
 
-laWoocommerceProductColumnsDependencyCallback = function() {
+NovaWoocommerceProductColumnsDependencyCallback = function() {
 	( function ( $, that ) {
 		var $parent_columns, $layout_dropdown, $column_type_dropdown;
 
@@ -2185,10 +2183,10 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 
 		$column_type_dropdown.change( function(){
 			if( this.value == 'custom' ){
-				$parent_columns.addClass('vc_dependent-hidden');
+				$parent_columns.addClass( 'vc_dependent-hidden' );
 			}
 			else{
-				$parent_columns.removeClass('vc_dependent-hidden');
+				$parent_columns.removeClass( 'vc_dependent-hidden' );
 			}
 		} );
 
@@ -2196,15 +2194,15 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 			$parent_columns.addClass( 'vc_dependent-hidden' );
 		}
 		else if($layout_dropdown.val() == 'masonry') {
-			if($column_type_dropdown.val() == 'custom') {
-				$parent_columns.addClass('vc_dependent-hidden');
+			if( $column_type_dropdown.val() == 'custom' ) {
+				$parent_columns.addClass( 'vc_dependent-hidden' );
 			}
 			else {
-				$parent_columns.removeClass('vc_dependent-hidden');
+				$parent_columns.removeClass( 'vc_dependent-hidden' );
 			}
 		}
 		else {
-			$parent_columns.removeClass('vc_dependent-hidden');
+			$parent_columns.removeClass( 'vc_dependent-hidden' );
 		}
 
 	}( window.jQuery, this ) );
@@ -2214,14 +2212,14 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 ( function( $ ) {
 	'use strict';
 
-	if( typeof la_swatches_vars === "undefined" ) {
+	if( typeof nova_swatches_vars === "undefined" ) {
 		return;
 	}
 
 	var $document = $( document ),
 		$body = $( 'body' );
 
-	var cache_key = 'la_swatches_galleries';
+	var cache_key = 'nova_swatches_galleries';
 	var local_cache = {
 		/**
 		 * timeout for cache in millis
@@ -2264,9 +2262,9 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 	function update_selected_images( $table_col ) {
 		// Get all selected images
 		var $selectedImgs = [],
-			$gallery_field = $table_col.find( '.la_variation_image_gallery' );
+			$gallery_field = $table_col.find( '.nova_variation_image_gallery' );
 
-		$table_col.find( '.la_variation_thumbs .image' ).each( function() {
+		$table_col.find( '.nova_variation_thumbs .image' ).each( function() {
 			$selectedImgs.push( $( this ).attr( 'data-attachment_id' ) );
 		} );
 		// Update hidden input with chosen images
@@ -2285,16 +2283,16 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 
 			if( typeof( galleries[variation_id] ) != "undefined" && galleries[variation_id] !== null ) {
 
-				var _wrapper_class = 'la_variation_thumb--' + variation_id;
+				var _wrapper_class = 'nova_variation_thumb--' + variation_id;
 
 				$('.'+_wrapper_class).remove();
 
-				var _html = '<div class="la_variation_thumb ' + _wrapper_class + '"><h4>Additional Images</h4>' + galleries[variation_id] + '<a href="#" class="la_swatches--manage_variation_thumbs button">Add Additional Images</a></div>';
+				var _html = '<div class="nova_variation_thumb ' + _wrapper_class + '"><h4>Additional Images</h4>' + galleries[variation_id] + '<a href="#" class="nova_swatches--manage_variation_thumbs button">Add Additional Images</a></div>';
 				$btn.after(_html);
 
 			}
 			// Sort Images
-			$( '.la_variation_thumbs' ).sortable( {
+			$( '.nova_variation_thumbs' ).sortable( {
 				deactivate: function( en, ui ) {
 					var $table_col = $( ui.item ).closest( '.upload_image' );
 					update_selected_images( $table_col );
@@ -2328,12 +2326,12 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 			} else {
 				// Set up content to inset after variation Image
 				var ajax_data = {
-					'action': 		'la_swatch_admin_load_thumbnails',
-					'nonce':   		la_swatches_vars.swatches_nonce,
+					'action': 		'nova_swatch_admin_load_thumbnails',
+					'nonce':   		nova_swatches_vars.swatches_nonce,
 					'variation_id': variation_id
 				};
 				$.ajax( {
-					url: la_swatches_vars.ajax_url,
+					url: nova_swatches_vars.ajax_url,
 					data: ajax_data,
 					context: this
 				} ).success( function( data ) {
@@ -2356,11 +2354,11 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 	function setup_variation_image_manager() {
 		trigger_get_gallery_data();
 		var product_gallery_frame;
-		$document.on( 'click', '.la_swatches--manage_variation_thumbs', function( e ) {
+		$document.on( 'click', '.nova_swatches--manage_variation_thumbs', function( e ) {
 			e.preventDefault();
 			var $el = $( this ),
-				$variation_thumbs = $el.siblings( '.la_variation_thumbs' ),
-				$image_gallery_ids = $el.siblings( '.la_variation_image_gallery' ),
+				$variation_thumbs = $el.siblings( '.nova_variation_thumbs' ),
+				$image_gallery_ids = $el.siblings( '.nova_variation_image_gallery' ),
 				attachment_ids = $image_gallery_ids.val();
 
 			// Create the media frame.
@@ -2395,10 +2393,10 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 			product_gallery_frame.open();
 
 			return false;
-		});
+		} );
 
 		// Delete Image
-		$document.on( 'click', '.la_variation_thumbs .delete', function( e ) {
+		$document.on( 'click', '.nova_variation_thumbs .delete', function( e ) {
 			e.preventDefault();
 			var $table_col = $( this ).closest( '.upload_image' );
 			// Remove clicked image
@@ -2421,15 +2419,14 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 
 		setup_variation_image_manager();
 
-		$( '#panel_la_swatches' ).LA_FRAMEWORK_RELOAD_PLUGINS();
+		$( '#panel_nova_swatches' ).NOVA_FRAMEWORK_RELOAD_PLUGINS();
 
 		$document
-			.on( 'click', '.la_swatch_field_meta', function( e ) {
+			.on( 'click', '.nova_swatch_field_meta', function( e ) {
 				e.preventDefault();
 				$( this ).toggleClass( 'open-form' );
-			})
-
-			.on( 'change', '.tab_la_swatches .fields .sub_field select', function( e ) {
+			} )
+			.on( 'change', '.tab_nova_swatches .fields .sub_field select', function( e ) {
 				var $this = $( this );
 				$this.closest( '.sub_field' ).find( '.attribute_swatch_type' ).html( $this.find( 'option:selected' ).text() );
 				if( $this.val() == 'color' ) {
@@ -2440,21 +2437,21 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 					$this.closest( '.sub_field' ).find( '.attr-prev-type-image' ).show();
 				}
 			} )
-			.on( 'change', '.tab_la_swatches .fields .sub_field input.wp-color-picker', function() {
+			.on( 'change', '.tab_nova_swatches .fields .sub_field input.wp-color-picker', function() {
 				var $this = $( this );
 				$this.closest( '.sub_field' ).find( '.attr-prev-type-color' ).css( 'background-color', $this.val() );
 			} )
-			.on( 'change', '.tab_la_swatches .fields .sub_field .la-field-image input', function() {
+			.on( 'change', '.tab_nova_swatches .fields .sub_field .nova-field-image input', function() {
 				var $this = $(this);
-				$this.closest( '.sub_field' ).find( '.attr-prev-type-image' ).html( $this.closest( '.la-fieldset' ).find( '.la-preview' ).html() );
+				$this.closest( '.sub_field' ).find( '.attr-prev-type-image' ).html( $this.closest( '.nova-fieldset' ).find( '.nova-preview' ).html() );
 			} )
-			.on( 'change', '.tab_la_swatches .fields .la-parent-type-class', function() {
+			.on( 'change', '.tab_nova_swatches .fields .nova-parent-type-class', function() {
 				var $this = $( this );
-				$this.closest( '.field' ).find( '> .la_swatch_field_meta .attribute_swatch_type' ).html( $this.find( 'option:selected' ).text() );
+				$this.closest( '.field' ).find( '> .nova_swatch_field_meta .attribute_swatch_type' ).html( $this.find( 'option:selected' ).text() );
 			} )
 			.on( 'reload', '#variable_product_options', function( e ) {
 
-				if( $( '#panel_la_swatches_inner' ).length == 0 ) {
+				if( $( '#panel_nova_swatches_inner' ).length == 0 ) {
 					return;
 				}
 				$( '#woocommerce-product-data' ).block({
@@ -2463,16 +2460,16 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 						background: '#fff',
 						opacity: 0.6
 					}
-				});
+				} );
 				var this_page = window.location.toString().replace( 'post-new.php?', 'post.php?post=' + woocommerce_admin_meta_boxes.post_id + '&action=edit&' );
-				$( '#panel_la_swatches' ).load( this_page + ' #panel_la_swatches_inner', function() {
-					$( '#panel_la_swatches' ).trigger( 'reload' );
-					$( '#panel_la_swatches' ).LA_FRAMEWORK_DEPENDENCY();
-					$( '#panel_la_swatches' ).LA_FRAMEWORK_RELOAD_PLUGINS();
+				$( '#panel_nova_swatches' ).load( this_page + ' #panel_nova_swatches_inner', function() {
+					$( '#panel_nova_swatches' ).trigger( 'reload' );
+					$( '#panel_nova_swatches' ).NOVA_FRAMEWORK_DEPENDENCY();
+					$( '#panel_nova_swatches' ).NOVA_FRAMEWORK_RELOAD_PLUGINS();
 				} );
 			} )
 			.on( 'woocommerce_variations_saved', '#woocommerce-product-data' ,function( e ) {
-				if( $( '#panel_la_swatches_inner' ).length == 0 ) {
+				if( $( '#panel_nova_swatches_inner' ).length == 0 ) {
 					return;
 				}
 				$( '#woocommerce-product-data' ).block( {
@@ -2483,10 +2480,10 @@ laWoocommerceProductColumnsDependencyCallback = function() {
 					}
 				} );
 				var this_page = window.location.toString().replace( 'post-new.php?', 'post.php?post=' + woocommerce_admin_meta_boxes.post_id + '&action=edit&' );
-				$( '#panel_la_swatches' ).load( this_page + ' #panel_la_swatches_inner', function() {
-					$( '#panel_la_swatches' ).trigger( 'reload' );
-					$( '#panel_la_swatches' ).LA_FRAMEWORK_DEPENDENCY();
-					$( '#panel_la_swatches' ).LA_FRAMEWORK_RELOAD_PLUGINS();
+				$( '#panel_nova_swatches' ).load( this_page + ' #panel_nova_swatches_inner', function() {
+					$( '#panel_nova_swatches' ).trigger( 'reload' );
+					$( '#panel_nova_swatches' ).NOVA_FRAMEWORK_DEPENDENCY();
+					$( '#panel_nova_swatches' ).NOVA_FRAMEWORK_RELOAD_PLUGINS();
 				} );
 			} )
 

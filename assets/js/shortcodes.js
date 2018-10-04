@@ -286,57 +286,99 @@ jQuery( document ).ready( function ( $ ) {
 		var $this = $( this ),
 			tooltip_func = $this.data( 'tooltip-func' );
 
-		var delay = 100, setTimeoutConst, 
-			delay2 = 300, setTimeoutConst2;
-
+		$( '> img', $this ).on( 'click', function( e ) {
+			$this.find( '.nova_hotspot.open, .nttip.open' ).removeClass( 'open' );
+		} );
+		
 		if( tooltip_func == 'hover' ) {
 
-			$this.find( '.nova_hotspot_wrap' ).on( 'mouseup.hoverdir, mousedown.hoverdir, mouseenter.hoverdir, mouseleave.hoverdir', function( event ) {
-				var $el = $( this );
+			$( '.nova_hotspot_wrap', $this )
+				.on( 'mouseenter', function( e ) {
+					if( $( window ).width() > 1024 ) {
+						$( this ).find( '>.nova_hotspot, >.nttip' ).addClass( 'open' );
+					}
+				} )
+				.on( 'mouseleave', function( e ) {
+					if( $( window ).width() > 1024){
+						$( this ).find( '>.nova_hotspot, >.nttip' ).removeClass( 'open' );
+					}
+				} );
+		}
+		
+		$( '.nova_hotspot_wrap', $this ).on( 'click', function( e ) {
+			e.preventDefault();
+			$( this ).siblings( '.nova_hotspot_wrap' ).find( '>.nova_hotspot, >.nttip' ).removeClass( 'open' );
+			if( $( e.target ).is( '.tipclose' ) || $( e.target ).parent().is( '.tipclose' ) ) {
+				$( this ).find( '>.nova_hotspot, >.nttip' ).removeClass( 'open' );
+			}
+			else{
+				$( this ).find( '>.nova_hotspot, >.nttip' ).addClass( 'open' );
+			}
+		} );
+		
+		$( '.tipclose', $this ).on( 'click', function( e ) {
+			e.preventDefault();
+			$( this ).closest( '.nova_hotspot_wrap' ).find( '>.nova_hotspot, >.nttip' ).removeClass( 'open' );
+		} );
 
+	} );
+	
+	/**
+	 * Advanced Carousel
+	 */
+	$( '.nova-slick-slider' ).each( function() {
+        var $slider = $( this ),
+            slider_config =  $slider.data( 'slider_config' ) || {},
+            CustomPaging = $slider.data( 'slick_custompaging' ) || '';
 
-				if( event.type == 'mouseenter' ) {
-					setTimeoutConst = setTimeout( function() {
-						$el.find( '.nova_hotspot' ).addClass( 'open' );
-						$el.find( '.nttip' ).addClass( 'open' );
-					}, delay );
-				}
-				else if( event.type == 'mouseleave' ){
-					clearTimeout( setTimeoutConst );
-					setTimeoutConst2 = setTimeout( function() {
-						var isHover = $el.find( '.nttip' ).is( ":hover" );
-						if( isHover !== true ) {
-							$el.find( '.nova_hotspot' ).removeClass( 'open' );
-							$el.find( '.nttip' ).removeClass( 'open' );
-						}
-					}, delay2 );
-				}
-			} );
+		if( CustomPaging != '' ) {
+            slider_config.customPaging = function( slide, i ) {
+                return CustomPaging;
+            }
+        }
 
+        slider_config = $.extend( {
+            prevArrow: '<span class="slick-prev default"><svg><use xlink:href="#left-arrow"></use></svg></span>',
+            nextArrow: '<span class="slick-next default"><svg><use xlink:href="#right-arrow"></use></svg></span>'
+        }, slider_config );
+
+		if( typeof slider_config.arrows !== "undefined" && typeof slider_config.appendArrows === "undefined" && slider_config.arrows == true ) {
+			if( $slider.closest( '.woocommerce' ).length && $slider.closest( '.woocommerce' ).closest( '.vc_row' ).length ) {
+				slider_config.appendArrows = $( '<div class="nova-slick-nav"></div>' ).prependTo( $slider.parent() );
+			}
+		}
+		if( $slider.closest( '.nova-carousel-wrapper' ).hasClass( 'slider-fade' ) ) {
+			slider_config.fade = true;
+		}
+		$slider.slick( slider_config );
+		
+	} );
+	
+	/**
+	 * Instagram Feed
+	 */
+	$( '.nova-instagram-feeds' ).each( function() {
+		var $shortcode = $( this );
+		
+		var $this = $shortcode,
+			_configs = $this.data('feed_config'),
+			_instagram_token = $this.data('instagram_token'),
+			$target, feed_configs, feed;
+
+		if( '' == _instagram_token ){
+			$this.addClass('loaded loaded-error');
 		}
 
-		else if( tooltip_func == 'click' ) {
-			$this.find( '.nova_hotspot_wrap' ).on( 'mouseup.hoverdir, mousedown.hoverdir, mouseenter.hoverdir, mouseleave.hoverdir', function( event ) {
-				var $el = $( this );
+		$target = $( '.nova-instagram-loop', $this );
 
-				if( event.type == 'mouseup' ) {
-					setTimeoutConst = setTimeout( function() {
-						$el.find( '.nova_hotspot' ).addClass( 'open' );
-						$el.find( '.nttip' ).addClass( 'open' );
-					}, delay );
-				}
-				else if( event.type == 'mouseleave' ) {
-					clearTimeout( setTimeoutConst );
-					setTimeoutConst2 = setTimeout( function() {
-						var isHover = $el.find( '.nttip' ).is( ":hover" );
-						if( isHover !== true ) {
-							$el.find( '.nova_hotspot' ).removeClass( 'open' );
-							$el.find( '.nttip' ).removeClass( 'open' );
-						}
-					}, delay2 );
-				}
-			} );
-		}
+		feed_configs = $.extend({
+			target: $target.get(0).id,
+			accessToken: _instagram_token
+		}, _configs);
+
+		feed = new Instafeed(feed_configs);
+		feed.run();
+		
 	} );
 	
 	/**

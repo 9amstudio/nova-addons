@@ -37,7 +37,11 @@ class Nova_Shortcodes {
 			'faq',
 			'team_member',
 			'hotspot',
-			'image_with_hotspots'
+			'image_with_hotspots',
+			'timeline_item',
+			'instagram_feed',
+			'portfolio_grid',
+			'portfolio_masonry'
 		);
 
 		foreach ( $shortcodes as $shortcode ) {
@@ -63,7 +67,7 @@ class Nova_Shortcodes {
 		wp_register_script( 'jquery-countdown', NOVA_ADDONS_URL . 'assets/js/jquery.countdown.js', array( 'jquery' ), '2.0.4', true );
 		wp_register_script( 'jquery-counterup', NOVA_ADDONS_URL . 'assets/js/jquery.counterup.js', array( 'jquery' ), '1.0.3', true );
 		wp_register_script( 'jquery-circle-progress', NOVA_ADDONS_URL . 'assets/js/circle-progress.js', array( 'jquery' ), '1.1.3', true );
-
+		wp_register_script( 'jquery-instafeed', NOVA_ADDONS_URL . 'assets/js/instafeed.js', array( 'jquery' ), '1.9.3', true );
 		wp_enqueue_script( 'nova-shortcodes', NOVA_ADDONS_URL . 'assets/js/shortcodes.js', array(
 			'isotope',
 			'wp-util',
@@ -71,6 +75,7 @@ class Nova_Shortcodes {
 			'jquery-countdown',
 			'jquery-counterup',
 			'jquery-circle-progress',
+			'jquery-instafeed',
 		), '20160725', true );
 	}
 
@@ -2611,7 +2616,634 @@ class Nova_Shortcodes {
 		
 		$GLOBALS['nova-image_hotspot-count']++;		
 	}
+	
+	/**
+	 * Timeline Item
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public static function timeline_item( $atts, $content ) {
+		$title = $subtitle = $time_link = $time_link_apply = $time_read_text = $el_class = $css_animation = $dot_color = '';
 
+		$atts = shortcode_atts( array(
+			'title'           => '',
+			'subtitle'        => '',
+			'time_link'       => '',
+			'time_link_apply' => '',
+			'time_read_text'  => '',
+			'el_class'        => '',
+			'css_animation'   => '',
+			'dot_color'       => ''
+		), $atts, 'nova_' . __FUNCTION__ );
+		
+		extract( $atts );
+		
+		$el_class = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
+		$css_class = "timeline-block" . $el_class;
+		if( ! empty( $css_animation ) && 'none' != $css_animation ) {
+			$css_class .= ' wpb_animate_when_almost_visible nova-animation animated';
+		}
+		//parse link
+		$attributes = $a_href = $a_title = $a_target = '';
+		$time_link = ( '||' === $time_link ) ? '' : $time_link;
+		$time_link = nova_build_link_from_atts( $time_link );
+		$use_link = false;
+		if ( strlen( $time_link['url'] ) > 0 ) {
+			$use_link = true;
+			$a_href = $time_link['url'];
+			$a_title = $time_link['title'];
+			$a_target = $time_link['target'];
+		}
+
+		if ( $use_link ) {
+			$attributes[] = "href='" . esc_url( trim( $a_href ) ) . "'";
+			$attributes[] = "title='" . esc_attr( trim( $a_title ) ) . "'";
+			if ( ! empty( $a_target ) ) {
+				$attributes[] = "target='" . esc_attr( trim( $a_target ) ) . "'";
+			}
+			$attributes = implode( ' ', $attributes );
+		}
+
+		ob_start();
+		?>
+		<div class="<?php echo esc_attr( $css_class ) ?>" data-animation-class="<?php echo esc_attr( $css_animation ) ?>">
+			<div class="timeline-dot"<?php echo $dot_color ? ' style="background-color:' . esc_attr( $dot_color ) . '"' : ''?>></div>
+			<div class="timeline-arrow"></div>
+			<div class="timeline-content-wrapper">
+				<div class="timeline-content">
+					<?php
+						if( ! empty( $subtitle ) ) {
+							printf( '<div class="timeline-subtitle">%s</div>', $subtitle );
+						}
+					?>
+					<h3 class="timeline-title">
+						<?php
+						if( $time_link_apply == 'title' && $use_link ) {
+							echo "<a {$attributes}>{$title}</a>";
+						} else {
+							echo $title;
+						}
+						?>
+					</h3>
+					<div class="timeline-entry"><?php echo Novaworks_Shortcodes_Helper::remove_js_autop( $content ); ?></div>
+					<?php if( $time_link_apply == 'more' && $use_link && ! empty( $time_read_text ) ) {
+						echo "<div class='readmore-link'><a {$attributes}>{$time_read_text}</a></div>";
+					} ?>
+					<?php if( $time_link_apply == 'box' && $use_link ) {
+						echo "<a {$attributes} class='readmore-box'></a>";
+					} ?>
+				</div>
+			</div>
+		</div>
+		<?php
+		$timeline_html = ob_get_contents();
+		ob_clean();
+		ob_end_flush();
+		
+		return $timeline_html;
+	}
+
+	/**
+	 * Instagram Feed
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public static function instagram_feed( $atts ) {
+
+	$instagram_token = $feed_type = $hashtag = $location_id = $user_id = $sort_by = $limit = $image_size = $el_class = $enable_carousel = $column = $item_space = $output = $image_aspect_ration = '';
+
+	$atts = shortcode_atts( array(
+		'instagram_token'     => '',
+		'feed_type'           => 'user',
+		'hashtag'             => '',
+		'location_id'         => '',
+		'user_id'             => '',
+		'sort_by'             => 'none',
+		'column'              => '',
+		'item_space'          => 'default',
+		'enable_carousel'     => '',
+		'limit'               => 5,
+		'image_size'          => 'thumbnail',
+		'image_aspect_ration' => '11',
+		'el_class'            => '',
+		'slider_type'         => 'horizontal',
+		'slide_to_scroll'     => 'all',
+		'infinite_loop'       => '',
+		'speed'               => '300',
+		'autoplay'            => '',
+		'autoplay_speed'      => '5000',
+		'arrows'              => '',
+		'arrow_style'         => 'default',
+		'arrow_bg_color'      => '',
+		'arrow_border_color'  => '',
+		'border_size'         => '2',
+		'arrow_color'         => '#333333',
+		'arrow_size'          => '24',
+		'next_icon'           => 'right-arrow',
+		'prev_icon'           => 'left-arrow',
+		'custom_nav'          => '',
+		'dots'                => '',
+		'dots_color'          => '#333333',
+		'dots_icon'           => 'dlicon-dot7',
+		'draggable'           => 'yes',
+		'touch_move'          => 'yes',
+		'rtl'                 => '',
+		'adaptive_height'     => '',
+		'pauseohover'         => '',
+		'centermode'          => '',
+		'autowidth'           => ''
+	), $atts, 'nova_' . __FUNCTION__ );
+
+	extract( $atts );
+
+	$unique_id = uniqid( 'nova_instagram_feed_' );
+
+	$loopCssClass = array( 'nova-loop', 'nova-instagram-loop' );
+
+	$responsive_column = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $column );
+
+	$carousel_configs = false;
+
+	if( $enable_carousel == 'yes' ) {
+		$carousel_configs .= Novaworks_Shortcodes_Helper::getParamCarouselShortCode( $atts, 'column' );
+		$loopCssClass[] = 'nova-instagram-slider nova-slick-slider';
+	}
+	else {
+		$loopCssClass[] = 'grid-items';
+		foreach( $responsive_column as $screen => $value ) {
+			$loopCssClass[]  =  sprintf( '%s-grid-%s-items', $screen, $value );
+		}
+	}
+
+	$loopCssClass[] = 'grid-space-' . $item_space;
+	$loopCssClass[] = 'image-as-' . $image_aspect_ration;
+
+	ob_start();
+	?>
+	<div class="nova-instagram-feeds <?php echo Novaworks_Shortcodes_Helper::getExtraClass( $el_class ); ?>" data-feed_config="<?php echo esc_attr( wp_json_encode( array(
+		'get' => $feed_type,
+		'tagName' => $hashtag,
+		'locationId' => $location_id,
+		'userId' => $user_id,
+		'sortBy' => $sort_by,
+		'limit' => $limit,
+		'resolution' => $image_size,
+		'template' => '<div class="grid-item"><div class="instagram-item"><a target="_blank" href="{{link}}" title="{{caption}}" style="background-image: url({{image}});" class="thumbnail"><span class="item--overlay"><i class="fa fa-instagram"></i></span></a><div class="instagram-info"><span class="instagram-like"><i class="fa-heart"></i>{{likes}}</span><span class="instagram-comments"><i class="fa-comments"></i>{{comments}}</span></div></div></div>'
+	) ) ) ?>" data-instagram_token="<?php echo esc_attr( $instagram_token ) ?>">
+		<div class="instagram-feed-inner">
+			<div id="<?php echo esc_attr( $unique_id ) ?>" class="<?php echo esc_attr( implode( ' ', $loopCssClass ) ) ?>"<?php
+			if( $carousel_configs ){
+				echo $carousel_configs;
+			}
+			?>>
+			</div>
+			<div class="nova-shortcode-loading"><div class="content"><div class="nova-loader spinner3"><div class="dot1"></div><div class="dot2"></div><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>
+		</div>
+	</div>
+
+	<?php
+		$instagram_html = ob_get_contents();
+		ob_clean();
+		ob_end_flush();
+		
+		return $instagram_html;
+	}
+
+	/**
+	 * Portfolio Grid
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public static function portfolio_grid( $atts ) {
+		$enable_skill_filter = $filters = $item_space = $layout = $grid_style = $list_style = $masonry_style = $category__in = $category__not_in = $post__in = $post__not_in = $orderby = $order = $per_page = $title_tag = $img_size = $column = $enable_carousel = $enable_loadmore = $per_page_loadmore = $load_more_text = $el_class =  $output = '';
+		
+		$atts = shortcode_atts( array(
+			'layout'             => 'grid',
+			'grid_style'         => '1',
+			'list_style'         => '1',
+			'category__in'       => '',
+			'category__not_in'   => '',
+			'post__in'           => '',
+			'post__not_in'       => '',
+			'orderby'            => '',
+			'order'              => '',
+			'per_page'           => -1,
+			//'paged'              => '1',
+			'title_tag'          => 'h3',
+			'img_size'           => 'nova-portfolio',
+			'column'             => '',
+			'item_space'         => '30',
+			'enable_carousel'    => '',
+			'enable_loadmore'    => '',
+			'load_more_text'     => 'Load more',
+			'el_class'           => '',
+			'slider_type'        => 'horizontal',
+			'slide_to_scroll'    => 'all',
+			'infinite_loop'      => '',
+			'speed'              => '300',
+			'autoplay'           => '',
+			'autoplay_speed'     => '5000',
+			'arrows'             => '',
+			'arrow_style'        => 'default',
+			'arrow_bg_color'     => '',
+			'arrow_border_color' => '',
+			'border_size'        => '2',
+			'arrow_color'        => '#333333',
+			'arrow_size'         => '24',
+			'next_icon'          => 'right-arrow',
+			'prev_icon'          => 'left-arrow',
+			'custom_nav'         => '',
+			'dots'               => '',
+			'dots_color'         => '#333333',
+			'dots_icon'          => 'dlicon-dot7',
+			'draggable'          => 'yes',
+			'touch_move'         => 'yes',
+			'rtl'                => '',
+			'adaptive_height'    => '',
+			'pauseohover'        => '',
+			'centermode'         => '',
+			'autowidth'          => ''
+		), $atts, 'nova_' . __FUNCTION__ );
+
+		$excerpt_length = 15;
+
+		if( 0 === $per_page ) $per_page = 1;
+
+		global $paged;
+		
+		if( empty( $paged ) ) {
+			$paged = 1;
+		}
+
+		extract( $atts );
+
+		$css_class = array(
+			'wpb_content_element',
+			'nova-portfolio-grid'
+		);
+
+		$css_class[] = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
+		$unique_id = uniqid( 'nova-portfolio-grid-' );
+
+		$query_args = array(
+			'post_type'           => 'portfolio',
+			'post_status'		  => 'publish',
+			'orderby'             => $orderby,
+			'order'               => $order,
+			'ignore_sticky_posts' => 1,
+			'paged'               => $paged,
+			'posts_per_page'      => $per_page
+		);
+
+		if ( $category__in ) {
+			$category__in = explode( ',', $category__in );
+			$category__in = array_map( 'trim', $category__in );
+		}
+		if ( $category__not_in ) {
+			$category__not_in = explode( ',', $category__not_in );
+			$category__not_in = array_map( 'trim', $category__not_in );
+		}
+		if ( $post__in ) {
+			$post__in = explode( ',', $post__in );
+			$post__in = array_map( 'trim', $post__in );
+		}
+		if ( $post__not_in ) {
+			$post__not_in = explode( ',', $post__not_in );
+			$post__not_in = array_map( 'trim', $post__not_in );
+		}
+		$tax_query = array();
+		if ( ! empty( $category__in ) && ! empty( $category__not_in ) ){
+			$tax_query['relation'] = 'AND';
+		}
+		if ( ! empty ( $category__in ) ) {
+			$tax_query[] = array(
+				'taxonomy' => 'portfolio_type',
+				'field'    => 'term_id',
+				'terms'    => $category__in
+			);
+		}
+		if ( ! empty ( $category__not_in ) ) {
+			$tax_query[] = array(
+				'taxonomy' => 'portfolio_type',
+				'field'    => 'term_id',
+				'terms'    => $category__not_in,
+				'operator' => 'NOT IN'
+			);
+		}
+		if ( ! empty( $tax_query ) ) {
+			$query_args['tax_query'] = $tax_query;
+		}
+		if ( ! empty ( $post__in ) ) {
+			$query_args['post__in'] = $post__in;
+		}
+		if ( ! empty ( $post__not_in ) ) {
+			$query_args['post__not_in'] = $post__not_in;
+		}
+
+		$globalVar = apply_filters( 'Novaworks/global_loop_variable', 'nova_loop' );
+		$globalVarTmp = ( isset( $GLOBALS[$globalVar] ) ? $GLOBALS[$globalVar] : '' );
+		$globalParams = array();
+
+		$layout_style = ${$layout . '_style'};
+
+		$globalParams['loop_id'] = $unique_id;
+		$globalParams['item_space']  = $item_space;
+		$globalParams['loop_layout'] = $layout;
+		$globalParams['loop_style'] = $layout_style;
+		$globalParams['responsive_column'] = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $column );
+		$globalParams['image_size'] = Novaworks_Shortcodes_Helper::getImageSizeFormString( $img_size );
+		$globalParams['title_tag'] = $title_tag;
+		$globalParams['excerpt_length'] = $excerpt_length;
+
+		if( 'grid' == $layout && $enable_carousel ) {
+			$globalParams['slider_configs'] = Novaworks_Shortcodes_Helper::getParamCarouselShortCode( $atts, 'column' );
+		}
+
+		$GLOBALS[$globalVar] = $globalParams;
+
+		$the_query = new WP_Query( $query_args );
+
+		ob_start();
+
+		if( $the_query->have_posts() ) {
+			?><div id="<?php echo esc_attr( $unique_id ); ?>" class="<?php echo esc_attr( implode( ' ', $css_class ) ) ?>"><?php
+
+			add_filter( 'excerpt_length', function() use ( $excerpt_length ) {
+				return $excerpt_length;
+			}, 1011 );
+
+			do_action( 'Novaworks/shortcodes/before_loop/', 'shortcode', 'nova_portfolio_grid', $atts );
+
+			$start_tpl = $end_tpl = $loop_tpl = array();
+
+			$start_tpl[] = "template-parts/shortcode-portfolio-start-{$layout}-{$layout_style}.php";
+			$start_tpl[] = "template-parts/shortcode-portfolio-start-{$layout}.php";
+			$start_tpl[] = "template-parts/shortcode-portfolio-start.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop-{$layout}-{$layout_style}.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop-{$layout}.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end-{$layout}-{$layout_style}.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end-{$layout}.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end.php";
+
+			locate_template( $start_tpl, true, false );
+
+			while( $the_query->have_posts() ) {
+
+				$the_query->the_post();
+
+				locate_template( $loop_tpl, true, false );
+
+			}
+
+			locate_template( $end_tpl, true, false );
+
+			do_action( 'Novaworks/shortcodes/after_loop', 'shortcode', 'nova_portfolio_grid', $atts );
+
+			remove_all_filters( 'excerpt_length', 1011 );
+
+			if( $enable_loadmore ) {
+				printf(
+					'<nav class="navigation portfolio-navigation ajax-navigation" role="navigation">%s</nav>',
+					get_next_posts_link( '<span class="button-text">' . esc_html( $load_more_text ) . '</span><span class="loading-icon"><span class="bubble"><span class="dot"></span></span><span class="bubble"><span class="dot"></span></span><span class="bubble"><span class="dot"></span></span></span>', $the_query->max_num_pages )
+				);
+			}
+			?>
+			</div><?php
+		}
+		
+		$portfolio_html = ob_get_contents();
+		ob_clean();
+		ob_end_flush();
+		
+		$GLOBALS[$globalVar] = $globalVarTmp;
+		wp_reset_postdata();
+		
+		return $portfolio_html;
+	}
+	
+	/**
+	 * Portfolio Grid
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public static function portfolio_masonry( $atts ) {
+		$mb_column = $category__in = $category__not_in = $post__in = $post__not_in = $orderby = $order = $per_page = $enable_skill_filter = $enable_loadmore = $load_more_text = $filters = $filter_style = $masonry_style = $column_type = $column = $base_item_h = $base_item_w = $custom_item_size = $item_sizes = $title_tag = $img_size = $el_class = $item_space = '';
+		
+		$atts = shortcode_atts( array(
+			'category__in'        => '',
+			'category__not_in'    => '',
+			'post__in'            => '',
+			'post__not_in'        => '',
+			'orderby'             => 'date',
+			'order'               => 'desc',
+			'per_page'            => 10,
+			//'paged'               => '1',
+			'enable_skill_filter' => '',
+			'enable_loadmore'     => '',
+			'load_more_text'      => 'Load more',
+			'filters'             => '',
+			'filter_style'        => '1',
+			'masonry_style'       => '1',
+			'title_tag'           => 'h5',
+			'img_size'            => 'full',
+			'item_space'          => '30',
+			'column_type'         => 'default',
+			'column'              => '',
+			'base_item_w'         => 400,
+			'base_item_h'         => 400,
+			'mb_column'           => '',
+			'custom_item_size'    => '',
+			'item_sizes'          => '',
+			'el_class'            => ''
+		), $atts, 'nova_' . __FUNCTION__ );
+		
+
+		$excerpt_length = 15;
+
+		if( 0 === $per_page ) $per_page = 1;
+
+		global $paged;
+		
+		if( empty( $paged ) ) {
+			$paged = 1;
+		}
+
+		extract( $atts );
+
+		$css_class = array(
+			'nova-portfolio-masonry'
+		);
+		$css_class[] = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
+		$unique_id = uniqid( 'nova-portfolio-masonry-' );
+
+		$query_args = array(
+			'post_type'             => 'portfolio',
+			'post_status'		    => 'publish',
+			'orderby'               => $orderby,
+			'order'                 => $order,
+			'ignore_sticky_posts'   => 1,
+			'paged'                 => $paged,
+			'posts_per_page'        => $per_page
+		);
+
+		if ( $category__in ) {
+			$category__in = explode( ',', $category__in );
+			$category__in = array_map( 'trim', $category__in );
+		}
+		if ( $category__not_in ) {
+			$category__not_in = explode( ',', $category__not_in );
+			$category__not_in = array_map( 'trim', $category__not_in );
+		}
+		if ( $post__in ) {
+			$post__in = explode( ',', $post__in );
+			$post__in = array_map( 'trim', $post__in );
+		}
+		if ( $post__not_in ) {
+			$post__not_in = explode( ',', $post__not_in );
+			$post__not_in = array_map( 'trim', $post__not_in );
+		}
+		$tax_query = array();
+		if ( ! empty( $category__in ) && ! empty( $category__not_in ) ){
+			$tax_query['relation'] = 'AND';
+		}
+		if ( ! empty ( $category__in ) ) {
+			$tax_query[] = array(
+				'taxonomy' => 'portfolio_type',
+				'field'    => 'term_id',
+				'terms'    => $category__in
+			);
+		}
+		if ( ! empty ( $category__not_in ) ) {
+			$tax_query[] = array(
+				'taxonomy' => 'portfolio_type',
+				'field'    => 'term_id',
+				'terms'    => $category__not_in,
+				'operator' => 'NOT IN'
+			);
+		}
+		if ( ! empty($tax_query) ) {
+			$query_args['tax_query'] = $tax_query;
+		}
+		if ( ! empty ( $post__in ) ) {
+			$query_args['post__in'] = $post__in;
+		}
+		if ( ! empty ( $post__not_in ) ) {
+			$query_args['post__not_in'] = $post__not_in;
+		}
+
+		$globalVar = apply_filters( 'Novaworks/global_loop_variable', 'nova_loop' );
+		$globalVarTmp = ( isset($GLOBALS[$globalVar] ) ? $GLOBALS[$globalVar] : '' );
+		$globalParams = array();
+
+		$layout = 'masonry';
+
+		$globalParams['loop_id']            = $unique_id;
+		$globalParams['item_space']         = $item_space;
+		$globalParams['loop_layout']        = $layout;
+		$globalParams['loop_style']         = $masonry_style;
+		$globalParams['responsive_column']  = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $column );
+		$globalParams['image_size']         = Novaworks_Shortcodes_Helper::getImageSizeFormString( $img_size );
+		$globalParams['title_tag']          = $title_tag;
+		$globalParams['excerpt_length']     = $excerpt_length;
+		$globalParams['column_type']        = $column_type;
+		$globalParams['mb_column']          = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $mb_column );
+		$globalParams['base_item_w']        = $base_item_w;
+		$globalParams['base_item_h']        = $base_item_h;
+
+		if( $custom_item_size == 'yes' ) {
+			$_item_sizes = ( array ) vc_param_group_parse_atts( $item_sizes );
+			$__new_item_sizes = array();
+			if( ! empty( $_item_sizes ) ) {
+				foreach( $_item_sizes as $k => $size ) {
+					$__new_item_sizes[$k] = $size;
+					if( ! empty( $size['s'] ) ) {
+						$__new_item_sizes[$k]['s'] = Novaworks_Shortcodes_Helper::getImageSizeFormString( $size['s'] );
+					}
+				}
+			}
+			$globalParams['item_sizes'] = $__new_item_sizes;
+		}
+
+		if( $enable_skill_filter == 'yes' ) {
+			$globalParams['enable_skill_filter'] = true;
+			$globalParams['filters'] = $filters;
+			$globalParams['filter_style'] = $filter_style;
+		}
+
+		$GLOBALS[$globalVar] = $globalParams;
+
+		$the_query = new WP_Query($query_args);
+		
+		ob_start();
+
+		if( $the_query->have_posts() ) {
+
+			?><div id="<?php echo esc_attr( $unique_id ); ?>" class="<?php echo esc_attr( implode( ' ', $css_class ) ) ?>"><?php
+
+			add_filter( 'excerpt_length', function() use ( $excerpt_length ) {
+				return $excerpt_length;
+			}, 1011 );
+
+			do_action( 'Novaworks/shortcodes/before_loop', 'shortcode', 'nova_portfolio_masonry', $atts );
+
+			$start_tpl = $end_tpl = $loop_tpl = array();
+
+
+			$start_tpl[] = "template-parts/shortcode-portfolio-start-{$layout}-{$masonry_style}.php";
+			$start_tpl[] = "template-parts/shortcode-portfolio-start-{$layout}.php";
+			$start_tpl[] = "template-parts/shortcode-portfolio-start.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop-{$layout}-{$masonry_style}.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop-{$layout}.php";
+			$loop_tpl[]  = "template-parts/shortcode-portfolio-loop.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end-{$layout}-{$masonry_style}.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end-{$layout}.php";
+			$end_tpl[]   = "template-parts/shortcode-portfolio-end.php";
+
+			locate_template( $start_tpl, true, false );
+
+			while( $the_query->have_posts() ){
+
+				$the_query->the_post();
+
+				locate_template( $loop_tpl, true, false );
+
+			}
+
+			locate_template( $end_tpl, true, false );
+
+			do_action( 'Novaworks/shortcodes/after_loop', 'shortcode', 'nova_portfolio_masonry', $atts );
+
+			remove_all_filters( 'excerpt_length', 1011 );
+
+			if( $enable_loadmore && $the_query->max_num_pages > $paged ) {
+				printf(
+					'<nav class="navigation portfolio-navigation ajax-navigation" role="navigation">%s</nav>',
+					get_next_posts_link( '<span class="button-text">' . esc_html( $load_more_text ) . '</span><span class="loading-icon"><span class="bubble"><span class="dot"></span></span><span class="bubble"><span class="dot"></span></span><span class="bubble"><span class="dot"></span></span></span>', $the_query->max_num_pages )
+				);
+			}
+			?>
+			</div><?php
+		}
+		
+		$portfolio_html = ob_get_contents();
+		ob_clean();
+		ob_end_flush();
+		
+		$GLOBALS[$globalVar] = $globalVarTmp;
+		wp_reset_postdata();
+		
+		return $portfolio_html;
+	}
+	
 	/**
 	 * Get coordinates
 	 *

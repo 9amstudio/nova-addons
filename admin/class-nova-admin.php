@@ -147,7 +147,7 @@ class Novaworks_Admin {
 			'ajax_url' => admin_url( 'admin-ajax.php', 'relative' ),
 			'swatches_nonce' => wp_create_nonce( 'swatches_nonce' )
 		);
-		wp_localize_script( 'nova-addons' , 'la_swatches_vars', $vars );
+		wp_localize_script( 'nova-addons' , 'nova_swatches_vars', $vars );
 
 	}
 
@@ -273,9 +273,9 @@ class Novaworks_Admin {
 
 	private function get_icon_library() {
 
-		$cache = wp_cache_get( 'icon_fonts', 'la_studio' );
+		$cache = wp_cache_get( 'icon_fonts', 'nova' );
 		if ( empty( $cache ) ) {
-			$jsons = apply_filters('nova/filter/framework/field/icon/json', array(
+			$jsons = apply_filters('Novaworks/filter/framework/field/icon/json', array(
 				plugin_dir_path( dirname(__FILE__) ) . 'public/fonts/font-awesome.json'
 			) );
 			if ( ! empty( $jsons ) ) {
@@ -286,7 +286,7 @@ class Novaworks_Admin {
 						$cache_tmp[] = json_decode( $file_data, false );
 					}
 				}
-				wp_cache_set('icon_fonts', maybe_serialize($cache_tmp), 'la_studio' );
+				wp_cache_set('icon_fonts', maybe_serialize($cache_tmp), 'nova' );
 				return $cache_tmp;
 			}
 		}
@@ -308,7 +308,7 @@ class Novaworks_Admin {
 				if( is_object( $icon_object ) ) {
 					echo ( count( $icons ) >= 2 ) ? '<h4 class="nova-icon-title">'. $icon_object->name .'</h4>' : '';
 					foreach ( $icon_object->icons as $icon ) {
-						echo '<a class="nova-icon-tooltip" data-nova-icon="' . $icon . '" data-title="' . $icon . '"><span class="nova-icon--selector la-selector"><i class="' . $icon . '"></i></span></a>';
+						echo '<a class="nova-icon-tooltip" data-nova-icon="' . $icon . '" data-title="' . $icon . '"><span class="nova-icon--selector nova-selector"><i class="' . $icon . '"></i></span></a>';
 					}
 				} else {
 					echo '<h4 class="nova-icon-title">' . esc_html__( 'Error! Can not load json file.', 'nova' ) . '</h4>';
@@ -336,7 +336,7 @@ class Novaworks_Admin {
 				echo '<div data-id="' . get_the_ID() . '">' . get_the_title() . '</div>';
 			}
 		} else {
-			echo '<b>' . esc_html__('Not found', 'nova' ) . '</b>';
+			echo '<b>' . esc_html__( 'Not found', 'nova' ) . '</b>';
 		}
 
 		wp_reset_postdata();
@@ -350,7 +350,7 @@ class Novaworks_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_export_options() {
-		$unique = isset( $_REQUEST['unique'] ) ? $_REQUEST['unique'] : 'la_options';
+		$unique = isset( $_REQUEST['unique'] ) ? $_REQUEST['unique'] : 'nova_options';
 		header('Content-Type: plain/text');
 		header('Content-disposition: attachment; filename=backup-' . esc_attr( $unique ) . '-' . gmdate( 'd-m-Y' ) . '.txt' );
 		header('Content-Transfer-Encoding: binary');

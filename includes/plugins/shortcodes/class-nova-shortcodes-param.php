@@ -27,7 +27,7 @@ class Novaworks_Shortcodes_Param {
         vc_add_shortcode_param( 'nova_heading' , array( $this, 'headingCallBack' ) );
         vc_add_shortcode_param( 'datetimepicker' , array( $this, 'datetimePickerCallBack' ) );
         vc_add_shortcode_param( 'gradient' , array( $this, 'gradient_picker' ) );
-        vc_add_shortcode_param( 'la_slides_navigation' , array( $this, 'slides_navigation' ) );
+        vc_add_shortcode_param( 'nova_slides_navigation' , array( $this, 'nova_slides_navigation' ) );
 		vc_add_shortcode_param( 'nova_hotspot_image_preview' , array( $this, 'nova_hotspot_image_preview' ) );
 
     }
@@ -43,7 +43,7 @@ class Novaworks_Shortcodes_Param {
         $uid = 'nova-responsive-' . rand( 1000, 9999 );
 
         $require = sprintf(
-            '<div class="simplify"><span class="la-vc-icon"><div class="la-vc-tooltip simplify-options">%s</div><i class="simplify-icon dashicons dashicons-arrow-right-alt2"></i></span></div>',
+            '<div class="simplify"><span class="nova-vc-icon"><div class="nova-vc-tooltip simplify-options">%s</div><i class="simplify-icon dashicons dashicons-arrow-right-alt2"></i></span></div>',
             esc_html__( 'Responsive Options', 'nova' )
         );
         $html  = '<div class="nova-responsive-wrapper" id="' . $uid . '"><div class="nova-responsive-items">';
@@ -166,7 +166,7 @@ class Novaworks_Shortcodes_Param {
 
     private function getParamMedia( $class, $icon, $tip, $default_value, $unit, $data_id ) {
         return sprintf(
-            '<div class="la-responsive-item %1$s %2$s"><span class="la-vc-icon"><div class="la-vc-tooltip %1$s %2$s">%3$s</div>%4$s</span><input type="text" class="la-responsive-input" data-default="%5$s" data-unit="%6$s" data-id="%2$s"/></div>',
+            '<div class="nova-responsive-item %1$s %2$s"><span class="nova-vc-icon"><div class="nova-vc-tooltip %1$s %2$s">%3$s</div>%4$s</span><input type="text" class="nova-responsive-input" data-default="%5$s" data-unit="%6$s" data-id="%2$s"/></div>',
             esc_attr( $class ),
             esc_attr( $data_id ),
             esc_html( $tip ),
@@ -386,16 +386,16 @@ class Novaworks_Shortcodes_Param {
         return $output;
     }
 
-    public function slides_navigation( $settings, $value ) {
+    public function nova_slides_navigation( $settings, $value ) {
         $uid = uniqid();
         $param_name = isset( $settings['param_name'] ) ? $settings['param_name'] : '';
         $type = isset( $settings['type'] ) ? $settings['type'] : '';
         $class = isset( $settings['class'] ) ? $settings['class'] : '';
         if( $param_name == "next_icon" ) {
-            $icons = array( 'dlicon-arrow-right1', 'dlicon-arrow-right2', 'dlicon-arrow-right3', 'dlicon-arrow-right4', 'dlicon-arrow-right5', 'dlicon-arrow-right6', 'dlicon-arrow-right7', 'dlicon-arrow-right7', 'dlicon-arrow-right8' );
+            $icons = array( 'right-arrow', 'dlicon-arrow-right2', 'dlicon-arrow-right3', 'dlicon-arrow-right4', 'dlicon-arrow-right5', 'dlicon-arrow-right6', 'dlicon-arrow-right7', 'dlicon-arrow-right7', 'dlicon-arrow-right8' );
         }
         if( $param_name == "prev_icon" ) {
-            $icons = array( 'dlicon-arrow-left1', 'dlicon-arrow-left2', 'dlicon-arrow-left3', 'dlicon-arrow-left4', 'dlicon-arrow-left5', 'dlicon-arrow-left6', 'dlicon-arrow-left7', 'dlicon-arrow-left7', 'dlicon-arrow-left8' );
+            $icons = array( 'left-arrow', 'dlicon-arrow-left2', 'dlicon-arrow-left3', 'dlicon-arrow-left4', 'dlicon-arrow-left5', 'dlicon-arrow-left6', 'dlicon-arrow-left7', 'dlicon-arrow-left7', 'dlicon-arrow-left8' );
         }
 
         if( $param_name == "dots_icon" ) {

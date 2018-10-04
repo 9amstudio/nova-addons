@@ -35,7 +35,7 @@ class Novaworks_Shortcodes_Autocomplete_Filters {
 
     private function loadFilter() {
         $filters = array(
-            'la_show_posts' => array(
+            'nova_post_grid' => array(
                 'category__in' 	=> array(
                     'callback' 	=> 'categoryTaxCallback',
                     'render' 	=> 'categoryTaxRender',
@@ -53,47 +53,47 @@ class Novaworks_Shortcodes_Autocomplete_Filters {
                     'render' 	=> 'contentTypeRender',
                 )
             ),
-            'la_show_portfolios' => array(
-                'filters' 	=> array(
-                    'callback' 	=> 'la_portfolio_skillTaxCallback',
-                    'render' 	=> 'la_portfolio_skillTaxRender',
+            'nova_portfolio_grid' => array(
+				'filters' 	=> array(
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'category__in' 	=> array(
-                    'callback' 	=> 'la_portfolio_categoryTaxCallback',
-                    'render' 	=> 'la_portfolio_categoryTaxRender',
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'category__not_in' 	=> array(
-                    'callback' 	=> 'la_portfolio_categoryTaxCallback',
-                    'render' 	=> 'la_portfolio_categoryTaxRender',
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'post__in' => array(
-                    'callback' 	=> 'la_portfolioContentTypeCallback',
+                    'callback' 	=> 'portfolioContentTypeCallback',
                     'render' 	=> 'contentTypeRender',
                 ),
                 'post__not_in' => array(
-                    'callback' 	=> 'la_portfolioContentTypeCallback',
+                    'callback' 	=> 'portfolioContentTypeCallback',
                     'render' 	=> 'contentTypeRender',
                 )
             ),
-            'la_portfolio_masonry' => array(
+            'nova_portfolio_masonry' => array(
                 'filters' 	=> array(
-                    'callback' 	=> 'la_portfolio_skillTaxCallback',
-                    'render' 	=> 'la_portfolio_skillTaxRender',
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'category__in' 	=> array(
-                    'callback' 	=> 'la_portfolio_categoryTaxCallback',
-                    'render' 	=> 'la_portfolio_categoryTaxRender',
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'category__not_in' 	=> array(
-                    'callback' 	=> 'la_portfolio_categoryTaxCallback',
-                    'render' 	=> 'la_portfolio_categoryTaxRender',
+                    'callback' 	=> 'portfolio_typeTaxCallback',
+                    'render' 	=> 'portfolio_typeTaxRender',
                 ),
                 'post__in' => array(
-                    'callback' 	=> 'la_portfolioContentTypeCallback',
+                    'callback' 	=> 'portfolioContentTypeCallback',
                     'render' 	=> 'contentTypeRender',
                 ),
                 'post__not_in' => array(
-                    'callback' 	=> 'la_portfolioContentTypeCallback',
+                    'callback' 	=> 'portfolioContentTypeCallback',
                     'render' 	=> 'contentTypeRender',
                 )
             ),

@@ -373,7 +373,7 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Style', 'nova' ),
 					'param_name'  => 'style',
 					'type'        => 'dropdown',
-					'value' => array(
+					'value'       => array(
 						esc_html__( 'Style 01', 'nova' ) => '1',
 						esc_html__( 'Style 02', 'nova' ) => '2',
 						esc_html__( 'Style 03', 'nova' ) => '3',
@@ -559,8 +559,8 @@ class Nova_Addons_VC {
 				)
 			),
 			Novaworks_Shortcodes_Helper::fieldIconType( array(
-				'element' => 'icon_pos',
-				'value'	=> array( 'top', 'left', 'right' )
+					'element'     => 'icon_pos',
+					'value'       => array( 'top', 'left', 'right' )
 			) ),
 			array(
 				array(
@@ -1405,7 +1405,7 @@ class Nova_Addons_VC {
 					'edit_field_class' => 'vc_col-xs-12 vc_message-type',
 					'type'        => 'dropdown',
 					'param_name'  => 'type',
-					'default'     => 'success',
+					'std'     => 'success',
 					'admin_label' => true,
 					'value'       => array(
 						esc_html__( 'Success', 'nova' ) => 'success',
@@ -1672,7 +1672,7 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Select icon position. Icon box style will be changed according to the icon position.', 'nova' ),
 					'type'        => 'dropdown',
 					'param_name'  => 'icon_pos',
-					'value'	=> array(
+					'value'       => array(
 						esc_html__( 'Icon at Top', 'nova' ) => 'default',
 						esc_html__( 'Icon at Left', 'nova' ) => 'left',
 						esc_html__( 'Icon at Right', 'nova' ) => 'right',
@@ -1853,7 +1853,7 @@ class Nova_Addons_VC {
 						'element'   => 'icon_border_style',
 						'not_empty'	=> true
 					),
-					'group' => esc_html__( 'Icon Settings', 'nova' )
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
 				),
 				array(
 					'heading'     => esc_html__( 'Icon Border Color', 'nova' ),
@@ -1917,7 +1917,7 @@ class Nova_Addons_VC {
 					'type'        => 'dropdown',
 					'heading'     => esc_html__( 'Heading tag', 'nova' ),
 					'param_name'  => 'tag',
-					'value' => array(
+					'value'       => array(
 						esc_html__( 'Default', 'nova' ) => 'h2',
 						esc_html__( 'H1', 'nova' ) => 'h1',
 						esc_html__( 'H3', 'nova' ) => 'h3',
@@ -1927,7 +1927,7 @@ class Nova_Addons_VC {
 						esc_html__( 'DIV', 'nova' ) => 'div',
 						esc_html__( 'p', 'nova' ) => 'p'
 					),
-					'default'     => 'h2',
+					'std'         => 'h2',
 					'description' => esc_html__( 'Default is H2', 'nova' )
 				),
 				array(
@@ -1940,7 +1940,7 @@ class Nova_Addons_VC {
 						esc_html__( 'Right','nova')	=> 'right',
 						esc_html__( 'Inline','nova') => 'inline'
 					),
-					'default'     => 'left'
+					'std'     => 'left'
 				),
 				array(
 					'type'        => 'dropdown',
@@ -1950,7 +1950,7 @@ class Nova_Addons_VC {
 						esc_html__( 'No Separator', 'nova' ) =>	'none',
 						esc_html__( 'Line', 'nova' ) =>	'line',
 					),
-					'default'     => 'none',
+					'std'         => 'none',
 					'dependency'  => array(
 						'element'   => 'alignment',
 						'value'     => array( 'center', 'left', 'right' )
@@ -1965,10 +1965,10 @@ class Nova_Addons_VC {
 						esc_html__( 'Bottom', 'nova' ) => 'bottom',
 						esc_html__( 'Left', 'nova' ) => 'left',
 						esc_html__( 'Right', 'nova' ) => 'right',
-						wp_kses_post( __( 'Between Heading - Subheading', 'nova' ) ) => 'middle',
+						esc_html__( 'Between Heading - Subheading', 'nova' ) => 'middle',
 						esc_html__( 'Title between separator', 'nova' ) => 'separator'
 					),
-					'default'     => 'top',
+					'std'         => 'top',
 					'dependency'  => array(
 						'element'   => 'spacer',
 						'value'     => 'line'
@@ -1984,7 +1984,7 @@ class Nova_Addons_VC {
 						esc_html__( 'Dotted', 'nova' ) => 'dotted',
 						esc_html__( 'Double', 'nova' ) => 'double'
 					),
-					'default'     => 'solid',
+					'std'         => 'solid',
 					'dependency'  => array(
 						'element'   => 'spacer',
 						'value'     => 'line'
@@ -2003,9 +2003,9 @@ class Nova_Addons_VC {
 						'xs'        => '',
 						'mb'        => ''
 					),
-					'dependency' => array(
-						'element'   => 'spacer',
-						'value'     => 'line'
+					'dependency'  => array(
+						'element'     => 'spacer',
+						'value'       => 'line'
 					)
 				),
 				array(
@@ -2031,19 +2031,19 @@ class Nova_Addons_VC {
 				),
 				Novaworks_Shortcodes_Helper::fieldExtraClass(),
 				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
-					'heading'       => esc_html__( 'Extra Class for heading', 'nova' ),
-					'param_name'    => 'title_class',
+					'heading'     => esc_html__( 'Extra Class for heading', 'nova' ),
+					'param_name'  => 'title_class',
 				) ),
 				Novaworks_Shortcodes_Helper::fieldExtraClass( array(
-					'heading'       => esc_html__( 'Extra Class for subheading', 'nova' ),
-					'param_name'    => 'subtitle_class',
+					'heading'     => esc_html__( 'Extra Class for subheading', 'nova' ),
+					'param_name'  => 'subtitle_class',
 				) ),
 				Novaworks_Shortcodes_Helper::fieldExtraClass(array(
-					'heading'       => esc_html__( 'Extra Class for Line', 'nova' ),
-					'param_name'    => 'line_class',
-					'dependency'    => array(
-						'element'     => 'spacer',
-						'value'       => 'line'
+					'heading'     => esc_html__( 'Extra Class for Line', 'nova' ),
+					'param_name'  => 'line_class',
+					'dependency'  => array(
+						'element'   => 'spacer',
+						'value'     => 'line'
 					)
 				) )
 			), Novaworks_Shortcodes_Helper::fieldTitleGFont(), Novaworks_Shortcodes_Helper::fieldTitleGFont( 'subtitle', esc_html__( 'Subheading', 'nova' ) ), array( Novaworks_Shortcodes_Helper::fieldCssClass() ) )
@@ -2154,10 +2154,10 @@ class Nova_Addons_VC {
 				),
 				vc_map_add_css_animation(),
 				array(
-					'type'        => 'textfield',
 					'heading'     => esc_html__( 'Extra class name', 'nova' ),
-					'param_name'  => 'el_class',
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' )
+					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'el_class'
 				)
 			)
 		) );
@@ -2200,14 +2200,14 @@ class Nova_Addons_VC {
 				array(
 					'heading'     => esc_html__( 'Marker', 'nova' ),
 					'description' => esc_html__( 'Upload custom marker icon or leave this to use default marker.', 'nova' ),
-					'param_name'  => 'marker',
-					'type'        => 'attach_image'
+					'type'        => 'attach_image',
+					'param_name'  => 'marker'
 				),
 				array(
 					'heading'     => esc_html__( 'Width', 'nova' ),
 					'description' => esc_html__( 'Map width in pixel or percentage.', 'nova' ),
-					'param_name'  => 'width',
 					'type'        => 'textfield',
+					'param_name'  => 'width',
 					'value'       => '100%'
 				),
 				array(
@@ -2220,21 +2220,21 @@ class Nova_Addons_VC {
 				array(
 					'heading'     => esc_html__( 'Zoom', 'nova' ),
 					'description' => esc_html__( 'Enter zoom level. The value is between 1 and 20.', 'nova' ),
-					'param_name'  => 'zoom',
 					'type'        => 'textfield',
+					'param_name'  => 'zoom',
 					'value'       => '15'
 				),
 				array(
-					'heading'          => esc_html__( 'Color', 'nova' ),
-					'description'      => esc_html__( 'Select map color style', 'nova' ),
+					'heading'     => esc_html__( 'Color', 'nova' ),
+					'description' => esc_html__( 'Select map color style', 'nova' ),
 					'edit_field_class' => 'vc_col-xs-12 vc_btn3-colored-dropdown vc_colored-dropdown',
-					'param_name'       => 'color',
-					'type'             => 'dropdown',
-					'value'            => array(
-						esc_html__( 'Default', 'nova' )       => '',
-						esc_html__( 'Grey', 'nova' )          => 'grey',
+					'type'        => 'dropdown',
+					'param_name'  => 'color',
+					'value'       => array(
+						esc_html__( 'Default', 'nova' ) => '',
+						esc_html__( 'Grey', 'nova' ) => 'grey',
 						esc_html__( 'Classic Black', 'nova' ) => 'inverse',
-						esc_html__( 'Vista Blue', 'nova' )    => 'vista-blue'
+						esc_html__( 'Vista Blue', 'nova' ) => 'vista-blue'
 					)
 				),
 				array(
@@ -2334,8 +2334,8 @@ class Nova_Addons_VC {
 					'type'        => 'attach_images',
 					'param_name'  => 'images',
 					'dependency'  => array(
-						'element' => 'source',
-						'value'   => 'media_library'
+						'element'   => 'source',
+						'value'     => 'media_library'
 					)
 				),
 				array(
@@ -2344,8 +2344,8 @@ class Nova_Addons_VC {
 					'type'        => 'textfield',
 					'param_name'  => 'img_size',
 					'dependency'  => array(
-						'element' => 'source',
-						'value'   => 'media_library'
+						'element'   => 'source',
+						'value'     => 'media_library'
 					)
 				),
 				array(
@@ -2354,8 +2354,8 @@ class Nova_Addons_VC {
 					'type'        => 'exploded_textarea_safe',
 					'param_name'  => 'custom_srcs',
 					'dependency'  => array(
-						'element' => 'source',
-						'value'   => 'external_link'
+						'element'   => 'source',
+						'value'     => 'external_link'
 					)
 				),
 				array(
@@ -2364,8 +2364,8 @@ class Nova_Addons_VC {
 					'type'        => 'textfield',
 					'param_name'  => 'external_img_size',
 					'dependency'  => array(
-						'element' => 'source',
-						'value'   => 'external_link'
+						'element'   => 'source',
+						'value'     => 'external_link'
 					)
 				),
 				array(
@@ -2381,7 +2381,7 @@ class Nova_Addons_VC {
 					'param_name'  => 'custom_links_target',
 					'value'       => array(
 						esc_html__( 'Same window', 'nova' ) => '_self',
-						esc_html__( 'New window', 'nova' )  => '_blank'
+						esc_html__( 'New window', 'nova' ) => '_blank'
 					)
 				),
 				array(
@@ -2391,7 +2391,7 @@ class Nova_Addons_VC {
 					'param_name'  => 'layout',
 					'value'       => array(
 						esc_html__( 'Bordered', 'nova' ) => 'bordered',
-						esc_html__( 'Plain', 'nova' )    => 'plain'
+						esc_html__( 'Plain', 'nova' ) => 'plain'
 					)
 				),
 				Novaworks_Shortcodes_Helper::fieldColumnGrid( array(
@@ -2568,7 +2568,7 @@ class Nova_Addons_VC {
 					'param_name'  => 'open',
 					'value'       => array(
 						esc_html__( 'Closed', 'nova' ) => 'false',
-						esc_html__( 'Open', 'nova' )   => 'true'
+						esc_html__( 'Open', 'nova' ) => 'true'
 					)
 				),
 				vc_map_add_css_animation(),
@@ -2802,14 +2802,848 @@ class Nova_Addons_VC {
 					'group'       => esc_html__( 'Style', 'nova' )
 				),
 				array(
-					'heading'       => esc_html__( 'Enable Animation', 'nova' ),
-					'description'   => esc_html__( 'Turning this on will make your hotspots animate in when the user scrolls to the element', 'nova' ),
-					'type'          => 'checkbox',
-					'param_name'    => 'animation',
-					'value'         => array(
-						esc_html__('Yes, please', 'nova') => 'true'
+					'heading'     => esc_html__( 'Enable Animation', 'nova' ),
+					'description' => esc_html__( 'Turning this on will make your hotspots animate in when the user scrolls to the element', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'animation',
+					'value'       => array(
+						esc_html__( 'Yes, please', 'nova' ) => 'true'
 					),
-					'group'         => esc_html__( 'Style', 'nova' )
+					'group'       => esc_html__( 'Style', 'nova' )
+				)
+			)		
+		) );
+		
+		// Advanced Carousel
+		vc_map( array(
+			'name'        => esc_html__( 'Nova Advanced Carousel', 'nova' ),
+			'base'        => 'nova_carousel',
+			'icon'        => 'nova-wpb-icon nova_carousel',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Carousel anything.','nova' ),
+			'as_parent'   => array( 'except' => array( 'nova_carousel' ) ),
+			'content_element' => true,
+			'controls'    => 'full',
+			'show_settings_on_create' => true,
+			'params'      => Novaworks_Shortcodes_Helper::paramCarouselShortCode(),
+			'js_view'     => 'VcColumnView'
+		) );
+		
+		// Timeline
+		vc_map( array(
+			'name'        => esc_html__( 'Timeline', 'nova' ),
+			'base'        => 'nova_timeline',
+			'icon'        => 'nova-wpb-icon nova_timeline',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Displays the timeline block', 'nova' ),
+			'as_parent'   => array( 'only' => 'nova_timeline_item' ),
+			'content_element' => true,
+			'is_container' => false,
+			'show_settings_on_create' => false,
+			'params'      => array(
+				array(
+					'heading'     => esc_html__( 'Styles', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+					),
+				),
+				/*
+				array(
+					'heading'     => esc_html__( 'Enable load more', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'enable_load_more',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				*/
+				array(
+					'heading'     => esc_html__( 'Load More Text', 'nova' ),
+					'description' => esc_html__( 'Customize the load more text.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'load_more_text',
+					'value'       => 'Load More',
+					'dependency'  => array( 'element' => 'enable_load_more', 'value' => array( 'yes' ) )
+				),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			),
+			'js_view' => 'VcColumnView'
+		) );
+		
+		// Timeline Item
+		vc_map( array(
+			'name'        => esc_html__( 'Timeline Item', 'nova' ),
+			'base'        => 'nova_timeline_item',
+			'icon'        => 'nova-wpb-icon nova_timeline_item',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Displays the timeline block', 'nova' ),
+			'as_child'    => array( 'only' => 'nova_timeline' ),
+			'content_element' => true,
+			'params'      => array(
+				array(
+					'heading'     => esc_html__( 'Title', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'title',
+					'admin_label' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Subtitle', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'subtitle',
+					'admin_label' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Content', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content',
+				),
+				array(
+					'heading'     => esc_html__( 'Apply link to:', 'nova' ),
+					'description' => esc_html__( 'Select the element for link.', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'time_link_apply',
+					'value'       => array(
+						esc_html__( 'None', 'nova' ) => '',
+						esc_html__( 'Complete box', 'nova' ) => 'box',
+						esc_html__( 'Box Title', 'nova' ) => 'title',
+						esc_html__( 'Display Read More', 'nova' ) => 'more',
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Add Link', 'nova' ),
+					'description' => esc_html__( 'Provide the link that will be applied to this timeline.', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'time_link',
+					'dependency'  => array(
+						'element'   => 'time_link_apply',
+						'value'     => array( 'more', 'title', 'box' )
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Read More Text', 'nova' ),
+					'description' => esc_html__( 'Customize the read more text.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'time_read_text',
+					'value'       => 'Read More',
+					'dependency'  => array(
+						'element'   => 'time_link_apply',
+						'value'     => array( 'more' )
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Dot Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'dot_color'
+				),
+				Novaworks_Shortcodes_Helper::fieldCssAnimation(),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			)
+		) );
+		
+		// Instagram Feed
+		vc_map( array(
+			'name'        => esc_html__( 'Instagram Feed', 'nova' ),
+			'base'        => 'nova_instagram_feed',
+			'icon'        => 'nova-wpb-icon nova_instagram_feed',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Display Instagram photos from any non-private Instagram accounts', 'nova' ),
+			'params'      => array_merge( array(
+				array(
+					'heading'     => esc_html__( 'Instagram Access Token', 'nova' ),
+					'description' => esc_html__( 'In order to display your photos you need an Access Token from Instagram.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'instagram_token'
+				),
+				array(
+					'heading'     => esc_html__( 'Feed Type', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'feed_type',
+					'value'       => array(
+						esc_html__( 'Images with a specific tag', 'nova' ) => 'tagged',
+						esc_html__( 'Images from a location.', 'nova' ) => 'location',
+						esc_html__( 'Images from a user', 'nova' ) => 'user'
+					),
+					'admin_label' => true,
+					'std'         => 'user'
+				),
+				array(
+					'heading'     => esc_html__( 'Hashtag', 'nova' ),
+					'description' => esc_html__( 'Only Alphanumeric characters are allowed (a-z, A-Z, 0-9)', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'hashtag',
+					'admin_label' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Location ID', 'nova' ),
+					'description' => esc_html__( 'Unique id of a location to get', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'location_id'
+				),
+				array(
+					'heading'     => esc_html__( 'User ID', 'nova' ),
+					'description' => esc_html__( 'Unique id of a user to get', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'user_id'
+				),
+				array(
+					'heading'     => esc_html__( 'Sort By', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'sort_by',
+					'admin_label' => true,
+					'value'       => array(
+						esc_html__( 'Default', 'nova' ) => 'none',
+						esc_html__( 'Newest to oldest', 'nova' ) => 'most-recent',
+						esc_html__( 'Oldest to newest', 'nova' ) => 'least-recent',
+						esc_html__( 'Highest # of likes to lowest.', 'nova' ) => 'most-liked',
+						esc_html__( 'Lowest # likes to highest.', 'nova' ) => 'least-liked',
+						esc_html__( 'Highest # of comments to lowest', 'nova' ) => 'most-commented',
+						esc_html__( 'Lowest # of comments to highest.', 'nova' ) => 'least-commented',
+						esc_html__( 'Random order', 'nova' ) => 'random',
+					),
+					'std'         => 'none'
+				),
+
+				Novaworks_Shortcodes_Helper::fieldColumn( array(
+					'heading'     => esc_html__( 'Items to show', 'nova' )
+				) ),
+				Novaworks_Shortcodes_Helper::getParamItemSpace( array(
+					'std'         => 'default'
+				) ),
+				/*
+				array(
+					'heading'     => esc_html__( 'Enable slider', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'enable_carousel',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				*/
+				array(
+					'heading'     => esc_html__( 'Limit', 'nova' ),
+					'description' => esc_html__( 'Maximum number of Images to add. Max of 60', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'limit',
+					'admin_label' => true,
+					'value'       => 5
+				),
+				array(
+					'heading'     => esc_html__( 'Image size', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'image_size',
+					'value'       => array(
+						esc_html__( 'Thumbnail', 'nova' ) => 'thumbnail',
+						esc_html__( 'Low Resolution', 'nova' ) => 'low_resolution',
+						esc_html__( 'Standard Resolution', 'nova' ) => 'standard_resolution'
+					),
+					'std'         => 'thumbnail'
+				),
+				array(
+					'heading'     => esc_html__( 'Image Aspect Ration', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'image_aspect_ration',
+					'value'       => array(
+						esc_html__( '1:1', 'nova' ) => '11',
+						esc_html__( '16:9', 'nova' ) => '169',
+						esc_html__( '4:3', 'nova' ) => '43',
+						esc_html__( '2.35:1', 'nova' ) => '2351'
+					),
+					'std'         => '11'
+				),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			), Novaworks_Shortcodes_Helper::paramCarouselShortCode( false ) )
+		) );
+		
+		// Portfolio Grid
+		vc_map( array(
+			'name'        => esc_html__( 'Portfolio Grid', 'nova' ),
+			'base'        => 'nova_portfolio_grid',
+			'icon'        => 'nova-wpb-icon nova_show_portfolios',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Display portfolio with themes style.', 'nova' ),
+			'params'      => array_merge( array(
+				/*
+				array(
+					'heading'     => esc_html__( 'Layout', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'layout',
+					'value'       => array(
+						esc_html__( 'Grid', 'nova' ) => 'grid'
+					),
+					'std'         => 'grid'
+				),
+				array(
+					'heading'     => esc_html__( 'Style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'grid_style',
+					'value' => array(
+						esc_html__( 'Design 01', 'nova' ) => '1',
+						esc_html__( 'Design 02', 'nova' ) => '2',
+						esc_html__( 'Design 03', 'nova' ) => '3',
+						esc_html__( 'Design 04', 'nova' ) => '4',
+						esc_html__( 'Design 05', 'nova' ) => '5',
+						esc_html__( 'Design 06', 'nova' ) => '6',
+						esc_html__( 'Design 07', 'nova' ) => '7',
+						esc_html__( 'Design 08', 'nova' ) => '8'
+					),
+					'dependency'  => array(
+						'element'   => 'layout',
+						'value'     => 'grid'
+					),
+					'std'         => '1'
+				),
+				array(
+					'heading'     => esc_html__( 'Style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'list_style',
+					'value' => array(
+						esc_html__( 'Classic 01', 'nova' ) => '1',
+						esc_html__( 'Classic 02', 'nova' ) => '2',
+						esc_html__( 'Classic 03', 'nova' ) => '3'
+					),
+					'dependency'  => array(
+						'element'   => 'layout',
+						'value'     => 'list'
+					),
+					'std'         => '1'
+				),
+				*/
+				Novaworks_Shortcodes_Helper::fieldImageSize( array(
+					'value'       => 'nova-portfolio',
+					//'group'       => esc_html__( 'Item Settings', 'nova' )
+				) ),
+
+				array(
+					'heading'     => esc_html__( 'Category In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'category__in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Category Not In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'category__not_in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Post In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'post__in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Post Not In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'post__not_in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Order by', 'nova' ),
+					'description' => sprintf( __( 'Select how to sort retrieved products. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'orderby',
+					'value'       => array(
+						'',
+						esc_html__( 'Date', 'nova' ) => 'date',
+						esc_html__( 'ID', 'nova' ) => 'ID',
+						esc_html__( 'Author', 'nova' ) => 'author',
+						esc_html__( 'Title', 'nova' ) => 'title',
+						esc_html__( 'Modified', 'nova' ) => 'modified',
+						esc_html__( 'Random', 'nova' ) => 'rand',
+						esc_html__( 'Comment count', 'nova' ) => 'comment_count',
+						esc_html__( 'Menu order', 'nova' ) => 'menu_order',
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Sort order', 'nova' ),
+					'description' => sprintf( __( 'Designates the ascending or descending order. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'order',
+					'value'       => array(
+						'',
+						esc_html__( 'Descending', 'nova' ) => 'DESC',
+						esc_html__( 'Ascending', 'nova' ) => 'ASC',
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Total items', 'nova' ),
+					'description' => esc_html__( 'Set max limit for items in grid or enter -1 to display all (limited to 1000).', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'per_page',
+					'value'       => -1,
+					'min'         => -1,
+					'max'         => 1000,
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Paged', 'nova' ),
+					'type'        => 'hidden',
+					'param_name'  => 'paged',
+					'value'       => '1',
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				/*
+				array(
+					'heading'     => esc_html__( 'Item title tag', 'nova' ),
+					'description' => esc_html__( 'Default is H3', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'title_tag',
+					'value'       => array(
+						esc_html__( 'Default', 'nova' ) => 'h3',
+						esc_html__( 'H1', 'nova' ) => 'h1',
+						esc_html__( 'H2', 'nova' ) => 'h2',
+						esc_html__( 'H4', 'nova' ) => 'h4',
+						esc_html__( 'H5', 'nova' ) => 'h5',
+						esc_html__( 'H6', 'nova' ) => 'h6',
+						esc_html__( 'DIV', 'nova' ) => 'div',
+					),
+					'std'         => 'h3',
+					'group'       => esc_html__( 'Item Settings', 'nova' )
+				),
+				*/
+
+				Novaworks_Shortcodes_Helper::fieldColumn( array(
+					'heading'     => esc_html__( 'Items to show', 'nova' ),
+					'dependency'  => array(
+						'element'   => 'layout',
+						'value'     => array( 'grid', 'masonry' )
+					),
+				) ),
+
+				Novaworks_Shortcodes_Helper::getParamItemSpace(),
+
+				array(
+					'heading'     => esc_html__( 'Enable slider', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'enable_carousel',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'dependency'  => array(
+						'element'   => 'layout',
+						'value'     => array( 'grid' )
+					),
+				),
+				array(
+					'heading'     => esc_html__( 'Enable Load More', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'enable_loadmore',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				array(
+					'heading'     => esc_html__( 'Load More Text', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'load_more_text',
+					'value'       => esc_html__( 'Load more', 'nova' ),
+					'dependency'  => array( 'element' => 'enable_loadmore', 'value' => 'yes' ),
+				),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			), Novaworks_Shortcodes_Helper::paramCarouselShortCode( false ) )		
+		) );
+		
+		// Portfolio Masonry
+		vc_map( array(
+			'name'        => esc_html__( 'Portfolio Masonry', 'nova' ),
+			'base'        => 'nova_portfolio_masonry',
+			'icon'        => 'nova-wpb-icon nova_portfolio_masonry',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Display portfolio with themes style.', 'nova' ),
+			'params'      => array(
+				/*
+				array(
+					'heading'     => esc_html__( 'Style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'masonry_style',
+					'value'       => array(
+						esc_html__( 'Design 01', 'nova' ) => '1',
+						esc_html__( 'Design 02', 'nova' ) => '2',
+						esc_html__( 'Design 03', 'nova' ) => '3',
+						esc_html__( 'Design 04', 'nova' ) => '4',
+						esc_html__( 'Design 05', 'nova' ) => '5',
+						esc_html__( 'Design 06', 'nova' ) => '6',
+						esc_html__( 'Design 07', 'nova' ) => '7',
+						esc_html__( 'Design 08', 'nova' ) => '8'
+					),
+					'std'         => '1'
+				),
+
+				array(
+					'heading'     => esc_html__( 'Item Title HTML Tag', 'nova' ),
+					'description' => esc_html__( 'Default is H5', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'title_tag',
+					'value'       => array(
+						esc_html__( 'Default', 'nova' ) => 'h5',
+						esc_html__( 'H1', 'nova' ) => 'h1',
+						esc_html__( 'H2', 'nova' ) => 'h2',
+						esc_html__( 'H3', 'nova' ) => 'h3',
+						esc_html__( 'H4', 'nova' ) => 'h4',
+						esc_html__( 'H6', 'nova' ) => 'h6',
+						esc_html__( 'DIV', 'nova' ) => 'div',
+					),
+					'std'         => 'h5'
+				),
+				*/
+				array(
+					'heading'     => esc_html__( 'Image Size', 'nova' ),
+					'description' => esc_html__( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)).', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'img_size',
+					'value'       => 'full'
+				),
+
+				array(
+					'heading'     => esc_html__( 'Category In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'category__in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Category Not In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'category__not_in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Post In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'post__in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Post Not In:', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'post__not_in',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Order by', 'nova' ),
+					'description' => sprintf( __( 'Select how to sort retrieved products. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'orderby',
+					'value'       => array(
+						esc_html__( 'Date', 'nova' ) => 'date',
+						esc_html__( 'ID', 'nova' ) => 'ID',
+						esc_html__( 'Author', 'nova' ) => 'author',
+						esc_html__( 'Title', 'nova' ) => 'title',
+						esc_html__( 'Modified', 'nova' ) => 'modified',
+						esc_html__( 'Random', 'nova' ) => 'rand',
+						esc_html__( 'Comment count', 'nova' ) => 'comment_count',
+						esc_html__( 'Menu order', 'nova' ) => 'menu_order',
+					),
+					'std'         => 'date',
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Sort order', 'nova' ),
+					'description' => sprintf( __( 'Designates the ascending or descending order. More at %s.', 'nova' ), '<a href="http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters" target="_blank">WordPress codex page</a>' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'order',
+					'std'         => 'desc',
+					'value'       => array(
+						esc_html__( 'Descending', 'nova' ) => 'desc',
+						esc_html__( 'Ascending', 'nova' ) => 'asc',
+					),
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Items per page', 'nova' ),
+					'description' => esc_html__( 'Set max limit for items in grid or enter -1 to display all (limited to 1000).', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'per_page',
+					'value'       => 10,
+					'min'         => -1,
+					'max'         => 1000,
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Paged', 'nova' ),
+					'param_name'  => 'paged',
+					'type'        => 'hidden',
+					'value'       => '1',
+					'group'       => esc_html__( 'Query Settings', 'nova' )
+				),
+
+				array(
+					'heading'     => esc_html__( 'Column Type', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'column_type',
+					'value'       => array(
+						esc_html__( 'Default', 'nova' ) => 'default',
+						//esc_html__( 'Custom', 'nova' ) => 'custom',
+					),
+					'std'         => 'default'
+				),
+				array(
+					'heading'     => esc_html__( 'Responsive Column', 'nova' ),
+					'type'        => 'nova_column',
+					'param_name'  => 'column',
+					'unit'        => '',
+					'media'       => array(
+						'xlg'	=> 1,
+						'lg'	=> 1,
+						'md'	=> 1,
+						'sm'	=> 1,
+						'xs'	=> 1,
+						'mb'	=> 1
+					),
+					'dependency'  => array(
+						'element'   => 'column_type',
+						'value'     => 'default'
+					)
+				),
+
+				array(
+					'heading'     => esc_html__( 'Portfolio Item Width', 'nova' ),
+					'description' => esc_html__( 'Set your portfolio item default width', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'base_item_w',
+					'value'       => 400,
+					'min'         => 100,
+					'max'         => 1920,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'column_type',
+						'value'     => 'custom'
+					)
+				),
+
+				array(
+					'heading'     => esc_html__( 'Portfolio Item Height', 'nova' ),
+					'description' => esc_html__( 'Set your portfolio item default height', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'base_item_h',
+					'value'       => 400,
+					'min'         => 100,
+					'max'         => 1920,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'column_type',
+						'value'     => 'custom'
+					)
+				),
+
+				array(
+					'heading'     => esc_html__( 'Mobile Column', 'nova' ),
+					'type'        => 'nova_column',
+					'param_name'  => 'mb_column',
+					'unit'        => '',
+					'media'       => array(
+						'md'	=> 1,
+						'sm'	=> 1,
+						'xs'	=> 1,
+						'mb'	=> 1
+					),
+					'dependency'  => array(
+						'element'   => 'column_type',
+						'value'     => 'custom'
+					)
+				),
+
+				array(
+					'heading'     => esc_html__( 'Enable Custom Item Setting', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'custom_item_size',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'dependency'  => array(
+						'element'   => 'column_type',
+						'value'     => 'custom'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Item Sizes', 'nova' ),
+					'type'        => 'param_group',
+					'param_name'  => 'item_sizes',
+					'params'      => array(
+						array(
+							'heading'     => esc_html__( 'Width', 'nova' ),
+							'description' => esc_html__( 'it will occupy x width of base item width, example: this item will be occupy 2x width of base width you need entered 2', 'nova' ),
+							'type'        => 'dropdown',
+							'param_name'  => 'w',
+							'admin_label' => true,
+							'value'       => array(
+								esc_html__( '1/2x width', 'nova' ) => '0.5',
+								esc_html__( '1x width', 'nova' ) => '1',
+								esc_html__( '1.5x width', 'nova' ) => '1.5',
+								esc_html__( '2x width', 'nova' ) => '2',
+								esc_html__( '2.5x width', 'nova' ) => '2.5',
+								esc_html__( '3x width', 'nova' ) => '3',
+								esc_html__( '3.5x width', 'nova' ) => '3.5',
+								esc_html__( '4x width', 'nova' ) => '4'
+							),
+							'std'         => '1'
+						),
+
+						array(
+							'heading'     => esc_html__( 'Height', 'nova' ),
+							'description' => esc_html__( 'it will occupy x height of base item height, example: this item will be occupy 2x height of base height you need entered 2', 'nova' ),
+							'type'        => 'dropdown',
+							'param_name'  => 'h',
+							'admin_label' => true,
+							'value'       => array(
+								esc_html__( '1/2x height', 'nova' ) => '0.5',
+								esc_html__( '1x height', 'nova' ) => '1',
+								esc_html__( '1.5x height', 'nova' ) => '1.5',
+								esc_html__( '2x height', 'nova' ) => '2',
+								esc_html__( '2.5x height', 'nova' ) => '2.5',
+								esc_html__( '3x height', 'nova' ) => '3',
+								esc_html__( '3.5x height', 'nova' ) => '3.5',
+								esc_html__( '4x height', 'nova' ) => '4'
+							),
+							'std'         => '1'
+						),
+
+						array(
+							'heading'     => esc_html__( 'Custom Image Size', 'nova' ),
+							'description' => esc_html__( 'leave blank to inherit from parent settings', 'nova' ),
+							'type'        => 'textfield',
+							'param_name'  => 's'
+						),
+					),
+					'dependency'  => array(
+						'element'   => 'custom_item_size',
+						'value'     => 'yes'
+					)
+				),
+
+				Novaworks_Shortcodes_Helper::getParamItemSpace(),
+
+				array(
+					'heading'     => esc_html__( 'Enable Skill Filter', 'nova' ),
+					'param_name'  => 'enable_skill_filter',
+					'type'        => 'checkbox',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				array(
+					'heading'     => esc_html__( 'Skill Filter', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'filters',
+					'settings'    => array(
+						'unique_values'  => true,
+						'multiple'       => true,
+						'sortable'       => true,
+						'groups'         => false,
+						'min_length'     => 0,
+						'auto_focus'     => true,
+						'display_inline' => true,
+					),
+					'dependency'  => array(
+						'element'   => 'enable_skill_filter',
+						'value'     => 'yes'
+					)
+				),
+				/*
+				array(
+					'heading'     => esc_html__( 'Filter style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'filter_style',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+						esc_html__( 'Style 03', 'nova' ) => '3'
+					),
+					'std'         => '1',
+					'dependency'  => array(
+						'element'   => 'enable_skill_filter',
+						'value'     => 'yes'
+					)
+				),
+				*/
+				array(
+					'heading'     => esc_html__( 'Enable Load More', 'nova' ),
+					'param_name'  => 'enable_loadmore',
+					'type'        => 'checkbox',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				array(
+					'heading'     => esc_html__( 'Load More Text', 'nova' ),
+					'param_name'  => 'load_more_text',
+					'type'        => 'textfield',
+					'value'       => esc_html__( 'Load more', 'nova' ),
+					'dependency'  => array(
+						'element'   => 'enable_loadmore',
+						'value'     => 'yes'
+					)
+				),
+
+				array(
+					'heading'     => esc_html__( 'Extra Class name', 'nova' ),
+					'description' => esc_html__( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'el_class'
 				)
 			)		
 		) );

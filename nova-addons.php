@@ -73,6 +73,8 @@ class Nova_Addons {
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-shortcodes.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-banner.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-banner-grid.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-carousel.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-timeline.php' );
 		WPBakeryShortCode_Nova_Row::get_instance();
 	}
 	/**
@@ -93,8 +95,8 @@ class Nova_Addons {
 		add_action( 'init', array( $shortcode_extension, 'load_dependencies' ), 8 );
 		add_action( 'init', array( $shortcode_extension, 'remove_old_woocommerce_shortcode' ), 20 );
 
-		add_action( 'wp_ajax_la_get_shortcode_loader_by_ajax', array( $shortcode_extension, 'ajax_render_shortcode' ) );
-		add_action( 'wp_ajax_nopriv_la_get_shortcode_loader_by_ajax', array( $shortcode_extension, 'ajax_render_shortcode' ) );
+		add_action( 'wp_ajax_nova_get_shortcode_loader_by_ajax', array( $shortcode_extension, 'ajax_render_shortcode' ) );
+		add_action( 'wp_ajax_nopriv_nova_get_shortcode_loader_by_ajax', array( $shortcode_extension, 'ajax_render_shortcode' ) );
 
 		add_action( 'vc_after_init', array( $shortcode_extension, 'vc_after_init' ) );
 		add_action( 'vc_param_animation_style_list', array( $shortcode_extension, 'vc_param_animation_style_list' ) );

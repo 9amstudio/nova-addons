@@ -18,34 +18,34 @@
 
         $('ul.customize-pane-child').each(function(){
             var $panel = $(this);
-            if($panel.find('.la-element .la-customizer-section-large').length){
+            if($panel.find('.nova-element .nova-customizer-section-large').length){
                 var $control = $('li[aria-owns="'+ $panel.attr('id') +'"]');
-                $control.addClass('la-control-large-section');
+                $control.addClass('nova-control-large-section');
             }
         });
 
         $(document)
             .on('click', '.accordion-section-title', function(e){
-                if($(this).parent().hasClass('la-control-large-section')){
-                    $('body').addClass('la-body-customize');
+                if($(this).parent().hasClass('nova-control-large-section')){
+                    $('body').addClass('nova-body-customize');
                 }
             })
             .on('click', '.customize-section-back', function(e){
-                if($('body').addClass('la-body-customize')){
-                    $('body').removeClass('la-body-customize');
+                if($('body').addClass('nova-body-customize')){
+                    $('body').removeClass('nova-body-customize');
                 }
             })
-            .on('change', '.la-groups [data-sub-depend-id]', function(e){
+            .on('change', '.nova-groups [data-sub-depend-id]', function(e){
                 self.fieldGroupSave( $(this) );
             })
-            .on('change', '.la-parent-fields .la-child-field', function(e){
+            .on('change', '.nova-parent-fields .nova-child-field', function(e){
                 self.fieldTypographySave( $(this) );
             });
 
-        $('.la-groups').on('LA_FRAMEWORK_field_groups:sorted', function(e){
+        $('.nova-groups').on('NOVA_FRAMEWORK_field_groups:sorted', function(e){
             var $field_groups = $(this),
-                _id = $field_groups.attr('data-la-customize-setting-link'),
-                _key = $field_groups.attr('data-la-customize-setting-key');
+                _id = $field_groups.attr('data-nova-customize-setting-link'),
+                _key = $field_groups.attr('data-nova-customize-setting-key');
 
             setTimeout(function(){
                 var _json_data = $field_groups.find(':input').serializeJSON();
@@ -62,20 +62,20 @@
             }, 300);
         });
 
-        $('.la-field-sorter').on('LA_FRAMEWORK_field_sorter:update', function(e){
-            var $fields = $(this).find('.la__sorter-fields'),
-                _id     = $fields.attr('data-la-customize-setting-link'),
-                _key    = $fields.attr('data-la-customize-setting-key'),
+        $('.nova-field-sorter').on('NOVA_FRAMEWORK_field_sorter:update', function(e){
+            var $fields = $(this).find('.nova__sorter-fields'),
+                _id     = $fields.attr('data-nova-customize-setting-link'),
+                _key    = $fields.attr('data-nova-customize-setting-key'),
                 $control = api.instance( _id );
 
             var _enabled = {},
                 _disabled = {};
 
-            $fields.find('.la-enabled input').each(function(){
+            $fields.find('.nova-enabled input').each(function(){
                 _enabled[$(this).data('tmp-id')] = $(this).val();
             });
 
-            $fields.find('.la-disabled input').each(function(){
+            $fields.find('.nova-disabled input').each(function(){
                 _disabled[$(this).data('tmp-id')] = $(this).val();
             });
 
@@ -98,9 +98,9 @@
     };
 
     self.fieldWpEditor = function(){
-        $('.la-field-wp_editor').each(function(){
+        $('.nova-field-wp_editor').each(function(){
             var $this = $(this),
-                control_id = $this.find('.la-parent-wp-editor-fields').attr('data-la-customize-setting-link'),
+                control_id = $this.find('.nova-parent-wp-editor-fields').attr('data-nova-customize-setting-link'),
                 $textarea = $this.find('textarea.wp-editor-area'),
                 editor_id = $textarea.attr('id'),
                 setChange,
@@ -128,7 +128,7 @@
             } );
         });
 
-        $('.la-field-code-editor-texarea.has_init_code').each(function(){
+        $('.nova-field-code-editor-texarea.has_init_code').each(function(){
             var _that = $(this),
                 _codeMirrorInstance = _that.data('CodeMirrorInstance');
 
@@ -142,11 +142,11 @@
     };
 
     self.fieldTypographySave = function( $parent ){
-        if(!$parent.hasClass('la-parent-fields')){
-            $parent = $parent.closest('.la-parent-fields');
+        if(!$parent.hasClass('nova-parent-fields')){
+            $parent = $parent.closest('.nova-parent-fields');
         }
-        var $id = $parent.attr('data-la-customize-setting-link'),
-            $key = $parent.attr('data-la-customize-setting-key');
+        var $id = $parent.attr('data-nova-customize-setting-link'),
+            $key = $parent.attr('data-nova-customize-setting-key');
         var $nData = $parent.find(':input').serializeJSON();
         $.each(
             $nData, function( $k, $v ) {
@@ -161,11 +161,11 @@
     };
 
     self.fieldGroupSave = function( $parent ){
-        if(!$parent.hasClass('la-groups')){
-            $parent = $parent.closest('.la-groups');
+        if(!$parent.hasClass('nova-groups')){
+            $parent = $parent.closest('.nova-groups');
         }
-        var $id = $parent.attr('data-la-customize-setting-link'),
-            $key = $parent.attr('data-la-customize-setting-key');
+        var $id = $parent.attr('data-nova-customize-setting-link'),
+            $key = $parent.attr('data-nova-customize-setting-key');
         var $nData = $parent.find(':input').serializeJSON();
         $.each(
             $nData, function( $k, $v ) {

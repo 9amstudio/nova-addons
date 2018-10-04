@@ -855,18 +855,19 @@ class Novaworks_Shortcodes_Helper {
                 ),
                 'group'      	=> esc_html__( 'Navigation' )
             ),
+			/*
             array(
-                'type'       => 'la_slides_navigation',
+                'type'       => 'nova_slides_navigation',
                 'heading'    => esc_html__( "Select icon for 'Next Arrow'", 'nova' ),
                 'param_name' => 'next_icon',
-                'value'      => 'dlicon-arrow-right1',
+                'value'      => 'right-arrow',
                 'dependency' => array(
                     'element' => 'arrows', 'value' => array( 'yes' )
                 ),
                 'group'      	=> esc_html__( 'Navigation' )
             ),
             array(
-                'type'       => 'la_slides_navigation',
+                'type'       => 'nova_slides_navigation',
                 'heading'    => esc_html__( "Select icon for 'Previous Arrow'", 'nova' ),
                 'param_name' => 'prev_icon',
                 'value'      => 'dlicon-arrow-left1',
@@ -875,6 +876,7 @@ class Novaworks_Shortcodes_Helper {
                 ),
                 'group'      	=> esc_html__( 'Navigation' )
             ),
+			*/
 
             array(
                 'type' 			=> 'textfield',
@@ -909,8 +911,9 @@ class Novaworks_Shortcodes_Helper {
                 ),
                 'group'      	=> esc_html__( 'Navigation' )
             ),
+			/*
             array(
-                'type'       => 'la_slides_navigation',
+                'type'       => 'nova_slides_navigation',
                 'heading'    => esc_html__( "Select icon for 'Navigation Dots'", 'nova' ),
                 'param_name' => 'dots_icon',
                 'value'      => 'dlicon-dot7',
@@ -919,6 +922,7 @@ class Novaworks_Shortcodes_Helper {
                 ),
                 'group'      	=> esc_html__( 'Navigation' )
             ),
+			*/
             array(
                 'type' 			=> 'checkbox',
                 'heading' 		=> esc_html__( 'Draggable Effect', 'nova' ),
@@ -1090,8 +1094,8 @@ class Novaworks_Shortcodes_Helper {
             'border_size'        => '2',
             'arrow_color'        => '#333333',
             'arrow_size'         => '24',
-            'next_icon'          => 'dlicon-arrow-right1',
-            'prev_icon'          => 'dlicon-arrow-left1',
+            'next_icon'          => 'right-arrow',
+            'prev_icon'          => 'left-arrow',
             'custom_nav'         => '',
             'dots'               => '',
             'dots_color'         => '#333333',
@@ -1167,16 +1171,16 @@ class Novaworks_Shortcodes_Helper {
             $setting_obj['rtl'] = true;
             if ( $arrows == 'yes' ) {
                 $setting_obj['arrows'] = true;
-                $setting_obj['nextArrow'] = '<button type="button" style="' . esc_attr( $arr_style ) . '" class="slick-next ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $prev_icon ) . '"></use></svg></button>';
-                $setting_obj['prevArrow'] = '<button type="button" style="' . esc_attr( $arr_style ) . '" class="slick-prev ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $next_icon ) . '"></use></svg></button>';
+                $setting_obj['nextArrow'] = '<div style="' . esc_attr( $arr_style ) . '" class="slick-next ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $prev_icon ) . '"></use></svg></div>';
+                $setting_obj['prevArrow'] = '<div style="' . esc_attr( $arr_style ) . '" class="slick-prev ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $next_icon ) . '"></use></svg></div>';
             } else {
                 $setting_obj['false'] = false;
             }
         } else {
             if ( $arrows == 'yes' ) {
                 $setting_obj['arrows'] = true;
-                $setting_obj['nextArrow'] = '<button type="button" style="' . esc_attr( $arr_style ) . '" class="slick-next ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $next_icon ) . '"></use></svg></button>';
-                $setting_obj['prevArrow'] = '<button type="button" style="' . esc_attr( $arr_style ) . '" class="slick-prev ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $prev_icon ) . '"></use></svg></button>';
+                $setting_obj['nextArrow'] = '<div style="' . esc_attr( $arr_style ) . '" class="slick-next ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $next_icon ) . '"></use></svg></div>';
+                $setting_obj['prevArrow'] = '<div style="' . esc_attr( $arr_style ) . '" class="slick-prev ' . esc_attr( $arrow_style ) . '"><svg><use xlink:href="#' . esc_attr( $prev_icon ) . '"></use></svg></div>';
             } else {
                 $setting_obj['arrows'] = false;
             }
@@ -1269,12 +1273,10 @@ class Novaworks_Shortcodes_Helper {
         }
 
         if ( $dots == 'yes' ) {
-            if ( $dots_icon !== 'off' && $dots_icon !== '' ) {
-                if ( $dots_color !== 'off' && $dots_color !== '' ) {
-                    $custom_dots = ' style="color:' . esc_attr( $dots_color ) . ';"';
-                }
-                $wrap_data .= 'data-slick_customPaging="' . esc_attr( '<span' . $custom_dots . '><svg><use xlink:href="#' . $dots_icon . '"></use></svg></span>' ) . '" ';
-            }
+			if ( $dots_color !== 'off' && $dots_color !== '' ) {
+				$custom_dots = ' style="background-color:' . esc_attr( $dots_color ) . ';"';
+			}
+			$wrap_data .= 'data-slick_customPaging="' . esc_attr( '<span' . $custom_dots . '></span>' ) . '" ';
         }
 
         $wrap_data .= 'data-slider_config="' . esc_attr( wp_json_encode( $setting_obj ) ) . '"';

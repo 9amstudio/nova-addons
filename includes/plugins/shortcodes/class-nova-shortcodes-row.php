@@ -62,7 +62,7 @@ class Novaworks_Shortcodes_Row {
             return $output;
         }
 
-        $output = '<div class="js-el la_row_grad" data-la_component="GradientBackground" data-grad="' . $bg_grad . '" ></div>';
+        $output = '<div class="js-el nova_row_grad" data-nova_component="GradientBackground" data-grad="' . $bg_grad . '" ></div>';
         return $output;
     }
 

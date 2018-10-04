@@ -10,7 +10,7 @@ $query_settings = wp_json_encode( array(
 ) );
 ?>
 <div class="elm-ajax-container-wrapper clearfix">
-	<div data-la_component="AjaxLoadShortCode" class="js-el elm-ajax-loader" data-query-settings="<?php echo esc_attr( $query_settings ); ?>" data-request="<?php echo esc_attr( admin_url( 'admin-ajax.php', 'relative' ) ); ?>">
+	<div data-nova_component="AjaxLoadShortCode" class="js-el elm-ajax-loader" data-query-settings="<?php echo esc_attr( $query_settings ); ?>" data-request="<?php echo esc_attr( admin_url( 'admin-ajax.php', 'relative' ) ); ?>">
 		<?php echo Novaworks_Shortcodes_Helper::getLoadingIcon(); ?>
 	</div>
 </div>

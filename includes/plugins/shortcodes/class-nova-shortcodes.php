@@ -11,12 +11,7 @@ class Novaworks_Shortcodes {
     public static $instance = null;
 
     private $_shortcodes = array(
-        'la_show_portfolios',
-        'la_portfolio_masonry',
-        'la_portfolio_info',
-        'la_banner',
-        'la_instagram_feed',
-        'la_carousel'
+        'la_portfolio_masonry'
     );
 
     private $_woo_shortcodes = array();
@@ -45,17 +40,17 @@ class Novaworks_Shortcodes {
 
     public function create_shortcode() {
 
-        add_shortcode( 'la_dropcap',     array( $this, 'add_dropcap' ) );
-        add_shortcode( 'la_quote',       array( $this, 'add_quote_shortcode' ) );
-        add_shortcode( 'la_text',        array( $this, 'add_text_shortcode' ) );
-        add_shortcode( 'wp_nav_menu',    array( $this, 'add_navmenu' ) );
+        add_shortcode( 'nova_dropcap', array( $this, 'add_dropcap' ) );
+        add_shortcode( 'nova_quote', array( $this, 'add_quote_shortcode' ) );
+        add_shortcode( 'nova_text', array( $this, 'add_text_shortcode' ) );
+        add_shortcode( 'wp_nav_menu', array( $this, 'add_navmenu' ) );
 
-        foreach ($this->_shortcodes as $shortcode) {
+        foreach ( $this->_shortcodes as $shortcode ) {
             add_shortcode( $shortcode, array( $this, 'auto_detect_shortcode_callback' ) );
         }
         if( class_exists( 'WooCommerce' ) ) {
-            add_shortcode( 'la_wishlist', array( $this, 'add_wishlist' ) );
-            add_shortcode( 'la_compare', array( $this, 'add_compare' ) );
+            add_shortcode( 'nova_wishlist', array( $this, 'add_wishlist' ) );
+            add_shortcode( 'nova_compare', array( $this, 'add_compare' ) );
             foreach ( $this->_woo_shortcodes as $shortcode ) {
                 add_filter( "{$shortcode}_shortcode_tag", array( $this, 'modify_woocommerce_shortcodes' ) );
                 add_shortcode( $shortcode, array( $this, 'auto_detect_shortcode_callback' ) );
@@ -80,12 +75,12 @@ class Novaworks_Shortcodes {
             }
         }
 
-        add_filter('vc_edit_form_fields_after_render', array( $this, 'add_js_to_edit_vc_form') );
+        add_filter( 'vc_edit_form_fields_after_render', array( $this, 'add_js_to_edit_vc_form' ) );
         Novaworks_Shortcodes_Param::get_instance();
     }
 
     public function formatting( $content ) {
-        $shortcodes = array_merge( $this->_shortcodes, $this->_woo_shortcodes, array( 'la_dropcap', 'la_quote', 'la_text' ) );
+        $shortcodes = array_merge( $this->_shortcodes, $this->_woo_shortcodes, array( 'nova_dropcap', 'nova_quote', 'nova_text' ) );
         $block = join( "|", $shortcodes );
         $content = preg_replace( "/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", "[$2$3]", $content );
         $content = preg_replace( "/(<p>)?\[\/($block)](<\/p>|<br \/>)/", "[/$2]", $content );
@@ -105,13 +100,13 @@ class Novaworks_Shortcodes {
 
     public function add_wishlist( $atts, $content = null ) {
         ob_start();
-        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_wishlist' );
+        echo $this->auto_detect_shortcode_callback( $atts, $content, 'nova_wishlist' );
         return ob_get_clean();
     }
 
     public function add_compare( $atts, $content = null ) {
         ob_start();
-        echo $this->auto_detect_shortcode_callback( $atts, $content, 'la_compare' );
+        echo $this->auto_detect_shortcode_callback( $atts, $content, 'nova_compare' );
         return ob_get_clean();
     }
 
@@ -124,12 +119,12 @@ class Novaworks_Shortcodes {
 
         ob_start();
 
-        ?><span class="la-dropcap style-<?php echo esc_attr( $style );?>" style="color:<?php echo esc_attr( $color ); ?>"><?php echo wp_strip_all_tags( $content, true ); ?></span><?php
+        ?><span class="nova-dropcap style-<?php echo esc_attr( $style );?>" style="color:<?php echo esc_attr( $color ); ?>"><?php echo wp_strip_all_tags( $content, true ); ?></span><?php
 
         return ob_get_clean();
     }
 
-    public function add_quote_shortcode( $atts, $content = null ){
+    public function add_quote_shortcode( $atts, $content = null ) {
         $output = $style = $author = $link = $role = $el_class = '';
         extract( shortcode_atts( array(
             'style' => 1,
@@ -139,10 +134,10 @@ class Novaworks_Shortcodes {
             'el_class'  => ''
         ), $atts ) );
 
-        if( empty( $content ) ){
+        if( empty( $content ) ) {
             return '';
         }
-        $output .= '<blockquote class="la-blockquote style-' . esc_attr( $style ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"';
+        $output .= '<blockquote class="nova-blockquote style-' . esc_attr( $style ) . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"';
         if( ! empty( $link ) ) {
             $output .= ' cite="' . esc_url( $link ) . '"';
         }
@@ -183,7 +178,7 @@ class Novaworks_Shortcodes {
         if( empty( $content ) ) {
             return $output;
         }
-        $unique_id = uniqid( 'la_text_' );
+        $unique_id = uniqid( 'nova_text_' );
         if( ! empty( $color ) ) {
             $adv_atts = 'style="color:';
             $adv_atts .= esc_attr( $color );
@@ -198,7 +193,7 @@ class Novaworks_Shortcodes {
                 )
             ) );
         }
-        $output = '<div id="' . $unique_id . '" class="js-el la-text ' . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"' . $adv_atts . '>';
+        $output = '<div id="' . $unique_id . '" class="js-el nova-text ' . Novaworks_Shortcodes_Helper::getExtraClass( $el_class ) . '"' . $adv_atts . '>';
         $output .= $content;
         $output .= '</div>';
         return $output;
@@ -207,10 +202,10 @@ class Novaworks_Shortcodes {
     public function add_js_to_edit_vc_form() {
         echo '<script type="text/javascript">';
         if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'vc_section' ) {
-            echo 'LaVCAdminEditForm("vc_section");';
+            echo 'NovaVCAdminEditForm("vc_section");';
         }
         if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'vc_row' && ! empty( $_POST['parent_tag'] ) && $_POST['parent_tag'] == 'vc_section' ) {
-            echo 'LaVCAdminEditForm("vc_row");';
+            echo 'NovaVCAdminEditForm("vc_row");';
         }
         if( ! empty( $_POST['tag'] ) && $_POST['tag'] == 'nova_image_with_hotspots' ){
             echo 'NovaVCAdminEditForm("nova_image_with_hotspots");';
@@ -231,9 +226,9 @@ class Novaworks_Shortcodes {
         $args = array(
             'menu' => $menu_id
         );
-        if(!empty($container_class)){
+        if( ! empty( $container_class ) ) {
             $args['container_class'] = $container_class;
-        }else{
+        } else {
             $args['container'] = false;
         }
         ob_start();
@@ -243,8 +238,8 @@ class Novaworks_Shortcodes {
 
     public function auto_detect_shortcode_callback( $atts, $content = null, $shortcode_tag ) {
 
-        if(!empty($atts['enable_ajax_loader'])){
-            unset($atts['enable_ajax_loader']);
+        if( ! empty( $atts['enable_ajax_loader'] ) ) {
+            unset( $atts['enable_ajax_loader'] );
             return self::get_template(
                 'ajax_wrapper',
                 array(
@@ -410,7 +405,7 @@ class Novaworks_Shortcodes {
         $json_file = NOVA_ADDONS_DIR . 'public/fonts/font-nucleo-glyph-object.json';
         if( file_exists( $json_file ) ) {
             $file_data = @file_get_contents( $json_file );
-            if( !is_wp_error( $file_data ) ) {
+            if( ! is_wp_error( $file_data ) ) {
                 $file_data = json_decode( $file_data, true);
                 return array_merge( $icons, $file_data );
             }

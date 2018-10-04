@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Products shortcode
  *
- * @author   La-Studio
+ * @author   Novaworks
  * @category Shortcodes
- * @package  Novaworks-Core/Shortcodes
+ * @package  Nova-addons/Shortcodes
  * @version  3.3.0
  */
 
@@ -112,8 +112,8 @@ class Novaworks_Shortcodes_WooCommerce {
             'border_size'              => '2',
             'arrow_color'              => '#333333',
             'arrow_size'               => '24',
-            'next_icon'                => 'dlicon-arrow-right1',
-            'prev_icon'                => 'dlicon-arrow-left1',
+            'next_icon'                => 'right-arrow',
+            'prev_icon'                => 'left-arrow',
             'custom_nav'               => '',
             'dots'                     => '',
             'dots_color'               => '#333333',
@@ -624,7 +624,7 @@ class Novaworks_Shortcodes_WooCommerce {
         $unique_id                  = $this->get_wrapper_shortcode_id();
         $wrapper_classes            = $this->get_wrapper_classes();
         $columns                    = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['columns'] );
-        $layout                     = !empty($this->attributes['layout']) ? $this->attributes['layout'] : 'grid';
+        $layout                     = ! empty( $this->attributes['layout'] ) ? $this->attributes['layout'] : 'grid';
         $style                      = $this->attributes[$layout . '_style'];
         $item_space                 = $this->attributes['item_space'];
 
@@ -638,9 +638,9 @@ class Novaworks_Shortcodes_WooCommerce {
         }
         if( $layout == 'grid' ){
             if( 'yes' == $this->attributes['enable_carousel'] ) {
-                $container_attr = ' data-la_component="AutoCarousel" ';
+                $container_attr = ' data-nova_component="AutoCarousel" ';
                 $container_attr .= Novaworks_Shortcodes_Helper::getParamCarouselShortCode( $this->origin_attributes );
-                $loopCssClass[] = 'js-el la-slick-slider';
+                $loopCssClass[] = 'js-el nova-slick-slider';
             }
         }
 
@@ -672,15 +672,15 @@ class Novaworks_Shortcodes_WooCommerce {
 
             if( $layout == 'masonry' ) {
 
-                $loopCssClass[] = 'js-el la-isotope-container';
+                $loopCssClass[] = 'js-el nova-isotope-container';
                 $loopCssClass[] = 'prods_masonry';
                 $loopCssClass[] = 'masonry__column-type-'. $this->attributes['column_type'];
                 if( 'custom' != $this->attributes['column_type'] ) {
-                    $container_attr = ' data-la_component="DefaultMasonry"';
+                    $container_attr = ' data-nova_component="DefaultMasonry"';
                 }
                 else {
                     $mb_columns = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $this->attributes['mb_columns'] );
-                    $container_attr = ' data-la_component="AdvancedMasonry"';
+                    $container_attr = ' data-nova_component="AdvancedMasonry"';
                     $container_attr .= ' data-item-width="' . ( $this->attributes['base_item_w'] ? intval($this->attributes['base_item_w']) : 300 ) . '"';
                     $container_attr .= ' data-item-height="' . ( $this->attributes['base_item_h'] ? intval($this->attributes['base_item_h']) : 300 ) . '"';
                     $container_attr .= ' data-md-col="' . $mb_columns['md'] . '"';
@@ -706,7 +706,7 @@ class Novaworks_Shortcodes_WooCommerce {
                 $globalWcLoopTmp['prods_masonry'] = true;
 
                 $container_attr .= ' data-item_selector=".product_item"';
-                $container_attr .= ' data-la-effect="sequencefade"';
+                $container_attr .= ' data-nova-effect="sequencefade"';
             }
         }
         else{
@@ -784,10 +784,10 @@ class Novaworks_Shortcodes_WooCommerce {
             ) {
 
                 if( $this->attributes['display_style'] == 'pagination' ) {
-                    $__url = add_query_arg( 'la_paged', 999999999, add_query_arg( null,null ) );
+                    $__url = add_query_arg( 'nova_paged', 999999999, add_query_arg( null, null ) );
                     $_paginate_links = paginate_links( array(
                         'base'         => esc_url_raw( str_replace( 999999999, '%#%', $__url ) ),
-                        'format'       => '?la_paged=%#%',
+                        'format'       => '?nova_paged=%#%',
                         'add_args'     => '',
                         'current'      => max( 1, $products->current_page ),
                         'total'        => $products->total_pages,
@@ -796,7 +796,7 @@ class Novaworks_Shortcodes_WooCommerce {
                         'type'         => 'list'
                     ) );
 
-                    echo sprintf( '<div class="elm-pagination-ajax" data-query-settings="%s" data-request="%s" data-append-type="replace" data-paged="%s" data-parent-container="#%s" data-container="#%s ul.products" data-item-class=".product_item"><div class="la-loading-icon">%s</div><div class="la-pagination">%s</div></div>',
+                    echo sprintf( '<div class="elm-pagination-ajax" data-query-settings="%s" data-request="%s" data-append-type="replace" data-paged="%s" data-parent-container="#%s" data-container="#%s ul.products" data-item-class=".product_item"><div class="nova-loading-icon">%s</div><div class="nova-pagination">%s</div></div>',
                         esc_attr( wp_json_encode( array(
                             'tag' => $this->type,
                             'atts' => $this->origin_attributes
