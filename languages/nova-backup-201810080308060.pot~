@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 03:08+0000\n"
+"POT-Creation-Date: 2018-10-03 03:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: nova-addons.php:121
+#: nova-addons.php:119
 #, php-format
 msgid ""
 "<strong>%s</strong> requires <strong><a href=\"http://bit.ly/vcomposer\" "
@@ -38,11 +38,11 @@ msgstr ""
 msgid "Error! Can not load json file."
 msgstr ""
 
-#: admin/class-nova-admin.php:327 public/nova-functions.php:328
+#: admin/class-nova-admin.php:327
 msgid "Query is empty ..."
 msgstr ""
 
-#: admin/class-nova-admin.php:339 public/nova-functions.php:344
+#: admin/class-nova-admin.php:339
 msgid "Not found"
 msgstr ""
 
@@ -59,9 +59,7 @@ msgstr ""
 #: includes/class-nova-vc.php:297 includes/class-nova-vc.php:351
 #: includes/class-nova-vc.php:837 includes/class-nova-vc.php:1267
 #: includes/class-nova-vc.php:1316 includes/class-nova-vc.php:1429
-#: includes/class-nova-vc.php:2728 includes/class-nova-vc.php:3295
-#: includes/class-nova-vc.php:3305 includes/class-nova-vc.php:3557
-#: includes/class-nova-vc.php:3625 includes/class-nova-vc.php:3666
+#: includes/class-nova-vc.php:3249 includes/class-nova-vc.php:3259
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:303
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:729
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:753
@@ -73,6 +71,11 @@ msgstr ""
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:993
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:1004
 #: includes/plugins/shortcodes/class-nova-shortcodes-row.php:30
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:121
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:128
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:310
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:197
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:207
 msgid "Yes"
 msgstr ""
 
@@ -106,10 +109,10 @@ msgstr ""
 #: includes/class-nova-vc.php:2171 includes/class-nova-vc.php:2263
 #: includes/class-nova-vc.php:2319 includes/class-nova-vc.php:2416
 #: includes/class-nova-vc.php:2469 includes/class-nova-vc.php:2543
-#: includes/class-nova-vc.php:2590 includes/class-nova-vc.php:2719
-#: includes/class-nova-vc.php:2859 includes/class-nova-vc.php:2874
-#: includes/class-nova-vc.php:2916 includes/class-nova-vc.php:2986
-#: includes/class-nova-vc.php:3098 includes/class-nova-vc.php:3323
+#: includes/class-nova-vc.php:2590 includes/class-nova-vc.php:2706
+#: includes/class-nova-vc.php:2822 includes/class-nova-vc.php:2837
+#: includes/class-nova-vc.php:2879 includes/class-nova-vc.php:2943
+#: includes/class-nova-vc.php:3055
 msgid "Nova"
 msgstr ""
 
@@ -201,7 +204,7 @@ msgstr ""
 #: includes/class-nova-vc.php:1186 includes/class-nova-vc.php:1242
 #: includes/class-nova-vc.php:1270 includes/class-nova-vc.php:1291
 #: includes/class-nova-vc.php:1319 includes/class-nova-vc.php:1386
-#: includes/class-nova-vc.php:1435 includes/class-nova-vc.php:2157
+#: includes/class-nova-vc.php:1435 includes/class-nova-vc.php:2158
 #: includes/class-nova-vc.php:2249 includes/class-nova-vc.php:2305
 #: includes/class-nova-vc.php:2455 includes/class-nova-vc.php:2529
 #: includes/class-nova-vc.php:2576 includes/class-nova-vc.php:2656
@@ -216,7 +219,7 @@ msgstr ""
 #: includes/class-nova-vc.php:1187 includes/class-nova-vc.php:1243
 #: includes/class-nova-vc.php:1271 includes/class-nova-vc.php:1292
 #: includes/class-nova-vc.php:1320 includes/class-nova-vc.php:1387
-#: includes/class-nova-vc.php:1437 includes/class-nova-vc.php:2158
+#: includes/class-nova-vc.php:1437 includes/class-nova-vc.php:2160
 #: includes/class-nova-vc.php:2250 includes/class-nova-vc.php:2306
 #: includes/class-nova-vc.php:2456 includes/class-nova-vc.php:2530
 #: includes/class-nova-vc.php:2577 includes/class-nova-vc.php:2657
@@ -338,22 +341,26 @@ msgid "Countdown digital clock"
 msgstr ""
 
 #: includes/class-nova-vc.php:373 includes/class-nova-vc.php:710
-#: includes/class-nova-vc.php:2754 includes/class-nova-vc.php:2785
-#: includes/class-nova-vc.php:2799 includes/class-nova-vc.php:2812
-#: includes/class-nova-vc.php:2825 includes/class-nova-vc.php:2839
-#: includes/class-nova-vc.php:2849
+#: includes/class-nova-vc.php:2731 includes/class-nova-vc.php:2762
+#: includes/class-nova-vc.php:2775 includes/class-nova-vc.php:2788
+#: includes/class-nova-vc.php:2802 includes/class-nova-vc.php:2812
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:20
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:40
 msgid "Style"
 msgstr ""
 
-#: includes/class-nova-vc.php:377 includes/class-nova-vc.php:2886
+#: includes/class-nova-vc.php:377 includes/class-nova-vc.php:2849
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:164
 msgid "Style 01"
 msgstr ""
 
-#: includes/class-nova-vc.php:378 includes/class-nova-vc.php:2887
+#: includes/class-nova-vc.php:378 includes/class-nova-vc.php:2850
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:165
 msgid "Style 02"
 msgstr ""
 
 #: includes/class-nova-vc.php:379
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:166
 msgid "Style 03"
 msgstr ""
 
@@ -361,8 +368,9 @@ msgstr ""
 msgid "Style 04"
 msgstr ""
 
-#: includes/class-nova-vc.php:384 includes/class-nova-vc.php:3219
-#: includes/class-nova-vc.php:3435
+#: includes/class-nova-vc.php:384 includes/class-nova-vc.php:3170
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:75
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:119
 msgid "Date"
 msgstr ""
 
@@ -382,8 +390,8 @@ msgstr ""
 #: includes/class-nova-vc.php:812 includes/class-nova-vc.php:1004
 #: includes/class-nova-vc.php:1096 includes/class-nova-vc.php:1136
 #: includes/class-nova-vc.php:1939 includes/class-nova-vc.php:1966
-#: includes/class-nova-vc.php:2292 includes/class-nova-vc.php:2686
-#: includes/class-nova-vc.php:2691
+#: includes/class-nova-vc.php:2292 includes/class-nova-vc.php:2679
+#: includes/class-nova-vc.php:2684
 msgid "Left"
 msgstr ""
 
@@ -398,7 +406,7 @@ msgstr ""
 #: includes/class-nova-vc.php:814 includes/class-nova-vc.php:1006
 #: includes/class-nova-vc.php:1098 includes/class-nova-vc.php:1137
 #: includes/class-nova-vc.php:1940 includes/class-nova-vc.php:1967
-#: includes/class-nova-vc.php:2293 includes/class-nova-vc.php:2684
+#: includes/class-nova-vc.php:2293 includes/class-nova-vc.php:2677
 msgid "Right"
 msgstr ""
 
@@ -532,12 +540,13 @@ msgid "Icon Background Color #2"
 msgstr ""
 
 #: includes/class-nova-vc.php:567 includes/class-nova-vc.php:1147
-#: includes/class-nova-vc.php:1633 includes/class-nova-vc.php:2701
-#: includes/class-nova-vc.php:2922 includes/class-nova-vc.php:3222
-#: includes/class-nova-vc.php:3438
+#: includes/class-nova-vc.php:1633 includes/class-nova-vc.php:2885
+#: includes/class-nova-vc.php:3173
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:274
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:308
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:330
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:78
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:122
 msgid "Title"
 msgstr ""
 
@@ -578,13 +587,13 @@ msgstr ""
 
 #: includes/class-nova-vc.php:606 includes/class-nova-vc.php:1108
 #: includes/class-nova-vc.php:1138 includes/class-nova-vc.php:1964
-#: includes/class-nova-vc.php:2683 includes/class-nova-vc.php:2696
+#: includes/class-nova-vc.php:2676 includes/class-nova-vc.php:2689
 msgid "Top"
 msgstr ""
 
 #: includes/class-nova-vc.php:607 includes/class-nova-vc.php:1110
 #: includes/class-nova-vc.php:1139 includes/class-nova-vc.php:1965
-#: includes/class-nova-vc.php:2685
+#: includes/class-nova-vc.php:2678
 msgid "Bottom"
 msgstr ""
 
@@ -690,7 +699,7 @@ msgid "Small"
 msgstr ""
 
 #: includes/class-nova-vc.php:736 includes/class-nova-vc.php:1358
-#: includes/class-nova-vc.php:2228 includes/class-nova-vc.php:2757
+#: includes/class-nova-vc.php:2228 includes/class-nova-vc.php:2734
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:352
 msgid "Color"
 msgstr ""
@@ -705,7 +714,7 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: includes/class-nova-vc.php:742 includes/class-nova-vc.php:2781
+#: includes/class-nova-vc.php:742 includes/class-nova-vc.php:2758
 msgid "White"
 msgstr ""
 
@@ -735,14 +744,14 @@ msgstr ""
 #: includes/class-nova-vc.php:781 includes/class-nova-vc.php:928
 #: includes/class-nova-vc.php:979 includes/class-nova-vc.php:1040
 #: includes/class-nova-vc.php:1125 includes/class-nova-vc.php:2593
-#: includes/class-nova-vc.php:2733
+#: includes/class-nova-vc.php:2710
 msgid "Image"
 msgstr ""
 
 #: includes/class-nova-vc.php:787 includes/class-nova-vc.php:935
 #: includes/class-nova-vc.php:985 includes/class-nova-vc.php:1046
 #: includes/class-nova-vc.php:2342 includes/class-nova-vc.php:2362
-#: includes/class-nova-vc.php:3067
+#: includes/class-nova-vc.php:3024
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:202
 msgid "Image size"
 msgstr ""
@@ -1136,6 +1145,7 @@ msgstr ""
 
 #: includes/class-nova-vc.php:1371
 #: includes/plugins/shortcodes/class-nova-shortcodes-param.php:196
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:231
 msgid "Custom"
 msgstr ""
 
@@ -1303,13 +1313,13 @@ msgid "The box title"
 msgstr ""
 
 #: includes/class-nova-vc.php:1638
-#: includes/shortcodes/class-nova-shortcodes.php:1444
+#: includes/shortcodes/class-nova-shortcodes.php:1443
 msgid "I am Icon Box"
 msgstr ""
 
 #: includes/class-nova-vc.php:1641 includes/class-nova-vc.php:2241
-#: includes/class-nova-vc.php:2297 includes/class-nova-vc.php:2706
-#: includes/class-nova-vc.php:2934
+#: includes/class-nova-vc.php:2297 includes/class-nova-vc.php:2694
+#: includes/class-nova-vc.php:2897
 msgid "Content"
 msgstr ""
 
@@ -1317,7 +1327,7 @@ msgstr ""
 msgid "I am icon box. Click edit button to change this text."
 msgstr ""
 
-#: includes/class-nova-vc.php:1650 includes/class-nova-vc.php:2939
+#: includes/class-nova-vc.php:1650 includes/class-nova-vc.php:2902
 msgid "Apply link to:"
 msgstr ""
 
@@ -1325,11 +1335,11 @@ msgstr ""
 msgid "No Link"
 msgstr ""
 
-#: includes/class-nova-vc.php:1655 includes/class-nova-vc.php:2946
+#: includes/class-nova-vc.php:1655 includes/class-nova-vc.php:2909
 msgid "Box Title"
 msgstr ""
 
-#: includes/class-nova-vc.php:1661 includes/class-nova-vc.php:2951
+#: includes/class-nova-vc.php:1661 includes/class-nova-vc.php:2914
 msgid "Add Link"
 msgstr ""
 
@@ -1375,8 +1385,8 @@ msgstr ""
 msgid "Icon Border Style"
 msgstr ""
 
-#: includes/class-nova-vc.php:1836 includes/class-nova-vc.php:2833
-#: includes/class-nova-vc.php:2944
+#: includes/class-nova-vc.php:1836 includes/class-nova-vc.php:2796
+#: includes/class-nova-vc.php:2907
 msgid "None"
 msgstr ""
 
@@ -1423,34 +1433,47 @@ msgid "Heading tag"
 msgstr ""
 
 #: includes/class-nova-vc.php:1921 includes/class-nova-vc.php:2234
-#: includes/class-nova-vc.php:3032 includes/class-nova-vc.php:3482
-#: includes/portfolio.php:358 public/nova-functions.php:434
+#: includes/class-nova-vc.php:2989 includes/class-nova-vc.php:3218
+#: includes/portfolio.php:358 public/nova-functions.php:380
 #: includes/shortcodes/class-nova-shortcodes-row.php:30
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:1043
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:199
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:230
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:167
 msgid "Default"
 msgstr ""
 
-#: includes/class-nova-vc.php:1922
+#: includes/class-nova-vc.php:1922 includes/class-nova-vc.php:3219
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:200
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:168
 msgid "H1"
 msgstr ""
 
 #: includes/class-nova-vc.php:1923
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:202
 msgid "H3"
 msgstr ""
 
-#: includes/class-nova-vc.php:1924
+#: includes/class-nova-vc.php:1924 includes/class-nova-vc.php:3221
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:203
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:170
 msgid "H4"
 msgstr ""
 
-#: includes/class-nova-vc.php:1925
+#: includes/class-nova-vc.php:1925 includes/class-nova-vc.php:3222
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:171
 msgid "H5"
 msgstr ""
 
-#: includes/class-nova-vc.php:1926
+#: includes/class-nova-vc.php:1926 includes/class-nova-vc.php:3223
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:204
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:172
 msgid "H6"
 msgstr ""
 
-#: includes/class-nova-vc.php:1927
+#: includes/class-nova-vc.php:1927 includes/class-nova-vc.php:3224
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:205
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:173
 msgid "DIV"
 msgstr ""
 
@@ -1535,7 +1558,7 @@ msgid "Recurring payment unit"
 msgstr ""
 
 #: includes/class-nova-vc.php:2111
-#: includes/shortcodes/class-nova-shortcodes.php:1935
+#: includes/shortcodes/class-nova-shortcodes.php:1934
 msgid "Per Month"
 msgstr ""
 
@@ -1556,7 +1579,7 @@ msgid "Feature value"
 msgstr ""
 
 #: includes/class-nova-vc.php:2135 includes/class-nova-vc.php:2141
-#: includes/shortcodes/class-nova-shortcodes.php:1937
+#: includes/shortcodes/class-nova-shortcodes.php:1936
 msgid "Get Started"
 msgstr ""
 
@@ -1592,8 +1615,8 @@ msgstr ""
 
 #: includes/class-nova-vc.php:2180 includes/class-nova-vc.php:2419
 #: includes/class-nova-vc.php:2479
-#: includes/shortcodes/class-nova-shortcodes.php:2268
-#: includes/shortcodes/class-nova-shortcodes.php:2322
+#: includes/shortcodes/class-nova-shortcodes.php:2267
+#: includes/shortcodes/class-nova-shortcodes.php:2321
 msgid "Address"
 msgstr ""
 
@@ -1619,7 +1642,8 @@ msgstr ""
 msgid "Upload custom marker icon or leave this to use default marker."
 msgstr ""
 
-#: includes/class-nova-vc.php:2207 includes/class-nova-vc.php:3569
+#: includes/class-nova-vc.php:2207
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:324
 msgid "Width"
 msgstr ""
 
@@ -1627,7 +1651,8 @@ msgstr ""
 msgid "Map width in pixel or percentage."
 msgstr ""
 
-#: includes/class-nova-vc.php:2214 includes/class-nova-vc.php:3588
+#: includes/class-nova-vc.php:2214
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:342
 msgid "Height"
 msgstr ""
 
@@ -1647,7 +1672,7 @@ msgstr ""
 msgid "Select map color style"
 msgstr ""
 
-#: includes/class-nova-vc.php:2235 includes/class-nova-vc.php:2774
+#: includes/class-nova-vc.php:2235 includes/class-nova-vc.php:2751
 msgid "Grey"
 msgstr ""
 
@@ -1655,7 +1680,7 @@ msgstr ""
 msgid "Classic Black"
 msgstr ""
 
-#: includes/class-nova-vc.php:2237 includes/class-nova-vc.php:2772
+#: includes/class-nova-vc.php:2237 includes/class-nova-vc.php:2749
 msgid "Vista Blue"
 msgstr ""
 
@@ -1777,7 +1802,8 @@ msgstr ""
 msgid "New window"
 msgstr ""
 
-#: includes/class-nova-vc.php:2388
+#: includes/class-nova-vc.php:2388 includes/class-nova-vc.php:3059
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:11
 msgid "Layout"
 msgstr ""
 
@@ -1810,8 +1836,8 @@ msgid "The office address"
 msgstr ""
 
 #: includes/class-nova-vc.php:2426 includes/class-nova-vc.php:2484
-#: includes/shortcodes/class-nova-shortcodes.php:2273
-#: includes/shortcodes/class-nova-shortcodes.php:2327
+#: includes/shortcodes/class-nova-shortcodes.php:2272
+#: includes/shortcodes/class-nova-shortcodes.php:2326
 msgid "Phone"
 msgstr ""
 
@@ -1820,8 +1846,8 @@ msgid "The phone number"
 msgstr ""
 
 #: includes/class-nova-vc.php:2433 includes/class-nova-vc.php:2489
-#: includes/shortcodes/class-nova-shortcodes.php:2279
-#: includes/shortcodes/class-nova-shortcodes.php:2332
+#: includes/shortcodes/class-nova-shortcodes.php:2278
+#: includes/shortcodes/class-nova-shortcodes.php:2331
 msgid "Fax"
 msgstr ""
 
@@ -1830,8 +1856,8 @@ msgid "The fax number"
 msgstr ""
 
 #: includes/class-nova-vc.php:2440 includes/class-nova-vc.php:2494
-#: includes/shortcodes/class-nova-shortcodes.php:2284
-#: includes/shortcodes/class-nova-shortcodes.php:2337
+#: includes/shortcodes/class-nova-shortcodes.php:2283
+#: includes/shortcodes/class-nova-shortcodes.php:2336
 msgid "Email"
 msgstr ""
 
@@ -1840,8 +1866,8 @@ msgid "The email adress"
 msgstr ""
 
 #: includes/class-nova-vc.php:2447 includes/class-nova-vc.php:2499
-#: includes/shortcodes/class-nova-shortcodes.php:2290
-#: includes/shortcodes/class-nova-shortcodes.php:2342
+#: includes/shortcodes/class-nova-shortcodes.php:2289
+#: includes/shortcodes/class-nova-shortcodes.php:2341
 msgid "Website"
 msgstr ""
 
@@ -1874,7 +1900,7 @@ msgid "Question and answer toggle"
 msgstr ""
 
 #: includes/class-nova-vc.php:2547
-#: includes/shortcodes/class-nova-shortcodes.php:2421
+#: includes/shortcodes/class-nova-shortcodes.php:2420
 msgid "Question"
 msgstr ""
 
@@ -1883,12 +1909,12 @@ msgid "Enter title of toggle block."
 msgstr ""
 
 #: includes/class-nova-vc.php:2553
-#: includes/shortcodes/class-nova-shortcodes.php:2395
+#: includes/shortcodes/class-nova-shortcodes.php:2394
 msgid "Question content goes here"
 msgstr ""
 
 #: includes/class-nova-vc.php:2556
-#: includes/shortcodes/class-nova-shortcodes.php:2423
+#: includes/shortcodes/class-nova-shortcodes.php:2422
 msgid "Answer"
 msgstr ""
 
@@ -1928,7 +1954,8 @@ msgstr ""
 msgid "Member photo"
 msgstr ""
 
-#: includes/class-nova-vc.php:2599 includes/class-nova-vc.php:3362
+#: includes/class-nova-vc.php:2599
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:214
 msgid "Image Size"
 msgstr ""
 
@@ -1980,661 +2007,595 @@ msgstr ""
 msgid "Nova Hotspot"
 msgstr ""
 
-#: includes/class-nova-vc.php:2673
-msgid "Select identificator"
-msgstr ""
-
-#: includes/class-nova-vc.php:2674
-msgid "Input product ID or product SKU or product title to see suggestions"
-msgstr ""
-
-#: includes/class-nova-vc.php:2679
+#: includes/class-nova-vc.php:2672
 msgid "Position"
 msgstr ""
 
-#: includes/class-nova-vc.php:2716
+#: includes/class-nova-vc.php:2703
 msgid "Image With Hotspots"
 msgstr ""
 
-#: includes/class-nova-vc.php:2720
+#: includes/class-nova-vc.php:2707
 msgid "Add Hotspots On Your Image"
 msgstr ""
 
-#: includes/class-nova-vc.php:2724
-msgid "Enable Product Viewer"
-msgstr ""
-
-#: includes/class-nova-vc.php:2734
+#: includes/class-nova-vc.php:2711
 msgid ""
 "Choose your image that will show the hotspots. <br/> You can then click on "
 "the image in the preview area to add your hotspots in the desired locations."
 msgstr ""
 
-#: includes/class-nova-vc.php:2739
+#: includes/class-nova-vc.php:2716
 msgid "Preview"
 msgstr ""
 
-#: includes/class-nova-vc.php:2740
+#: includes/class-nova-vc.php:2717
 msgid ""
 "Click to add - Drag to move - Edit content below<br/> Note: this preview "
 "will not reflect hotspot style choices or show tooltips. <br/>This is only "
 "used as a visual guide for positioning."
 msgstr ""
 
-#: includes/class-nova-vc.php:2745
+#: includes/class-nova-vc.php:2722
 msgid "Hotspots"
 msgstr ""
 
-#: includes/class-nova-vc.php:2750 includes/class-nova-vc.php:3680
+#: includes/class-nova-vc.php:2727
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:234
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:374
 msgid "Extra Class name"
 msgstr ""
 
-#: includes/class-nova-vc.php:2751 includes/class-nova-vc.php:3681
+#: includes/class-nova-vc.php:2728
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:236
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:376
 msgid ""
 "Style particular content element differently - add a class name and refer to "
 "it in custom CSS."
 msgstr ""
 
-#: includes/class-nova-vc.php:2758
+#: includes/class-nova-vc.php:2735
 msgid "Choose the color which the hotspot will use"
 msgstr ""
 
-#: includes/class-nova-vc.php:2763
+#: includes/class-nova-vc.php:2740
 msgid "Primary"
 msgstr ""
 
-#: includes/class-nova-vc.php:2764
+#: includes/class-nova-vc.php:2741
 msgid "Secondary"
 msgstr ""
 
-#: includes/class-nova-vc.php:2765
+#: includes/class-nova-vc.php:2742
 msgid "Blue"
 msgstr ""
 
-#: includes/class-nova-vc.php:2766
+#: includes/class-nova-vc.php:2743
 msgid "Turquoise"
 msgstr ""
 
-#: includes/class-nova-vc.php:2767
+#: includes/class-nova-vc.php:2744
 msgid "Pink"
 msgstr ""
 
-#: includes/class-nova-vc.php:2768
+#: includes/class-nova-vc.php:2745
 msgid "Violet"
 msgstr ""
 
-#: includes/class-nova-vc.php:2769
+#: includes/class-nova-vc.php:2746
 msgid "Peacoc"
 msgstr ""
 
-#: includes/class-nova-vc.php:2770
+#: includes/class-nova-vc.php:2747
 msgid "Chino"
 msgstr ""
 
-#: includes/class-nova-vc.php:2771
+#: includes/class-nova-vc.php:2748
 msgid "Mulled Wine"
 msgstr ""
 
-#: includes/class-nova-vc.php:2773
+#: includes/class-nova-vc.php:2750
 msgid "Black"
 msgstr ""
 
-#: includes/class-nova-vc.php:2775
+#: includes/class-nova-vc.php:2752
 msgid "Orange"
 msgstr ""
 
-#: includes/class-nova-vc.php:2776
+#: includes/class-nova-vc.php:2753
 msgid "Sky"
 msgstr ""
 
-#: includes/class-nova-vc.php:2777
+#: includes/class-nova-vc.php:2754
 msgid "Green"
 msgstr ""
 
-#: includes/class-nova-vc.php:2778
+#: includes/class-nova-vc.php:2755
 msgid "Juicy pink"
 msgstr ""
 
-#: includes/class-nova-vc.php:2779
+#: includes/class-nova-vc.php:2756
 msgid "Sandy brown"
 msgstr ""
 
-#: includes/class-nova-vc.php:2780
+#: includes/class-nova-vc.php:2757
 msgid "Purple"
 msgstr ""
 
-#: includes/class-nova-vc.php:2788
+#: includes/class-nova-vc.php:2765
 msgid "Hotspot Icon"
 msgstr ""
 
-#: includes/class-nova-vc.php:2789
+#: includes/class-nova-vc.php:2766
 msgid "The icon that will be shown on the hotspots"
 msgstr ""
 
-#: includes/class-nova-vc.php:2794
+#: includes/class-nova-vc.php:2771
 msgid "Plus Sign"
 msgstr ""
 
-#. esc_html__( 'Numerical', 'nova' ) => 'numerical',
-#: includes/class-nova-vc.php:2796
-msgid "Custom Title"
+#: includes/class-nova-vc.php:2772
+msgid "Numerical"
 msgstr ""
 
-#: includes/class-nova-vc.php:2802
-msgid "Start number"
-msgstr ""
-
-#: includes/class-nova-vc.php:2803
-msgid "The number that will begin on the hotspots"
-msgstr ""
-
-#: includes/class-nova-vc.php:2815
+#: includes/class-nova-vc.php:2778
 msgid "Tooltip Functionality"
 msgstr ""
 
-#: includes/class-nova-vc.php:2816
+#: includes/class-nova-vc.php:2779
 msgid "Select how you want your tooltips to display to the user"
 msgstr ""
 
-#: includes/class-nova-vc.php:2820
+#: includes/class-nova-vc.php:2783
 msgid "Show On Hover"
 msgstr ""
 
-#: includes/class-nova-vc.php:2821
+#: includes/class-nova-vc.php:2784
 msgid "Show On Click"
 msgstr ""
 
-#: includes/class-nova-vc.php:2822
+#: includes/class-nova-vc.php:2785
 msgid "Always Show"
 msgstr ""
 
-#: includes/class-nova-vc.php:2828
+#: includes/class-nova-vc.php:2791
 msgid "Tooltip Shadow"
 msgstr ""
 
-#: includes/class-nova-vc.php:2829
+#: includes/class-nova-vc.php:2792
 msgid "Select the shadow size for your tooltip"
 msgstr ""
 
-#: includes/class-nova-vc.php:2834
+#: includes/class-nova-vc.php:2797
 msgid "Small Depth"
 msgstr ""
 
-#: includes/class-nova-vc.php:2835
+#: includes/class-nova-vc.php:2798
 msgid "Medium Depth"
 msgstr ""
 
-#: includes/class-nova-vc.php:2836
+#: includes/class-nova-vc.php:2799
 msgid "Large Depth"
 msgstr ""
 
-#: includes/class-nova-vc.php:2842
+#: includes/class-nova-vc.php:2805
 msgid "Enable Animation"
 msgstr ""
 
-#: includes/class-nova-vc.php:2843
+#: includes/class-nova-vc.php:2806
 msgid ""
 "Turning this on will make your hotspots animate in when the user scrolls to "
 "the element"
 msgstr ""
 
-#: includes/class-nova-vc.php:2847
+#: includes/class-nova-vc.php:2810
 msgid "Yes, please"
 msgstr ""
 
-#: includes/class-nova-vc.php:2856
+#: includes/class-nova-vc.php:2819
 msgid "Nova Advanced Carousel"
 msgstr ""
 
-#: includes/class-nova-vc.php:2860
+#: includes/class-nova-vc.php:2823
 msgid "Carousel anything."
 msgstr ""
 
-#: includes/class-nova-vc.php:2871
+#: includes/class-nova-vc.php:2834
 msgid "Timeline"
 msgstr ""
 
-#: includes/class-nova-vc.php:2875 includes/class-nova-vc.php:2917
+#: includes/class-nova-vc.php:2838 includes/class-nova-vc.php:2880
 msgid "Displays the timeline block"
 msgstr ""
 
-#: includes/class-nova-vc.php:2882
+#: includes/class-nova-vc.php:2845
 msgid "Styles"
 msgstr ""
 
-#: includes/class-nova-vc.php:2899 includes/class-nova-vc.php:3308
-#: includes/class-nova-vc.php:3669
+#: includes/class-nova-vc.php:2862 includes/class-nova-vc.php:3262
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:133
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:211
 msgid "Load More Text"
 msgstr ""
 
-#: includes/class-nova-vc.php:2900
+#: includes/class-nova-vc.php:2863
 msgid "Customize the load more text."
 msgstr ""
 
-#: includes/class-nova-vc.php:2913
+#: includes/class-nova-vc.php:2876
 msgid "Timeline Item"
 msgstr ""
 
-#: includes/class-nova-vc.php:2928
+#: includes/class-nova-vc.php:2891
 msgid "Subtitle"
 msgstr ""
 
-#: includes/class-nova-vc.php:2940
+#: includes/class-nova-vc.php:2903
 msgid "Select the element for link."
 msgstr ""
 
-#: includes/class-nova-vc.php:2945
+#: includes/class-nova-vc.php:2908
 msgid "Complete box"
 msgstr ""
 
-#: includes/class-nova-vc.php:2947
+#: includes/class-nova-vc.php:2910
 msgid "Display Read More"
 msgstr ""
 
-#: includes/class-nova-vc.php:2952
+#: includes/class-nova-vc.php:2918
 msgid "Provide the link that will be applied to this timeline."
 msgstr ""
 
-#: includes/class-nova-vc.php:2961
+#: includes/class-nova-vc.php:2921
 msgid "Read More Text"
 msgstr ""
 
-#: includes/class-nova-vc.php:2962
+#: includes/class-nova-vc.php:2922
 msgid "Customize the read more text."
 msgstr ""
 
-#: includes/class-nova-vc.php:2972
+#: includes/class-nova-vc.php:2929
 msgid "Dot Color"
 msgstr ""
 
-#: includes/class-nova-vc.php:2983
+#: includes/class-nova-vc.php:2940
 msgid "Instagram Feed"
 msgstr ""
 
-#: includes/class-nova-vc.php:2987
+#: includes/class-nova-vc.php:2944
 msgid "Display Instagram photos from any non-private Instagram accounts"
 msgstr ""
 
-#: includes/class-nova-vc.php:2990
+#: includes/class-nova-vc.php:2947
 msgid "Instagram Access Token"
 msgstr ""
 
-#: includes/class-nova-vc.php:2991
+#: includes/class-nova-vc.php:2948
 msgid ""
 "In order to display your photos you need an Access Token from Instagram."
 msgstr ""
 
-#: includes/class-nova-vc.php:2996
+#: includes/class-nova-vc.php:2953
 msgid "Feed Type"
 msgstr ""
 
-#: includes/class-nova-vc.php:3000
+#: includes/class-nova-vc.php:2957
 msgid "Images with a specific tag"
 msgstr ""
 
-#: includes/class-nova-vc.php:3001
+#: includes/class-nova-vc.php:2958
 msgid "Images from a location."
 msgstr ""
 
-#: includes/class-nova-vc.php:3002
+#: includes/class-nova-vc.php:2959
 msgid "Images from a user"
 msgstr ""
 
-#: includes/class-nova-vc.php:3008
+#: includes/class-nova-vc.php:2965
 msgid "Hashtag"
 msgstr ""
 
-#: includes/class-nova-vc.php:3009
+#: includes/class-nova-vc.php:2966
 msgid "Only Alphanumeric characters are allowed (a-z, A-Z, 0-9)"
 msgstr ""
 
-#: includes/class-nova-vc.php:3015
+#: includes/class-nova-vc.php:2972
 msgid "Location ID"
 msgstr ""
 
-#: includes/class-nova-vc.php:3016
+#: includes/class-nova-vc.php:2973
 msgid "Unique id of a location to get"
 msgstr ""
 
-#: includes/class-nova-vc.php:3021
+#: includes/class-nova-vc.php:2978
 msgid "User ID"
 msgstr ""
 
-#: includes/class-nova-vc.php:3022
+#: includes/class-nova-vc.php:2979
 msgid "Unique id of a user to get"
 msgstr ""
 
-#: includes/class-nova-vc.php:3027
+#: includes/class-nova-vc.php:2984
 msgid "Sort By"
 msgstr ""
 
-#: includes/class-nova-vc.php:3033
+#: includes/class-nova-vc.php:2990
 msgid "Newest to oldest"
 msgstr ""
 
-#: includes/class-nova-vc.php:3034
+#: includes/class-nova-vc.php:2991
 msgid "Oldest to newest"
 msgstr ""
 
-#: includes/class-nova-vc.php:3035
+#: includes/class-nova-vc.php:2992
 msgid "Highest # of likes to lowest."
 msgstr ""
 
-#: includes/class-nova-vc.php:3036
+#: includes/class-nova-vc.php:2993
 msgid "Lowest # likes to highest."
 msgstr ""
 
-#: includes/class-nova-vc.php:3037
+#: includes/class-nova-vc.php:2994
 msgid "Highest # of comments to lowest"
 msgstr ""
 
-#: includes/class-nova-vc.php:3038
+#: includes/class-nova-vc.php:2995
 msgid "Lowest # of comments to highest."
 msgstr ""
 
-#: includes/class-nova-vc.php:3039
+#: includes/class-nova-vc.php:2996
 msgid "Random order"
 msgstr ""
 
-#: includes/class-nova-vc.php:3045 includes/class-nova-vc.php:3282
+#: includes/class-nova-vc.php:3002 includes/class-nova-vc.php:3236
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:184
 msgid "Items to show"
 msgstr ""
 
-#: includes/class-nova-vc.php:3059
+#: includes/class-nova-vc.php:3016
 msgid "Limit"
 msgstr ""
 
-#: includes/class-nova-vc.php:3060
+#: includes/class-nova-vc.php:3017
 msgid "Maximum number of Images to add. Max of 60"
 msgstr ""
 
-#: includes/class-nova-vc.php:3071
+#: includes/class-nova-vc.php:3028
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/class-nova-vc.php:3072
+#: includes/class-nova-vc.php:3029
 msgid "Low Resolution"
 msgstr ""
 
-#: includes/class-nova-vc.php:3073
+#: includes/class-nova-vc.php:3030
 msgid "Standard Resolution"
 msgstr ""
 
-#: includes/class-nova-vc.php:3078
+#: includes/class-nova-vc.php:3035
 msgid "Image Aspect Ration"
 msgstr ""
 
-#: includes/class-nova-vc.php:3082
+#: includes/class-nova-vc.php:3039
 msgid "1:1"
 msgstr ""
 
-#: includes/class-nova-vc.php:3083
+#: includes/class-nova-vc.php:3040
 msgid "16:9"
 msgstr ""
 
-#: includes/class-nova-vc.php:3084
+#: includes/class-nova-vc.php:3041
 msgid "4:3"
 msgstr ""
 
-#: includes/class-nova-vc.php:3085
+#: includes/class-nova-vc.php:3042
 msgid "2.35:1"
 msgstr ""
 
-#: includes/class-nova-vc.php:3095
+#: includes/class-nova-vc.php:3052
 msgid "Portfolio Grid"
 msgstr ""
 
-#: includes/class-nova-vc.php:3099 includes/class-nova-vc.php:3324
+#: includes/class-nova-vc.php:3056
 msgid "Display portfolio with themes style."
 msgstr ""
 
-#: includes/class-nova-vc.php:3153 includes/class-nova-vc.php:3370
+#: includes/class-nova-vc.php:3063
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:14
+msgid "Grid"
+msgstr ""
+
+#: includes/class-nova-vc.php:3105
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:12
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:55
 msgid "Category In:"
 msgstr ""
 
-#: includes/class-nova-vc.php:3165 includes/class-nova-vc.php:3180
-#: includes/class-nova-vc.php:3195 includes/class-nova-vc.php:3210
-#: includes/class-nova-vc.php:3229 includes/class-nova-vc.php:3242
-#: includes/class-nova-vc.php:3252 includes/class-nova-vc.php:3259
-#: includes/class-nova-vc.php:3382 includes/class-nova-vc.php:3397
-#: includes/class-nova-vc.php:3412 includes/class-nova-vc.php:3427
-#: includes/class-nova-vc.php:3445 includes/class-nova-vc.php:3457
-#: includes/class-nova-vc.php:3467 includes/class-nova-vc.php:3474
+#: includes/class-nova-vc.php:3117 includes/class-nova-vc.php:3132
+#: includes/class-nova-vc.php:3147 includes/class-nova-vc.php:3162
+#: includes/class-nova-vc.php:3181 includes/class-nova-vc.php:3194
+#: includes/class-nova-vc.php:3204 includes/class-nova-vc.php:3211
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:23
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:38
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:53
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:68
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:86
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:98
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:108
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:115
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:122
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:129
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:137
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:66
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:81
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:96
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:111
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:130
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:143
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:153
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:160
 msgid "Query Settings"
 msgstr ""
 
-#: includes/class-nova-vc.php:3168 includes/class-nova-vc.php:3385
+#: includes/class-nova-vc.php:3120
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:27
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:70
 msgid "Category Not In:"
 msgstr ""
 
-#: includes/class-nova-vc.php:3183 includes/class-nova-vc.php:3400
+#: includes/class-nova-vc.php:3135
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:42
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:85
 msgid "Post In:"
 msgstr ""
 
-#: includes/class-nova-vc.php:3198 includes/class-nova-vc.php:3415
+#: includes/class-nova-vc.php:3150
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:57
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:100
 msgid "Post Not In:"
 msgstr ""
 
-#: includes/class-nova-vc.php:3213 includes/class-nova-vc.php:3430
+#: includes/class-nova-vc.php:3165
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:72
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:115
 msgid "Order by"
 msgstr ""
 
-#: includes/class-nova-vc.php:3214 includes/class-nova-vc.php:3431
+#: includes/class-nova-vc.php:3171
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:76
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:120
+msgid "ID"
+msgstr ""
+
+#: includes/class-nova-vc.php:3172
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:77
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:121
+msgid "Author"
+msgstr ""
+
+#: includes/class-nova-vc.php:3174
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:79
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:123
+msgid "Modified"
+msgstr ""
+
+#: includes/class-nova-vc.php:3175
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:80
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:124
+msgid "Random"
+msgstr ""
+
+#: includes/class-nova-vc.php:3176
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:81
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:125
+msgid "Comment count"
+msgstr ""
+
+#: includes/class-nova-vc.php:3177
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:82
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:126
+msgid "Menu order"
+msgstr ""
+
+#: includes/class-nova-vc.php:3180
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:85
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:129
 #, php-format
 msgid "Select how to sort retrieved products. More at %s."
 msgstr ""
 
-#: includes/class-nova-vc.php:3220 includes/class-nova-vc.php:3436
-#: includes/options/base-field.php:122
-msgid "ID"
-msgstr ""
-
-#: includes/class-nova-vc.php:3221 includes/class-nova-vc.php:3437
-msgid "Author"
-msgstr ""
-
-#: includes/class-nova-vc.php:3223 includes/class-nova-vc.php:3439
-msgid "Modified"
-msgstr ""
-
-#: includes/class-nova-vc.php:3224 includes/class-nova-vc.php:3440
-msgid "Random"
-msgstr ""
-
-#: includes/class-nova-vc.php:3225 includes/class-nova-vc.php:3441
-msgid "Comment count"
-msgstr ""
-
-#: includes/class-nova-vc.php:3226 includes/class-nova-vc.php:3442
-msgid "Menu order"
-msgstr ""
-
-#: includes/class-nova-vc.php:3232 includes/class-nova-vc.php:3448
+#: includes/class-nova-vc.php:3184
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:90
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:134
 msgid "Sort order"
 msgstr ""
 
-#: includes/class-nova-vc.php:3233 includes/class-nova-vc.php:3449
+#: includes/class-nova-vc.php:3189
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:94
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:138
+msgid "Descending"
+msgstr ""
+
+#: includes/class-nova-vc.php:3190
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:95
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:139
+msgid "Ascending"
+msgstr ""
+
+#: includes/class-nova-vc.php:3193
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:97
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:142
 #, php-format
 msgid "Designates the ascending or descending order. More at %s."
 msgstr ""
 
-#: includes/class-nova-vc.php:3238 includes/class-nova-vc.php:3454
-msgid "Descending"
-msgstr ""
-
-#: includes/class-nova-vc.php:3239 includes/class-nova-vc.php:3455
-msgid "Ascending"
-msgstr ""
-
-#: includes/class-nova-vc.php:3245
+#: includes/class-nova-vc.php:3197
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:147
 msgid "Total items"
 msgstr ""
 
-#: includes/class-nova-vc.php:3246 includes/class-nova-vc.php:3461
+#: includes/class-nova-vc.php:3198
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:103
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:148
 msgid ""
 "Set max limit for items in grid or enter -1 to display all (limited to 1000)."
 msgstr ""
 
-#: includes/class-nova-vc.php:3255 includes/class-nova-vc.php:3470
+#: includes/class-nova-vc.php:3207
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:112
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:157
 msgid "Paged"
 msgstr ""
 
-#: includes/class-nova-vc.php:3292
+#: includes/class-nova-vc.php:3214
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:164
+msgid "Item title tag"
+msgstr ""
+
+#: includes/class-nova-vc.php:3220
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:201
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:169
+msgid "H2"
+msgstr ""
+
+#: includes/class-nova-vc.php:3227
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:176
+msgid "Default is H3"
+msgstr ""
+
+#: includes/class-nova-vc.php:3228 includes/class-nova-vc.php:3232
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:191
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:209
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:218
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:222
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:234
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:253
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:269
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:285
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:303
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:315
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:369
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:377
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:177
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:180
+msgid "Item Settings"
+msgstr ""
+
+#: includes/class-nova-vc.php:3246
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:195
 msgid "Enable slider"
 msgstr ""
 
-#: includes/class-nova-vc.php:3302 includes/class-nova-vc.php:3663
+#: includes/class-nova-vc.php:3256
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:126
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:205
 msgid "Enable Load More"
 msgstr ""
 
-#: includes/class-nova-vc.php:3311 includes/class-nova-vc.php:3672
+#: includes/class-nova-vc.php:3265
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:135
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:213
 msgid "Load more"
-msgstr ""
-
-#: includes/class-nova-vc.php:3320
-msgid "Portfolio Masonry"
-msgstr ""
-
-#: includes/class-nova-vc.php:3363
-#: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:205
-msgid ""
-"Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
-"other sizes defined by theme). Alternatively enter size in pixels (Example: "
-"200x100 (Width x Height))."
-msgstr ""
-
-#: includes/class-nova-vc.php:3460
-msgid "Items per page"
-msgstr ""
-
-#: includes/class-nova-vc.php:3478
-msgid "Column Type"
-msgstr ""
-
-#: includes/class-nova-vc.php:3488
-msgid "Responsive Column"
-msgstr ""
-
-#: includes/class-nova-vc.php:3507
-msgid "Portfolio Item Width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3508
-msgid "Set your portfolio item default width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3522
-msgid "Portfolio Item Height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3523
-msgid "Set your portfolio item default height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3537
-msgid "Mobile Column"
-msgstr ""
-
-#: includes/class-nova-vc.php:3554
-msgid "Enable Custom Item Setting"
-msgstr ""
-
-#: includes/class-nova-vc.php:3564
-msgid "Item Sizes"
-msgstr ""
-
-#: includes/class-nova-vc.php:3570
-msgid ""
-"it will occupy x width of base item width, example: this item will be occupy "
-"2x width of base width you need entered 2"
-msgstr ""
-
-#: includes/class-nova-vc.php:3575
-msgid "1/2x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3576
-msgid "1x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3577
-msgid "1.5x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3578
-msgid "2x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3579
-msgid "2.5x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3580
-msgid "3x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3581
-msgid "3.5x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3582
-msgid "4x width"
-msgstr ""
-
-#: includes/class-nova-vc.php:3589
-msgid ""
-"it will occupy x height of base item height, example: this item will be "
-"occupy 2x height of base height you need entered 2"
-msgstr ""
-
-#: includes/class-nova-vc.php:3594
-msgid "1/2x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3595
-msgid "1x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3596
-msgid "1.5x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3597
-msgid "2x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3598
-msgid "2.5x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3599
-msgid "3x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3600
-msgid "3.5x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3601
-msgid "4x height"
-msgstr ""
-
-#: includes/class-nova-vc.php:3607
-msgid "Custom Image Size"
-msgstr ""
-
-#: includes/class-nova-vc.php:3608
-msgid "leave blank to inherit from parent settings"
-msgstr ""
-
-#: includes/class-nova-vc.php:3622
-msgid "Enable Skill Filter"
-msgstr ""
-
-#: includes/class-nova-vc.php:3628
-msgid "Skill Filter"
 msgstr ""
 
 #: includes/portfolio.php:89 includes/portfolio.php:528
@@ -2844,67 +2805,69 @@ msgstr ""
 msgid "This field class is not available!"
 msgstr ""
 
-#: public/nova-functions.php:420
+#: public/nova-functions.php:366
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:181
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:23
 msgid "Design 01"
 msgstr ""
 
-#: public/nova-functions.php:421
+#: public/nova-functions.php:367
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:182
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:24
 msgid "Design 02"
 msgstr ""
 
-#: public/nova-functions.php:422
+#: public/nova-functions.php:368
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:183
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:25
 msgid "Design 03"
 msgstr ""
 
-#: public/nova-functions.php:423
+#: public/nova-functions.php:369
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:184
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:26
 msgid "Design 04"
 msgstr ""
 
-#: public/nova-functions.php:424
+#: public/nova-functions.php:370
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:185
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:27
 msgid "Design 05"
 msgstr ""
 
-#: public/nova-functions.php:425
+#: public/nova-functions.php:371
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:186
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:28
 msgid "Design 06"
 msgstr ""
 
-#: public/nova-functions.php:426
+#: public/nova-functions.php:372
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:187
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:29
 msgid "Design 07"
 msgstr ""
 
-#: public/nova-functions.php:435
+#: public/nova-functions.php:381
 msgid "Mini"
 msgstr ""
 
-#: public/nova-functions.php:477
+#: public/nova-functions.php:423
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
 
-#: public/nova-functions.php:478
+#: public/nova-functions.php:424
 msgid "Select product options before adding this product to your cart."
 msgstr ""
 
-#: public/nova-functions.php:479
+#: public/nova-functions.php:425
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
 
-#: public/nova-functions.php:493
+#: public/nova-functions.php:439
 msgid "Please select a rating"
-msgstr ""
-
-#: includes/options/base-field.php:92
-msgid "CONFIG"
-msgstr ""
-
-#: includes/options/base-field.php:98 includes/options/base-field.php:118
-msgid "USAGE"
-msgstr ""
-
-#: includes/options/base-field.php:104
-msgid "VALUE"
 msgstr ""
 
 #: includes/shortcodes/class-nova-shortcodes-row.php:23
@@ -2915,85 +2878,81 @@ msgstr ""
 msgid "Header Preset"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:267
+#: includes/shortcodes/class-nova-shortcodes.php:266
 msgid "Show All"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:285
-#: includes/shortcodes/class-nova-shortcodes.php:287
+#: includes/shortcodes/class-nova-shortcodes.php:284
+#: includes/shortcodes/class-nova-shortcodes.php:286
 msgid "Best Sellers"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:289
+#: includes/shortcodes/class-nova-shortcodes.php:288
 msgid "New Products"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:290
+#: includes/shortcodes/class-nova-shortcodes.php:289
 msgid "Sales Products"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:413
+#: includes/shortcodes/class-nova-shortcodes.php:412
 msgid "Read More"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:458
+#: includes/shortcodes/class-nova-shortcodes.php:457
 msgid "Days"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:459
+#: includes/shortcodes/class-nova-shortcodes.php:458
 msgid "Hours"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:460
+#: includes/shortcodes/class-nova-shortcodes.php:459
 msgid "Mins"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:461
+#: includes/shortcodes/class-nova-shortcodes.php:460
 msgid "Sec"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:987
+#: includes/shortcodes/class-nova-shortcodes.php:986
 msgid "Add to cart"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:991
+#: includes/shortcodes/class-nova-shortcodes.php:990
 msgid "View Product"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:1217
+#: includes/shortcodes/class-nova-shortcodes.php:1216
 msgid "View detail"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2017
+#: includes/shortcodes/class-nova-shortcodes.php:2016
 msgid "Google map requires API Key in order to work."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2021
+#: includes/shortcodes/class-nova-shortcodes.php:2020
 msgid "No address"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2627
-msgid "BUY"
-msgstr ""
-
-#: includes/shortcodes/class-nova-shortcodes.php:3311
-#: includes/shortcodes/class-nova-shortcodes.php:3319
+#: includes/shortcodes/class-nova-shortcodes.php:3058
+#: includes/shortcodes/class-nova-shortcodes.php:3066
 msgid "Can not connect to Google Maps APIs"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3337
+#: includes/shortcodes/class-nova-shortcodes.php:3084
 msgid "No location found for the entered address."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3339
+#: includes/shortcodes/class-nova-shortcodes.php:3086
 msgid "Invalid request. Did you enter an address?"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3344
+#: includes/shortcodes/class-nova-shortcodes.php:3091
 msgid "Unable to contact Google API service."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3424
+#: includes/shortcodes/class-nova-shortcodes.php:3171
 msgid "Load More"
 msgstr ""
 
@@ -3021,6 +2980,14 @@ msgstr ""
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:172
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:188
 msgid "Column"
+msgstr ""
+
+#: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:205
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:217
+msgid ""
+"Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by theme). Alternatively enter size in pixels (Example: "
+"200x100 (Width x Height))."
 msgstr ""
 
 #: includes/plugins/shortcodes/class-nova-shortcodes-helper.php:215
@@ -3369,68 +3336,256 @@ msgstr ""
 msgid "At least two color points should be selected."
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:319
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:322
 msgid "Infinite Animations"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:321
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:324
 msgid "InfiniteRotate"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:325
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:328
 msgid "InfiniteRotateCounter"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:329
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:332
 msgid "InfiniteDangle"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:333
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:336
 msgid "InfiniteSwing"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:337
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:340
 msgid "InfinitePulse"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:341
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:344
 msgid "InfiniteHorizontalShake"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:345
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:348
 msgid "InfiniteVericalShake"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:349
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:352
 msgid "InfiniteBounce"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:353
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:356
 msgid "InfiniteFlash"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:357
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:360
 msgid "InfiniteTADA"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:361
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:364
 msgid "InfiniteRubberBand"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:365
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:368
 msgid "InfiniteHorizontalFlip"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:369
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:372
 msgid "InfiniteVericalFlip"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:373
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:376
 msgid "InfiniteHorizontalScaleFlip"
 msgstr ""
 
-#: includes/plugins/shortcodes/class-nova-shortcodes.php:377
+#: includes/plugins/shortcodes/class-nova-shortcodes.php:380
 msgid "InfiniteVerticalScaleFlip"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:102
+msgid "Items per page"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:119
+msgid "Enable Skill Filter"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:142
+msgid "Skill Filter"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:157
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:173
+msgid "Skill Filters"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:161
+msgid "Filter style"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:178
+msgid "Design"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:188
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:30
+msgid "Design 08"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:196
+msgid "Item Title HTML Tag"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:208
+msgid "Default is H5"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:227
+msgid "Column Type"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:238
+msgid "Responsive Column"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:258
+msgid "Portfolio Item Width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:260
+msgid "Set your portfolio item default width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:274
+msgid "Portfolio Item Height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:275
+msgid "Set your portfolio item default height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:290
+msgid "Mobile Column"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:308
+msgid "Enable Custom Item Setting"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:320
+msgid "Item Sizes"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:325
+msgid ""
+"it will occupy x width of base item width ( example: this item will be "
+"occupy 2x width of base width you need entered \"2\")"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:329
+msgid "1/2x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:330
+msgid "1x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:331
+msgid "1.5x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:332
+msgid "2x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:333
+msgid "2.5x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:334
+msgid "3x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:335
+msgid "3.5x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:336
+msgid "4x width"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:343
+msgid ""
+"it will occupy x height of base item height ( example: this item will be "
+"occupy 2x height of base height you need entered \"2\")"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:347
+msgid "1/2x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:348
+msgid "1x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:349
+msgid "1.5x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:350
+msgid "2x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:351
+msgid "2.5x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:352
+msgid "3x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:353
+msgid "3.5x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:354
+msgid "4x height"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:360
+msgid "Custom Image Size"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:362
+msgid "leave blank to inherit from parent settings"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:384
+msgid "Portfolio Masonry"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:387
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:234
+msgid "La Studio"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_portfolio_masonry.php:388
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:235
+msgid "Display portfolio with la-studio themes style."
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:43
+msgid "Classic 01"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:44
+msgid "Classic 02"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:45
+msgid "Classic 03"
+msgstr ""
+
+#: includes/plugins/shortcodes/configs/la_show_portfolios.php:231
+msgid "Show Portfolios"
 msgstr ""
 
 #. Name of the plugin

@@ -2527,11 +2527,13 @@ class Nova_Shortcodes {
 	 */
 	public static function image_with_hotspots( $atts, $content ) {
 		$atts = shortcode_atts( array(
+			'product_viewer' => false,
 			'image'          => '',
 			'preview'        => '',
 			'el_class'       => '',
 			'color'          => 'primary',
 			'hotspot_icon'   => 'plus_sign',
+			'start_number'   => 1,
 			'tooltip'        => 'hover',
 			'tooltip_shadow' => 'none',
 			'animation'      => ''
@@ -2554,17 +2556,22 @@ class Nova_Shortcodes {
 
 		$atts['el_class'] = Novaworks_Shortcodes_Helper::getExtraClass( $image_class . $atts['el_class'] );
 
-		$css_class = "nova-image-with-hotspots" . $atts['el_class'];
+		$css_class = array(
+			'nova-image-with-hotspots',
+			$atts['el_class']
+		);
 		$GLOBALS['nova-image_hotspot-icon'] = $atts['hotspot_icon'];
-		$GLOBALS['nova-image_hotspot-count'] = 1;
+		$GLOBALS['nova-image_hotspot-count'] = ( int ) $atts['start_number'];
 		$GLOBALS['nova-image_hotspot-tooltip-func'] = $atts['tooltip'];
+		$GLOBALS['nova-image_hotspot-product-viewer'] = $atts['product_viewer'];
 		
 		return sprintf(
-			'<div class="%s" data-style="%s" data-hotspot-icon="%s" data-size="medium" data-color="%s" data-tooltip-func="%s" data-tooltip_shadow="%s" data-animation="%s">
+			'<div class="%s" data-style="%s" data-product-viewer="%s" data-hotspot-icon="%s" data-size="medium" data-color="%s" data-tooltip-func="%s" data-tooltip_shadow="%s" data-animation="%s">
 				%s
 			</div>',
-			esc_attr( $css_class ),
+			esc_attr( implode( ' ', $css_class ) ),
 			esc_attr( $style ),
+			esc_attr( $atts['product_viewer'] ),
 			esc_attr( $atts['hotspot_icon'] ),
 			esc_attr( $atts['color'] ),
 			esc_attr( $atts['tooltip'] ),
@@ -2583,35 +2590,73 @@ class Nova_Shortcodes {
 	 */
 	public static function hotspot( $atts, $content ) {
 		$atts = shortcode_atts( array(
-			'top'      => '',
-			'left'     => '',
-			'position' => ''
+			'product_viewer' => null,
+			'product_id'     => '',
+			'top'            => '',
+			'left'           => '',
+			'position'       => '',
+			'title'          => ''
 		), $atts, 'nova_' . __FUNCTION__ );
 		
 		$styles = array();
 		$styles[] = 'top:' . $atts['top'];
 		$styles[] = 'left:' . $atts['left'];
+		
+		$product_id = ( int ) $atts['product_id'];
 
-		$hotspot_icon = ( $GLOBALS['nova-image_hotspot-icon'] == 'plus_sign') ? '' : $GLOBALS['nova-image_hotspot-count'];
-		$click_class = ( $GLOBALS['nova-image_hotspot-tooltip-func'] == 'click') ? ' click' : null;
+		$hotspot_icon = '';
+		if( $GLOBALS['nova-image_hotspot-icon'] == 'numerical' ) $hotspot_icon = $GLOBALS['nova-image_hotspot-count'];
+		if( $GLOBALS['nova-image_hotspot-icon'] == 'custom_title' ) $hotspot_icon = $atts['title'];
+		$click_class = ( $GLOBALS['nova-image_hotspot-tooltip-func'] == 'click' ) ? ' click' : null;
 
 		$tooltip_content_class = ( empty( $content ) ) ? 'nttip empty-tip' : 'nttip';
+		
+		if( $GLOBALS['nova-image_hotspot-product-viewer'] == true && ( int ) $product_id > 0 ) {
+			if( ! function_exists( 'wc_get_product') ) return false;
+			$product = wc_get_product( $product_id );
+			
+			$tooltip_content_html = '
+			<div class="nttip product-viewer" data-tooltip-position="' . esc_attr( $atts['position'] ) . '">
+				<div class="inner">
+					<div class="public-hotspot-info__product-image-holder">
+						<div class="public-hotspot-info__product-image-inner">
+							<a class="public-hotspot-info__product-image" target="_blank" href="'. esc_url( get_post_permalink( $product_id ) ) . '">' . $product->get_image() . '</a>
+						</div>
+					</div>
+					<a class="public-hotspot-info__btn-buy" target="_blank" href="' . esc_url( get_post_permalink( $product_id ) ) . '">
+						<span class="btn_txt">' . esc_html__( 'BUY', 'nova' ) . '</span>
+						<span class="btn_ico">
+							<i class="nova-icon-arrow-tail-right"></i>
+						</span>
+					</a>
+					<div class="public-hotspot-info__first-line">
+						<div class="public-hotspot-info__price">' . $product->get_price_html() . '</div>
+					</div>
+					<div class="public-hotspot-info__second-line">
+						<a target="_blank" href="' . esc_url( get_post_permalink( $product_id ) ) . '">' . $product->get_title() . '</a>
+					</div>
+				</div>
+			</div>
+			';
+		} else {
+			$tooltip_content_html = '
+			<div class="' . esc_attr( $tooltip_content_class ) . '" data-tooltip-position="' . esc_attr( $atts['position'] ) . '">
+				<div class="inner">' . Novaworks_Shortcodes_Helper::remove_js_autop( $content ) . '</div>
+			</div>
+			';
+		}
 		
 		return sprintf(
 			'<div class="nova_hotspot_wrap" style="%s">
 				<div class="nova_hotspot %s">
 					<span>%s</span>
 				</div>
-				<div class="%s" data-tooltip-position="%s">
-					<div class="inner">%s</div>
-				</div>
+				%s
 			</div>',
 			esc_attr( implode( ';', $styles ) ),
-			$click_class,
-			$hotspot_icon,
-			esc_attr( $tooltip_content_class ),
-			esc_attr( $atts['position'] ),
-			Novaworks_Shortcodes_Helper::remove_js_autop( $content )
+			esc_attr( $click_class ),
+			esc_attr( $hotspot_icon ),
+			$tooltip_content_html
 		);
 		
 		$GLOBALS['nova-image_hotspot-count']++;		

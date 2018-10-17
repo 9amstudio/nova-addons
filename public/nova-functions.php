@@ -33,7 +33,7 @@ if ( ! function_exists( 'nova_fw_add_element' ) ) {
         $depend = '';
         $sub = ( isset( $field['sub'] ) ) ? 'sub-' : '';
         $unique = ( isset( $unique ) ) ? $unique : '';
-        $class = 'Novaworks_Theme_Options_Field_' . strtolower( $field['type'] );
+        $class = 'Novaworks_Framework_Field_' . strtolower( $field['type'] );
         $wrap_class = ( isset( $field['wrap_class'] ) ) ? ' ' . $field['wrap_class'] : '';
         $el_class = ( isset($field['title'] ) ) ? sanitize_title( $field['title'] ) : 'no-title';
         $hidden = '';
@@ -321,6 +321,61 @@ if ( !function_exists( 'nova_fw_restore_shortcodes' ) ) {
     }
 }
 
+if( ! function_exists( 'nova_fw_ajax_autocomplete' ) ) {
+    function nova_fw_ajax_autocomplete() {
+
+        if ( empty( $_GET['query_args'] ) || empty( $_GET['s'] ) ) {
+            echo '<b>' . esc_html__( 'Query is empty ...', 'nova' ) . '</b>';
+            die();
+        }
+
+        $out = array();
+        ob_start();
+		
+		add_filter( 'posts_search', 'nova_fw_filter_search_by_title_only', 600, 2 );
+
+        $query = new WP_Query( wp_parse_args( $_GET['query_args'], array( 's' => $_GET['s'] ) ) );
+        if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                echo '<div data-id="' . get_the_ID() . '">' . get_the_title() . '</div>';
+            }
+        } else {
+            echo '<b>' . esc_html__( 'Not found', 'nova' ) . '</b>';
+        }
+
+        echo ob_get_clean();
+        wp_reset_postdata();
+        die();
+    }
+    add_action( 'wp_ajax_nova-fw-autocomplete', 'nova_fw_ajax_autocomplete' );
+}
+
+if ( ! function_exists('nova_fw_filter_search_by_title_only') ) {
+	function nova_fw_filter_search_by_title_only( $search, $wp_query ){
+		global $wpdb;
+		if ( empty( $search ) ) {
+			return $search;
+		} // skip processing - no search term in query
+		$q = $wp_query->query_vars;
+		$n = ! empty( $q['exact'] ) ? '' : '%';
+			$search = $searchand = '';
+			foreach ( (array) $q['search_terms'] as $term ) {
+				$term = $wpdb->esc_like( $term );
+				$like = $n . $term . $n;
+				$search .= $wpdb->prepare( "{$searchand}($wpdb->posts.post_title LIKE %s)", $like );
+				$searchand = ' AND ';
+			}
+			if ( ! empty( $search ) ) {
+				$search = " AND ({$search}) ";
+				if ( ! is_user_logged_in() ) {
+					$search .= " AND ($wpdb->posts.post_password = '') ";
+				}
+			}
+		return $search;			
+	}
+}
+
 if ( ! function_exists( 'nova_pagespeed_detected' ) ) {
     function nova_pagespeed_detected() {
         return (
@@ -352,7 +407,6 @@ if ( ! function_exists( 'nova_build_link_from_atts' ) ) {
         return $result;
     }
 }
-
 
 if ( ! function_exists( 'nova_get_blank_image_src' ) ) {
     function nova_get_blank_image_src() {

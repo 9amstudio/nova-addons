@@ -10,9 +10,7 @@ class Novaworks_Shortcodes {
 
     public static $instance = null;
 
-    private $_shortcodes = array(
-        'la_portfolio_masonry'
-    );
+    private $_shortcodes = array();
 
     private $_woo_shortcodes = array();
 

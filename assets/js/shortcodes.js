@@ -638,11 +638,11 @@ jQuery( document ).ready( function ( $ ) {
 		var $faq = $( this ).closest( '.nova-faq' );
 
 		if ( $faq.hasClass( 'open' ) ) {
-			$faq.find( '.answer' ).stop( true, true ).slideUp( function () {
+			$faq.find( '.accordion-content' ).stop( true, true ).slideUp( function () {
 				$faq.removeClass( 'open' );
 			} );
 		} else {
-			$faq.find( '.answer' ).stop( true, true ).slideDown( function () {
+			$faq.find( '.accordion-content' ).stop( true, true ).slideDown( function () {
 				$faq.addClass( 'open' );
 			} );
 		}

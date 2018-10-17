@@ -2668,6 +2668,13 @@ class Nova_Addons_VC {
 			'allowed_container_element' => 'vc_row',
 			'content_element'           => false,
 			'params'                    => array(
+
+				array(
+					'heading'     => esc_html__( 'Select identificator', 'nova' ),
+					'description' => esc_html__( 'Input product ID or product SKU or product title to see suggestions', 'nova' ),
+					'type'        => 'autocomplete',
+					'param_name'  => 'product_id',
+				),
 				array(
 					'heading'     => esc_html__( 'Position', 'nova' ),
 					'type'        => 'dropdown',
@@ -2691,10 +2698,16 @@ class Nova_Addons_VC {
 					'param_name'  => 'top'
 				),
 				array(
+					'heading'     => esc_html__( 'Title', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'title'
+				),
+				array(
 					'heading'     => esc_html__( 'Content', 'nova' ),
 					'type'        => 'textarea_html',
 					'param_name'  => 'content'
-				)
+				),
+
 			)
 		) );
 		
@@ -2706,6 +2719,16 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'description' => esc_html__( 'Add Hotspots On Your Image', 'nova' ),
 			'params'      => array(
+
+				array(
+					'heading'     => esc_html__( 'Enable Product Viewer', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'product_viewer',
+					'value'       => array(
+						esc_html__( 'Yes', 'nova' ) => 'true'
+					)
+				),
+
 				array(
 					'heading'     => esc_html__( 'Image', 'nova' ),
 					'description' => esc_html__( 'Choose your image that will show the hotspots. <br/> You can then click on the image in the preview area to add your hotspots in the desired locations.', 'nova' ),
@@ -2769,7 +2792,21 @@ class Nova_Addons_VC {
 					'param_name'  => 'hotspot_icon',
 					'value'       => array(
 						esc_html__( 'Plus Sign', 'nova' ) => 'plus_sign',
-						esc_html__( 'Numerical', 'nova' ) => 'numerical'
+						//esc_html__( 'Numerical', 'nova' ) => 'numerical',
+						esc_html__( 'Custom Title', 'nova' ) => 'custom_title',
+					),
+					'save_always' => true,
+					'group'       => esc_html__( 'Style', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Start number', 'nova' ),
+					'description' => esc_html__( 'The number that will begin on the hotspots', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'start_number',
+					'value'       => '1',
+					'dependency'  => array(
+						'element'   => 'hotspot_icon',
+						'value'     => 'numerical'
 					),
 					'save_always' => true,
 					'group'       => esc_html__( 'Style', 'nova' )

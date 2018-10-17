@@ -1893,6 +1893,8 @@
 						'left' : namedAttrs.left,
 						'top' : namedAttrs.top,
 						'position' : namedAttrs.position,
+						'product_id' : namedAttrs.product_id,
+						'title' : namedAttrs.title,
 						'content': matches[5]
 					};
 					window.$hotSpotData.push( hotspotObj );
@@ -1911,9 +1913,15 @@
 						else
 							$positionOptions += '<option name="' + $positionArr[i] + '">' + $positionArr[i] + '</option>';
 					}
+					
+					var auto_complete_action = '{&quot;action&quot;:&quot;nova-fw-autocomplete&quot;,&quot;query_args&quot;:{&quot;post_type&quot;:&quot;product&quot;,&quot;orderby&quot;:&quot;title&quot;,&quot;order&quot;:&quot;ASC&quot;,&quot;posts_per_page&quot;:20},&quot;elm_name&quot;:&quot;product_id&quot;}';
+					var auto_complete_field = '<div class="wrap-autocomplete"><div>Product ID</div><div class="nova-autocomplete" data-query="' + auto_complete_action + '"><input type="text" class="single" data-depend-id="product_id"><i class="fa fa-codevz"></i><div class="ajax_items" style="display: none;"></div><div class="selected_items"><div id="' + v.product_id + '"><input name="product_id" value="' + v.product_id + '"><span>' + v.product_id + '<i class="fa fa-remove"></i></span></div></div></div></div>';
+
 					//textarea
-					$( '<div class="hotspot-content" data-rel="' + ( k + 1 ) + '"><div class="wpb_element_label"><span><a class="delete" href="#" title="Delete Hotspot"><i class="fa fa-times"></i></a></span> Hotspot <i>Number <span class="num">' + ( k + 1 ) + '</span></i></div> <div>Tooltip Position</div> <select name="position">' + $positionOptions + '</select> <div>Text</div> <textarea name="text">' + v.content + '</textarea></div>' ).insertBefore( 'div[data-vc-shortcode-param-name="content"]' );
+					$( '<div class="hotspot-content" data-rel="' + ( k + 1 ) + '"><div class="wpb_element_label"><span><a class="delete" href="#" title="Delete Hotspot"><i class="fa fa-times"></i></a></span> Hotspot <i>Number <span class="num">' + ( k + 1 ) + '</span></i></div> <div>Tooltip Position</div> <select name="position">' + $positionOptions + '</select> '+ auto_complete_field +' <div>Title</div> <input type="text" name="title" value="' + v.title + '" /> <div>Text</div> <textarea name="text">' + v.content + '</textarea></div>' ).insertBefore( 'div[data-vc-shortcode-param-name="content"]' );
 				} );
+				
+				$( '.wrap-autocomplete .nova-autocomplete').NOVA_FRAMEWORK_AUTOCOMPLETE();
 			}
 		}
 
@@ -1921,13 +1929,15 @@
 			window.$hotSpotData[rel-1] = {
 				'left': x,
 				'top': y,
+				'product_id': $( '.hotspot-content[data-rel="' + rel + '"] input[name="product_id"]' ).val(),
+				'title': $( '.hotspot-content[data-rel="' + rel + '"] input[name="title"]' ).val(),
 				'content': $( '.hotspot-content[data-rel="' + rel + '"] textarea' ).val(),
 				'position': $( '.hotspot-content[data-rel="' + rel + '"] select' ).val()
 			}
 			//store it / convert to shortcodes
 			var _content = '';
 			$.each( window.$hotSpotData, function( k, v ) {
-				_content += '[nova_hotspot left="' + v.left + '" top="' + v.top + '" position="' + v.position + '"]' + v.content + '[/nova_hotspot]';
+				_content += '[nova_hotspot left="' + v.left + '" top="' + v.top + '" position="' + v.position + '" product_id="' + v.product_id + '" title="' + v.title + '"]' + v.content + '[/nova_hotspot]';
 			} );
 
 			//save dynamic fields (hotspot)
@@ -2005,10 +2015,13 @@
 				} );
 
 				$( this ).append( $hotspot );
+					
+				var auto_complete_action = '{&quot;action&quot;:&quot;nova-fw-autocomplete&quot;,&quot;query_args&quot;:{&quot;post_type&quot;:&quot;product&quot;,&quot;orderby&quot;:&quot;title&quot;,&quot;order&quot;:&quot;ASC&quot;,&quot;posts_per_page&quot;:20},&quot;elm_name&quot;:&quot;product_id&quot;}';
+				var auto_complete_field = '<div>Product ID</div><div class="nova-autocomplete" data-query="' + auto_complete_action + '"><input type="text" class="single" data-depend-id="product_id"><i class="fa fa-codevz"></i><div class="ajax_items" style="display: none;"></div><div class="selected_items"></div></div>';
 
 				//create textarea
-				$( '<div class="hotspot-content" data-rel="' + hotSpots + '"><div class="wpb_element_label"><span><a class="delete" href="#" title="Delete Hotspot"><i class="fa fa-times" aria-hidden="true"></i></a></span> Hotspot <i>Number <span class="num">' + hotSpots + '</span></i></div> <div>Tooltip Position</div> <select name="position"><option value="top">top</option><option value="right">right</option><option value="bottom">bottom</option><option value="left">left</option></select> <div>Text</div> <textarea name="text"></textarea></div>' ).insertBefore( 'div[data-vc-shortcode-param-name="content"]' );
-
+				$( '<div class="hotspot-content" data-rel="' + hotSpots + '"><div class="wpb_element_label"><span><a class="delete" href="#" title="Delete Hotspot"><i class="fa fa-times" aria-hidden="true"></i></a></span> Hotspot <i>Number <span class="num">' + hotSpots + '</span></i></div> <div>Tooltip Position</div> <select name="position"><option value="top">top</option><option value="right">right</option><option value="bottom">bottom</option><option value="left">left</option></select> <div class="wrap-autocomplete">' + auto_complete_field + '</div> <div>Title</div> <input type="text" name="title" value="" /> <div>Text</div> <textarea name="text"></textarea></div>' ).insertBefore( 'div[data-vc-shortcode-param-name="content"]' );
+				$('.wrap-autocomplete .nova-autocomplete').NOVA_FRAMEWORK_AUTOCOMPLETE();
 				nova_hotspot_make_draggable();
 				nova_update_hotspot_data( hotSpots, ( ( e.pageX - posX )/parentSizes.width ) * 100 + '%', ( ( e.pageY - posY )/parentSizes.height ) * 100 + '%' );
 			} )
@@ -2031,6 +2044,10 @@
 				var $rel = $( this ).parents( '.hotspot-content' ).attr( 'data-rel' );
 				nova_update_hotspot_data( $rel, $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]' )[0].style.left , $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]' )[0].style.top );
 			} )
+            .on( 'change', '.hotspot-content input', function( e ) {
+                var $rel = $(this).parents( '.hotspot-content' ).attr( 'data-rel' );
+                nova_update_hotspot_data( $rel, $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]' )[0].style.left , $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]' )[0].style.top );
+            } )
 			.on( 'change', '.hotspot-content select', function( e ) {
 				var $rel = $( this ).closest( '.hotspot-content' ).attr( 'data-rel' );
 				nova_update_hotspot_data( $rel, $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]' )[0].style.left , $( '#nova_image_with_hotspots_preview .hotspot[data-rel="' + $rel + '"]')[0].style.top );

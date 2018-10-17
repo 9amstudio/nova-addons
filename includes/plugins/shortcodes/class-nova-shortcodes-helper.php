@@ -1128,8 +1128,8 @@ class Novaworks_Shortcodes_Helper {
         }
 
         $setting_obj = array();
-        $setting_obj['slidesToShow'] = absint($slides_column['xlg']);
-        $setting_obj['slidesToScroll'] = absint($slide_to_scroll);
+        $setting_obj['slidesToShow'] = absint( $slides_column['xlg'] );
+        $setting_obj['slidesToScroll'] = absint( $slide_to_scroll );
 
 
         $arr_style .= 'color:' . $arrow_color . ';';
