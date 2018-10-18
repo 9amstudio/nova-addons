@@ -76,6 +76,7 @@ class Nova_Addons {
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-carousel.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/shortcodes/class-nova-timeline.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/class-autoload.php' );
+		include_once( NOVA_ADDONS_DIR . 'includes/product-filter.php' );
 		WPBakeryShortCode_Nova_Row::get_instance();
 		new Novaworks_Autoload();
 	}

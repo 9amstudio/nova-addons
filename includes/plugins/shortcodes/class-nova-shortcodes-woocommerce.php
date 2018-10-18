@@ -846,7 +846,7 @@ class Novaworks_Shortcodes_WooCommerce {
 
         }
 
-        return '<div id="'.esc_attr( $unique_id ).'" class="' . esc_attr( implode( ' ', $wrapper_classes ) ) . '">' . ob_get_clean() . '</div>';
+        return '<div id="'.esc_attr( $unique_id ) . '" class="' . esc_attr( implode( ' ', $wrapper_classes ) ) . '">' . ob_get_clean() . '</div>';
     }
 
     /**

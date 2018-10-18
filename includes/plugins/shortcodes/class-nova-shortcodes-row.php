@@ -33,9 +33,9 @@ class Novaworks_Shortcodes_Row {
 
         vc_add_param( 'vc_row', array(
             'type' => 'gradient',
-            'heading' => esc_html__('Gradient Type',  'nova'),
+            'heading' => esc_html__( 'Gradient Type',  'nova' ),
             'param_name' => 'bg_grad',
-            'description' => esc_html__('At least two color points should be selected.', 'nova'),
+            'description' => esc_html__( 'At least two color points should be selected.', 'nova' ),
             'dependency' => array( 'element' => 'use_grad', 'value' => array( 'yes' ) ),
             'group' => $group_name,
         ) );
