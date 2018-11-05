@@ -202,13 +202,12 @@ jQuery( document ).ready( function ( $ ) {
 
 		$carousel.find( 'ul.products' ).addClass( 'owl-carousel' ).owlCarousel( {
 			items          : columns,
+			lazyLoad: true,
 			autoplay       : !!autoplay,
 			autoplayTimeout: autoplay,
 			loop           : loop === 'yes',
-			pagination     : true,
-			navigation     : false,
-			slideSpeed     : 300,
-			paginationSpeed: 500,
+			dots     : false,
+			nav     : true,
 			rtl            : !!( novaData && novaData.isRTL && novaData.isRTL === '1' ),
 			responsive     : {
 				0:{
@@ -220,7 +219,8 @@ jQuery( document ).ready( function ( $ ) {
 				767:{
 					items:columns
 				}
-			}
+			},
+			navText: ['<svg viewBox="0 0 14 20"><use xlink:href="#left"></use></svg>', '<svg viewBox="0 0 14 20"><use xlink:href="#right"></use></svg>']
 		} );
 	} );
 

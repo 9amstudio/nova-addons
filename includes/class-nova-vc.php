@@ -99,6 +99,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'columns',
 					'type'        => 'dropdown',
 					'value'       => array(
+						esc_html__( '2 Columns', 'nova' ) => 2,
+						esc_html__( '3 Columns', 'nova' ) => 3,
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
 						esc_html__( '6 Columns', 'nova' ) => 6
@@ -169,6 +171,8 @@ class Nova_Addons_VC {
 					'param_name'  => 'columns',
 					'type'        => 'dropdown',
 					'value'       => array(
+						esc_html__( '2 Columns', 'nova' ) => 2,
+						esc_html__( '3 Columns', 'nova' ) => 3,
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
 						esc_html__( '6 Columns', 'nova' ) => 6
@@ -252,6 +256,7 @@ class Nova_Addons_VC {
 					'param_name'  => 'columns',
 					'type'        => 'dropdown',
 					'value'       => array(
+						esc_html__( '2 Columns', 'nova' ) => 2,
 						esc_html__( '3 Columns', 'nova' ) => 3,
 						esc_html__( '4 Columns', 'nova' ) => 4,
 						esc_html__( '5 Columns', 'nova' ) => 5,
@@ -316,6 +321,16 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
+					'heading'     => esc_html__( 'Styles', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+						esc_html__( 'Style 03', 'nova' ) => '3',
+					),
+				),
+				array(
 					'description' => esc_html__( 'Number of posts you want to show', 'nova' ),
 					'heading'     => esc_html__( 'Number of posts', 'nova' ),
 					'param_name'  => 'per_page',
@@ -328,9 +343,11 @@ class Nova_Addons_VC {
 					'param_name'  => 'columns',
 					'type'        => 'dropdown',
 					'value'       => array(
+						esc_html__( '2 Columns', 'nova' ) => 2,
 						esc_html__( '3 Columns', 'nova' ) => 3,
 						esc_html__( '4 Columns', 'nova' ) => 4
-					)
+					),
+					'std'         => '3'
 				),
 				array(
 					'heading'     => esc_html__( 'Category', 'nova' ),
@@ -348,6 +365,13 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'Hide information about date, category', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'hide_meta',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
+				),
+				array(
+					'heading'     => esc_html__( 'Hide Post Excerpt', 'nova' ),
+					'description' => esc_html__( 'Hide short description', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'hide_excerpt',
 					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
 				vc_map_add_css_animation(),
@@ -1207,6 +1231,15 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
+					'heading'     => esc_html__( 'Styles', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+					),
+				),
+				array(
 					'heading'     => esc_html__( 'Images', 'nova' ),
 					'description' => esc_html__( 'Upload a product image', 'nova' ),
 					'param_name'  => 'image',
@@ -1221,16 +1254,22 @@ class Nova_Addons_VC {
 					'admin_label' => true
 				),
 				array(
-					'heading'     => esc_html__( 'Product description', 'nova' ),
-					'description' => esc_html__( 'Enter product description', 'nova' ),
-					'type'        => 'textarea',
-					'param_name'  => 'content'
-				),
-				array(
 					'heading'     => esc_html__( 'Product price', 'nova' ),
 					'description' => esc_html__( 'Enter product price. Only allow number.', 'nova' ),
 					'type'        => 'textfield',
 					'param_name'  => 'price'
+				),
+				array(
+					'heading'     => esc_html__( 'Regular price', 'nova' ),
+					'description' => esc_html__( 'Enter product price. Only allow number.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'regular_price'
+				),
+				array(
+					'heading'     => esc_html__( 'Product description', 'nova' ),
+					'description' => esc_html__( 'Enter product description', 'nova' ),
+					'type'        => 'textarea',
+					'param_name'  => 'content'
 				),
 				array(
 					'heading'     => esc_html__( 'Product URL', 'nova' ),
@@ -1243,6 +1282,12 @@ class Nova_Addons_VC {
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
 					'param_name'  => 'el_class',
 					'type'        => 'textfield'
+				),
+				array(
+					'heading'    => esc_html__( 'CSS box', 'nova' ),
+					'type'       => 'css_editor',
+					'param_name' => 'css',
+					'group'      => esc_html__( 'Design Options', 'nova' )
 				)
 			)
 		) );
@@ -3047,14 +3092,14 @@ class Nova_Addons_VC {
 				Novaworks_Shortcodes_Helper::getParamItemSpace( array(
 					'std'         => 'default'
 				) ),
-				/*
+
 				array(
 					'heading'     => esc_html__( 'Enable slider', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'enable_carousel',
 					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
-				*/
+
 				array(
 					'heading'     => esc_html__( 'Limit', 'nova' ),
 					'description' => esc_html__( 'Maximum number of Images to add. Max of 60', 'nova' ),
@@ -3683,6 +3728,448 @@ class Nova_Addons_VC {
 					'param_name'  => 'el_class'
 				)
 			)		
+		) );
+		
+		// Popup video
+		vc_map( array(
+			'name'        => esc_html__( 'Popup Video Player', 'nova' ),
+			'base'        => 'nova_popup_video',
+			'icon'        => 'nova-wpb-icon nova_popup_video',
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'description' => esc_html__( 'Embed YouTube/Vimeo player', 'nova' ),
+			'params'      => array(
+				array(
+					'heading'     => esc_html__( 'Icon library', 'nova' ),
+					'description' => esc_html__( 'Select icon library.', 'nova' ),
+					'param_name'  => 'icon_type',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Font Awesome', 'nova' ) => 'fontawesome',
+						esc_html__( 'Open Iconic', 'nova' ) => 'openiconic',
+						esc_html__( 'Typicons', 'nova' ) => 'typicons',
+						esc_html__( 'Entypo', 'nova' ) => 'entypo',
+						esc_html__( 'Linecons', 'nova' ) => 'linecons',
+						esc_html__( 'Mono Social', 'nova' ) => 'monosocial',
+						esc_html__( 'Novaworks Icons', 'nova' ) => 'nova_icon_outline',
+						esc_html__( 'Nucleo Glyph', 'nova' ) => 'nucleo_glyph',
+						esc_html__( 'Material', 'nova' ) => 'material',
+						esc_html__( 'Custom Image', 'nova' ) => 'image'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_fontawesome',
+					'value'       => 'fa fa-adjust',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'fontawesome'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_openiconic',
+					'value'       => 'vc-oi vc-oi-dial',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'openiconic',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'openiconic'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_typicons',
+					'value'       => 'typcn typcn-adjust-brightness',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'typicons',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'typicons'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_entypo',
+					'value'       => 'entypo-icon entypo-icon-note',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'entypo',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'entypo'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_linecons',
+					'value'       => 'vc_li vc_li-heart',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'linecons',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'linecons'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_monosocial',
+					'value'       => 'vc-mono vc-mono-fivehundredpx',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'monosocial',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'monosocial'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_nova_icon_outline',
+					'value'       => 'nova-icon nature_bear',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'nova_icon_outline',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'nova_icon_outline'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_nucleo_glyph',
+					'value'       => 'nc-icon-glyph nature_bear',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'nucleo_glyph',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'nucleo_glyph'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon', 'nova' ),
+					'description' => esc_html__( 'Select icon from library.', 'nova' ),
+					'type'        => 'iconpicker',
+					'param_name'  => 'icon_material',
+					'value'       => 'vc-material vc-material-cake',
+					'settings'    => array(
+						'emptyIcon'    => false,
+						'type'         => 'material',
+						'iconsPerPage' => 4000
+					),
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'material'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Image', 'nova' ),
+					'description' => esc_html__( 'Upload icon image', 'nova' ),
+					'type'        => 'attach_image',
+					'param_name'  => 'image',
+					'value'       => '',
+					'dependency'  => array(
+						'element'      => 'icon_type',
+						'value'        => 'image'
+					)
+				),
+				array(
+					'type'        => 'textfield',
+					'heading'     => esc_html__( 'Video link', 'nova' ),
+					'param_name'  => 'link',
+					'value'       => '',
+					'admin_label' => true,
+					'description' => sprintf( __( 'Enter link to video (Note: read more about available formats at WordPress <a href="%s" target="_blank">codex page</a>).', 'nova' ), 'http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F' ),
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Video width', 'nova' ),
+					'param_name'  => 'el_width',
+					'value'       => array(
+						'100%' => '100',
+						'90%' => '90',
+						'80%' => '80',
+						'70%' => '70',
+						'60%' => '60',
+						'50%' => '50',
+						'40%' => '40',
+						'30%' => '30',
+						'20%' => '20',
+						'10%' => '10',
+					),
+					'description' => esc_html__( 'Select video width (percentage).', 'nova' ),
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Video aspect ration', 'nova' ),
+					'param_name'  => 'el_aspect',
+					'value'       => array(
+						'16:9' => '169',
+						'4:3' => '43',
+						'2.35:1' => '235',
+					),
+					'description' => esc_html__( 'Select video aspect ratio.', 'nova' ),
+				),
+				array(
+					'type'        => 'dropdown',
+					'heading'     => esc_html__( 'Alignment', 'nova' ),
+					'param_name'  => 'alignment',
+					'value' => array(
+						esc_html__( 'Center', 'nova' ) => 'center',
+						esc_html__( 'Left','nova') => 'left',
+						esc_html__( 'Right','nova')	=> 'right',
+						esc_html__( 'Inline','nova') => 'inline'
+					),
+					'std'         => 'center'
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Style', 'nova' ),
+					'description' => esc_html__( 'Select icon style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Normal', 'nova' ) => 'normal',
+						esc_html__( 'Circle', 'nova' ) => 'circle',
+						esc_html__( 'Square', 'nova' ) => 'square',
+						esc_html__( 'Round', 'nova' ) => 'round',
+						esc_html__( 'Advanced', 'nova' ) => 'advanced'
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Size', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_size',
+					'value'       => 50,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Width', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_width',
+					'value'       => 50,
+					'min'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Padding', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_padding',
+					'value'       => 0,
+					'min'         => 0,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color Type', 'nova' ),
+					'type' 		  => 'dropdown',
+					'param_name'  => 'icon_color_type',
+					'value' 	  => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'		  => 'simple',
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_color',
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Hover Color', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_h_color',
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Color #2', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_color2',
+					'dependency'  => array(
+						'element' 	=> 'icon_color_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group' 	  => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading' 	  => esc_html__( 'Icon Hover Color #2', 'nova' ),
+					'type' 		  => 'colorpicker',
+					'param_name'  => 'icon_h_color2',
+					'dependency'  => array(
+						'element' 	=> 'icon_color_type',
+						'value' 	=> array('gradient')
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Type', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'icon_bg_type',
+					'value'       => array(
+						esc_html__( 'Simple', 'nova' ) => 'simple',
+						esc_html__( 'Gradient', 'nova' ) => 'gradient',
+					),
+					'std'         => 'simple',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_bg',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Background Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_bg',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'circle', 'square', 'round', 'advanced' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Background Color #2', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_bg2',
+					'dependency'  => array(
+						'element' 	=> 'icon_bg_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Background Color #2', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_bg2',
+					'dependency'  => array(
+						'element' 	=> 'icon_bg_type',
+						'value' 	=> array( 'gradient' )
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Style', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'icon_border_style',
+					'value'       => array(
+						esc_html__( 'None', 'nova' ) => '',
+						esc_html__( 'Solid', 'nova' ) => 'solid',
+						esc_html__( 'Dashed', 'nova' ) => 'dashed',
+						esc_html__( 'Dotted', 'nova' ) => 'dotted',
+						esc_html__( 'Double', 'nova' ) => 'double',
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Width', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_border_width',
+					'value'       => 1,
+					'min'         => 1,
+					'max'         => 10,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty'	=> true
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_border_color',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty' => true
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Hover Border Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'icon_h_border_color',
+					'dependency'  => array(
+						'element'   => 'icon_border_style',
+						'not_empty' => true
+					),
+					'group'       => esc_html__( 'Icon Settings', 'nova' )
+				),
+				array(
+					'heading'     => esc_html__( 'Icon Border Radius', 'nova' ),
+					'description' => esc_html__( '0 pixel value will create a square border. As you increase the value, the shape convert in circle slowly. (e.g 500 pixels).', 'nova' ),
+					'type'        => 'nova_number',
+					'param_name'  => 'icon_border_radius',
+					'value'       => 500,
+					'min'         => 1,
+					'suffix'      => 'px',
+					'dependency'  => array(
+						'element' 	=> 'style',
+						'value' 	=> array( 'advanced' )
+					),
+					'group'       => esc_html__('Icon Settings', 'nova')
+				),
+				vc_map_add_css_animation(),
+				Novaworks_Shortcodes_Helper::fieldExtraClass()
+			)
 		) );
 	}
 

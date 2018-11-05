@@ -3914,12 +3914,12 @@ div[data-vc-shortcode="nova_image_with_hotspots"] .vc_icon-remove {
 [data-element_type="nova_image_with_hotspots"] .vc_element-icon,
 [data-element="nova_instagram_feed"] .vc_element-icon,
 [data-element_type="nova_instagram_feed"] .vc_element-icon,
+[data-element="nova_popup_video"] .vc_element-icon,
+[data-element_type="nova_popup_video"] .vc_element-icon,
 [data-element="nova_timeline"] .vc_element-icon,
 [data-element_type="nova_timeline"] .vc_element-icon,
 [data-element="nova_social_link"] .vc_element-icon,
 [data-element_type="nova_social_link"] .vc_element-icon,
-[data-element="nova_testimonial"] .vc_element-icon,
-[data-element_type="nova_testimonial"] .vc_element-icon,
 [data-element="nova_team_member"] .vc_element-icon,
 [data-element_type="nova_team_member"] .vc_element-icon,
 [data-element="vc_custom_heading"] .vc_element-icon,
@@ -3946,10 +3946,6 @@ div[data-vc-shortcode="nova_image_with_hotspots"] .vc_icon-remove {
 [data-element_type="nova_team_member"] .vc_element-icon:before {
     content: "\f0c0";
 }
-[data-element="nova_testimonial"] .vc_element-icon:before,
-[data-element_type="nova_testimonial"] .vc_element-icon:before {
-    content: "\f27b";
-}
 [data-element="nova_social_link"] .vc_element-icon:before,
 [data-element_type="nova_social_link"] .vc_element-icon:before {
     content: "\f1e0";
@@ -3962,7 +3958,10 @@ div[data-vc-shortcode="nova_image_with_hotspots"] .vc_icon-remove {
 [data-element_type="nova_instagram_feed"] .vc_element-icon:before {
     content: "\f16d";
 }
-
+[data-element="nova_popup_video"] .vc_element-icon:before,
+[data-element_type="nova_popup_video"] .vc_element-icon:before {
+    content: "\f144";
+}
 [data-element="nova_image_with_hotspots"] .vc_element-icon:before,
 [data-element_type="nova_image_with_hotspots"] .vc_element-icon:before {
     content: "\f05b";

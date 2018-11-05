@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 03:08+0000\n"
+"POT-Creation-Date: 2018-10-24 08:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: nova-addons.php:121
+#: nova-addons.php:122
 #, php-format
 msgid ""
 "<strong>%s</strong> requires <strong><a href=\"http://bit.ly/vcomposer\" "
@@ -148,6 +148,7 @@ msgid "6 Columns"
 msgstr ""
 
 #: includes/class-nova-vc.php:108 includes/class-nova-vc.php:336
+#: includes/product-filter.php:898
 msgid "Category"
 msgstr ""
 
@@ -534,7 +535,7 @@ msgstr ""
 #: includes/class-nova-vc.php:567 includes/class-nova-vc.php:1147
 #: includes/class-nova-vc.php:1633 includes/class-nova-vc.php:2701
 #: includes/class-nova-vc.php:2922 includes/class-nova-vc.php:3222
-#: includes/class-nova-vc.php:3438
+#: includes/class-nova-vc.php:3438 includes/product-filter.php:284
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:274
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:308
 #: includes/plugins/shortcodes/class-nova-shortcodes-autocomplete-filters.php:330
@@ -1130,7 +1131,7 @@ msgstr ""
 msgid "Chart label source"
 msgstr ""
 
-#: includes/class-nova-vc.php:1370
+#: includes/class-nova-vc.php:1370 includes/product-filter.php:920
 msgid "Auto"
 msgstr ""
 
@@ -1303,7 +1304,7 @@ msgid "The box title"
 msgstr ""
 
 #: includes/class-nova-vc.php:1638
-#: includes/shortcodes/class-nova-shortcodes.php:1444
+#: includes/shortcodes/class-nova-shortcodes.php:1446
 msgid "I am Icon Box"
 msgstr ""
 
@@ -1510,7 +1511,7 @@ msgstr ""
 msgid "Plan Name"
 msgstr ""
 
-#: includes/class-nova-vc.php:2094
+#: includes/class-nova-vc.php:2094 includes/product-filter.php:897
 msgid "Price"
 msgstr ""
 
@@ -1535,7 +1536,7 @@ msgid "Recurring payment unit"
 msgstr ""
 
 #: includes/class-nova-vc.php:2111
-#: includes/shortcodes/class-nova-shortcodes.php:1935
+#: includes/shortcodes/class-nova-shortcodes.php:1937
 msgid "Per Month"
 msgstr ""
 
@@ -1556,7 +1557,7 @@ msgid "Feature value"
 msgstr ""
 
 #: includes/class-nova-vc.php:2135 includes/class-nova-vc.php:2141
-#: includes/shortcodes/class-nova-shortcodes.php:1937
+#: includes/shortcodes/class-nova-shortcodes.php:1939
 msgid "Get Started"
 msgstr ""
 
@@ -1592,8 +1593,8 @@ msgstr ""
 
 #: includes/class-nova-vc.php:2180 includes/class-nova-vc.php:2419
 #: includes/class-nova-vc.php:2479
-#: includes/shortcodes/class-nova-shortcodes.php:2268
-#: includes/shortcodes/class-nova-shortcodes.php:2322
+#: includes/shortcodes/class-nova-shortcodes.php:2270
+#: includes/shortcodes/class-nova-shortcodes.php:2324
 msgid "Address"
 msgstr ""
 
@@ -1810,8 +1811,8 @@ msgid "The office address"
 msgstr ""
 
 #: includes/class-nova-vc.php:2426 includes/class-nova-vc.php:2484
-#: includes/shortcodes/class-nova-shortcodes.php:2273
-#: includes/shortcodes/class-nova-shortcodes.php:2327
+#: includes/shortcodes/class-nova-shortcodes.php:2275
+#: includes/shortcodes/class-nova-shortcodes.php:2329
 msgid "Phone"
 msgstr ""
 
@@ -1820,8 +1821,8 @@ msgid "The phone number"
 msgstr ""
 
 #: includes/class-nova-vc.php:2433 includes/class-nova-vc.php:2489
-#: includes/shortcodes/class-nova-shortcodes.php:2279
-#: includes/shortcodes/class-nova-shortcodes.php:2332
+#: includes/shortcodes/class-nova-shortcodes.php:2281
+#: includes/shortcodes/class-nova-shortcodes.php:2334
 msgid "Fax"
 msgstr ""
 
@@ -1830,8 +1831,8 @@ msgid "The fax number"
 msgstr ""
 
 #: includes/class-nova-vc.php:2440 includes/class-nova-vc.php:2494
-#: includes/shortcodes/class-nova-shortcodes.php:2284
-#: includes/shortcodes/class-nova-shortcodes.php:2337
+#: includes/shortcodes/class-nova-shortcodes.php:2286
+#: includes/shortcodes/class-nova-shortcodes.php:2339
 msgid "Email"
 msgstr ""
 
@@ -1840,8 +1841,8 @@ msgid "The email adress"
 msgstr ""
 
 #: includes/class-nova-vc.php:2447 includes/class-nova-vc.php:2499
-#: includes/shortcodes/class-nova-shortcodes.php:2290
-#: includes/shortcodes/class-nova-shortcodes.php:2342
+#: includes/shortcodes/class-nova-shortcodes.php:2292
+#: includes/shortcodes/class-nova-shortcodes.php:2344
 msgid "Website"
 msgstr ""
 
@@ -1874,7 +1875,7 @@ msgid "Question and answer toggle"
 msgstr ""
 
 #: includes/class-nova-vc.php:2547
-#: includes/shortcodes/class-nova-shortcodes.php:2421
+#: includes/shortcodes/class-nova-shortcodes.php:2423
 msgid "Question"
 msgstr ""
 
@@ -1883,12 +1884,12 @@ msgid "Enter title of toggle block."
 msgstr ""
 
 #: includes/class-nova-vc.php:2553
-#: includes/shortcodes/class-nova-shortcodes.php:2395
+#: includes/shortcodes/class-nova-shortcodes.php:2397
 msgid "Question content goes here"
 msgstr ""
 
 #: includes/class-nova-vc.php:2556
-#: includes/shortcodes/class-nova-shortcodes.php:2423
+#: includes/shortcodes/class-nova-shortcodes.php:2425
 msgid "Answer"
 msgstr ""
 
@@ -2840,6 +2841,105 @@ msgctxt "Portfolio post type breadcrumb"
 msgid "Portfolio"
 msgstr ""
 
+#: includes/product-filter.php:55
+msgid "Nova Product Filter"
+msgstr ""
+
+#: includes/product-filter.php:58
+msgid "Display product filters"
+msgstr ""
+
+#: includes/product-filter.php:234
+msgid "Filter"
+msgstr ""
+
+#: includes/product-filter.php:290
+msgid "Use ajax for filtering"
+msgstr ""
+
+#: includes/product-filter.php:297
+msgid "There is no filter yet."
+msgstr ""
+
+#: includes/product-filter.php:304 includes/product-filter.php:975
+msgid "Filter Name"
+msgstr ""
+
+#: includes/product-filter.php:310 includes/product-filter.php:981
+msgid "Filter By"
+msgstr ""
+
+#: includes/product-filter.php:329 includes/product-filter.php:996
+msgid "Display Type"
+msgstr ""
+
+#: includes/product-filter.php:338 includes/product-filter.php:1003
+msgid "Multiple select"
+msgstr ""
+
+#: includes/product-filter.php:339 includes/product-filter.php:1004
+msgid "Single select"
+msgstr ""
+
+#: includes/product-filter.php:344 includes/product-filter.php:1009
+msgid "Remove filter"
+msgstr ""
+
+#: includes/product-filter.php:353
+msgid "Add new filter"
+msgstr ""
+
+#: includes/product-filter.php:397
+#, php-format
+msgid "Any %s"
+msgstr ""
+
+#: includes/product-filter.php:401
+#, php-format
+msgid "Select a %s"
+msgstr ""
+
+#: includes/product-filter.php:598
+msgid "Range:"
+msgstr ""
+
+#: includes/product-filter.php:617
+msgid "Any"
+msgstr ""
+
+#: includes/product-filter.php:899
+msgid "Tag"
+msgstr ""
+
+#: includes/product-filter.php:900
+msgid "Attributes"
+msgstr ""
+
+#: includes/product-filter.php:907
+msgid "Slider"
+msgstr ""
+
+#: includes/product-filter.php:910 includes/product-filter.php:915
+#: includes/product-filter.php:921
+msgid "Dropdown"
+msgstr ""
+
+#: includes/product-filter.php:911 includes/product-filter.php:916
+#: includes/product-filter.php:922
+msgid "Vertical List"
+msgstr ""
+
+#: includes/product-filter.php:912 includes/product-filter.php:917
+#: includes/product-filter.php:923
+msgid "Horizontal List"
+msgstr ""
+
+#: includes/product-filter.php:1045
+msgid ""
+"Nova Product Filter is enabled but not effective. It requires WooCommerce in "
+"order to work."
+msgstr ""
+
 #: public/nova-functions.php:67
 msgid "This field class is not available!"
 msgstr ""
@@ -2932,68 +3032,68 @@ msgstr ""
 msgid "Sales Products"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:413
+#: includes/shortcodes/class-nova-shortcodes.php:415
 msgid "Read More"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:458
+#: includes/shortcodes/class-nova-shortcodes.php:460
 msgid "Days"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:459
+#: includes/shortcodes/class-nova-shortcodes.php:461
 msgid "Hours"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:460
+#: includes/shortcodes/class-nova-shortcodes.php:462
 msgid "Mins"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:461
+#: includes/shortcodes/class-nova-shortcodes.php:463
 msgid "Sec"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:987
+#: includes/shortcodes/class-nova-shortcodes.php:989
 msgid "Add to cart"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:991
+#: includes/shortcodes/class-nova-shortcodes.php:993
 msgid "View Product"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:1217
+#: includes/shortcodes/class-nova-shortcodes.php:1219
 msgid "View detail"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2017
+#: includes/shortcodes/class-nova-shortcodes.php:2019
 msgid "Google map requires API Key in order to work."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2021
+#: includes/shortcodes/class-nova-shortcodes.php:2023
 msgid "No address"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:2627
+#: includes/shortcodes/class-nova-shortcodes.php:2629
 msgid "BUY"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3311
-#: includes/shortcodes/class-nova-shortcodes.php:3319
+#: includes/shortcodes/class-nova-shortcodes.php:3313
+#: includes/shortcodes/class-nova-shortcodes.php:3321
 msgid "Can not connect to Google Maps APIs"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3337
+#: includes/shortcodes/class-nova-shortcodes.php:3339
 msgid "No location found for the entered address."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3339
+#: includes/shortcodes/class-nova-shortcodes.php:3341
 msgid "Invalid request. Did you enter an address?"
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3344
+#: includes/shortcodes/class-nova-shortcodes.php:3346
 msgid "Unable to contact Google API service."
 msgstr ""
 
-#: includes/shortcodes/class-nova-shortcodes.php:3424
+#: includes/shortcodes/class-nova-shortcodes.php:3426
 msgid "Load More"
 msgstr ""
 

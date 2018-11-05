@@ -41,7 +41,8 @@ class Nova_Shortcodes {
 			'timeline_item',
 			'instagram_feed',
 			'portfolio_grid',
-			'portfolio_masonry'
+			'portfolio_masonry',
+			'popup_video'
 		);
 
 		foreach ( $shortcodes as $shortcode ) {
@@ -321,10 +322,12 @@ class Nova_Shortcodes {
 	 */
 	public static function post_grid( $atts ) {
 		$atts = shortcode_atts( array(
+			'style'         => '1',
 			'per_page'      => 3,
 			'columns'       => 3,
 			'category'      => '',
 			'hide_meta'     => false,
+			'hide_excerpt'  => false,
 			'css_animation' => '',
 			'el_class'      => '',
 		), $atts, 'nova_' . __FUNCTION__ );
@@ -332,6 +335,7 @@ class Nova_Shortcodes {
 		$css_class = array(
 			'nova-post-grid',
 			'post-grid',
+			'style-' . $atts['style'],
 			'columns-' . $atts['columns'],
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
@@ -359,10 +363,55 @@ class Nova_Shortcodes {
 		}
 
 		$column_class = 'col-sm-6 col-md-' . ( 12 / absint( $atts['columns'] ) );
+		
+		$thumbnail_size = 'nova-blog-grid';
+		$post_count = 0;
 
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$post_class = get_post_class( $column_class );
-			$thumbnail  = $meta = '';
+			$thumbnail = $meta = $meta_category = $summary = '';
+			$post_count ++;
+			
+			if ( $atts['style'] == 2 && $post_count % 3 == 1 ) {
+				$thumbnail_size = 'nova-blog-grid2';
+			}
+			
+			$categories = get_the_terms( get_the_ID(), 'category' );
+			$category = $categories[0];
+			if( isset( $category ) )
+				$meta_category = '<div class="post-grid-category">' . esc_attr( $category->name ) . '</div>';
+			if ( $atts['style'] == 3 ) {
+				$meta_category = '<div class="post-grid-category"><a href="' . get_term_link( $category->term_id ) . '">' . esc_attr( $category->name ) . '</a></div>';
+			}
+
+			if ( ! $atts['hide_meta'] ) {
+				ob_start();
+				nova_entry_meta();
+				$meta = ob_get_contents();
+				ob_clean();
+				ob_end_flush();
+				
+				if ( $atts['style'] == 3 ) {
+					$meta = $meta_category . '<span class="entry-date">' . get_the_date( 'm/d/Y' ) . '</span>';
+				}
+			}
+
+			$summary = sprintf(
+				'<div class="post-summary">
+					%s
+					<h3 class="entry-title"><a href="%s" rel="bookmark">%s</a></h3>
+					%s
+					%s
+					<a class="read-more" href="%s">%s</a>
+				</div>',
+				$atts['style'] == 2 ? $meta_category : '',
+				esc_url( get_permalink() ),
+				get_the_title(),
+				$atts['hide_meta'] ? '' : '<div class="entry-meta">' . $meta . '</div>',
+				$atts['hide_excerpt'] ? '' : '<div class="entry-summary">' . get_the_excerpt() . '</div>',
+				esc_url( get_permalink() ),
+				esc_html__( 'Read the story', 'nova' )
+			);
 
 			if ( has_post_thumbnail() ) :
 				$icon = '';
@@ -374,51 +423,31 @@ class Nova_Shortcodes {
 				}
 
 				$thumbnail = sprintf(
-					'<a href="%s" class="post-thumbnail">%s%s</a>',
+					'<div class="post-thumbnail"><a href="%s"></a>%s%s%s%s</div>',
 					esc_url( get_permalink() ),
-					get_the_post_thumbnail( get_the_ID(), 'nova-blog-grid' ),
-					$icon
+					get_the_post_thumbnail( get_the_ID(), $thumbnail_size ),
+					$icon,
+					( $atts['style'] == 2 || $atts['style'] == 3 ) ? '' : $meta_category,
+					$atts['style'] == 2 ? $summary : ''
 				);
 			endif;
-
-			if ( ! $atts['hide_meta'] ) {
-				$posted_on = sprintf(
-					'<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
-					esc_attr( get_the_date( 'c' ) ),
-					esc_html( get_the_date( 'd.m Y' ) )
-				);
-
-				$categories_list = get_the_category_list( ' ' );
-
-				$meta = '<span class="posted-on">' . $posted_on . '</span><span class="cat-links"> ' . $categories_list . '</span>'; // WPCS: XSS OK.
-			}
 
 			$output[] = sprintf(
 				'<div class="%s">
 					%s
-					<div class="post-summary">
-						<div class="entry-meta">%s</div>
-						<h3 class="entry-title"><a href="%s" rel="bookmark">%s</a></h3>
-						<div class="entry-summary">%s</div>
-						<a class="line-hover read-more active" href="%s">%s</a>
-					</div>
+					%s
 				</div>',
 				esc_attr( implode( ' ', $post_class ) ),
 				$thumbnail,
-				$atts['hide_meta'] ? '' : '<div class="entry-meta">' . $meta . '</div>',
-				esc_url( get_permalink() ),
-				get_the_title(),
-				get_the_excerpt(),
-				esc_url( get_permalink() ),
-				esc_html__( 'Read More', 'nova' )
+				$atts['style'] == 2 ? '' : $summary
 			);
 		endwhile;
 
 		wp_reset_postdata();
 
 		return sprintf(
-			'<div class="nova-post-grid post-grid %s">
-				<div class="row">%s</div>
+			'<div class="%s">
+				<div class="nova-posts row">%s</div>
 			</div>',
 			esc_attr( implode( ' ', $css_class ) ),
 			implode( '', $output )
@@ -936,29 +965,37 @@ class Nova_Shortcodes {
 	 */
 	public static function product( $atts, $content ) {
 		$atts = shortcode_atts( array(
+			'style'         => 1,
 			'image'         => '',
 			'title'         => '',
 			'price'         => '',
+			'regular_price' => '',
 			'link'          => '',
 			'css_animation' => '',
 			'el_class'      => '',
+			'css'           => '',
 		), $atts, 'nova_' . __FUNCTION__ );
 
 		$css_class = array(
 			'nova-product',
+			'style-' . $atts['style'],
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
+			nova_shortcode_custom_css_class( $atts['css'] )
 		);
 
 		$image = wp_get_attachment_image_src( $atts['image'], 'full' );
 		$src   = $image[0];
-		$image = sprintf( '<img alt="%s" src="%s">', esc_attr( $atts['title'] ), esc_url( $image[0] ) );
+		$image = $src ? sprintf( '<img alt="%s" src="%s">', esc_attr( $atts['title'] ), esc_url( $image[0] ) ) : '';
 		$link  = vc_build_link( $atts['link'] );
 
 		$price = floatval( $atts['price'] );
-
-		if ( shortcode_exists( 'woocs_show_custom_price' ) ) {
-			$price = do_shortcode( '[woocs_show_custom_price value="' . $price . '"]' );
+		$regular_price = floatval( $atts['regular_price'] );
+		
+		if ( ! $price ) {
+			$price = '';			
+		} elseif ( $price && $regular_price ) {
+			$price = wc_format_sale_price( $regular_price, $price );
 		} else {
 			$price = wc_price( $price );
 		}
@@ -970,11 +1007,11 @@ class Nova_Shortcodes {
 				</div>
 				<div class="product-info">
 					<h3 class="product-title">%s</h3>
-					<div class="product-desc">%s</div>
 					<div class="product-price">
 						<span class="price">%s</span>
 						<span class="button">%s</span>
 					</div>
+					<div class="product-desc">%s</div>
 				</div>
 				<a href="%s" target="%s" rel="%s" class="overlink">%s</a>
 			</div>',
@@ -982,13 +1019,13 @@ class Nova_Shortcodes {
 			$src ? 'background-image: url(' . esc_url( $src ) . ');' : '',
 			$image,
 			esc_html( $atts['title'] ),
-			$content,
 			$price,
 			esc_html__( 'Add to cart', 'nova' ),
+			$content,
 			esc_url( $link['url'] ),
 			esc_url( $link['target'] ),
 			esc_url( $link['rel'] ),
-			esc_html__( 'View Product', 'nova' )
+			esc_html__( 'Add to cart', 'nova' )
 		);
 	}
 
@@ -1567,14 +1604,14 @@ class Nova_Shortcodes {
 		if( ! empty( $atts['title'] ) ){
 			if( ! empty( $atts['title_fz'] ) || ! empty( $atts['title_lh'] ) ){
 				$titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss( array(
-					'target' => '#'. $unique_id.' .box-title',
+					'target' => '#' . $unique_id.' .box-title',
 					'media_sizes' => array(
 						'font-size' => $atts['title_fz'],
 						'line-height' => $atts['title_lh']
 					),
 				));
 				Novaworks_Shortcodes_Helper::renderResponsiveMediaCss( $nova_fix_css, array(
-					'target' => '#'. $unique_id.' .box-title',
+					'target' => '#' . $unique_id.' .box-title',
 					'media_sizes' => array(
 						'font-size' => $atts['title_fz'],
 						'line-height' => $atts['title_lh']
@@ -1635,16 +1672,16 @@ class Nova_Shortcodes {
 		if( ! empty( $iconCssStyle ) || ! empty( $wapIconCssStyle ) || ! empty( $iconHoverCssStyle ) || ! empty( $wapIconHoverCssStyle ) ){
 			$customCss .= '<span data-nova_component="InsertCustomCSS" class="js-el hidden">';
 			if( ! empty( $wapIconCssStyle ) ){
-				$customCss .= '#'.$unique_id . '.nova-icon-box .box-icon{' . implode( ';', $wapIconCssStyle ) . '}';
+				$customCss .= '#' . $unique_id . '.nova-icon-box .box-icon{' . implode( ';', $wapIconCssStyle ) . '}';
 			}
 			if( ! empty( $iconCssStyle ) ){
-				$customCss .= '#'.$unique_id . '.nova-icon-box .box-icon span{' . implode( ';', $iconCssStyle ) . '}';
+				$customCss .= '#' . $unique_id . '.nova-icon-box .box-icon span{' . implode( ';', $iconCssStyle ) . '}';
 			}
 			if( ! empty( $wapIconHoverCssStyle ) ){
-				$customCss .= '#'.$unique_id . '.nova-icon-box:hover .box-icon{' . implode( ';', $wapIconHoverCssStyle ) . '}';
+				$customCss .= '#' . $unique_id . '.nova-icon-box:hover .box-icon{' . implode( ';', $wapIconHoverCssStyle ) . '}';
 			}
 			if( ! empty( $iconHoverCssStyle ) ){
-				$customCss .= '#'.$unique_id . '.nova-icon-box:hover .box-icon span{' . implode( ';', $iconHoverCssStyle ) . '}';
+				$customCss .= '#' . $unique_id . '.nova-icon-box:hover .box-icon span{' . implode( ';', $iconHoverCssStyle ) . '}';
 			}
 			$customCss .= '</span>';
 		}
@@ -1684,7 +1721,7 @@ class Nova_Shortcodes {
 		$atts = shortcode_atts( array(
 			'title'                => '',
 			'tag'                  => 'h2',
-			'alignment'            => 'center',
+			'alignment'            => 'left',
 			'spacer'               => 'none',
 			'spacer_position'      => 'top',
 			'line_style'           => 'solid',
@@ -2121,21 +2158,24 @@ class Nova_Shortcodes {
 			}
 		}
 
-		$authors = array(
-			'<span class="name">' . esc_html( $atts['name'] ) . '</span>',
-			'<span class="company">' . esc_html( $atts['company'] ) . '</span>',
-		);
+		$authors = array();
+		
+		if ( $atts['name'] )
+			$authors[] = '<span class="name">' . esc_html( $atts['name'] ) . '</span>';
+
+		if ( $atts['company'] )
+			$authors[] = '<span class="company">' . esc_html( $atts['company'] ) . '</span>';
 
 		return sprintf(
 			'<div class="%s">
-				<div class="author-photo">%s</div>
+				%s
 				<div class="testimonial-entry">
 					<div class="testimonial-content">%s</div>
 					<div class="testimonial-author">%s</div>
 				</div>
 			</div>',
 			esc_attr( implode( ' ', $css_class ) ),
-			$image,
+			$image ? '<div class="author-photo">' . $image . '</div>' : '',
 			$content,
 			implode( ', ', $authors )
 		);
@@ -2502,11 +2542,13 @@ class Nova_Shortcodes {
 
 		return sprintf(
 			'<div class="%s">
-				%s
-				<div class="member-socials">%s</div>
-				<div class="member-info">
-					<h4 class="member-name">%s</h4>
-					<span class="member-job">%s</span>
+				<div class="nova-team-member__item-thumbnail">
+					%s
+					<div class="item--social member-social">%s</div>
+				</div>
+				<div class="nova-team-member__item-info">
+					<h4 class="nova-team-member__item-title">%s</h4>
+					<span class="nova-team-member__item-role">%s</span>
 				</div>
 			</div>',
 			esc_attr( implode( ' ', $css_class ) ),
@@ -3288,7 +3330,238 @@ class Nova_Shortcodes {
 		
 		return $portfolio_html;
 	}
-	
+
+	/**
+	 * Portfolio Grid
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public static function popup_video( $atts ) {
+		$atts = shortcode_atts( array(
+			'icon_type'              => 'fontawesome',
+			'icon_fontawesome'       => 'fa fa-adjust',
+			'icon_openiconic'        => 'vc-oi vc-oi-dial',
+			'icon_typicons'          => 'typcn typcn-adjust-brightness',
+			'icon_entypo'            => 'entypo-icon entypo-icon-note',
+			'icon_linecons'          => 'vc_li vc_li-heart',
+			'icon_monosocial'        => 'vc-mono vc-mono-fivehundredpx',
+			'icon_nova_icon_outline' => 'nova-icon nature_bear',
+			'icon_nucleo_glyph'      => 'nc-icon-glyph nature_bear',
+			'icon_material'          => 'vc-material vc-material-cake',
+			'image'                  => '',
+			'style'                  => 'normal',
+			'icon_size'              => 50,
+			'icon_width'             => 50,
+			'icon_padding'           => 0,
+			'icon_color_type'        => 'simple',
+			'icon_color'             => '',
+			'icon_h_color'           => '',
+			'icon_color2'            => '',
+			'icon_h_color2'          => '',
+			'icon_bg_type'           => 'simple',
+			'icon_bg'                => '',
+			'icon_h_bg'              => '',
+			'icon_bg2'               => '',
+			'icon_h_bg2'             => '',
+			'icon_border_style'      => '',
+			'icon_border_width'      => 1,
+			'icon_border_color'      => '',
+			'icon_h_border_color'    => '',
+			'icon_border_radius'     => 500,
+			'link'                   => '',
+			'el_width'               => '100',
+			'el_aspect'              => '169',
+			'alignment'              => 'center',
+			'css_animation'          => '',
+			'el_class'               => '',
+		), $atts, 'nova_' . __FUNCTION__ );
+
+		if ( '' === $atts['link'] ) {
+			return null;
+		}
+		
+		$css_class = array(
+			'nova-popup-video',
+			'icon-type-' . $atts['icon_type'],
+			'icon-style-' . $atts['style'],
+			'text-' . $atts['alignment'],
+			self::get_css_animation( $atts['css_animation'] ),
+			$atts['el_class'],
+		);
+		
+		if ( 'image' == $atts['icon_type'] ) {
+			$image = wp_get_attachment_image_src( $atts['image'], 'full' );
+			$icon  = $image ? sprintf( '<span><img alt="%s" src="%s" /></span>', esc_attr( $atts['title'] ), esc_url( $image[0] ) ) : '';
+		} else {
+			vc_icon_element_fonts_enqueue( $atts['icon_type'] );
+			$icon = '<span><i class="' . esc_attr( $atts[ 'icon_' . $atts['icon_type'] ] ) . '"></i></span>';
+		}
+		
+		if( empty( $atts['icon_h_color'] ) ){
+			$atts['icon_h_color'] = $atts['icon_color'];
+		}
+		if( empty( $atts['icon_h_color2'] ) ){
+			$atts['icon_h_color2'] = $atts['icon_color2'];
+		}
+		if( empty( $atts['icon_h_bg'] ) ){
+			$atts['icon_h_bg'] = $atts['icon_bg'];
+		}
+		if( empty( $atts['icon_h_bg2'] ) ){
+			$atts['icon_h_bg2'] = $atts['icon_bg2'];
+		}
+		if( empty( $atts['icon_h_border_color'] ) ){
+			$atts['icon_h_border_color'] = $atts['icon_border_color'];
+		}
+		
+		$unique_id = uniqid( 'nova_popup_video_' );
+
+		$wapIconCssStyle = $iconCssStyle = array();
+		$wapIconHoverCssStyle = $iconHoverCssStyle = array();
+		
+		if( ! empty( $atts['icon_size'] ) ){
+			$iconCssStyle[] = 'line-height:' . $atts['icon_size'] . 'px';
+			$iconCssStyle[] = 'font-size:' . $atts['icon_size'] . 'px';
+			if( ! empty( $atts['icon_width'] ) && $atts['style'] != 'normal' ){
+				$iconCssStyle[] = 'width:' . $atts['icon_width'] . 'px';
+				$iconCssStyle[] = 'height:' . $atts['icon_width'] . 'px';
+			}else{
+				$iconCssStyle[] = 'width:' . $atts['icon_size'] . 'px';
+				$iconCssStyle[] = 'height:' . $atts['icon_size'] . 'px';
+			}
+		}
+		if( ! empty( $atts['icon_width'] ) && $atts['style'] != 'normal' ){
+			$__padding_tmp = intval( ( $atts['icon_width'] - $atts['icon_size'] ) / 2 );
+			$iconCssStyle[] = 'padding:' . $__padding_tmp . 'px';
+		}
+		if( $atts['style'] != 'normal' && ! empty( $atts['icon_bg'] ) ){
+			if( $atts['icon_bg_type'] == 'gradient' ){
+				$css_class[] = 'iconbg-gradient';
+				$wapIconCssStyle[] = 'background-color: ' . $atts['icon_bg'];
+				$wapIconCssStyle[] = 'background-image: -webkit-linear-gradient(left, ' . $atts['icon_bg'] . ' 0%, ' . $atts['icon_bg2'] . ' 50%,' . $atts['icon_bg'] . ' 100%)';
+				$wapIconCssStyle[] = 'background-image: linear-gradient(to right, ' . $atts['icon_bg'] . ' 0%, ' . $atts['icon_bg2'] . ' 50%,' . $atts['icon_bg'] . ' 100%)';
+
+				$wapIconHoverCssStyle[] = 'background-color: ' . $atts['icon_h_bg'];
+				$wapIconHoverCssStyle[] = 'background-image: -webkit-linear-gradient(left, ' . $atts['icon_h_bg'] . ' 0%, ' . $atts['icon_h_bg2'] . ' 50%,' . $atts['icon_h_bg'] . ' 100%)';
+				$wapIconHoverCssStyle[] = 'background-image: linear-gradient(to right, ' . $atts['icon_h_bg'] . ' 0%, ' . $atts['icon_h_bg2'] . ' 50%,' . $atts['icon_h_bg'] . ' 100%)';
+
+			}else{
+				$wapIconCssStyle[] = 'background-color: ' . $atts['icon_bg'] ;
+				$wapIconHoverCssStyle[] = 'background-color: ' . $atts['icon_h_bg'] ;
+			}
+
+		}
+		if( $atts['style'] == 'advanced' ){
+			$wapIconCssStyle[] = 'border-radius:' . $atts['icon_border_radius'] . 'px';
+			$iconCssStyle[] = 'border-radius:' . $atts['icon_border_radius'] . 'px';
+			if( ! empty( $atts['icon_padding'] ) ){
+				$wapIconCssStyle[] = 'padding:'. intval( $atts['icon_padding'] ) . 'px';
+			}
+		}
+		if( ! empty( $atts['icon_color'] ) ){
+			if( $atts['icon_color_type'] == 'gradient' ){
+				$iconCssStyle[] = 'color: ' . $atts['icon_color'];
+				$iconCssStyle[] = 'background-image: -webkit-linear-gradient(left, ' . $atts['icon_color'] . ' 0%, ' . $atts['icon_color2'] . ' 50%,' . $atts['icon_color'] . ' 100%)';
+				$iconCssStyle[] = 'background-image: linear-gradient(to right, ' . $atts['icon_color'] . ' 0%, ' . $atts['icon_color2'] . ' 50%,' . $atts['icon_color'] . ' 100%)';
+				$iconCssStyle[] = '-webkit-background-clip: text';
+				$iconCssStyle[] = 'background-clip: text';
+				$iconCssStyle[] = '-webkit-text-fill-color: transparent';
+				$css_class[] = 'icontext-gradient';
+
+				$iconHoverCssStyle[] = 'color: ' . $atts['icon_h_color'];
+				$iconHoverCssStyle[] = 'background-image: -webkit-linear-gradient(left, ' . $atts['icon_h_color'] . ' 0%, ' . $atts['icon_h_color2'] . ' 50%,' . $atts['icon_h_color'] . ' 100%)';
+				$iconHoverCssStyle[] = 'background-image: linear-gradient(to right, ' . $atts['icon_h_color'] . ' 0%, ' . $atts['icon_h_color2'] . ' 50%,' . $atts['icon_h_color'] . ' 100%)';
+			}else{
+				$iconCssStyle[] = 'color:' . $atts['icon_color'];
+				$iconHoverCssStyle[] = 'color:' . $atts['icon_h_color'];
+			}
+		}
+		if( ! empty( $atts['icon_border_style'] ) ){
+			$wapIconCssStyle[] = 'border-style:' . $atts['icon_border_style'];
+			$wapIconCssStyle[] = 'border-width:' . $atts['icon_border_width'] . 'px';
+			$wapIconCssStyle[] = 'border-color:' . $atts['icon_border_color'];
+			$wapIconHoverCssStyle[] = 'border-color:' . $atts['icon_h_border_color'];
+		}
+
+		$customCss = '';
+		if( ! empty( $iconCssStyle ) || ! empty( $wapIconCssStyle ) || ! empty( $iconHoverCssStyle ) || ! empty( $wapIconHoverCssStyle ) ){
+			$customCss .= '<span data-nova_component="InsertCustomCSS" class="js-el hidden">';
+			if( ! empty( $wapIconCssStyle ) ){
+				$customCss .= '#' . $unique_id . '.nova-popup-video .video-icon{' . implode( ';', $wapIconCssStyle ) . '}';
+			}
+			if( ! empty( $iconCssStyle ) ){
+				$customCss .= '#' . $unique_id . '.nova-popup-video .video-icon span{' . implode( ';', $iconCssStyle ) . '}';
+			}
+			if( ! empty( $wapIconHoverCssStyle ) ){
+				$customCss .= '#' . $unique_id . '.nova-popup-video:hover .video-icon{' . implode( ';', $wapIconHoverCssStyle ) . '}';
+			}
+			if( ! empty( $iconHoverCssStyle ) ){
+				$customCss .= '#' . $unique_id . '.nova-popup-video:hover .video-icon span{' . implode( ';', $iconHoverCssStyle ) . '}';
+			}
+			$customCss .= '</span>';
+		}
+		
+		$video_css_class = array(
+			'wpb_video_widget',
+			'wpb_content_element',
+			'vc_clearfix',
+			'vc_video-aspect-ratio-' . esc_attr( $atts['el_aspect'] ),
+			'vc_video-el-width-' . esc_attr( $atts['el_width'] ),
+			'vc_video-align-' . esc_attr( $atts['alignment'] ),
+		);
+
+		$video_w = 500;
+		$video_h = $video_w / 1.61; //1.61 golden ratio
+		/** @var WP_Embed $wp_embed */
+		global $wp_embed;
+		$embed = '';
+		if ( is_object( $wp_embed ) ) {
+			$embed = $wp_embed->run_shortcode( '[embed width="' . $video_w . '"' . $video_h . ']' . $atts['link'] . '[/embed]' );
+		}
+		
+		$video_html = '
+			<div class="' . implode( ' ', $video_css_class ) . '">
+				<div class="wpb_wrapper">
+					<div class="wpb_video_wrapper">' . $embed . '</div>
+				</div>
+			</div>
+		';
+		
+		$video_wrapper_html = '
+			<div id="__' . esc_attr( $unique_id ) . '" class="video-modal nova-modal" tabindex="-1" role="dialog">
+				<div class="modal-header">
+					<a href="#" class="close-modal">
+						<svg viewBox="0 0 20 20">
+							<use xlink:href="#close-delete"></use>
+						</svg>
+					</a>
+
+					<h2>&nbsp;</h2>
+				</div>
+
+				<div class="modal-content">
+					<div class="container">
+						' . $video_html . '
+					</div>
+				</div>
+			</div>
+		';
+		
+		add_action( 'wp_footer', function () use ( $video_wrapper_html ) { echo $video_wrapper_html; } );
+		
+		return sprintf(
+			'<div id="%s" class="%s">
+				<div class="video-icon">%s</div>
+			</div>
+			%s',
+			esc_attr( $unique_id ),
+			esc_attr( implode( ' ', $css_class ) ),
+			'<a class="video-link" data-toggle="modal" data-target="__' . esc_attr( $unique_id ) . '" href="#">' . $icon . '</a>',
+			$customCss
+		);
+	}
+
 	/**
 	 * Get coordinates
 	 *
