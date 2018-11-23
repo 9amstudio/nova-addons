@@ -222,10 +222,12 @@ class Nova_Shortcodes {
 	 */
 	public static function product_tabs( $atts ) {
 		$atts = shortcode_atts( array(
+			'layout'        => 'grid',
 			'per_page'      => 15,
 			'columns'       => 4,
 			'filter'        => 'category',
 			'filter_type'   => 'isotope',
+			'filter_style'  => 1,
 			'category'      => '',
 			'load_more'     => false,
 			'css_animation' => '',
@@ -237,6 +239,7 @@ class Nova_Shortcodes {
 			'nova-product-tabs',
 			'nova-products',
 			'nova-products-filterable',
+			$atts['layout'],
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
 		);
@@ -265,14 +268,14 @@ class Nova_Shortcodes {
 
 			if ( $categories && ! is_wp_error( $categories ) ) {
 				if ( 'isotope' == $atts['filter_type'] ) {
-					$filter[] = '<li data-filter="*" class="line-hover active">' . esc_html__( 'Show All', 'nova' ) . '</li>';
+					$filter[] = '<li data-filter="*" class=" active">' . esc_html__( 'All', 'nova' ) . '</li>';
 				} else {
 					$atts['category'] = $categories[0]->slug; // Prepare for product_loop only
 				}
 
 				foreach ( $categories as $index => $category ) {
 					$filter[] = sprintf(
-						'<li data-filter=".product_cat-%s" class="line-hover %s">%s</li>',
+						'<li data-filter=".product_cat-%s" class=" %s">%s</li>',
 						esc_attr( $category->slug ),
 						'ajax' == $atts['filter_type'] && ! $index ? 'active' : '',
 						esc_html( $category->name )
@@ -283,12 +286,12 @@ class Nova_Shortcodes {
 			$atts['type'] = 'best_sellers'; // Prepare for product_loop only
 
 			if ( 'isotope' == $atts['filter_type'] ) {
-				$filter[] = '<li data-filter="*" class="line-hover active">' . esc_html__( 'Best Sellers', 'nova' ) . '</li>';
+				$filter[] = '<li data-filter="*" class=" active">' . esc_html__( 'Best Sellers', 'nova' ) . '</li>';
 			} else {
-				$filter[] = '<li data-filter=".best_sellers" class="line-hover active">' . esc_html__( 'Best Sellers', 'nova' ) . '</li>';
+				$filter[] = '<li data-filter=".best_sellers" class=" active">' . esc_html__( 'Best Sellers', 'nova' ) . '</li>';
 			}
-			$filter[] = '<li data-filter=".new" class="line-hover">' . esc_html__( 'New Products', 'nova' ) . '</li>';
-			$filter[] = '<li data-filter=".sale" class="line-hover">' . esc_html__( 'Sales Products', 'nova' ) . '</li>';
+			$filter[] = '<li data-filter=".new" class="">' . esc_html__( 'New Products', 'nova' ) . '</li>';
+			$filter[] = '<li data-filter=".sale" class="">' . esc_html__( 'Sales Products', 'nova' ) . '</li>';
 		}
 
 		$loading = '
@@ -307,7 +310,7 @@ class Nova_Shortcodes {
 			esc_attr( $atts['per_page'] ),
 			esc_attr( $atts['load_more'] ),
 			esc_attr( wp_create_nonce( 'nova_get_products' ) ),
-			empty( $filter ) ? '' : '<div class="product-filter"><ul class="filter">' . implode( "\n\t", $filter ) . '</ul></div>',
+			empty( $filter ) ? '' : '<div class="product-filter"><ul class="filter filter_style-' . $atts['filter_style'] . '">' . implode( "\n\t", $filter ) . '</ul></div>',
 			'ajax' == $atts['filter_type'] ? $loading : '',
 			self::product_loop( $atts )
 		);
@@ -1239,19 +1242,15 @@ class Nova_Shortcodes {
 				%s
 				<div class="banner-content">
 					<span class="banner-text">%s</span>
-					<span class="nova-button button-light line-hover active">%s</span>
+					%s
 				</div>
-				<a href="%s" target="%s" rel="%s" title="%s">%s</a>
+				%s
 			</div>',
 			esc_attr( implode( ' ', $css_class ) ),
 			$image,
 			do_shortcode( $content ),
-			esc_html( $atts['button_text'] ),
-			esc_url( $link['url'] ),
-			esc_attr( $link['target'] ),
-			esc_attr( $link['rel'] ),
-			esc_attr( $link['title'] ),
-			esc_html__( 'View detail', 'nova' )
+			$atts['button_text'] ? '<span class="nova-button button-light line-hover active">' . esc_html( $atts['button_text'] ) . '</span>' : '',
+			$link['url'] ? '<a href="' . esc_url( $link['url'] ) . '" target="' . esc_attr( $link['target'] ) . '" rel="' . esc_attr( $link['rel'] ) . '" title="' . esc_attr( $link['title'] ) . '">' . esc_html__( 'View detail', 'nova' ) . '</a>' : ''
 		);
 	}
 
@@ -1778,7 +1777,7 @@ class Nova_Shortcodes {
 			$parentLineCssInline = array();
 			$parentLineCssInline[] = 'height:' . $atts['line_height'] . 'px';
 			if( $atts['spacer_position'] == 'separator' || $atts['spacer_position'] == 'left' || $atts['spacer_position'] == 'right' ){
-				$parentLineCssInline[] = 'margin-top:' . $atts['line_height'] . 'px';
+				$parentLineCssInline[] = 'margin-top: 0px';
 			}
 			if( ! empty( $atts['line_width'] ) ){
 				$lineHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss( array(
@@ -2122,6 +2121,7 @@ class Nova_Shortcodes {
 	 */
 	public static function testimonial( $atts, $content ) {
 		$atts = shortcode_atts( array(
+			'style'         => 1,
 			'image'         => '',
 			'name'          => '',
 			'company'       => '',
@@ -2132,6 +2132,7 @@ class Nova_Shortcodes {
 
 		$css_class = array(
 			'nova-testimonial',
+			'testimonial-style-' . $atts['style'],
 			'testimonial-align-' . $atts['align'],
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
@@ -2165,20 +2166,35 @@ class Nova_Shortcodes {
 
 		if ( $atts['company'] )
 			$authors[] = '<span class="company">' . esc_html( $atts['company'] ) . '</span>';
-
-		return sprintf(
-			'<div class="%s">
-				%s
-				<div class="testimonial-entry">
-					<div class="testimonial-content">%s</div>
+		if ( $atts['style'] != 2 ) {
+			return sprintf(
+				'<div class="%s">
+					%s
+					<div class="testimonial-entry">
+						<div class="testimonial-content">%s</div>
+						<div class="testimonial-author">%s</div>
+					</div>
+				</div>',
+				esc_attr( implode( ' ', $css_class ) ),
+				$image ? '<div class="author-photo">' . $image . '</div>' : '',
+				$content,
+				implode( ', ', $authors )
+			);
+		} else {
+			return sprintf(
+				'<div class="%s">
+					<div class="testimonial-entry">
+						<div class="testimonial-content">%s</div>
+					</div>
+					%s
 					<div class="testimonial-author">%s</div>
-				</div>
-			</div>',
-			esc_attr( implode( ' ', $css_class ) ),
-			$image ? '<div class="author-photo">' . $image . '</div>' : '',
-			$content,
-			implode( ', ', $authors )
-		);
+				</div>',
+				esc_attr( implode( ' ', $css_class ) ),
+				$content,
+				$image ? '<div class="author-photo">' . $image . '</div>' : '',
+				implode( ' ', $authors )
+			);
+		}
 	}
 
 	/**

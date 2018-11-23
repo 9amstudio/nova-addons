@@ -160,6 +160,16 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
+					'heading'     => esc_html__( 'Layout', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'layout',
+					'value'       => array(
+						esc_html__( 'Grid', 'nova' )    => 'grid',
+						esc_html__( 'Special', 'nova' ) => 'special',
+					),
+					'std'         => 'grid'
+				),
+				array(
 					'heading'     => esc_html__( 'Number Of Products', 'nova' ),
 					'param_name'  => 'per_page',
 					'type'        => 'textfield',
@@ -177,6 +187,7 @@ class Nova_Addons_VC {
 						esc_html__( '5 Columns', 'nova' ) => 5,
 						esc_html__( '6 Columns', 'nova' ) => 6
 					),
+					'std'         => 4,
 					'description' => esc_html__( 'Display products in how many columns', 'nova' )
 				),
 				array(
@@ -203,6 +214,16 @@ class Nova_Addons_VC {
 					'dependency'  => array(
 						'element'   => 'filter',
 						'value'     => 'category'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Tabs Styles', 'nova' ),
+					'param_name'  => 'filter_style',
+					'type'        => 'dropdown',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+						esc_html__( 'Style 03', 'nova' ) => '3',
 					)
 				),
 				array(
@@ -1133,6 +1154,158 @@ class Nova_Addons_VC {
 						esc_html__( 'Middle', 'nova' ) => 'middle',
 						esc_html__( 'Bottom', 'nova' ) => 'bottom'
 					)
+				)
+			)
+		) );
+		
+		// Banner 5
+		vc_map( array(
+			'name'        => esc_html__( 'Banner Image 5', 'nova' ),
+			'description' => esc_html__( 'Simple banner image with text', 'nova' ),
+			'base'        => 'nova_banner5',
+			'icon'        => $this->get_icon( 'banner.png' ),
+			'category'    => esc_html__( 'Nova', 'nova' ),
+			'params'      => array(
+				array(
+					'heading'     => esc_html__( 'Image', 'nova' ),
+					'description' => esc_html__( 'Banner Image', 'nova' ),
+					'param_name'  => 'image',
+					'type'        => 'attach_image'
+				),
+				array(
+					'heading'     => esc_html__( 'Image size', 'nova' ),
+					'description' => esc_html__( 'Enter image size. Example: "thumbnail", "medium", "large", "full" or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size.', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'image_size',
+					'value'       => ''
+				),
+				array(
+					'heading'     => esc_html__( 'Banner description', 'nova' ),
+					'description' => esc_html__( 'A short text display before the banner text', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'desc'
+				),
+				array(
+					'heading'     => esc_html__( 'Desc Color', 'nova' ),
+					'type'        => 'colorpicker',
+					'param_name'  => 'desc_color'
+				),
+				array(
+					'heading'     => esc_html__( 'Banner Text', 'nova' ),
+					'description' => esc_html__( 'Enter the banner text', 'nova' ),
+					'type'        => 'textarea_html',
+					'param_name'  => 'content',
+					'admin_label' => true
+				),
+				array(
+					'heading'     => esc_html__( 'Banner Text Position', 'nova' ),
+					'description' => esc_html__( 'Select text position', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'text_position',
+					'value'       => array(
+						esc_html__( 'Left', 'nova' ) => 'left',
+						esc_html__( 'Center', 'nova' ) => 'center',
+						esc_html__( 'Right', 'nova' ) => 'right'
+					)
+				),
+				array(
+					'type'        => 'font_container',
+					'param_name'  => 'font_container',
+					'value'       => '',
+					'settings'    => array(
+						'fields'  => array(
+							'font_size',
+							'line_height',
+							'color',
+							'font_size_description'   => esc_html__( 'Enter text font size.', 'nova' ),
+							'line_height_description' => esc_html__( 'Enter text line height.', 'nova' ),
+							'color_description'       => esc_html__( 'Select text color.', 'nova' )
+						)
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Use theme default font family?', 'nova' ),
+					'description' => esc_html__( 'Use font family from the theme.', 'nova' ),
+					'type'        => 'checkbox',
+					'param_name'  => 'use_theme_fonts',
+					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' ),
+					'std'         => 'yes'
+				),
+				array(
+					'type'        => 'google_fonts',
+					'param_name'  => 'google_fonts',
+					'value'       => 'font_family:Abril%20Fatface%3Aregular|font_style:400%20regular%3A400%3Anormal',
+					'settings'    => array(
+						'fields'  => array(
+							'font_family_description' => esc_html__( 'Select font family.', 'nova' ),
+							'font_style_description'  => esc_html__( 'Select font styling.', 'nova' ),
+						)
+					),
+					'dependency'  => array(
+						'element'            => 'use_theme_fonts',
+						'value_not_equal_to' => 'yes'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Link (URL)', 'nova' ),
+					'type'        => 'vc_link',
+					'param_name'  => 'link'
+				),
+				array(
+					'heading'     => esc_html__( 'Button Type', 'nova' ),
+					'description' => esc_html__( 'Select button type', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'button_type',
+					'value'       => array(
+						esc_html__( 'Light Button', 'nova' ) => 'light',
+						esc_html__( 'Normal Button', 'nova' ) => 'normal',
+						esc_html__( 'Arrow Icon', 'nova' ) => 'arrow_icon'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Button Text', 'nova' ),
+					'description' => esc_html__( 'Enter the text for banner button', 'nova' ),
+					'type'        => 'textfield',
+					'param_name'  => 'button_text',
+					'dependency'  => array(
+						'element' => 'button_type',
+						'value'   => array( 'light', 'normal' )
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Button Visibility', 'nova' ),
+					'description' => esc_html__( 'Select button visibility', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'button_visibility',
+					'value'       => array(
+						esc_html__( 'Always visible', 'nova' ) => 'always',
+						esc_html__( 'When hover', 'nova' ) => 'hover',
+						esc_html__( 'Hidden', 'nova' ) => 'hidden'
+					)
+				),
+				array(
+					'heading'     => esc_html__( 'Banner Color Scheme', 'nova' ),
+					'description' => esc_html__( 'Select color scheme for description, button color', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'scheme',
+					'value'       => array(
+						esc_html__( 'Dark', 'nova' ) => 'dark',
+						esc_html__( 'Light', 'nova' ) => 'light'
+					)
+				),
+				vc_map_add_css_animation(),
+				array(
+					'heading'     => esc_html__( 'Extra class name', 'nova' ),
+					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'nova' ),
+					'param_name'  => 'el_class',
+					'type'        => 'textfield',
+					'value'       => ''
+				),
+				array(
+					'heading'     => esc_html__( 'CSS box', 'nova' ),
+					'type'        => 'css_editor',
+					'param_name'  => 'css',
+					'group'       => esc_html__( 'Design Options', 'nova' )
 				)
 			)
 		) );
@@ -2308,6 +2481,15 @@ class Nova_Addons_VC {
 			'category'    => esc_html__( 'Nova', 'nova' ),
 			'params'      => array(
 				array(
+					'heading'     => esc_html__( 'Styles', 'nova' ),
+					'type'        => 'dropdown',
+					'param_name'  => 'style',
+					'value'       => array(
+						esc_html__( 'Style 01', 'nova' ) => '1',
+						esc_html__( 'Style 02', 'nova' ) => '2',
+					),
+				),
+				array(
 					'heading'     => esc_html__( 'Photo', 'nova' ),
 					'description' => esc_html__( 'Author photo or avatar. Recommend 160x160 in dimension.', 'nova' ),
 					'type'        => 'attach_image',
@@ -2342,8 +2524,7 @@ class Nova_Addons_VC {
 					'heading'     => esc_html__( 'Content', 'nova' ),
 					'description' => esc_html__( 'Testimonial content', 'nova' ),
 					'type'        => 'textarea_html',
-					'param_name'  => 'content',
-					'holder'      => 'div'
+					'param_name'  => 'content'
 				),
 				vc_map_add_css_animation(),
 				array(
@@ -3092,14 +3273,14 @@ class Nova_Addons_VC {
 				Novaworks_Shortcodes_Helper::getParamItemSpace( array(
 					'std'         => 'default'
 				) ),
-
+/*
 				array(
 					'heading'     => esc_html__( 'Enable slider', 'nova' ),
 					'type'        => 'checkbox',
 					'param_name'  => 'enable_carousel',
 					'value'       => array( esc_html__( 'Yes', 'nova' ) => 'yes' )
 				),
-
+*/
 				array(
 					'heading'     => esc_html__( 'Limit', 'nova' ),
 					'description' => esc_html__( 'Maximum number of Images to add. Max of 60', 'nova' ),
@@ -3132,7 +3313,7 @@ class Nova_Addons_VC {
 					'std'         => '11'
 				),
 				Novaworks_Shortcodes_Helper::fieldExtraClass()
-			), Novaworks_Shortcodes_Helper::paramCarouselShortCode( false ) )
+			) /*,Novaworks_Shortcodes_Helper::paramCarouselShortCode( false )*/ )
 		) );
 		
 		// Portfolio Grid

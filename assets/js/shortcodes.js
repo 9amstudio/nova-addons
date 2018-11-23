@@ -11,7 +11,7 @@ jQuery( document ).ready( function ( $ ) {
 			$grid.isotope( {
 				itemSelector      : '.product',
 				transitionDuration: 700,
-				layoutMode        : 'fitRows',
+				layoutMode        : 'masonry',
 				isOriginLeft      : !( novaData && novaData.isRTL && novaData.isRTL === '1' ),
 				hiddenStyle: {
 					opacity: 0,
@@ -42,7 +42,7 @@ jQuery( document ).ready( function ( $ ) {
 		$this.addClass( 'active' ).siblings( '.active' ).removeClass( 'active' );
 
 		if ( $grid.hasClass( 'filter-type-isotope' ) ) {
-			$products.isotope( {filter: $this.data( 'filter' )} );
+			$products.isotope( { filter: $this.data( 'filter' ) } );
 		} else {
 			var filter = $this.attr( 'data-filter' ),
 				$container = $grid.find( '.products-grid' );
@@ -361,24 +361,23 @@ jQuery( document ).ready( function ( $ ) {
 		var $shortcode = $( this );
 		
 		var $this = $shortcode,
-			_configs = $this.data('feed_config'),
-			_instagram_token = $this.data('instagram_token'),
+			_configs = $this.data( 'feed_config' ),
+			_instagram_token = $this.data( 'instagram_token' ),
 			$target, feed_configs, feed;
 
-		if( '' == _instagram_token ){
-			$this.addClass('loaded loaded-error');
+		if( '' == _instagram_token ) {
+			$this.addClass( 'loaded loaded-error' );
 		}
 
 		$target = $( '.nova-instagram-loop', $this );
 
-		feed_configs = $.extend({
+		feed_configs = $.extend( {
 			target: $target.get(0).id,
 			accessToken: _instagram_token
-		}, _configs);
+		}, _configs );
 
-		feed = new Instafeed(feed_configs);
+		feed = new Instafeed( feed_configs );
 		feed.run();
-		
 	} );
 	
 	/**
