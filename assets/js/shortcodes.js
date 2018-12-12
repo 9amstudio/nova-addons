@@ -4,14 +4,19 @@ jQuery( document ).ready( function ( $ ) {
 	/**
 	 * Init isotope
 	 */
-	$( '.nova-product-grid.filterable.filter-type-isotope ul.products' ).each( function () {
-		var $grid = $( this );
+	$( '.nova-product-grid.filterable.filter-type-isotope' ).each( function () {
+		var $grid = $( this ).find( 'ul.products' ),
+			_mode = 'fitRows';
+
+		if ( $( this ).hasClass( 'special' ) ) {
+			_mode = 'masonry';
+		}
 
 		$grid.imagesLoaded().always( function () {
 			$grid.isotope( {
 				itemSelector      : '.product',
 				transitionDuration: 700,
-				layoutMode        : 'masonry',
+				layoutMode        : _mode,
 				isOriginLeft      : !( novaData && novaData.isRTL && novaData.isRTL === '1' ),
 				hiddenStyle: {
 					opacity: 0,
@@ -217,7 +222,10 @@ jQuery( document ).ready( function ( $ ) {
 					items:2
 				},
 				767:{
-					items:columns
+					items:3
+				},
+				991:{
+					items:4
 				}
 			},
 			navText: ['<svg viewBox="0 0 14 20"><use xlink:href="#left"></use></svg>', '<svg viewBox="0 0 14 20"><use xlink:href="#right"></use></svg>']

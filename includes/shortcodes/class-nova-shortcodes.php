@@ -170,7 +170,7 @@ class Nova_Shortcodes {
 		}
 
 		return sprintf(
-			'<div class="nova-product-grid nova-products %s">%s</div>',
+			'<div class="%s">%s</div>',
 			esc_attr( trim( implode( ' ', $css_class ) ) ),
 			self::product_loop( $atts )
 		);
@@ -304,7 +304,7 @@ class Nova_Shortcodes {
 			</div>';
 
 		return sprintf(
-			'<div class="%s" data-columns="%s" data-per_page="%s" data-load_more="%s" data-nonce="%s">%s<div class="products-grid">%s%s</div></div>',
+			'<div class="%s" data-columns="%s" data-per_page="%s" data-load_more="%s" data-nonce="%s">%s%s%s</div>',
 			esc_attr( implode( ' ', $css_class ) ),
 			esc_attr( $atts['columns'] ),
 			esc_attr( $atts['per_page'] ),
@@ -365,7 +365,7 @@ class Nova_Shortcodes {
 			return '';
 		}
 
-		$column_class = 'col-sm-6 col-md-' . ( 12 / absint( $atts['columns'] ) );
+		$column_class = 'col-sm-6 col-lg-' . ( 12 / absint( $atts['columns'] ) );
 		
 		$thumbnail_size = 'nova-blog-grid';
 		$post_count = 0;
@@ -373,10 +373,12 @@ class Nova_Shortcodes {
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$post_class = get_post_class( $column_class );
 			$thumbnail = $meta = $meta_category = $summary = '';
-			$post_count ++;
+			$post_count++;
 			
-			if ( $atts['style'] == 2 && $post_count % 3 == 1 ) {
+			if ( $atts['style'] == 2 && ( $post_count == 1 || $post_count == 3 ) ) {
 				$thumbnail_size = 'nova-blog-grid2';
+			} else {
+				$thumbnail_size = 'nova-blog-grid';
 			}
 			
 			$categories = get_the_terms( get_the_ID(), 'category' );
@@ -3672,6 +3674,12 @@ class Nova_Shortcodes {
 
 		if ( $columns ) {
 			$woocommerce_loop['columns'] = $columns;
+		}
+		
+		$woocommerce_loop['is_shortcode'] = true;
+		
+		if ( isset( $atts['layout'] ) && 'special' == $atts['layout'] ) {
+			add_filter( 'single_product_archive_thumbnail_size', function() { return 'woocommerce_single'; } ); 
 		}
 
 		ob_start();

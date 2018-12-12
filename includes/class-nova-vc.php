@@ -211,10 +211,12 @@ class Nova_Addons_VC {
 						'sortable'  => true,
 						'values'    => $this->get_terms()
 					),
+					/*
 					'dependency'  => array(
 						'element'   => 'filter',
 						'value'     => 'category'
 					)
+					*/
 				),
 				array(
 					'heading'     => esc_html__( 'Tabs Styles', 'nova' ),
