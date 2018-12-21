@@ -351,6 +351,7 @@ class Nova_Addons_VC {
 						esc_html__( 'Style 01', 'nova' ) => '1',
 						esc_html__( 'Style 02', 'nova' ) => '2',
 						esc_html__( 'Style 03', 'nova' ) => '3',
+						esc_html__( 'Style 04', 'nova' ) => '4',
 					),
 				),
 				array(

@@ -385,7 +385,7 @@ class Nova_Shortcodes {
 			$category = $categories[0];
 			if( isset( $category ) )
 				$meta_category = '<div class="post-grid-category">' . esc_attr( $category->name ) . '</div>';
-			if ( $atts['style'] == 3 ) {
+			if ( $atts['style'] == 3 || $atts['style'] == 4 ) {
 				$meta_category = '<div class="post-grid-category"><a href="' . get_term_link( $category->term_id ) . '">' . esc_attr( $category->name ) . '</a></div>';
 			}
 
@@ -409,7 +409,7 @@ class Nova_Shortcodes {
 					%s
 					<a class="read-more" href="%s">%s</a>
 				</div>',
-				$atts['style'] == 2 ? $meta_category : '',
+				( $atts['style'] == 2 || $atts['style'] == 4 ) ? $meta_category : '',
 				esc_url( get_permalink() ),
 				get_the_title(),
 				$atts['hide_meta'] ? '' : '<div class="entry-meta">' . $meta . '</div>',
@@ -432,7 +432,7 @@ class Nova_Shortcodes {
 					esc_url( get_permalink() ),
 					get_the_post_thumbnail( get_the_ID(), $thumbnail_size ),
 					$icon,
-					( $atts['style'] == 2 || $atts['style'] == 3 ) ? '' : $meta_category,
+					( $atts['style'] == 2 || $atts['style'] == 3 || $atts['style'] == 4 ) ? '' : $meta_category,
 					$atts['style'] == 2 ? $summary : ''
 				);
 			endif;

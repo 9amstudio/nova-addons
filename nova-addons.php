@@ -64,7 +64,6 @@ class Nova_Addons {
 		include_once( NOVA_ADDONS_DIR . 'admin/class-nova-admin.php' );
 		include_once( NOVA_ADDONS_DIR . 'public/nova-functions.php' );
 		include_once( NOVA_ADDONS_DIR . 'public/class-nova-public.php' );
-		include_once( NOVA_ADDONS_DIR . 'includes/import.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/user.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/portfolio.php' );
 		include_once( NOVA_ADDONS_DIR . 'includes/class-nova-vc.php' );

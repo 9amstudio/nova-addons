@@ -36,7 +36,8 @@ class Nova_Addons_Portfolio {
 		add_action( 'import_start', array( $this, 'register_post_type' ) );
 
 		if ( ! get_option( $this->option ) ) {
-			return;
+			update_option( $this->option, true );
+			//return;
 		}
 
 		$this->register_post_type();
