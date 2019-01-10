@@ -2889,7 +2889,7 @@ class Nova_Shortcodes {
 
 	ob_start();
 	?>
-	<div class="nova-instagram-feeds <?php echo Novaworks_Shortcodes_Helper::getExtraClass( $el_class ); ?>" data-feed_config="<?php echo esc_attr( wp_json_encode( array(
+	<div class="nova-instagram-feeds <?php echo Novaworks_Shortcodes_Helper::getExtraClass( $el_class ); ?>" data-feed_config='<?php echo esc_attr( wp_json_encode( array(
 		'get' => $feed_type,
 		'tagName' => $hashtag,
 		'locationId' => $location_id,
@@ -2898,7 +2898,7 @@ class Nova_Shortcodes {
 		'limit' => $limit,
 		'resolution' => $image_size,
 		'template' => '<div class="grid-item"><div class="instagram-item"><a target="_blank" href="{{link}}" title="{{caption}}" style="background-image: url({{image}});" class="thumbnail"><span class="item--overlay"><i class="fa fa-instagram"></i></span></a><div class="instagram-info"><span class="instagram-like"><i class="fa-heart"></i>{{likes}}</span><span class="instagram-comments"><i class="fa-comments"></i>{{comments}}</span></div></div></div>'
-	) ) ) ?>" data-instagram_token="<?php echo esc_attr( $instagram_token ) ?>">
+	) ) ) ?>' data-instagram_token="<?php echo esc_attr( $instagram_token ) ?>">
 		<div class="instagram-feed-inner">
 			<div id="<?php echo esc_attr( $unique_id ) ?>" class="<?php echo esc_attr( implode( ' ', $loopCssClass ) ) ?>"<?php
 			if( $carousel_configs ){
