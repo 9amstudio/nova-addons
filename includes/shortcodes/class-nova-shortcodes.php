@@ -366,7 +366,7 @@ class Nova_Shortcodes {
 		}
 
 		$column_class = 'col-sm-6 col-lg-' . ( 12 / absint( $atts['columns'] ) );
-		
+
 		$thumbnail_size = 'nova-blog-grid';
 		$post_count = 0;
 
@@ -374,13 +374,13 @@ class Nova_Shortcodes {
 			$post_class = get_post_class( $column_class );
 			$thumbnail = $meta = $meta_category = $summary = '';
 			$post_count++;
-			
+
 			if ( $atts['style'] == 2 && ( $post_count == 1 || $post_count == 3 ) ) {
 				$thumbnail_size = 'nova-blog-grid2';
 			} else {
 				$thumbnail_size = 'nova-blog-grid';
 			}
-			
+
 			$categories = get_the_terms( get_the_ID(), 'category' );
 			$category = $categories[0];
 			if( isset( $category ) )
@@ -395,7 +395,7 @@ class Nova_Shortcodes {
 				$meta = ob_get_contents();
 				ob_clean();
 				ob_end_flush();
-				
+
 				if ( $atts['style'] == 3 ) {
 					$meta = $meta_category . '<span class="entry-date">' . get_the_date( 'm/d/Y' ) . '</span>';
 				}
@@ -501,7 +501,7 @@ class Nova_Shortcodes {
 			implode( '', $output )
 		);
 	}
-	
+
 	/**
 	 * Stats Counter
 	 *
@@ -560,9 +560,9 @@ class Nova_Shortcodes {
 			'el_class_value'         => '',
 			'el_class_heading'       => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		$unique_id = ( ! empty( $atts['el_id'] ) ) ? esc_attr( $atts['el_id'] ) : uniqid( 'nova_stats_counter_' );
-		
+
 		$css_class = array(
 			'nova-stats-counter',
 			'icon-pos-' . $atts['icon_pos'],
@@ -576,7 +576,7 @@ class Nova_Shortcodes {
 		$_icon_html = '';
 		$nova_fix_css = array();
 		$wapIconCssStyle = $iconCssStyle = array();
-		
+
 		if( $atts['icon_pos'] != 'none' ) {
 
 			if( function_exists( 'vc_icon_element_fonts_enqueue' ) ) {
@@ -646,7 +646,7 @@ class Nova_Shortcodes {
 		}
 
 		$spacer_html = $icon_html = $value_html = $title_html = '';
-		
+
 		if( $atts['spacer'] == 'line' ) {
 			$lineHtmlAtts = '';
 			$lineCssInline = array();
@@ -688,10 +688,10 @@ class Nova_Shortcodes {
 		}
 
 		if( ! empty( $atts['title'] ) ) {
-			
+
 			$titleHtmlAtts = '';
 			$titleCssInline = array();
-			
+
 			if( ! empty( $atts['title_fz'] ) || ! empty( $atts['title_lh'] ) ) {
 				$titleHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss( array(
 					'target' => '#'. $unique_id.' .stats-heading',
@@ -780,7 +780,7 @@ class Nova_Shortcodes {
 				$value_html .= $spacer_html;
 				break;
 		}
-		
+
 		$customCss = '';
 		if( ! empty( $iconCssStyle ) || ! empty( $wapIconCssStyle ) ) {
 			$customCss .= '<span data-nova_component="InsertCustomCSS" class="js-el hidden">';
@@ -792,7 +792,7 @@ class Nova_Shortcodes {
 			}
 			$customCss .= '</span>';
 		}
-		
+
 		return sprintf(
 			'<div id="%s" class="%s">
 				<div class="element-inner">
@@ -811,7 +811,7 @@ class Nova_Shortcodes {
 			$customCss,
 			Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags( $nova_fix_css )
 		);
-		
+
 	}
 
 	/**
@@ -996,9 +996,9 @@ class Nova_Shortcodes {
 
 		$price = floatval( $atts['price'] );
 		$regular_price = floatval( $atts['regular_price'] );
-		
+
 		if ( ! $price ) {
-			$price = '';			
+			$price = '';
 		} elseif ( $price && $regular_price ) {
 			$price = wc_format_sale_price( $regular_price, $price );
 		} else {
@@ -1506,7 +1506,7 @@ class Nova_Shortcodes {
 			vc_icon_element_fonts_enqueue( $atts['icon_type'] );
 			$icon = '<span><i class="' . esc_attr( $atts[ 'icon_' . $atts['icon_type'] ] ) . '"></i></span>';
 		}
-		
+
 		$link = $a_link_open = $a_link_close = '';
 		if( ! empty( $atts['link'] ) ) {
 			$link = vc_build_link( $atts['link'] );
@@ -1529,13 +1529,13 @@ class Nova_Shortcodes {
 		if( empty( $atts['icon_h_border_color'] ) ){
 			$atts['icon_h_border_color'] = $atts['icon_border_color'];
 		}
-		
+
 		$unique_id = uniqid( 'nova_icon_box_' );
-		
+
 		$nova_fix_css = array();
 		$wapIconCssStyle = $iconCssStyle = array();
 		$wapIconHoverCssStyle = $iconHoverCssStyle = array();
-		
+
 		if( ! empty( $atts['icon_size'] ) ){
 			$iconCssStyle[] = 'line-height:' . $atts['icon_size'] . 'px';
 			$iconCssStyle[] = 'font-size:' . $atts['icon_size'] . 'px';
@@ -1633,7 +1633,7 @@ class Nova_Shortcodes {
 				}
 			}
 		}
-		
+
 		$descHtmlAtts = '';
 		$descCssInline = array();
 		if( ! empty( $content ) ){
@@ -1654,7 +1654,7 @@ class Nova_Shortcodes {
 				));
 			}
 
-			
+
 			if( ! empty( $atts['desc_color'] ) ){
 				$descCssInline[] = 'color:' . $atts['desc_color'];
 			}
@@ -1686,7 +1686,7 @@ class Nova_Shortcodes {
 			}
 			$customCss .= '</span>';
 		}
-		
+
 		return sprintf(
 			'<div id="%s" class="%s">
 				<div class="box-icon">%s</div>
@@ -1699,7 +1699,7 @@ class Nova_Shortcodes {
 			esc_attr( implode( ' ', $css_class ) ),
 			( ( $atts['read_more'] == 'icon' && $a_link_open != '' ) ? $a_link_open : '' ) . $icon . ( ( $atts['read_more'] == 'icon' && $a_link_open != '' ) ? $a_link_close : '' ),
 			( ! empty( $titleCssInline ) ) ? 'style="'. esc_attr( implode( ';', $titleCssInline ) ).'"' : '',
-			$titleHtmlAtts,			
+			$titleHtmlAtts,
 			( ( $atts['read_more'] == 'title' && $a_link_open != '' ) ? $a_link_open : '' ) . esc_html( $atts['title'] ) . ( ( $atts['read_more'] == 'title' && $a_link_open != '' ) ? $a_link_close : '' ),
 			( ! empty( $descCssInline ) ) ? 'style="'. esc_attr( implode( ';', $descCssInline ) ).'"' : '',
 			$descHtmlAtts,
@@ -1707,7 +1707,7 @@ class Nova_Shortcodes {
 			$customCss,
 			Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags( $nova_fix_css )
 		);
-		
+
 	}
 
 	/**
@@ -1747,14 +1747,14 @@ class Nova_Shortcodes {
 			'subtitle_color'       => '',
 			'css' => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		$css_class = array(
 			'nova-headings',
 			'text-' . $atts['alignment'],
 			$atts['el_class'],
 			nova_shortcode_custom_css_class( $atts['css'] )
 		);
-		
+
 		$unique_id = uniqid( 'nova_heading_' );
 		$nova_fix_css = array();
 		$spacer_html = '';
@@ -1762,7 +1762,7 @@ class Nova_Shortcodes {
 		$subheading_html = '';
 		$title_class = 'js-el heading-tag nova-unit-responsive' . Novaworks_Shortcodes_Helper::getExtraClass( $atts['title_class'] );
 		$subtitle_class = 'js-el subheading-tag nova-unit-responsive' . Novaworks_Shortcodes_Helper::getExtraClass( $atts['subtitle_class'] );
-		
+
 		if( $atts['spacer'] == 'line' ){
 			if( $atts['spacer_position'] == 'left' || $atts['spacer_position'] == 'right' ){
 				$css_class[] = 'spacer-position-separator sp_at-' . $atts['spacer_position'];
@@ -1771,7 +1771,7 @@ class Nova_Shortcodes {
 				$css_class[] = 'spacer-position-' . $atts['spacer_position'];
 			}
 		}
-		
+
 
 		if( $atts['spacer'] == 'line' ){
 			$lineHtmlAtts = '';
@@ -1807,7 +1807,7 @@ class Nova_Shortcodes {
 				$lineHtmlAtts
 			);
 		}
-		
+
 		if( ! empty( $atts['title'] ) ){
 			$titleHtmlAtts = '';
 			$titleCssInline = array();
@@ -1848,7 +1848,7 @@ class Nova_Shortcodes {
 				esc_html( $atts['title'] )
 			);
 		}
-		
+
 		if( ! empty( $content ) ){
 			$subtitleHtmlAtts = '';
 			$subtitleCssInline = array();
@@ -1905,14 +1905,14 @@ class Nova_Shortcodes {
 			( $atts['spacer_position'] == 'top' ? $spacer_html : '' ),
 			( ( $atts['spacer_position'] == 'separator' || $atts['spacer_position'] == 'left' || $atts['spacer_position'] == 'right' ) ? '<div class="heading-with-line">' . $spacer_html : '' ),
 			( empty( $heading_html ) ? $subheading_html : $heading_html ),
-			( ( $atts['spacer_position'] == 'separator' || $atts['spacer_position'] == 'left' || $atts['spacer_position'] == 'right' ) ? $spacer_html . '</div>' : '' ),			
+			( ( $atts['spacer_position'] == 'separator' || $atts['spacer_position'] == 'left' || $atts['spacer_position'] == 'right' ) ? $spacer_html . '</div>' : '' ),
 			( $atts['spacer_position'] == 'middle' ? $spacer_html : '' ),
 			( empty( $heading_html ) ? '' : $subheading_html ),
 			( $atts['spacer_position'] == 'bottom' ? $spacer_html : '' )
 		);
-		
+
 	}
-	
+
 	/**
 	 * Contact Space
 	 *
@@ -1925,12 +1925,12 @@ class Nova_Shortcodes {
 			'height' => '',
 			'el_class' => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		$spaceHtmlAtts = '';
 		$nova_fix_css = array();
 		$unique_id = uniqid('nova_divider_');
 		$css_class = 'js-el nova-divider nova-unit-responsive ' . Novaworks_Shortcodes_Helper::getExtraClass( $atts['el_class'] );
-		
+
 		if( ! empty( $atts['height'] ) ){
 			$default_style = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $atts['height'] );
 			$spaceHtmlAtts = Novaworks_Shortcodes_Helper::getResponsiveMediaCss( array(
@@ -1946,7 +1946,7 @@ class Nova_Shortcodes {
 				)
 			) );
 		}
-		
+
 		return sprintf(
 			'<div id="%s" class="%s" %s></div>
 			%s',
@@ -1955,9 +1955,9 @@ class Nova_Shortcodes {
 			$spaceHtmlAtts,
 			Novaworks_Shortcodes_Helper::renderResponsiveMediaStyleTags( $nova_fix_css )
 		);
-		
+
 	}
-	
+
 	/**
 	 * Pricing Table
 	 *
@@ -1985,7 +1985,7 @@ class Nova_Shortcodes {
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
 		);
-		
+
 		if($atts['package_featured'] == 'yes'){
 			$css_class[] = 'is_box_featured';
 		}
@@ -2162,7 +2162,7 @@ class Nova_Shortcodes {
 		}
 
 		$authors = array();
-		
+
 		if ( $atts['name'] )
 			$authors[] = '<span class="name">' . esc_html( $atts['name'] ) . '</span>';
 
@@ -2223,8 +2223,8 @@ class Nova_Shortcodes {
 
 		$unique_id = uniqid( 'nova_partners_' );
 		$column_array = Novaworks_Shortcodes_Helper::getColumnFromShortcodeAtts( $atts['column'] );
-		$responsive_column = isset( $column_array ) ? $column_array : array( 'lg'=> 2, 'md'=> 2, 'mb'=> 1 );		
-		
+		$responsive_column = isset( $column_array ) ? $column_array : array( 'lg'=> 2, 'md'=> 2, 'mb'=> 1 );
+
 		$css_class     = array(
 			'nova-partners',
 			$atts['layout'] . '-layout',
@@ -2576,7 +2576,7 @@ class Nova_Shortcodes {
 			esc_html( $atts['job'] )
 		);
 	}
-	
+
 	/**
 	 * Image with hotspots
 	 *
@@ -2598,7 +2598,7 @@ class Nova_Shortcodes {
 			'tooltip_shadow' => 'none',
 			'animation'      => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		$style = 'color_pulse';
 
 		$image_el = null;
@@ -2624,7 +2624,7 @@ class Nova_Shortcodes {
 		$GLOBALS['nova-image_hotspot-count'] = ( int ) $atts['start_number'];
 		$GLOBALS['nova-image_hotspot-tooltip-func'] = $atts['tooltip'];
 		$GLOBALS['nova-image_hotspot-product-viewer'] = $atts['product_viewer'];
-		
+
 		return sprintf(
 			'<div class="%s" data-style="%s" data-product-viewer="%s" data-hotspot-icon="%s" data-size="medium" data-color="%s" data-tooltip-func="%s" data-tooltip_shadow="%s" data-animation="%s">
 				%s
@@ -2640,7 +2640,7 @@ class Nova_Shortcodes {
 			$image_el . Novaworks_Shortcodes_Helper::remove_js_autop( $content )
 		);
 	}
-	
+
 	/**
 	 * Hotspot
 	 *
@@ -2657,11 +2657,11 @@ class Nova_Shortcodes {
 			'position'       => '',
 			'title'          => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		$styles = array();
 		$styles[] = 'top:' . $atts['top'];
 		$styles[] = 'left:' . $atts['left'];
-		
+
 		$product_id = ( int ) $atts['product_id'];
 
 		$hotspot_icon = '';
@@ -2670,11 +2670,11 @@ class Nova_Shortcodes {
 		$click_class = ( $GLOBALS['nova-image_hotspot-tooltip-func'] == 'click' ) ? ' click' : null;
 
 		$tooltip_content_class = ( empty( $content ) ) ? 'nttip empty-tip' : 'nttip';
-		
+
 		if( $GLOBALS['nova-image_hotspot-product-viewer'] == true && ( int ) $product_id > 0 ) {
 			if( ! function_exists( 'wc_get_product') ) return false;
 			$product = wc_get_product( $product_id );
-			
+
 			$tooltip_content_html = '
 			<div class="nttip product-viewer" data-tooltip-position="' . esc_attr( $atts['position'] ) . '">
 				<div class="inner">
@@ -2705,7 +2705,7 @@ class Nova_Shortcodes {
 			</div>
 			';
 		}
-		
+
 		return sprintf(
 			'<div class="nova_hotspot_wrap" style="%s">
 				<div class="nova_hotspot %s">
@@ -2718,10 +2718,10 @@ class Nova_Shortcodes {
 			esc_attr( $hotspot_icon ),
 			$tooltip_content_html
 		);
-		
-		$GLOBALS['nova-image_hotspot-count']++;		
+
+		$GLOBALS['nova-image_hotspot-count']++;
 	}
-	
+
 	/**
 	 * Timeline Item
 	 *
@@ -2742,9 +2742,9 @@ class Nova_Shortcodes {
 			'css_animation'   => '',
 			'dot_color'       => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 		extract( $atts );
-		
+
 		$el_class = Novaworks_Shortcodes_Helper::getExtraClass( $el_class );
 		$css_class = "timeline-block" . $el_class;
 		if( ! empty( $css_animation ) && 'none' != $css_animation ) {
@@ -2806,7 +2806,7 @@ class Nova_Shortcodes {
 		$timeline_html = ob_get_contents();
 		ob_clean();
 		ob_end_flush();
-		
+
 		return $timeline_html;
 	}
 
@@ -2914,7 +2914,7 @@ class Nova_Shortcodes {
 		$instagram_html = ob_get_contents();
 		ob_clean();
 		ob_end_flush();
-		
+
 		return $instagram_html;
 	}
 
@@ -2927,7 +2927,7 @@ class Nova_Shortcodes {
 	 */
 	public static function portfolio_grid( $atts ) {
 		$enable_skill_filter = $filters = $item_space = $layout = $grid_style = $list_style = $masonry_style = $category__in = $category__not_in = $post__in = $post__not_in = $orderby = $order = $per_page = $title_tag = $img_size = $column = $enable_carousel = $enable_loadmore = $per_page_loadmore = $load_more_text = $el_class =  $output = '';
-		
+
 		$atts = shortcode_atts( array(
 			'layout'             => 'grid',
 			'grid_style'         => '1',
@@ -2981,7 +2981,7 @@ class Nova_Shortcodes {
 		if( 0 === $per_page ) $per_page = 1;
 
 		global $paged;
-		
+
 		if( empty( $paged ) ) {
 			$paged = 1;
 		}
@@ -3122,17 +3122,17 @@ class Nova_Shortcodes {
 			?>
 			</div><?php
 		}
-		
+
 		$portfolio_html = ob_get_contents();
 		ob_clean();
 		ob_end_flush();
-		
+
 		$GLOBALS[$globalVar] = $globalVarTmp;
 		wp_reset_postdata();
-		
+
 		return $portfolio_html;
 	}
-	
+
 	/**
 	 * Portfolio Grid
 	 *
@@ -3142,7 +3142,7 @@ class Nova_Shortcodes {
 	 */
 	public static function portfolio_masonry( $atts ) {
 		$mb_column = $category__in = $category__not_in = $post__in = $post__not_in = $orderby = $order = $per_page = $enable_skill_filter = $enable_loadmore = $load_more_text = $filters = $filter_style = $masonry_style = $column_type = $column = $base_item_h = $base_item_w = $custom_item_size = $item_sizes = $title_tag = $img_size = $el_class = $item_space = '';
-		
+
 		$atts = shortcode_atts( array(
 			'category__in'        => '',
 			'category__not_in'    => '',
@@ -3170,14 +3170,14 @@ class Nova_Shortcodes {
 			'item_sizes'          => '',
 			'el_class'            => ''
 		), $atts, 'nova_' . __FUNCTION__ );
-		
+
 
 		$excerpt_length = 15;
 
 		if( 0 === $per_page ) $per_page = 1;
 
 		global $paged;
-		
+
 		if( empty( $paged ) ) {
 			$paged = 1;
 		}
@@ -3287,7 +3287,7 @@ class Nova_Shortcodes {
 		$GLOBALS[$globalVar] = $globalParams;
 
 		$the_query = new WP_Query($query_args);
-		
+
 		ob_start();
 
 		if( $the_query->have_posts() ) {
@@ -3338,14 +3338,14 @@ class Nova_Shortcodes {
 			?>
 			</div><?php
 		}
-		
+
 		$portfolio_html = ob_get_contents();
 		ob_clean();
 		ob_end_flush();
-		
+
 		$GLOBALS[$globalVar] = $globalVarTmp;
 		wp_reset_postdata();
-		
+
 		return $portfolio_html;
 	}
 
@@ -3399,7 +3399,7 @@ class Nova_Shortcodes {
 		if ( '' === $atts['link'] ) {
 			return null;
 		}
-		
+
 		$css_class = array(
 			'nova-popup-video',
 			'icon-type-' . $atts['icon_type'],
@@ -3408,7 +3408,7 @@ class Nova_Shortcodes {
 			self::get_css_animation( $atts['css_animation'] ),
 			$atts['el_class'],
 		);
-		
+
 		if ( 'image' == $atts['icon_type'] ) {
 			$image = wp_get_attachment_image_src( $atts['image'], 'full' );
 			$icon  = $image ? sprintf( '<span><img alt="%s" src="%s" /></span>', esc_attr( $atts['title'] ), esc_url( $image[0] ) ) : '';
@@ -3416,7 +3416,7 @@ class Nova_Shortcodes {
 			vc_icon_element_fonts_enqueue( $atts['icon_type'] );
 			$icon = '<span><i class="' . esc_attr( $atts[ 'icon_' . $atts['icon_type'] ] ) . '"></i></span>';
 		}
-		
+
 		if( empty( $atts['icon_h_color'] ) ){
 			$atts['icon_h_color'] = $atts['icon_color'];
 		}
@@ -3432,12 +3432,12 @@ class Nova_Shortcodes {
 		if( empty( $atts['icon_h_border_color'] ) ){
 			$atts['icon_h_border_color'] = $atts['icon_border_color'];
 		}
-		
+
 		$unique_id = uniqid( 'nova_popup_video_' );
 
 		$wapIconCssStyle = $iconCssStyle = array();
 		$wapIconHoverCssStyle = $iconHoverCssStyle = array();
-		
+
 		if( ! empty( $atts['icon_size'] ) ){
 			$iconCssStyle[] = 'line-height:' . $atts['icon_size'] . 'px';
 			$iconCssStyle[] = 'font-size:' . $atts['icon_size'] . 'px';
@@ -3519,7 +3519,7 @@ class Nova_Shortcodes {
 			}
 			$customCss .= '</span>';
 		}
-		
+
 		$video_css_class = array(
 			'wpb_video_widget',
 			'wpb_content_element',
@@ -3537,7 +3537,7 @@ class Nova_Shortcodes {
 		if ( is_object( $wp_embed ) ) {
 			$embed = $wp_embed->run_shortcode( '[embed width="' . $video_w . '"' . $video_h . ']' . $atts['link'] . '[/embed]' );
 		}
-		
+
 		$video_html = '
 			<div class="' . implode( ' ', $video_css_class ) . '">
 				<div class="wpb_wrapper">
@@ -3545,7 +3545,7 @@ class Nova_Shortcodes {
 				</div>
 			</div>
 		';
-		
+
 		$video_wrapper_html = '
 			<div id="__' . esc_attr( $unique_id ) . '" class="video-modal nova-modal" tabindex="-1" role="dialog">
 				<div class="modal-header">
@@ -3565,9 +3565,9 @@ class Nova_Shortcodes {
 				</div>
 			</div>
 		';
-		
+
 		add_action( 'wp_footer', function () use ( $video_wrapper_html ) { echo $video_wrapper_html; } );
-		
+
 		return sprintf(
 			'<div id="%s" class="%s">
 				<div class="video-icon">%s</div>
@@ -3675,11 +3675,11 @@ class Nova_Shortcodes {
 		if ( $columns ) {
 			$woocommerce_loop['columns'] = $columns;
 		}
-		
+
 		$woocommerce_loop['is_shortcode'] = true;
-		
+
 		if ( isset( $atts['layout'] ) && 'special' == $atts['layout'] ) {
-			add_filter( 'single_product_archive_thumbnail_size', function() { return 'woocommerce_single'; } ); 
+			add_filter( 'single_product_archive_thumbnail_size', function() { return 'woocommerce_single'; } );
 		}
 
 		ob_start();
